@@ -1,0 +1,48 @@
+{
+  "training_date": "2026-08-02T06:34:35.466555Z",
+  "dataset_version": "1.0.0",
+  "model_version": "2.0.0",
+  "metrics_summary": {
+    "Random Forest": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "training_time": 0.23203063011169434
+    },
+    "Gradient Boosting": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "training_time": 0.355602502822876
+    },
+    "XGBoost": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "training_time": 0.0921168327331543
+    },
+    "LSTM Character Fallback": {
+      "accuracy": 0.95,
+      "precision": 0.9591836734693877,
+      "recall": 0.94,
+      "f1_score": 0.9494949494949495,
+      "roc_auc": 0.98,
+      "training_time": 0.11121320724487305
+    },
+    "Ensemble Model": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "training_time": 0.7909631729125977
+    }
+  },
+  "selected_model": "Hybrid Ensemble (RF + GB + XGB + LSTM-Fallback)"
+}

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Suraksha-AI - AI-Powered Security Dashboard</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            dashboardBg: '#f8f9fd',
+            cardBorder: '#edf0f7',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #f8faff;
+      color: #0f172a;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .metric-card {
+      background-color: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex bg-[#f8faff] text-slate-800 text-[13px] antialiased">
+<!-- BEGIN: Left Sidebar -->
+<aside class="w-[230px] bg-white border-r border-slate-100 flex flex-col justify-between shrink-0 min-h-screen p-5" data-purpose="sidebar-nav">
+<div>
+<!-- Brand Logo Header -->
+<div class="flex items-center gap-3 px-1 mb-7">
+<div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-indigo-100 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h1 class="font-bold text-[18px] tracking-tight text-slate-900 leading-tight">Suraksha-AI</h1>
+<p class="text-[11px] text-slate-400 font-medium">AI-Powered Security</p>
+</div>
+</div>
+<!-- Main Navigation -->
+<nav class="space-y-1">
+<!-- Overview (Active) -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl bg-[#f0efff] text-indigo-600 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewbox="0 0 24 24">
+<path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path>
+<path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.432z"></path>
+</svg>
+<span>Overview</span>
+</a>
+<!-- Threats -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Threats</span>
+</a>
+<!-- Detection -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Detection</span>
+</a>
+<!-- Response -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Response</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Reports</span>
+</a>
+<!-- Adversarial AI -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Adversarial AI</span>
+</a>
+<!-- Models -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Models</span>
+</a>
+<!-- Vulnerabilities -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.007v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Vulnerabilities</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom System Status Card -->
+<div class="bg-[#f9fafc] border border-slate-100 rounded-2xl p-4 mt-6">
+<div class="flex items-center justify-between mb-3">
+<span class="font-bold text-slate-800 text-[12px]">System Status</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-100">
+          Healthy
+        </span>
+</div>
+<div class="space-y-2 text-[11px]">
+<div class="flex justify-between items-center">
+<span class="text-slate-400">AI Agents</span>
+<span class="text-emerald-500 font-semibold">6 Active</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-400">Data Ingestion</span>
+<span class="text-emerald-500 font-semibold">Live</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-400">Model Health</span>
+<span class="text-emerald-500 font-semibold">98.7%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-400">Response Engine</span>
+<span class="text-emerald-500 font-semibold">Active</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: Left Sidebar -->
+<!-- BEGIN: Main Dashboard -->
+<main class="flex-1 p-6 lg:p-7 space-y-5 overflow-x-hidden min-w-0">
+<!-- Top Header Bar -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-[22px] font-bold tracking-tight text-slate-900 leading-tight">Dashboard Overview</h2>
+<p class="text-[12px] text-slate-400 mt-0.5">Real-time SQL Injection Detection &amp; Response</p>
+</div>
+<!-- Controls -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Date Selector -->
+<button class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200/80 rounded-xl text-slate-700 text-[12px] font-medium shadow-xs hover:bg-slate-50">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<path d="M16 2v4M8 2v4M3 10h18"></path>
+</svg>
+<span>Last 24 Hours</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+<!-- Environment Selector -->
+<button class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200/80 rounded-xl text-slate-700 text-[12px] font-medium shadow-xs hover:bg-slate-50">
+<span>All Environments</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+<!-- Auto Refresh -->
+<button class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200/80 rounded-xl text-slate-700 text-[12px] font-medium shadow-xs hover:bg-slate-50">
+<span class="text-slate-400 font-normal">Auto Refresh</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span class="font-semibold text-slate-800">On</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+<!-- Export Report Button -->
+<button class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#5243e8] hover:bg-[#4335d6] text-white font-medium text-[12px] rounded-xl shadow-xs transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Export Report</span>
+<svg class="w-3 h-3 text-indigo-200" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</div>
+</header>
+<!-- 1. Top KPI Row (6 cards exactly matching reference) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3.5">
+<!-- Card 1: Total Requests -->
+<div class="metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14.5l-4-4 1.41-1.41L11 13.67l6.59-6.59L19 8.5l-8 8z"></path>
+</svg>
+</div>
+<span class="text-[11px] font-medium text-slate-500">Total Requests</span>
+</div>
+<div class="text-[21px] font-bold text-slate-900 tracking-tight">2,350,912</div>
+<div class="text-[10px] text-emerald-500 font-medium mt-0.5">
+            ▲ 12.5% <span class="text-slate-400 font-normal">vs yesterday</span>
+</div>
+</div>
+<div class="mt-3 h-6 w-full">
+<svg class="w-full h-full text-indigo-500" preserveaspectratio="none" viewbox="0 0 100 25">
+<path d="M0,18 L15,19 L28,14 L42,16 L56,12 L70,15 L85,8 L100,12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</div>
+<!-- Card 2: SQLi Attempts Detected -->
+<div class="metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-lg bg-red-50 flex items-center justify-center text-red-500 shrink-0">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"></path>
+</svg>
+</div>
+<span class="text-[11px] font-medium text-slate-500">SQLi Attempts Detected</span>
+</div>
+<div class="text-[21px] font-bold text-slate-900 tracking-tight">1,248</div>
+<div class="text-[10px] text-emerald-500 font-medium mt-0.5">
+            ▲ 18.3% <span class="text-slate-400 font-normal">vs yesterday</span>
+</div>
+</div>
+<div class="mt-3 h-6 w-full">
+<svg class="w-full h-full text-red-500" preserveaspectratio="none" viewbox="0 0 100 25">
+<path d="M0,17 L14,18 L28,14 L42,19 L56,13 L70,17 L85,11 L100,16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</div>
+<!-- Card 3: Blocked Threats -->
+<div class="metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-lg bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<line x1="8" x2="16" y1="12" y2="12"></line>
+</svg>
+</div>
+<span class="text-[11px] font-medium text-slate-500">Blocked Threats</span>
+</div>
+<div class="text-[21px] font-bold text-slate-900 tracking-tight">982</div>
+<div class="text-[10px] text-emerald-500 font-medium mt-0.5">
+            ▲ 78.8% <span class="text-slate-400 font-normal">vs yesterday</span>
+</div>
+</div>
+<div class="mt-3 h-6 w-full">
+<svg class="w-full h-full text-amber-500" preserveaspectratio="none" viewbox="0 0 100 25">
+<path d="M0,18 L15,16 L30,20 L45,15 L60,18 L75,12 L88,16 L100,13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</div>
+<!-- Card 4: False Positive Rate -->
+<div class="metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-500 shrink-0">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14.5l-4-4 1.41-1.41L11 13.67l6.59-6.59L19 8.5l-8 8z"></path>
+</svg>
+</div>
+<span class="text-[11px] font-medium text-slate-500">False Positive Rate</span>
+</div>
+<div class="text-[21px] font-bold text-slate-900 tracking-tight">0.97%</div>
+<div class="text-[10px] text-emerald-500 font-medium mt-0.5">
+            ▼ 15.5% <span class="text-slate-400 font-normal">vs yesterday</span>
+</div>
+</div>
+<div class="mt-3 h-6 w-full">
+<svg class="w-full h-full text-emerald-500" preserveaspectratio="none" viewbox="0 0 100 25">
+<path d="M0,17 L16,18 L32,13 L48,20 L64,14 L80,19 L100,15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</div>
+<!-- Card 5: Avg Response Time -->
+<div class="metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500 shrink-0">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M13 2L3 14h7v8l11-12h-8z"></path>
+</svg>
+</div>
+<span class="text-[11px] font-medium text-slate-500">Avg Response Time</span>
+</div>
+<div class="text-[21px] font-bold text-slate-900 tracking-tight">0.008 ms</div>
+<div class="text-[10px] text-blue-500 font-medium mt-0.5">
+            ▼ 92.1% <span class="text-slate-400 font-normal">vs yesterday</span>
+</div>
+</div>
+<div class="mt-3 h-6 w-full">
+<svg class="w-full h-full text-blue-500" preserveaspectratio="none" viewbox="0 0 100 25">
+<path d="M0,16 L12,20 L24,15 L38,21 L52,17 L70,20 L84,16 L100,19" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</div>
+<!-- Card 6: System Uptime -->
+<div class="metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-500 shrink-0">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="3"></rect>
+<path d="M8 21h8m-4-4v4"></path>
+</svg>
+</div>
+<span class="text-[11px] font-medium text-slate-500">System Uptime</span>
+</div>
+<div class="text-[21px] font-bold text-slate-900 tracking-tight">99.99%</div>
+<div class="text-[10px] text-emerald-500 font-medium mt-0.5">
+            ▲ 0.01% <span class="text-slate-400 font-normal">vs yesterday</span>
+</div>
+</div>
+<!-- Bar Sparkline -->
+<div class="mt-3 h-6 flex items-end gap-[3px] w-full">
+<div class="flex-1 bg-emerald-300 h-3 rounded-xs"></div>
+<div class="flex-1 bg-emerald-400 h-5 rounded-xs"></div>
+<div class="flex-1 bg-emerald-300 h-4 rounded-xs"></div>
+<div class="flex-1 bg-emerald-500 h-6 rounded-xs"></div>
+<div class="flex-1 bg-emerald-400 h-5 rounded-xs"></div>
+<div class="flex-1 bg-emerald-300 h-3 rounded-xs"></div>
+<div class="flex-1 bg-emerald-500 h-6 rounded-xs"></div>
+<div class="flex-1 bg-emerald-400 h-4 rounded-xs"></div>
+<div class="flex-1 bg-emerald-500 h-5 rounded-xs"></div>
+<div class="flex-1 bg-emerald-300 h-3 rounded-xs"></div>
+<div class="flex-1 bg-emerald-400 h-5 rounded-xs"></div>
+<div class="flex-1 bg-emerald-500 h-6 rounded-xs"></div>
+</div>
+</div>
+</section>
+<!-- 2. Middle Row: Threats Over Time | Top Patterns | Categories | Real-time Feed -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-3.5">
+<!-- Threats Over Time (Col 4) -->
+<div class="lg:col-span-4 metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-bold text-slate-900 text-[13px]">Threats Over Time</h3>
+<div class="flex items-center gap-2.5 text-[10px] font-medium text-slate-500">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-500"></span> Blocked</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Alerted</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Allowed</span>
+</div>
+</div>
+<div class="h-36 w-full relative mt-2">
+<svg class="w-full h-full" viewbox="0 0 320 140">
+<!-- Y Grid -->
+<line stroke="#f1f5f9" stroke-width="1" x1="25" x2="315" y1="15" y2="15"></line>
+<text fill="#94a3b8" font-size="8" x="5" y="18">800</text>
+<line stroke="#f1f5f9" stroke-width="1" x1="25" x2="315" y1="45" y2="45"></line>
+<text fill="#94a3b8" font-size="8" x="5" y="48">600</text>
+<line stroke="#f1f5f9" stroke-width="1" x1="25" x2="315" y1="75" y2="75"></line>
+<text fill="#94a3b8" font-size="8" x="5" y="78">400</text>
+<line stroke="#f1f5f9" stroke-width="1" x1="25" x2="315" y1="105" y2="105"></line>
+<text fill="#94a3b8" font-size="8" x="5" y="108">200</text>
+<line stroke="#e2e8f0" stroke-width="1" x1="25" x2="315" y1="130" y2="130"></line>
+<text fill="#94a3b8" font-size="8" x="14" y="133">0</text>
+<!-- Blocked Path (Red) -->
+<polyline fill="none" points="25,85 50,70 75,90 100,85 125,65 150,70 175,55 200,75 225,50 250,65 275,45 310,70" stroke="#ef4444" stroke-width="1.8"></polyline>
+<circle cx="25" cy="85" fill="#ef4444" r="2.5"></circle>
+<circle cx="75" cy="90" fill="#ef4444" r="2.5"></circle>
+<circle cx="125" cy="65" fill="#ef4444" r="2.5"></circle>
+<circle cx="175" cy="55" fill="#ef4444" r="2.5"></circle>
+<circle cx="225" cy="50" fill="#ef4444" r="2.5"></circle>
+<circle cx="275" cy="45" fill="#ef4444" r="2.5"></circle>
+<circle cx="310" cy="70" fill="#ef4444" r="2.5"></circle>
+<!-- Alerted Path (Orange) -->
+<polyline fill="none" points="25,105 50,95 75,100 100,102 125,90 150,92 175,85 200,88 225,78 250,90 275,85 310,92" stroke="#f59e0b" stroke-width="1.8"></polyline>
+<circle cx="50" cy="95" fill="#f59e0b" r="2.5"></circle>
+<circle cx="125" cy="90" fill="#f59e0b" r="2.5"></circle>
+<circle cx="200" cy="88" fill="#f59e0b" r="2.5"></circle>
+<circle cx="275" cy="85" fill="#f59e0b" r="2.5"></circle>
+<!-- Allowed Path (Green) -->
+<polyline fill="none" points="25,122 50,118 75,120 100,115 125,118 150,116 175,114 200,118 225,114 250,116 275,115 310,118" stroke="#10b981" stroke-width="1.8"></polyline>
+<circle cx="75" cy="120" fill="#10b981" r="2.5"></circle>
+<circle cx="150" cy="116" fill="#10b981" r="2.5"></circle>
+<circle cx="225" cy="114" fill="#10b981" r="2.5"></circle>
+</svg>
+</div>
+</div>
+<div class="flex justify-between text-[9px] text-slate-400 px-6 pt-1">
+<span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>24:00</span>
+</div>
+</div>
+<!-- Top SQLi Patterns (Col 2) -->
+<div class="lg:col-span-2 metric-card p-4 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-slate-900 text-[13px] mb-2">Top SQLi Patterns</h3>
+<div class="flex justify-between text-[10px] text-slate-400 mb-2 font-medium">
+<span>Pattern</span>
+<span>Count</span>
+</div>
+<div class="space-y-2.5">
+<div>
+<div class="flex justify-between text-[11px] mb-1">
+<span class="text-slate-600 font-medium">UNION SELECT</span>
+<span class="text-slate-400">38%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#5243e8] h-1.5 rounded-full" style="width: 38%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] mb-1">
+<span class="text-slate-600 font-medium">Boolean Based</span>
+<span class="text-slate-400">24%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#5243e8] h-1.5 rounded-full" style="width: 24%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] mb-1">
+<span class="text-slate-600 font-medium">Error Based</span>
+<span class="text-slate-400">18%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#6366f1] h-1.5 rounded-full" style="width: 18%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] mb-1">
+<span class="text-slate-600 font-medium">Time Based</span>
+<span class="text-slate-400">12%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#818cf8] h-1.5 rounded-full" style="width: 12%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] mb-1">
+<span class="text-slate-600 font-medium">Stacked Queries</span>
+<span class="text-slate-400">8%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#a5b4fc] h-1.5 rounded-full" style="width: 8%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Threat Categories (Col 2) -->
+<div class="lg:col-span-2 metric-card p-4 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-slate-900 text-[13px] mb-1">Threat Categories</h3>
+<div class="flex items-center justify-center my-1.5">
+<div class="relative w-24 h-24">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background -->
+<path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4.5"></path>
+<!-- SQLi 61.5% (indigo) -->
+<path class="text-[#4f46e5]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="61.5, 100" stroke-width="4.8"></path>
+<!-- XSS 15.3% (blue) -->
+<path class="text-[#38bdf8]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="15.3, 100" stroke-dashoffset="-61.5" stroke-width="4.8"></path>
+<!-- RCE 8.7% (amber) -->
+<path class="text-[#f59e0b]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="8.7, 100" stroke-dashoffset="-76.8" stroke-width="4.8"></path>
+<!-- LFI 6.1% (orange) -->
+<path class="text-[#fb923c]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="6.1, 100" stroke-dashoffset="-85.5" stroke-width="4.8"></path>
+<!-- Other 8.4% (slate) -->
+<path class="text-[#cbd5e1]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="8.4, 100" stroke-dashoffset="-91.6" stroke-width="4.8"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="text-[12px] font-bold text-slate-900 leading-tight">1,248</span>
+<span class="text-[9px] text-slate-400">Total</span>
+</div>
+</div>
+</div>
+<!-- Legend on right / bottom -->
+<div class="space-y-1 text-[10px] pt-1">
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-[#4f46e5]"></span> SQL Injection</span> <span class="text-slate-500 font-medium">61.5%</span></div>
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-[#38bdf8]"></span> XSS</span> <span class="text-slate-500 font-medium">15.3%</span></div>
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-[#f59e0b]"></span> RCE</span> <span class="text-slate-500 font-medium">8.7%</span></div>
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-[#fb923c]"></span> LFI</span> <span class="text-slate-500 font-medium">6.1%</span></div>
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-[#cbd5e1]"></span> Other</span> <span class="text-slate-500 font-medium">8.4%</span></div>
+</div>
+</div>
+</div>
+<!-- Real-time Threat Feed (Col 4) -->
+<div class="lg:col-span-4 metric-card p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-2">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+<h3 class="font-bold text-slate-900 text-[13px]">Real-time Threat Feed</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-[11px]">
+<thead>
+<tr class="border-b border-slate-100 text-slate-400 font-normal">
+<th class="pb-1.5 font-normal">Time</th>
+<th class="pb-1.5 font-normal">Source IP</th>
+<th class="pb-1.5 font-normal">Payload (Snippet)</th>
+<th class="pb-1.5 font-normal">Type</th>
+<th class="pb-1.5 text-right font-normal">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr>
+<td class="py-1.5 text-slate-500">10:24:31</td>
+<td class="py-1.5 text-slate-700 font-medium">192.168.1.10</td>
+<td class="py-1.5 font-mono text-[10px] text-slate-500 truncate max-w-[90px]">UNION SELECT NULL...</td>
+<td class="py-1.5 text-slate-500">SQLi</td>
+<td class="py-1.5 text-right"><span class="text-[10px] font-semibold text-red-500">Blocked</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-500">10:24:28</td>
+<td class="py-1.5 text-slate-700 font-medium">203.0.113.45</td>
+<td class="py-1.5 font-mono text-[10px] text-slate-500 truncate max-w-[90px]">' OR '1'='1</td>
+<td class="py-1.5 text-slate-500">SQLi</td>
+<td class="py-1.5 text-right"><span class="text-[10px] font-semibold text-red-500">Blocked</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-500">10:24:22</td>
+<td class="py-1.5 text-slate-700 font-medium">198.51.100.23</td>
+<td class="py-1.5 font-mono text-[10px] text-slate-500 truncate max-w-[90px]">AND 1=(SELECT 1/0 ...</td>
+<td class="py-1.5 text-slate-500">SQLi</td>
+<td class="py-1.5 text-right"><span class="text-[10px] font-semibold text-red-500">Blocked</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-500">10:24:18</td>
+<td class="py-1.5 text-slate-700 font-medium">185.199.109.8</td>
+<td class="py-1.5 font-mono text-[10px] text-slate-500 truncate max-w-[90px]">SLEEP(5)--</td>
+<td class="py-1.5 text-slate-500">SQLi</td>
+<td class="py-1.5 text-right"><span class="text-[10px] font-semibold text-red-500">Blocked</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-500">10:24:11</td>
+<td class="py-1.5 text-slate-700 font-medium">203.0.113.78</td>
+<td class="py-1.5 font-mono text-[10px] text-slate-500 truncate max-w-[90px]">DROP TABLE users; --</td>
+<td class="py-1.5 text-slate-500">SQLi</td>
+<td class="py-1.5 text-right"><span class="text-[10px] font-semibold text-red-500">Blocked</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Third Row: Geographic Threat Map | Top Attacking IPs | Detection Accuracy | Response Performance | System Reliability -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3.5">
+<!-- Geographic Threat Map (Col 3) -->
+<div class="lg:col-span-3 metric-card p-4 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-slate-900 text-[13px] mb-2">Geographic Threat Map</h3>
+<div class="relative h-32 flex items-center justify-center my-1 overflow-hidden">
+<svg class="w-full h-full opacity-85" fill="none" viewbox="0 0 650 350">
+<!-- World silhouette paths -->
+<path d="M110,65 Q130,45 170,55 T210,105 T170,155 T120,125 Z" fill="#e2e8f0"></path>
+<path d="M180,165 Q200,185 220,250 T170,300 T150,240 Z" fill="#e2e8f0"></path>
+<path d="M290,45 Q350,35 390,75 T360,135 T310,125 Z" fill="#e2e8f0"></path>
+<path d="M300,135 Q350,155 370,235 T330,295 T290,235 Z" fill="#e2e8f0"></path>
+<path d="M410,55 Q510,35 580,85 T560,175 T440,145 Z" fill="#e2e8f0"></path>
+<path d="M490,205 Q550,195 570,255 T500,285 Z" fill="#e2e8f0"></path>
+<!-- Hotspots -->
+<circle cx="160" cy="105" fill="#ef4444" fill-opacity="0.8" r="14"></circle>
+<circle cx="160" cy="105" fill="#ef4444" fill-opacity="0.25" r="28"></circle>
+<circle cx="205" cy="210" fill="#f97316" fill-opacity="0.8" r="9"></circle>
+<circle cx="335" cy="85" fill="#ef4444" fill-opacity="0.75" r="12"></circle>
+<circle cx="470" cy="115" fill="#ef4444" fill-opacity="0.85" r="16"></circle>
+<circle cx="470" cy="115" fill="#ef4444" fill-opacity="0.25" r="32"></circle>
+<circle cx="525" cy="235" fill="#eab308" fill-opacity="0.75" r="8"></circle>
+</svg>
+</div>
+</div>
+<div class="flex items-center gap-2 text-[9px] text-slate-400 font-medium pt-1">
+<span>Low</span>
+<div class="h-1 flex-1 rounded-full bg-gradient-to-r from-amber-300 via-orange-500 to-red-600"></div>
+<span>High</span>
+</div>
+</div>
+<!-- Top Attacking IPs (Col 3) -->
+<div class="lg:col-span-3 metric-card p-4 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-slate-900 text-[13px] mb-2">Top Attacking IPs</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-[11px]">
+<thead>
+<tr class="border-b border-slate-100 text-slate-400 font-normal">
+<th class="pb-1.5 font-normal">IP Address</th>
+<th class="pb-1.5 font-normal">Requests</th>
+<th class="pb-1.5 font-normal">Threats</th>
+<th class="pb-1.5 text-right font-normal">Risk Score</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr>
+<td class="py-1.5 text-slate-700 font-medium">192.168.1.10</td>
+<td class="py-1.5 text-slate-500">15,231</td>
+<td class="py-1.5 text-slate-500">231</td>
+<td class="py-1.5 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-600">85</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-700 font-medium">203.0.113.45</td>
+<td class="py-1.5 text-slate-500">12,432</td>
+<td class="py-1.5 text-slate-500">189</td>
+<td class="py-1.5 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-orange-50 text-orange-600">78</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-700 font-medium">198.51.100.23</td>
+<td class="py-1.5 text-slate-500">9,876</td>
+<td class="py-1.5 text-slate-500">132</td>
+<td class="py-1.5 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-600">65</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-700 font-medium">185.199.109.8</td>
+<td class="py-1.5 text-slate-500">7,654</td>
+<td class="py-1.5 text-slate-500">98</td>
+<td class="py-1.5 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-yellow-50 text-yellow-600">58</span></td>
+</tr>
+<tr>
+<td class="py-1.5 text-slate-700 font-medium">203.0.113.78</td>
+<td class="py-1.5 text-slate-500">6,543</td>
+<td class="py-1.5 text-slate-500">76</td>
+<td class="py-1.5 text-right"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-600">47</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Detection Accuracy (Col 2) -->
+<div class="lg:col-span-2 metric-card p-4 flex flex-col justify-between items-center text-center">
+<div class="w-full">
+<h3 class="font-bold text-slate-900 text-[13px] mb-1">Detection Accuracy</h3>
+<!-- Circular Gauge -->
+<div class="relative w-24 h-24 mx-auto my-1">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-emerald-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="99.2, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-[17px] font-bold text-slate-900">99.2%</span>
+</div>
+</div>
+<p class="text-[11px] font-semibold text-slate-800 mb-2">High Accuracy</p>
+<div class="space-y-1 text-[10px] text-slate-500 text-left px-1">
+<div class="flex justify-between font-medium"><span>Precision:</span> <span class="font-bold text-slate-800">99.1%</span></div>
+<div class="flex justify-between font-medium"><span>Recall:</span> <span class="font-bold text-slate-800">99.3%</span></div>
+<div class="flex justify-between font-medium"><span>F1 Score:</span> <span class="font-bold text-slate-800">99.2%</span></div>
+</div>
+</div>
+</div>
+<!-- Response Performance (Col 2) -->
+<div class="lg:col-span-2 metric-card p-4 flex flex-col justify-between">
+<div>
+<h3 class="font-bold text-slate-900 text-[13px] mb-2">Response Performance</h3>
+<div class="flex items-start gap-2.5 mb-2">
+<div class="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M13 2L3 14h7v8l11-12h-8z"></path></svg>
+</div>
+<div>
+<div class="text-[15px] font-bold text-slate-900 leading-tight">0.008 ms</div>
+<p class="text-[9px] text-slate-400">From Minutes<br/>to Milliseconds</p>
+</div>
+</div>
+<div class="mt-2">
+<p class="text-[9px] text-slate-400 mb-1">Avg Response Time (24h)</p>
+<div class="h-14 w-full relative">
+<svg class="w-full h-full" viewbox="0 0 160 60">
+<line stroke="#f8fafc" stroke-width="1" x1="20" x2="160" y1="10" y2="10"></line>
+<text fill="#cbd5e1" font-size="6" x="2" y="12">10ms</text>
+<line stroke="#f8fafc" stroke-width="1" x1="20" x2="160" y1="25" y2="25"></line>
+<text fill="#cbd5e1" font-size="6" x="2" y="27">1ms</text>
+<line stroke="#f8fafc" stroke-width="1" x1="20" x2="160" y1="40" y2="40"></line>
+<text fill="#cbd5e1" font-size="6" x="2" y="42">0.1ms</text>
+<line stroke="#f1f5f9" stroke-width="1" x1="20" x2="160" y1="52" y2="52"></line>
+<text fill="#cbd5e1" font-size="5" x="0" y="54">0.001ms</text>
+<path d="M20,38 L32,40 L45,35 L60,37 L75,32 L90,36 L105,42 L120,44 L135,45 L150,47" fill="none" stroke="#3b82f6" stroke-width="1.6"></path>
+</svg>
+</div>
+<div class="flex justify-between text-[7px] text-slate-400 px-3">
+<span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- System Reliability (Col 2) -->
+<div class="lg:col-span-2 metric-card p-4 flex flex-col justify-between items-center text-center">
+<div class="w-full">
+<h3 class="font-bold text-slate-900 text-[13px] mb-1">System Reliability</h3>
+<!-- Radial Circle -->
+<div class="relative w-24 h-24 mx-auto my-1">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-emerald-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="99.99, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-[14px] font-bold text-slate-900">99.99%</span>
+<span class="text-[8px] text-slate-400">Uptime</span>
+</div>
+</div>
+<!-- Checklist -->
+<div class="space-y-1.5 text-[10px] text-slate-700 font-medium text-left px-2 pt-2">
+<div class="flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<rect height="18" rx="3" width="18" x="3" y="3"></rect>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+<span>Availability</span>
+</div>
+<div class="flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<rect height="18" rx="3" width="18" x="3" y="3"></rect>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+<span>Redundancy</span>
+</div>
+<div class="flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<rect height="18" rx="3" width="18" x="3" y="3"></rect>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+<span>Failover</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Bottom Row: Security Reports & Analytics -->
+<section class="metric-card p-5">
+<h3 class="font-bold text-slate-900 text-[14px] mb-4">Security Reports &amp; Analytics</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+<!-- Executive Summary & Threat Distribution (Col 3.5) -->
+<div class="lg:col-span-4 space-y-4">
+<div>
+<h4 class="font-semibold text-slate-800 text-[11px] mb-2.5">Executive Summary</h4>
+<div class="grid grid-cols-4 gap-2 text-left">
+<div>
+<p class="text-[9px] text-slate-400 font-medium">Total Requests</p>
+<p class="text-[13px] font-bold text-slate-900">2.35M</p>
+<span class="text-[9px] font-semibold text-emerald-500">▲ 12.5%</span>
+</div>
+<div>
+<p class="text-[9px] text-slate-400 font-medium">Total Threats</p>
+<p class="text-[13px] font-bold text-slate-900">1,248</p>
+<span class="text-[9px] font-semibold text-emerald-500">▲ 18.3%</span>
+</div>
+<div>
+<p class="text-[9px] text-slate-400 font-medium">Blocked</p>
+<p class="text-[13px] font-bold text-slate-900">982</p>
+<span class="text-[9px] font-semibold text-emerald-500">▲ 78.8%</span>
+</div>
+<div>
+<p class="text-[9px] text-slate-400 font-medium">Alerted</p>
+<p class="text-[13px] font-bold text-slate-900">193</p>
+<span class="text-[9px] font-semibold text-emerald-500">▲ 15.5%</span>
+</div>
+</div>
+</div>
+<!-- Threat Distribution Donut -->
+<div class="pt-2">
+<h4 class="font-semibold text-slate-800 text-[11px] mb-2">Threat Distribution</h4>
+<div class="flex items-center gap-4">
+<div class="relative w-16 h-16 shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- High: 18.6% (red) -->
+<path class="text-red-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="18.6, 100" stroke-width="5"></path>
+<!-- Medium: 34.2% (orange) -->
+<path class="text-amber-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="34.2, 100" stroke-dashoffset="-18.6" stroke-width="5"></path>
+<!-- Low: 47.2% (green) -->
+<path class="text-emerald-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="47.2, 100" stroke-dashoffset="-52.8" stroke-width="5"></path>
+</svg>
+</div>
+<div class="space-y-1 text-[10px] flex-1">
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-red-500"></span> High (70-100)</span> <span class="font-medium text-slate-700">18.6%</span></div>
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-amber-500"></span> Medium (40-70)</span> <span class="font-medium text-slate-700">34.2%</span></div>
+<div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-xs bg-emerald-500"></span> Low (0-40)</span> <span class="font-medium text-slate-700">47.2%</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Threats Over Time Detailed Chart (Col 3) -->
+<div class="lg:col-span-3">
+<h4 class="font-semibold text-slate-800 text-[11px] mb-2.5">Threats Over Time</h4>
+<div class="h-32 w-full relative">
+<svg class="w-full h-full" viewbox="0 0 240 120">
+<line stroke="#f1f5f9" stroke-width="1" x1="20" x2="235" y1="10" y2="10"></line>
+<text fill="#94a3b8" font-size="7" x="2" y="13">200</text>
+<line stroke="#f1f5f9" stroke-width="1" x1="20" x2="235" y1="40" y2="40"></line>
+<text fill="#94a3b8" font-size="7" x="2" y="43">150</text>
+<line stroke="#f1f5f9" stroke-width="1" x1="20" x2="235" y1="70" y2="70"></line>
+<text fill="#94a3b8" font-size="7" x="2" y="73">100</text>
+<line stroke="#f1f5f9" stroke-width="1" x1="20" x2="235" y1="95" y2="95"></line>
+<text fill="#94a3b8" font-size="7" x="6" y="98">50</text>
+<line stroke="#e2e8f0" stroke-width="1" x1="20" x2="235" y1="110" y2="110"></line>
+<text fill="#94a3b8" font-size="7" x="10" y="113">0</text>
+<!-- Blue Line with Dots -->
+<polyline fill="none" points="20,105 32,95 44,90 56,75 68,85 80,70 92,95 104,80 116,65 128,55 140,65 152,78 164,60 176,78 188,95 200,85 212,98 224,94" stroke="#2563eb" stroke-width="1.6"></polyline>
+<circle cx="20" cy="105" fill="#2563eb" r="2"></circle>
+<circle cx="56" cy="75" fill="#2563eb" r="2"></circle>
+<circle cx="80" cy="70" fill="#2563eb" r="2"></circle>
+<circle cx="104" cy="80" fill="#2563eb" r="2"></circle>
+<circle cx="128" cy="55" fill="#2563eb" r="2"></circle>
+<circle cx="164" cy="60" fill="#2563eb" r="2"></circle>
+<circle cx="188" cy="95" fill="#2563eb" r="2"></circle>
+<circle cx="212" cy="98" fill="#2563eb" r="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between text-[8px] text-slate-400 px-4 pt-1">
+<span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>24:00</span>
+</div>
+</div>
+<!-- Vulnerability Breakdown OWASP (Col 3) -->
+<div class="lg:col-span-3">
+<h4 class="font-semibold text-slate-800 text-[11px] mb-2.5">Vulnerability Breakdown (OWASP Top 10)</h4>
+<div class="space-y-1 text-[9px]">
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A01: Broken Access Control</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#5243e8] h-1 rounded-full" style="width: 28%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">28%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A02: Cryptographic Failures</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#5243e8] h-1 rounded-full" style="width: 18%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">18%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A03: Injection</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#5243e8] h-1 rounded-full" style="width: 24%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">24%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A04: Insecure Design</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#6366f1] h-1 rounded-full" style="width: 7%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">7%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A05: Security Misconfiguration</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#6366f1] h-1 rounded-full" style="width: 9%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">9%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A06: Vulnerable Components</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#818cf8] h-1 rounded-full" style="width: 6%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">6%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A07: ID &amp; Auth Failures</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#818cf8] h-1 rounded-full" style="width: 2%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">2%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A08: Software &amp; Data Integrity</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#a5b4fc] h-1 rounded-full" style="width: 2%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">2%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A09: Security Logging Failures</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#a5b4fc] h-1 rounded-full" style="width: 1%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">1%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-32 truncate text-slate-600 font-medium">A10: SSRF</span>
+<div class="flex-1 bg-slate-100 rounded-full h-1"><div class="bg-[#a5b4fc] h-1 rounded-full" style="width: 1%"></div></div>
+<span class="w-5 text-right font-medium text-slate-500">1%</span>
+</div>
+</div>
+</div>
+<!-- Report Export Items (Col 2) -->
+<div class="lg:col-span-2 flex flex-col justify-between">
+<div>
+<h4 class="font-semibold text-slate-800 text-[11px] mb-2.5">Report Export</h4>
+<div class="space-y-2.5">
+<!-- PDF -->
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-red-50 text-red-500 flex items-center justify-center font-bold text-[8px] shrink-0">
+                    PDF
+                  </div>
+<div>
+<p class="font-semibold text-slate-800 text-[10px] leading-tight">SQLi Security Report</p>
+<p class="text-[8px] text-slate-400">Generated: May 27, 2024 10:30 AM</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-600">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+<!-- XLSX -->
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[8px] shrink-0">
+                    XLSX
+                  </div>
+<div>
+<p class="font-semibold text-slate-800 text-[10px] leading-tight">Threat Intelligence Report</p>
+<p class="text-[8px] text-slate-400">Generated: May 27, 2024 10:30 AM</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-600">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+<!-- CSV -->
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-blue-50 text-blue-500 flex items-center justify-center font-bold text-[8px] shrink-0">
+                    CSV
+                  </div>
+<div>
+<p class="font-semibold text-slate-800 text-[10px] leading-tight">Dashboard Data (Raw)</p>
+<p class="text-[8px] text-slate-400">Generated: May 27, 2024 10:30 AM</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-600">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<div class="pt-2 text-right">
+<a class="inline-flex items-center gap-1 text-[11px] font-semibold text-indigo-600 hover:text-indigo-700" href="#">
+<span>View All Reports</span>
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- END: Main Dashboard -->
+</body></html>

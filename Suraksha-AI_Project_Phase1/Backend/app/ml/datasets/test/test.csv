@@ -1,0 +1,60 @@
+payload,label
+admin' # -- 125,1
+can you drop me a mail at info@security.org?,0
+sql injection vs cross site scripting 88,0
+scikit-learn tutorial for beginners 124,0
+search query for security systems,0
+operator 91,0
+' or '1'='1 -- 140,1
+hello world 140,0
+' or ''=',1
+that's a great feature!,0
+"1 union select 1, 2, 3 -- 139",1
+how to learn python 102,0
+operator 71,0
+' or 1=1 limit 1 -- -- 138,1
+"1' union all select null, null, null--",1
+admin'/* -- 126,1
+1' or '1'='1 -- 112,1
+1' order by 50--,1
+' or '1'='1' -- -- 101,1
+1'; update users set password='hacked' --,1
+flask api blueprints guide 106,0
+security_analyst 99,0
+' or '1'='1,1
+rishi 74,0
+standard json format: {'name': 'test'},0
+sarah_smith 116,0
+rishi,0
+admin 130,0
+1' or length('abc')=3,1
+rating: 4.5/5,0
+1' and (select count(*) from users) > 0--,1
+' or 1=1-- -- 147,1
+let's review the reports tomorrow morning.,0
+understanding agentic coding and ai 129,0
+admin' or '1'='1'# -- 96,1
+search query for security systems 121,0
+1' or 'abc'='abc',1
+"1' union select null, user(), database() --",1
+' or '1'='1'/* -- 123,1
+best models for classification 103,0
+' or '1'='1'/* -- 143,1
+"1' and extractvalue(1, concat(char(126), md5(123)))--",1
+1' or '1'='1 -- 132,1
+understanding agentic coding and ai 149,0
+agent@suraksha.ai,0
+' or ''=' -- 93,1
+total count: 100,0
+1' and (select 1) = 1--,1
+sqlite database visual studio code 87,0
+admin@suraksha.ai,0
+' or 1=1-- -- 107,1
+user123 92,0
+scikit-learn tutorial for beginners 144,0
+1' and 1=2--,1
+')) or (('a'='a,1
+"1 union all select 1,2,3,4--",1
+admin 90,0
+sqlite database visual studio code 107,0
+1' and sleep(10) or '1'='1,1

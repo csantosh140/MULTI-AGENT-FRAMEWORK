@@ -1,0 +1,2759 @@
+2026-09-20 23:49:41,116 - INFO - Category: Incorrect
+Payload: mjones@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.44s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 145.175.229.94
+==================================================
+2026-09-20 23:49:41,165 - INFO - Category: Authentication Bypass
+Payload: admin'/*
+Password: [REDACTED]
+Status: 401
+Response Time: 2.38s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 14.201.249.40
+==================================================
+2026-09-20 23:49:41,184 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.48s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 189.5.66.162
+==================================================
+2026-09-20 23:49:41,213 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 401
+Response Time: 2.49s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 155.238.29.142
+==================================================
+2026-09-20 23:49:41,248 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.48s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 194.147.236.114
+==================================================
+2026-09-20 23:49:41,274 - INFO - Category: Error-Based SQLi
+Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.64s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 168.194.214.228
+==================================================
+2026-09-20 23:49:41,298 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.49s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 145.39.159.121
+==================================================
+2026-09-20 23:49:41,365 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 # 
+Password: [REDACTED]
+Status: 403
+Response Time: 2.55s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 171.163.141.11
+==================================================
+2026-09-20 23:49:41,422 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.58s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 52.64.9.187
+==================================================
+2026-09-20 23:49:41,435 - INFO - Category: Incorrect
+Payload: shaun65@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.55s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 185.225.142.143
+==================================================
+2026-09-20 23:49:43,318 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.20s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 162.189.118.163
+==================================================
+2026-09-20 23:49:43,397 - INFO - Category: Authentication Bypass
+Payload: ' OR 1=1 LIMIT 1; --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.21s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 64.54.180.169
+==================================================
+2026-09-20 23:49:43,434 - INFO - Category: Incorrect
+Payload: ncameron@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.27s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 123.133.184.144
+==================================================
+2026-09-20 23:49:43,679 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.47s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 207.186.69.32
+==================================================
+2026-09-20 23:49:43,694 - INFO - Category: Boolean-Based SQLi
+Payload: admin' OR '1'='1
+Password: [REDACTED]
+Status: 403
+Response Time: 2.45s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 35.18.218.125
+==================================================
+2026-09-20 23:49:43,712 - INFO - Category: Union-Based SQLi
+Payload: ' UNION+SELECT database(),user(),version() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.44s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 119.145.31.251
+==================================================
+2026-09-20 23:49:43,738 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.44s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 119.24.23.15
+==================================================
+2026-09-20 23:49:43,751 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.38s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 70.153.193.249
+==================================================
+2026-09-20 23:49:43,880 - INFO - Category: Incorrect
+Payload: shelby77@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.46s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 94.162.92.128
+==================================================
+2026-09-20 23:49:43,893 - INFO - Category: Union-Based SQLi
+Payload: admin' UNION ALL SELECT username, password FROM users --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.46s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 144.194.65.31
+==================================================
+2026-09-20 23:49:45,458 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.14s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 84.167.247.28
+==================================================
+2026-09-20 23:49:45,548 - INFO - Category: Incorrect
+Payload: johntanner@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.15s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 22.136.114.151
+==================================================
+2026-09-20 23:49:45,572 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 159.146.117.213
+==================================================
+2026-09-20 23:49:45,873 - INFO - Category: Boolean-Based SQLi
+Payload: admin' OR '1'='1
+Password: [REDACTED]
+Status: 403
+Response Time: 2.19s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 129.184.88.124
+==================================================
+2026-09-20 23:49:45,890 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.19s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 21.146.195.59
+==================================================
+2026-09-20 23:49:45,893 - INFO - Results saved to sqli_test_results.json
+2026-09-21 00:02:22,172 - INFO - Category: Error-Based SQLi
+Payload: ' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.35s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 61.172.143.56
+==================================================
+2026-09-21 00:02:22,228 - INFO - Category: Legitimate
+Payload: marcus@antigravity.io
+Password: marcusPassWord!
+Status: 200
+Response Time: 2.27s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 110.86.26.95
+==================================================
+2026-09-21 00:02:22,285 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.30s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 32.127.134.102
+==================================================
+2026-09-21 00:02:22,288 - INFO - Category: Union-Based SQLi
+Payload: ' UNION ALL SELECT table_name,column_name FROM information_schema.columns --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.48s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 164.109.247.235
+==================================================
+2026-09-21 00:02:22,291 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 401
+Response Time: 2.42s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 19.116.169.97
+==================================================
+2026-09-21 00:02:22,606 - INFO - Category: Boolean-Based SQLi
+Payload: admin' OR '1'='1
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 65.121.166.153
+==================================================
+2026-09-21 00:02:22,718 - INFO - Category: Union-Based SQLi
+Payload: admin' UNION ALL SELECT username, password FROM users --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 137.92.118.166
+==================================================
+2026-09-21 00:02:23,038 - INFO - Category: Union-Based SQLi
+Payload: ' UNION SELECT 1,2,3 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.06s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 138.128.168.220
+==================================================
+2026-09-21 00:02:23,303 - INFO - Category: Authentication Bypass
+Payload: username' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.07s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 207.127.123.185
+==================================================
+2026-09-21 00:02:23,559 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 211.59.242.185
+==================================================
+2026-09-21 00:02:24,297 - INFO - Category: Incorrect
+Payload: franklinli@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.12s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 43.72.92.206
+==================================================
+2026-09-21 00:02:24,421 - INFO - Category: Incorrect
+Payload: kclark@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.18s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 113.6.28.128
+==================================================
+2026-09-21 00:02:24,564 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.28s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 81.77.122.175
+==================================================
+2026-09-21 00:02:24,587 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 401
+Response Time: 2.29s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 117.69.182.1
+==================================================
+2026-09-21 00:02:24,620 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.33s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 208.34.23.24
+==================================================
+2026-09-21 00:02:24,746 - INFO - Category: Legitimate
+Payload: marcus@antigravity.io
+Password: marcusPassWord!
+Status: 200
+Response Time: 2.14s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 160.70.47.43
+==================================================
+2026-09-21 00:02:24,845 - INFO - Category: Authentication Bypass
+Payload: ' OR '1'='1' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 119.241.216.151
+==================================================
+2026-09-21 00:02:25,169 - INFO - Category: Time-Based SQLi
+Payload: admin'; WAITFOR DELAY '00:00:2' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 202.209.189.231
+==================================================
+2026-09-21 00:02:25,415 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 163.120.184.9
+==================================================
+2026-09-21 00:02:25,734 - INFO - Category: Authentication Bypass
+Payload: admin'/*
+Password: [REDACTED]
+Status: 401
+Response Time: 2.17s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 43.245.245.168
+==================================================
+2026-09-21 00:02:26,446 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 401
+Response Time: 2.15s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 177.239.252.61
+==================================================
+2026-09-21 00:02:26,536 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 178.100.116.19
+==================================================
+2026-09-21 00:02:26,726 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.16s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 19.129.41.239
+==================================================
+2026-09-21 00:02:26,755 - INFO - Category: Error-Based SQLi
+Payload: ' AND extractvalue(1, concat(0x7e, (SELECT database()), 0x7e)) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.16s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 75.228.81.120
+==================================================
+2026-09-21 00:02:27,095 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 217.191.65.178
+==================================================
+2026-09-21 00:02:27,544 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 192.64.22.72
+==================================================
+2026-09-21 00:02:27,641 - INFO - Category: Boolean-Based SQLi
+Payload: admin' OR '1'='1
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 113.201.176.121
+==================================================
+2026-09-21 00:02:27,720 - INFO - Category: Error-Based SQLi
+Payload: ' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 130.190.150.238
+==================================================
+2026-09-21 00:02:28,195 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 198.2.60.188
+==================================================
+2026-09-21 00:02:28,537 - INFO - Category: Incorrect
+Payload: kathyhanna@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.09s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 162.83.153.73
+==================================================
+2026-09-21 00:02:28,685 - INFO - Category: Incorrect
+Payload: raymond24@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.11s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 115.140.67.169
+==================================================
+2026-09-21 00:02:28,739 - INFO - Category: Authentication Bypass
+Payload: admin'/*
+Password: [REDACTED]
+Status: 401
+Response Time: 2.14s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 7.228.145.102
+==================================================
+2026-09-21 00:02:28,879 - INFO - Category: Error-Based SQLi
+Payload: ' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 146.28.29.30
+==================================================
+2026-09-21 00:02:29,318 - INFO - Category: Error-Based SQLi
+Payload: ' AND extractvalue(1, concat(0x7e, (SELECT database()), 0x7e)) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 68.231.91.243
+==================================================
+2026-09-21 00:02:29,781 - INFO - Category: Legitimate
+Payload: admin@antigravity.io
+Password: password123
+Status: 200
+Response Time: 2.09s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 191.230.37.122
+==================================================
+2026-09-21 00:02:30,215 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 # 
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 61.116.139.116
+==================================================
+2026-09-21 00:02:30,339 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 9.154.143.112
+==================================================
+2026-09-21 00:02:30,432 - INFO - Category: Authentication Bypass
+Payload: ' OR '1'='1' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 40.28.43.241
+==================================================
+2026-09-21 00:02:30,814 - INFO - Category: Time-Based SQLi
+Payload: admin'; WAITFOR DELAY '00:00:2' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 89.155.10.243
+==================================================
+2026-09-21 00:02:31,137 - INFO - Category: Incorrect
+Payload: kennethbaker@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.10s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 165.99.176.146
+==================================================
+2026-09-21 00:02:31,601 - INFO - Category: Legitimate
+Payload: marcus@antigravity.io
+Password: marcusPassWord!
+Status: 200
+Response Time: 2.11s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 216.173.83.59
+==================================================
+2026-09-21 00:02:31,614 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 20.99.223.247
+==================================================
+2026-09-21 00:02:32,114 - INFO - Category: Error-Based SQLi
+Payload: ' AND extractvalue(1, concat(0x7e, (SELECT database()), 0x7e)) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 53.248.44.123
+==================================================
+2026-09-21 00:02:32,577 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.21s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 181.242.31.54
+==================================================
+2026-09-21 00:02:32,724 - INFO - Category: Union-Based SQLi
+Payload: ' UNION+SELECT database(),user(),version() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 180.200.206.251
+==================================================
+2026-09-21 00:02:33,165 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 137.244.174.243
+==================================================
+2026-09-21 00:02:33,540 - INFO - Category: Incorrect
+Payload: katherinespencer@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.09s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 117.124.91.215
+==================================================
+2026-09-21 00:02:33,939 - INFO - Category: Incorrect
+Payload: matthewpadilla@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.12s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 123.112.4.181
+==================================================
+2026-09-21 00:02:34,030 - INFO - Category: Union-Based SQLi
+Payload: ' UNION SELECT 1,2,3 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 75.154.202.141
+==================================================
+2026-09-21 00:02:34,282 - INFO - Category: Legitimate
+Payload: marcus@antigravity.io
+Password: marcusPassWord!
+Status: 200
+Response Time: 2.11s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 6.100.30.202
+==================================================
+2026-09-21 00:02:34,576 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 91.245.60.9
+==================================================
+2026-09-21 00:02:34,687 - INFO - Category: Error-Based SQLi
+Payload: ' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 157.160.67.181
+==================================================
+2026-09-21 00:02:34,820 - INFO - Category: Union-Based SQLi
+Payload: admin' UNION ALL SELECT username, password FROM users --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 50.203.206.52
+==================================================
+2026-09-21 00:02:35,021 - INFO - Category: Authentication Bypass
+Payload: ' OR 1=1 LIMIT 1; --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 109.52.2.180
+==================================================
+2026-09-21 00:02:35,123 - INFO - Category: Incorrect
+Payload: jking@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 127.60.207.246
+==================================================
+2026-09-21 00:02:35,368 - INFO - Category: Union-Based SQLi
+Payload: ' UNION+SELECT database(),user(),version() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.08s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 73.121.195.43
+==================================================
+2026-09-21 00:02:35,762 - INFO - Category: Incorrect
+Payload: stephaniesingleton@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.10s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 89.138.206.87
+==================================================
+2026-09-21 00:02:36,025 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 # 
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 156.42.74.99
+==================================================
+2026-09-21 00:02:36,126 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 4.126.209.175
+==================================================
+2026-09-21 00:02:36,370 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 # 
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 175.58.107.146
+==================================================
+2026-09-21 00:02:36,682 - INFO - Category: Incorrect
+Payload: mmccormick@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.10s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 54.16.75.75
+==================================================
+2026-09-21 00:02:37,022 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 2.177.167.251
+==================================================
+2026-09-21 00:02:37,110 - INFO - Category: Incorrect
+Payload: matthewsangela@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.09s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 4.235.58.42
+==================================================
+2026-09-21 00:02:37,506 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 157.131.21.165
+==================================================
+2026-09-21 00:02:37,734 - INFO - Category: Incorrect
+Payload: scottharris@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.08s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 22.108.212.18
+==================================================
+2026-09-21 00:02:37,999 - INFO - Category: Incorrect
+Payload: msalazar@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.09s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 40.4.237.154
+==================================================
+2026-09-21 00:02:38,485 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.10s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 169.241.109.52
+==================================================
+2026-09-21 00:02:38,729 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 40.212.100.55
+==================================================
+2026-09-21 00:02:39,121 - INFO - Category: Incorrect
+Payload: lisa55@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.08s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 184.228.130.151
+==================================================
+2026-09-21 00:02:39,529 - INFO - Category: Union-Based SQLi
+Payload: ' UNION+SELECT database(),user(),version() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.08s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 144.185.99.158
+==================================================
+2026-09-21 00:02:39,669 - INFO - Category: Incorrect
+Payload: gabrielirwin@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.07s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 157.36.127.194
+==================================================
+2026-09-21 00:02:40,158 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 86.36.137.222
+==================================================
+2026-09-21 00:02:40,337 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 100.188.219.121
+==================================================
+2026-09-21 00:02:40,790 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 121.71.7.24
+==================================================
+2026-09-21 00:02:41,171 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.41s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 98.168.5.234
+==================================================
+2026-09-21 00:02:41,227 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.43s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 169.217.115.201
+==================================================
+2026-09-21 00:02:41,364 - INFO - Category: Error-Based SQLi
+Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 18.228.11.115
+==================================================
+2026-09-21 00:02:41,606 - INFO - Category: Incorrect
+Payload: wward@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.14s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 55.209.51.135
+==================================================
+2026-09-21 00:02:41,799 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.10s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 114.139.124.57
+==================================================
+2026-09-21 00:02:41,966 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 65.55.79.236
+==================================================
+2026-09-21 00:02:42,353 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.08s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 91.56.57.28
+==================================================
+2026-09-21 00:02:42,625 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 53.72.174.158
+==================================================
+2026-09-21 00:02:42,719 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 121.154.252.229
+==================================================
+2026-09-21 00:02:42,911 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.08s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 158.103.92.218
+==================================================
+2026-09-21 00:02:43,436 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 190.193.247.104
+==================================================
+2026-09-21 00:02:43,759 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 148.183.70.208
+==================================================
+2026-09-21 00:02:43,991 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.08s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 188.130.3.78
+==================================================
+2026-09-21 00:02:44,148 - INFO - Category: Incorrect
+Payload: cervantesjason@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.09s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 143.44.63.23
+==================================================
+2026-09-21 00:02:44,492 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.08s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 113.254.231.8
+==================================================
+2026-09-21 00:02:44,885 - INFO - Category: Incorrect
+Payload: marygarrett@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.11s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 80.102.246.214
+==================================================
+2026-09-21 00:02:45,025 - INFO - Category: Error-Based SQLi
+Payload: ' AND extractvalue(1, concat(0x7e, (SELECT database()), 0x7e)) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 31.136.31.232
+==================================================
+2026-09-21 00:02:45,380 - INFO - Category: Boolean-Based SQLi
+Payload: admin' OR '1'='1
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 222.140.225.238
+==================================================
+2026-09-21 00:02:45,580 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 # 
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 120.166.72.169
+==================================================
+2026-09-21 00:02:45,744 - INFO - Category: Incorrect
+Payload: luis04@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.11s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 149.231.35.26
+==================================================
+2026-09-21 00:02:45,920 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 118.129.219.248
+==================================================
+2026-09-21 00:02:46,318 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 33.49.5.253
+==================================================
+2026-09-21 00:02:46,517 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.09s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 137.38.99.111
+==================================================
+2026-09-21 00:02:46,933 - INFO - Category: Union-Based SQLi
+Payload: ' UNION ALL SELECT table_name,column_name FROM information_schema.columns --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 171.245.48.204
+==================================================
+2026-09-21 00:02:46,956 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 118.198.108.44
+==================================================
+2026-09-21 00:02:47,035 - INFO - Category: Incorrect
+Payload: fwatkins@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 203.88.21.202
+==================================================
+2026-09-21 00:02:47,044 - INFO - Results saved to sqli_test_results.json
+2026-09-21 00:03:39,171 - INFO - Category: Error-Based SQLi
+Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 38.255.197.203
+==================================================
+2026-09-21 00:03:39,210 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.09s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 48.78.86.114
+==================================================
+2026-09-21 00:03:39,269 - INFO - Category: Union-Based SQLi
+Payload: ' UNION+SELECT database(),user(),version() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.10s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 111.46.159.130
+==================================================
+2026-09-21 00:03:39,339 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 16.178.252.62
+==================================================
+2026-09-21 00:03:39,356 - INFO - Category: Incorrect
+Payload: hollydavis@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.11s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 7.218.145.114
+==================================================
+2026-09-21 00:03:39,411 - INFO - Category: Union-Based SQLi
+Payload: ' UNION ALL SELECT table_name,column_name FROM information_schema.columns --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 33.92.62.232
+==================================================
+2026-09-21 00:03:39,446 - INFO - Category: Incorrect
+Payload: wmcdaniel@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 86.17.52.72
+==================================================
+2026-09-21 00:03:39,543 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 53.204.199.167
+==================================================
+2026-09-21 00:03:39,552 - INFO - Category: Incorrect
+Payload: sonya23@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.11s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 65.36.94.192
+==================================================
+2026-09-21 00:03:39,609 - INFO - Category: Error-Based SQLi
+Payload: ' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 184.200.69.224
+==================================================
+2026-09-21 00:03:41,304 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 219.236.147.61
+==================================================
+2026-09-21 00:03:41,332 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 106.191.105.142
+==================================================
+2026-09-21 00:03:41,397 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 # 
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 1.222.238.137
+==================================================
+2026-09-21 00:03:41,508 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 401
+Response Time: 2.17s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 219.34.95.233
+==================================================
+2026-09-21 00:03:41,552 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.19s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 12.34.208.85
+==================================================
+2026-09-21 00:03:41,636 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.22s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 218.51.72.180
+==================================================
+2026-09-21 00:03:41,642 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.20s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 101.228.50.166
+==================================================
+2026-09-21 00:03:41,796 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.25s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 171.134.56.103
+==================================================
+2026-09-21 00:03:41,810 - INFO - Category: Authentication Bypass
+Payload: username' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.26s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 27.166.98.252
+==================================================
+2026-09-21 00:03:41,829 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.22s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 137.121.170.108
+==================================================
+2026-09-21 00:03:43,443 - INFO - Category: Legitimate
+Payload: marcus@antigravity.io
+Password: marcusPassWord!
+Status: 200
+Response Time: 2.14s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 188.35.116.18
+==================================================
+2026-09-21 00:03:43,504 - INFO - Category: Incorrect
+Payload: leesusan@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.17s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 77.15.139.85
+==================================================
+2026-09-21 00:03:43,630 - INFO - Category: Incorrect
+Payload: smithmichael@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.23s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 183.32.89.25
+==================================================
+2026-09-21 00:03:43,711 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.20s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 34.67.224.146
+==================================================
+2026-09-21 00:03:43,921 - INFO - Category: Authentication Bypass
+Payload: ' OR '1'='1' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.37s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 184.8.162.59
+==================================================
+2026-09-21 00:03:44,086 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.45s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 18.127.101.86
+==================================================
+2026-09-21 00:03:44,111 - INFO - Category: Authentication Bypass
+Payload: username' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.47s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 161.239.151.74
+==================================================
+2026-09-21 00:03:44,255 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.46s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 116.21.120.251
+==================================================
+2026-09-21 00:03:44,463 - INFO - Category: Incorrect
+Payload: randall01@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.65s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 90.222.199.229
+==================================================
+2026-09-21 00:03:44,497 - INFO - Category: Union-Based SQLi
+Payload: ' UNION SELECT 1,2,3 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.67s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 87.37.92.252
+==================================================
+2026-09-21 00:03:45,599 - INFO - Category: Legitimate
+Payload: admin@antigravity.io
+Password: password123
+Status: 200
+Response Time: 2.15s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 191.25.53.110
+==================================================
+2026-09-21 00:03:45,643 - INFO - Category: Error-Based SQLi
+Payload: ' AND extractvalue(1, concat(0x7e, (SELECT database()), 0x7e)) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 210.171.80.190
+==================================================
+2026-09-21 00:03:45,767 - INFO - Category: Incorrect
+Payload: zwilliams@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.14s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 87.236.72.234
+==================================================
+2026-09-21 00:03:45,866 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.15s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 141.34.9.60
+==================================================
+2026-09-21 00:03:46,040 - INFO - Category: Boolean-Based SQLi
+Payload: admin' OR '1'='1
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 61.146.29.99
+==================================================
+2026-09-21 00:03:46,181 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.09s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 69.231.40.248
+==================================================
+2026-09-21 00:03:46,274 - INFO - Category: Time-Based SQLi
+Payload: admin'; WAITFOR DELAY '00:00:2' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 102.126.132.241
+==================================================
+2026-09-21 00:03:46,397 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 163.102.101.72
+==================================================
+2026-09-21 00:03:46,582 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.11s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 55.5.109.71
+==================================================
+2026-09-21 00:03:46,618 - INFO - Category: Authentication Bypass
+Payload: admin'/*
+Password: [REDACTED]
+Status: 401
+Response Time: 2.11s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 77.246.96.29
+==================================================
+2026-09-21 00:03:47,715 - INFO - Category: Incorrect
+Payload: derek17@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.11s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 166.14.95.40
+==================================================
+2026-09-21 00:03:47,771 - INFO - Category: Union-Based SQLi
+Payload: admin' UNION ALL SELECT username, password FROM users --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 123.207.183.175
+==================================================
+2026-09-21 00:03:47,932 - INFO - Category: Authentication Bypass
+Payload: ' OR 1=1 LIMIT 1; --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.16s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 101.92.225.199
+==================================================
+2026-09-21 00:03:47,989 - INFO - Category: Incorrect
+Payload: clucas@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 156.15.128.137
+==================================================
+2026-09-21 00:03:48,166 - INFO - Category: Incorrect
+Payload: lisaweber@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.12s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 71.145.144.216
+==================================================
+2026-09-21 00:03:48,308 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.12s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 9.167.208.144
+==================================================
+2026-09-21 00:03:48,412 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 31.63.159.109
+==================================================
+2026-09-21 00:03:48,536 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 97.38.113.129
+==================================================
+2026-09-21 00:03:48,732 - INFO - Category: Time-Based SQLi
+Payload: admin'; WAITFOR DELAY '00:00:2' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.15s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 158.186.158.160
+==================================================
+2026-09-21 00:03:48,776 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.16s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 98.68.105.171
+==================================================
+2026-09-21 00:03:48,786 - INFO - Results saved to sqli_test_results.json
+2026-09-21 00:10:36,192 - INFO - Category: Incorrect
+Payload: christopheredwards@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.21s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 123.198.237.83
+==================================================
+2026-09-21 00:10:36,256 - INFO - Category: Incorrect
+Payload: fred60@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.32s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 132.147.32.214
+==================================================
+2026-09-21 00:10:36,411 - INFO - Category: Union-Based SQLi
+Payload: ' UNION SELECT 1,2,3 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.36s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 97.246.32.114
+==================================================
+2026-09-21 00:10:36,674 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.48s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 21.201.203.226
+==================================================
+2026-09-21 00:10:36,704 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.46s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 40.161.41.11
+==================================================
+2026-09-21 00:10:36,720 - INFO - Category: Incorrect
+Payload: villarrealjacqueline@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.46s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 123.62.109.68
+==================================================
+2026-09-21 00:10:36,784 - INFO - Category: Legitimate
+Payload: marcus@antigravity.io
+Password: marcusPassWord!
+Status: 200
+Response Time: 2.65s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 175.66.66.202
+==================================================
+2026-09-21 00:10:36,802 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.42s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 205.135.9.220
+==================================================
+2026-09-21 00:10:36,829 - INFO - Category: Authentication Bypass
+Payload: admin'/*
+Password: [REDACTED]
+Status: 401
+Response Time: 2.66s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 14.98.133.39
+==================================================
+2026-09-21 00:10:36,863 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.54s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 220.144.142.57
+==================================================
+2026-09-21 00:10:38,345 - INFO - Category: Time-Based SQLi
+Payload: admin'; WAITFOR DELAY '00:00:2' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.15s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 108.143.117.179
+==================================================
+2026-09-21 00:10:38,403 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.13s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 50.246.67.203
+==================================================
+2026-09-21 00:10:38,581 - INFO - Category: Error-Based SQLi
+Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT(version(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.17s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 33.138.162.180
+==================================================
+2026-09-21 00:10:38,832 - INFO - Category: Error-Based SQLi
+Payload: ' AND extractvalue(1, concat(0x7e, (SELECT database()), 0x7e)) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.15s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 217.103.78.121
+==================================================
+2026-09-21 00:10:39,010 - INFO - Category: Union-Based SQLi
+Payload: ' UNION ALL SELECT table_name,column_name FROM information_schema.columns --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.30s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 13.186.181.91
+==================================================
+2026-09-21 00:10:39,020 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 401
+Response Time: 2.30s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 70.203.57.55
+==================================================
+2026-09-21 00:10:39,070 - INFO - Category: Incorrect
+Payload: chenjoshua@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.29s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 80.124.122.239
+==================================================
+2026-09-21 00:10:39,124 - INFO - Category: Union-Based SQLi
+Payload: 1' UNION SELECT @@version,user(),database() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.32s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 209.134.164.156
+==================================================
+2026-09-21 00:10:39,209 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.34s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 125.238.59.228
+==================================================
+2026-09-21 00:10:39,225 - INFO - Category: Authentication Bypass
+Payload: ' OR 1=1 LIMIT 1; --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.40s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 2.149.144.187
+==================================================
+2026-09-21 00:10:40,458 - INFO - Category: Legitimate
+Payload: admin@antigravity.io
+Password: password123
+Status: 200
+Response Time: 2.11s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 33.112.230.218
+==================================================
+2026-09-21 00:10:40,620 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.22s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 27.171.117.110
+==================================================
+2026-09-21 00:10:40,728 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 200.120.9.79
+==================================================
+2026-09-21 00:10:40,934 - INFO - Category: Legitimate
+Payload: admin@antigravity.io
+Password: password123
+Status: 200
+Response Time: 2.09s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 76.174.222.139
+==================================================
+2026-09-21 00:10:41,214 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.19s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 145.182.139.99
+==================================================
+2026-09-21 00:10:41,244 - INFO - Category: Incorrect
+Payload: hernandezkayla@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.22s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 197.58.1.216
+==================================================
+2026-09-21 00:10:41,285 - INFO - Category: Union-Based SQLi
+Payload: ' UNION+SELECT database(),user(),version() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.21s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 167.73.2.50
+==================================================
+2026-09-21 00:10:41,335 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 # 
+Password: [REDACTED]
+Status: 403
+Response Time: 2.21s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 189.255.239.27
+==================================================
+2026-09-21 00:10:41,422 - INFO - Category: Incorrect
+Payload: ramirezlisa@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.19s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 93.57.218.80
+==================================================
+2026-09-21 00:10:41,452 - INFO - Category: Authentication Bypass
+Payload: ' OR '1'='1' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.24s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 13.176.48.53
+==================================================
+2026-09-21 00:10:41,463 - INFO - Results saved to sqli_test_results.json
+2026-09-21 00:10:52,359 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 401
+Response Time: 2.12s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 34.234.22.175
+==================================================
+2026-09-21 00:10:52,376 - INFO - Category: Incorrect
+Payload: kathryn91@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.15s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 100.3.191.230
+==================================================
+2026-09-21 00:10:52,488 - INFO - Category: Incorrect
+Payload: williamsamy@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.15s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 117.5.215.170
+==================================================
+2026-09-21 00:10:52,583 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 9.2.29.80
+==================================================
+2026-09-21 00:10:52,639 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.13s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 70.242.161.215
+==================================================
+2026-09-21 00:10:52,718 - INFO - Category: Union-Based SQLi
+Payload: ' UNION+SELECT database(),user(),version() --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.15s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 60.239.5.47
+==================================================
+2026-09-21 00:10:52,777 - INFO - Category: Union-Based SQLi
+Payload: ' UNION SELECT 1,2,3 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.16s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 49.28.75.141
+==================================================
+2026-09-21 00:10:52,808 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.16s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 130.123.124.39
+==================================================
+2026-09-21 00:10:52,880 - INFO - Category: Legitimate
+Payload: marcus@antigravity.io
+Password: marcusPassWord!
+Status: 200
+Response Time: 2.15s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 143.73.169.87
+==================================================
+2026-09-21 00:10:52,893 - INFO - Category: Incorrect
+Payload: gutierrezmatthew@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.14s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 42.5.54.142
+==================================================
+2026-09-21 00:10:54,498 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Behav...
+IP: 133.95.175.187
+==================================================
+2026-09-21 00:10:54,534 - INFO - Category: Incorrect
+Payload: lindsay61@antigravity.io
+Password: [REDACTED]
+Status: 403
+Response Time: 2.16s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 211.118.128.202
+==================================================
+2026-09-21 00:10:54,630 - INFO - Category: Incorrect
+Payload: zcarr@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.14s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 50.101.11.46
+==================================================
+2026-09-21 00:10:54,743 - INFO - Category: Legitimate
+Payload: elena@antigravity.io
+Password: securePassword2026
+Status: 200
+Response Time: 2.16s
+Response: {'success': True, 'message': 'Login successful!', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
+IP: 43.146.133.64
+==================================================
+2026-09-21 00:10:54,815 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.18s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 49.128.195.179
+==================================================
+2026-09-21 00:10:54,873 - INFO - Category: Authentication Bypass
+Payload: admin'/*
+Password: [REDACTED]
+Status: 401
+Response Time: 2.15s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 212.243.195.116
+==================================================
+2026-09-21 00:10:54,970 - INFO - Category: Incorrect
+Payload: stephensashley@antigravity.io
+Password: [REDACTED]
+Status: 401
+Response Time: 2.19s
+Response: {'error': 'Authentication Failed', 'message': 'Invalid email or password credentials'}...
+IP: 96.240.155.132
+==================================================
+2026-09-21 00:10:54,977 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.17s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 141.133.81.251
+==================================================
+2026-09-21 00:10:55,097 - INFO - Category: Error-Based SQLi
+Payload: ' AND extractvalue(1, concat(0x7e, (SELECT database()), 0x7e)) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.22s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 115.165.132.25
+==================================================
+2026-09-21 00:10:55,113 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.22s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 204.96.84.122
+==================================================
+2026-09-21 00:10:56,639 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.14s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 142.90.211.251
+==================================================
+2026-09-21 00:10:56,731 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.19s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 5.241.166.240
+==================================================
+2026-09-21 00:10:56,805 - INFO - Category: Union-Based SQLi
+Payload: admin' UNION ALL SELECT username, password FROM users --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.17s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 159.87.184.48
+==================================================
+2026-09-21 00:10:56,947 - INFO - Category: Authentication Bypass
+Payload: username' OR 1=1 --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.20s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 186.206.22.110
+==================================================
+2026-09-21 00:10:57,002 - INFO - Category: Authentication Bypass
+Payload: ' OR 1=1 LIMIT 1; --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.18s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 105.47.128.246
+==================================================
+2026-09-21 00:10:57,070 - INFO - Category: Union-Based SQLi
+Payload: ' UNION ALL SELECT table_name,column_name FROM information_schema.columns --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.19s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: UNION...
+IP: 198.249.112.68
+==================================================
+2026-09-21 00:10:57,180 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.21s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 110.53.133.157
+==================================================
+2026-09-21 00:10:57,222 - INFO - Category: Error-Based SQLi
+Payload: ' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1) --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.24s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Inlin...
+IP: 116.150.124.110
+==================================================
+2026-09-21 00:10:57,283 - INFO - Category: Time-Based SQLi
+Payload: admin'; WAITFOR DELAY '00:00:2' --
+Password: [REDACTED]
+Status: 403
+Response Time: 2.18s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Time-...
+IP: 13.209.162.87
+==================================================
+2026-09-21 00:10:57,298 - INFO - Category: Boolean-Based SQLi
+Payload: admin' OR '1'='1
+Password: [REDACTED]
+Status: 403
+Response Time: 2.18s
+Response: {'error': 'Security Threat Intercepted', 'message': '\U0001f6a8 Blocked by Suraksha-AI Security System: Boole...
+IP: 46.40.171.178
+==================================================
+2026-09-21 00:10:57,312 - INFO - Results saved to sqli_test_results.json
+2026-09-21 13:13:49,988 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 174.199.18.169 | Payload: ' OR '1'='1' --
+2026-09-21 13:13:54,128 - INFO - [401] [Incorrect] IP: 120.147.72.247 | Payload: earl59@antigravity.io
+2026-09-21 13:13:58,274 - INFO - [401] [Incorrect] IP: 212.0.100.14 | Payload: ryanwilliams@antigravity.io
+2026-09-21 13:14:02,413 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 94.4.166.57 | Payload: admin' OR '1'='1
+2026-09-21 13:14:06,539 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 188.95.192.33 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-09-21 13:14:10,667 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 4.250.61.24 | Payload: ' AND 1=1 --
+2026-09-21 13:14:14,790 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 71.149.185.228 | Payload: ' OR 1=1 --
+2026-09-21 13:14:18,936 - INFO - [200 OK] [Legitimate] IP: 47.45.29.5 | Payload: marcus@antigravity.io
+2026-09-21 13:14:23,067 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 193.2.255.107 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-09-21 13:14:27,206 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 163.176.133.174 | Payload: ' OR SLEEP(3) --
+2026-09-21 13:14:31,356 - INFO - [401] [Incorrect] IP: 36.139.124.70 | Payload: danielle67@antigravity.io
+2026-09-21 13:14:35,493 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 69.220.193.213 | Payload: admin' UNION ALL SELECT username, password FR
+2026-09-21 13:14:39,615 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 37.239.229.10 | Payload: username' OR pg_sleep(2) --
+2026-09-21 13:14:43,749 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 165.147.205.116 | Payload: username' OR 1=1 --
+2026-09-21 13:14:47,850 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 35.107.234.80 | Payload: ' OR 1=1 # 
+2026-09-21 13:14:51,988 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 192.139.13.243 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-09-21 13:14:56,157 - INFO - [401] [Incorrect] IP: 207.190.162.244 | Payload: donna84@antigravity.io
+2026-09-21 22:19:37,480 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 13.23.207.123 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-09-21 22:19:41,628 - INFO - [401] [Authentication Bypass] IP: 217.82.16.211 | Payload: admin'/*
+2026-09-21 22:19:45,758 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 206.9.136.116 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-09-21 22:19:49,882 - INFO - [401] [Incorrect] IP: 55.89.122.247 | Payload: julieburns@antigravity.io
+2026-09-21 22:19:54,006 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 143.21.205.90 | Payload: ' OR 1=1 --
+2026-09-21 22:19:58,192 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 147.152.69.244 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-09-21 22:20:02,339 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 81.245.178.36 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-09-21 22:20:06,459 - INFO - [200 OK] [Legitimate] IP: 187.149.50.167 | Payload: marcus@antigravity.io
+2026-09-21 22:20:10,587 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 89.55.53.184 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-09-21 22:20:14,708 - INFO - [200 OK] [Legitimate] IP: 111.209.67.217 | Payload: elena@antigravity.io
+2026-09-21 22:20:18,898 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 187.104.199.162 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-09-21 22:36:47,721 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 192.228.187.191 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-09-21 22:36:51,889 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 135.124.37.228 | Payload: username' OR 1=1 --
+2026-09-21 22:36:56,026 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 107.176.233.218 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-09-21 22:37:00,167 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 41.178.177.96 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-09-21 22:37:04,332 - INFO - [401] [Incorrect] IP: 100.151.229.139 | Payload: jkelly@antigravity.io
+2026-09-21 22:37:08,469 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 19.14.221.195 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-09-21 22:37:12,612 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 206.205.68.249 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-09-21 22:37:16,733 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 136.64.98.173 | Payload: admin' OR '1'='1
+2026-09-21 22:37:20,876 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 180.0.100.31 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-09-21 22:37:25,003 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 192.29.234.223 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-09-21 22:37:29,114 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 110.219.59.79 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-09-21 22:37:33,233 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 43.97.18.50 | Payload: ' UNION SELECT 1,2,3 --
+2026-09-21 22:37:37,358 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 108.181.191.106 | Payload: username' OR pg_sleep(2) --
+2026-09-21 22:37:41,522 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 23.32.12.188 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-09-21 22:43:53,921 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 144.8.102.5 | Payload: ' OR 1=1 --
+2026-09-21 22:43:58,054 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 34.187.240.134 | Payload: ' OR 1=1 --
+2026-09-21 22:44:02,170 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 160.116.153.106 | Payload: ' OR 1=1 --
+2026-09-21 22:44:06,310 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 113.36.157.239 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-09-21 22:44:10,459 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 7.170.251.169 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-09-21 22:44:14,576 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 125.33.213.140 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-09-21 22:44:18,702 - INFO - [200 OK] [Legitimate] IP: 6.45.172.7 | Payload: admin@antigravity.io
+2026-09-21 22:44:22,822 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 63.64.163.170 | Payload: ' OR SLEEP(3) --
+2026-09-21 22:44:26,936 - INFO - [401] [Incorrect] IP: 212.38.221.100 | Payload: kristen46@antigravity.io
+2026-09-21 22:44:31,038 - INFO - [401] [Incorrect] IP: 191.202.127.224 | Payload: thorntongeorge@antigravity.io
+2026-09-21 22:44:35,331 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 221.121.174.166 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-09-21 22:44:39,465 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 84.182.31.67 | Payload: ' OR '1'='1' --
+2026-09-21 22:44:43,577 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 137.12.20.138 | Payload: admin' OR '1'='1
+2026-09-21 22:44:47,688 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 208.255.119.92 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-09-21 22:44:51,863 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 184.101.145.202 | Payload: ' OR '1'='1' --
+2026-09-21 22:44:55,999 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 171.74.66.56 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-09-21 22:45:00,107 - INFO - [401] [Incorrect] IP: 79.190.210.78 | Payload: frankkelly@antigravity.io
+2026-09-21 22:45:06,657 - INFO - [401] [Error-Based SQLi] IP: 194.227.4.133 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-09-21 22:45:10,772 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 77.31.241.66 | Payload: ' OR 1=1 LIMIT 1; --
+2026-09-21 22:45:14,926 - INFO - [401] [Boolean-Based SQLi] IP: 129.94.120.208 | Payload: username' OR 'a'='a
+2026-09-21 22:45:19,060 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 82.30.98.84 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-09-21 22:45:23,205 - INFO - [200 OK] [Legitimate] IP: 136.38.21.105 | Payload: elena@antigravity.io
+2026-09-21 22:45:27,318 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 49.51.182.169 | Payload: admin' UNION ALL SELECT username, password FR
+2026-09-21 22:45:31,452 - INFO - [200 OK] [Legitimate] IP: 168.103.76.127 | Payload: marcus@antigravity.io
+2026-09-21 22:45:35,579 - INFO - [403 BLOCKED] [Incorrect] IP: 164.35.24.50 | Payload: jameskey@antigravity.io
+2026-09-21 22:45:39,697 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 217.103.240.246 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-09-21 22:45:43,814 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 172.10.103.90 | Payload: ' UNION SELECT 1,2,3 --
+2026-09-21 22:45:47,944 - INFO - [200 OK] [Legitimate] IP: 212.232.227.27 | Payload: elena@antigravity.io
+2026-09-21 22:45:52,061 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 53.71.142.239 | Payload: admin' --
+2026-09-21 22:45:56,152 - INFO - [401] [Incorrect] IP: 5.146.32.231 | Payload: brownkarl@antigravity.io
+2026-09-21 22:46:00,277 - INFO - [403 BLOCKED] [Incorrect] IP: 157.142.47.254 | Payload: andersonjohn@antigravity.io
+2026-09-21 22:46:04,407 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 59.246.182.95 | Payload: ' OR 1=1 LIMIT 1; --
+2026-09-21 22:46:08,521 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 103.167.88.183 | Payload: ' UNION SELECT 1,2,3 --
+2026-09-21 22:46:12,651 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 117.189.204.237 | Payload: username' OR pg_sleep(2) --
+2026-09-21 22:46:16,742 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 83.249.78.47 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-09-21 22:46:20,857 - INFO - [401] [Incorrect] IP: 71.160.203.209 | Payload: smithmiguel@antigravity.io
+2026-09-21 22:46:24,962 - INFO - [200 OK] [Legitimate] IP: 79.149.106.200 | Payload: elena@antigravity.io
+2026-09-22 16:28:21,655 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 194.181.21.198 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-09-22 16:28:25,794 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 100.120.127.238 | Payload: admin' OR '1'='1
+2026-09-22 16:28:29,947 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 139.162.119.45 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-09-22 16:28:34,077 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 190.172.10.230 | Payload: ' OR 1=1 --
+2026-09-22 16:28:38,226 - INFO - [401] [Authentication Bypass] IP: 142.183.18.202 | Payload: admin'/*
+2026-09-22 16:28:42,356 - INFO - [200 OK] [Legitimate] IP: 134.127.164.67 | Payload: admin@antigravity.io
+2026-09-22 16:28:46,479 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 192.117.155.72 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-09-22 16:28:50,660 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 78.121.193.119 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-09-22 16:28:54,790 - INFO - [401] [Incorrect] IP: 8.82.120.157 | Payload: trevorbell@antigravity.io
+2026-09-22 16:28:58,941 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 165.178.183.228 | Payload: username' OR pg_sleep(2) --
+2026-09-22 16:29:03,041 - INFO - [401] [Authentication Bypass] IP: 2.48.10.226 | Payload: admin'/*
+2026-09-22 16:29:07,162 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 148.25.68.34 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-09-22 16:29:11,314 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 129.63.223.96 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-09-22 16:29:15,447 - INFO - [200 OK] [Legitimate] IP: 15.156.172.74 | Payload: admin@antigravity.io
+2026-09-22 16:29:19,596 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 33.83.102.241 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-09-22 16:29:23,713 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 181.158.13.37 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-09-22 16:29:27,856 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 156.32.188.202 | Payload: ' OR 1=1 --
+2026-09-22 16:29:31,980 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 213.83.30.31 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-09-22 16:29:36,129 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 41.88.222.101 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-09-22 16:30:52,988 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 182.47.93.205 | Payload: username' OR pg_sleep(2) --
+2026-09-22 16:30:57,131 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 125.172.254.202 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-09-22 16:31:01,267 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 51.211.40.191 | Payload: ' UNION SELECT 1,2,3 --
+2026-09-22 16:31:05,397 - INFO - [401] [Incorrect] IP: 39.102.245.42 | Payload: cfletcher@antigravity.io
+2026-09-22 16:31:09,520 - INFO - [200 OK] [Legitimate] IP: 3.75.111.107 | Payload: admin@antigravity.io
+2026-09-22 16:31:13,643 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 49.32.244.72 | Payload: ' OR 1=1 --
+2026-09-22 16:31:17,803 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 101.227.145.122 | Payload: admin' --
+2026-09-22 16:31:21,974 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 192.156.30.149 | Payload: username' OR pg_sleep(2) --
+2026-09-22 16:31:26,099 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 104.250.112.163 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-09-22 16:31:30,207 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 211.96.79.156 | Payload: admin' UNION ALL SELECT username, password FR
+2026-09-22 16:31:34,347 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 187.114.185.66 | Payload: ' AND 1=1 --
+2026-09-22 16:31:38,485 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 41.142.186.181 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-09-22 16:31:42,614 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 136.84.204.136 | Payload: username' OR pg_sleep(2) --
+2026-09-22 16:31:46,796 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 51.203.9.220 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-09-22 16:31:50,921 - INFO - [401] [Incorrect] IP: 47.15.122.8 | Payload: jonescrystal@antigravity.io
+2026-09-22 16:31:55,057 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 15.206.97.167 | Payload: ' OR 1=1 LIMIT 1; --
+2026-09-22 16:31:59,154 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 124.126.182.201 | Payload: username' OR pg_sleep(2) --
+2026-09-22 16:32:03,282 - INFO - [401] [Incorrect] IP: 23.122.164.111 | Payload: garciacasey@antigravity.io
+2026-09-22 16:32:07,424 - INFO - [200 OK] [Legitimate] IP: 214.181.165.20 | Payload: admin@antigravity.io
+2026-09-22 16:32:11,539 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 163.249.32.230 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-09-22 16:32:15,682 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 80.38.104.30 | Payload: ' OR 1=1 --
+2026-09-22 16:32:19,800 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 13.247.50.141 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-09-22 16:32:23,950 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 179.218.193.44 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-09-22 16:32:28,056 - INFO - [401] [Incorrect] IP: 218.107.160.246 | Payload: penningtonsandra@antigravity.io
+2026-09-22 16:32:32,180 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 57.15.87.79 | Payload: ' UNION SELECT 1,2,3 --
+2026-09-22 16:32:36,299 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 205.141.187.163 | Payload: admin' OR '1'='1
+2026-09-22 16:32:40,448 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 61.102.172.151 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-09-22 16:32:44,579 - INFO - [401] [Incorrect] IP: 45.99.87.82 | Payload: pashley@antigravity.io
+2026-09-22 16:32:48,728 - INFO - [401] [Authentication Bypass] IP: 144.36.229.97 | Payload: admin'/*
+2026-09-22 16:32:52,861 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 37.24.143.28 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-09-22 16:32:56,978 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 94.241.31.135 | Payload: admin' UNION ALL SELECT username, password FR
+2026-09-22 16:33:01,104 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 27.144.150.35 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-09-22 16:33:05,232 - INFO - [403 BLOCKED] [Incorrect] IP: 41.80.20.122 | Payload: victoria18@antigravity.io
+2026-09-22 16:33:09,358 - INFO - [200 OK] [Legitimate] IP: 63.23.237.96 | Payload: marcus@antigravity.io
+2026-09-22 16:33:13,501 - INFO - [401] [Incorrect] IP: 90.255.163.208 | Payload: nelsonseth@antigravity.io
+2026-09-22 16:33:17,643 - INFO - [200 OK] [Legitimate] IP: 68.3.30.244 | Payload: elena@antigravity.io
+2026-09-22 16:33:21,796 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 121.56.132.62 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-09-22 16:33:25,934 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 148.28.141.20 | Payload: ' OR 1=1 LIMIT 1; --
+2026-09-22 16:33:30,059 - INFO - [401] [Incorrect] IP: 44.71.3.94 | Payload: pwhite@antigravity.io
+2026-09-22 16:33:34,191 - INFO - [401] [Incorrect] IP: 187.155.24.53 | Payload: stacysolis@antigravity.io
+2026-09-22 16:33:38,311 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 220.186.144.137 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-09-22 16:33:42,439 - INFO - [401] [Boolean-Based SQLi] IP: 194.124.237.254 | Payload: username' OR 'a'='a
+2026-09-22 16:33:46,560 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 59.143.127.185 | Payload: ' OR '1'='1' --
+2026-09-22 16:33:50,667 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 19.37.1.147 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-09-22 16:33:54,779 - INFO - [401] [Incorrect] IP: 160.206.34.133 | Payload: kferguson@antigravity.io
+2026-09-22 16:33:58,905 - INFO - [401] [Authentication Bypass] IP: 204.172.129.145 | Payload: admin'/*
+2026-10-01 10:07:10,827 - INFO - [404] [Incorrect] IP: 112.80.137.206 | Payload: danielharrison@antigravity.io
+2026-10-01 10:07:12,334 - INFO - [404] [Time-Based SQLi] IP: 65.10.17.8 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-01 10:07:13,846 - INFO - [404] [Boolean-Based SQLi] IP: 113.85.104.110 | Payload: ' OR 1=1 --
+2026-10-01 10:07:15,357 - INFO - [404] [Union-Based SQLi] IP: 7.109.182.207 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-01 10:07:16,869 - INFO - [404] [Boolean-Based SQLi] IP: 183.95.97.218 | Payload: ' AND 1=1 --
+2026-10-01 10:07:18,379 - INFO - [404] [Boolean-Based SQLi] IP: 5.177.155.136 | Payload: ' OR 1=1 # 
+2026-10-01 10:07:19,890 - INFO - [404] [Time-Based SQLi] IP: 209.82.93.166 | Payload: ' OR SLEEP(3) --
+2026-10-01 10:07:21,399 - INFO - [404] [Union-Based SQLi] IP: 162.50.112.33 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-01 10:07:22,911 - INFO - [404] [Legitimate] IP: 53.193.57.229 | Payload: elena@antigravity.io
+2026-10-01 10:07:24,418 - INFO - [404] [Authentication Bypass] IP: 42.129.177.204 | Payload: admin'/*
+2026-10-01 10:07:25,930 - INFO - [404] [Legitimate] IP: 125.61.7.100 | Payload: admin@antigravity.io
+2026-10-01 10:07:27,436 - INFO - [404] [Incorrect] IP: 63.226.1.15 | Payload: melindahall@antigravity.io
+2026-10-01 10:07:28,945 - INFO - [404] [Time-Based SQLi] IP: 193.213.155.224 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-01 10:07:30,451 - INFO - [404] [Error-Based SQLi] IP: 152.233.168.64 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-01 10:07:31,957 - INFO - [404] [Incorrect] IP: 207.24.147.195 | Payload: epage@antigravity.io
+2026-10-01 10:07:33,467 - INFO - [404] [Error-Based SQLi] IP: 200.147.134.135 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:07:34,979 - INFO - [404] [Error-Based SQLi] IP: 19.241.236.160 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:07:36,485 - INFO - [404] [Legitimate] IP: 161.163.199.223 | Payload: admin@antigravity.io
+2026-10-01 10:07:37,991 - INFO - [404] [Error-Based SQLi] IP: 135.229.182.140 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:07:39,497 - INFO - [404] [Authentication Bypass] IP: 47.188.199.182 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:07:41,003 - INFO - Results saved to sqli_test_results.json
+2026-10-01 10:07:55,753 - INFO - [404] [Incorrect] IP: 58.99.214.194 | Payload: sstone@antigravity.io
+2026-10-01 10:07:57,263 - INFO - [404] [Legitimate] IP: 79.133.191.2 | Payload: marcus@antigravity.io
+2026-10-01 10:07:58,774 - INFO - [404] [Authentication Bypass] IP: 140.93.117.175 | Payload: username' OR 1=1 --
+2026-10-01 10:08:04,918 - INFO - [404] [Union-Based SQLi] IP: 162.91.86.50 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-01 10:08:06,926 - INFO - [404] [Authentication Bypass] IP: 84.166.204.194 | Payload: admin' --
+2026-10-01 10:08:08,939 - INFO - [404] [Boolean-Based SQLi] IP: 161.77.56.21 | Payload: username' OR 'a'='a
+2026-10-01 10:08:10,955 - INFO - [404] [Error-Based SQLi] IP: 193.49.227.199 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:08:12,978 - INFO - [404] [Incorrect] IP: 45.172.50.12 | Payload: staceybeard@antigravity.io
+2026-10-01 10:08:14,988 - INFO - [404] [Legitimate] IP: 190.89.158.165 | Payload: elena@antigravity.io
+2026-10-01 10:08:17,000 - INFO - [404] [Incorrect] IP: 149.31.175.136 | Payload: stanleyhawkins@antigravity.io
+2026-10-01 10:08:19,008 - INFO - [404] [Incorrect] IP: 70.193.62.231 | Payload: monica60@antigravity.io
+2026-10-01 10:08:21,017 - INFO - [404] [Error-Based SQLi] IP: 81.251.174.10 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-01 10:08:23,025 - INFO - [404] [Union-Based SQLi] IP: 94.100.96.32 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-01 10:08:25,034 - INFO - [404] [Legitimate] IP: 72.69.107.165 | Payload: admin@antigravity.io
+2026-10-01 10:08:27,048 - INFO - [404] [Union-Based SQLi] IP: 49.118.167.181 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-01 10:08:29,059 - INFO - [404] [Boolean-Based SQLi] IP: 75.11.89.199 | Payload: ' OR 1=1 # 
+2026-10-01 10:08:31,065 - INFO - [404] [Incorrect] IP: 196.180.79.43 | Payload: krodriguez@antigravity.io
+2026-10-01 10:08:33,075 - INFO - [404] [Time-Based SQLi] IP: 208.49.103.14 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-01 10:08:35,087 - INFO - [404] [Boolean-Based SQLi] IP: 6.34.158.167 | Payload: admin' OR '1'='1
+2026-10-01 10:08:37,095 - INFO - [404] [Legitimate] IP: 139.202.122.107 | Payload: admin@antigravity.io
+2026-10-01 10:08:39,105 - INFO - [404] [Error-Based SQLi] IP: 163.13.36.225 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-01 10:08:41,111 - INFO - [404] [Error-Based SQLi] IP: 33.26.190.158 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:08:43,120 - INFO - [404] [Union-Based SQLi] IP: 134.196.42.183 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-01 10:08:45,129 - INFO - [404] [Union-Based SQLi] IP: 204.200.21.70 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-01 10:08:47,140 - INFO - [404] [Authentication Bypass] IP: 86.210.70.160 | Payload: ' OR '1'='1' --
+2026-10-01 10:08:49,145 - INFO - [404] [Incorrect] IP: 187.170.245.162 | Payload: larsonandre@antigravity.io
+2026-10-01 10:08:51,154 - INFO - [404] [Boolean-Based SQLi] IP: 92.248.153.37 | Payload: ' OR 1=1 --
+2026-10-01 10:08:53,162 - INFO - [404] [Legitimate] IP: 214.120.249.77 | Payload: admin@antigravity.io
+2026-10-01 10:08:55,169 - INFO - [404] [Union-Based SQLi] IP: 34.248.194.199 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-01 10:08:57,177 - INFO - [404] [Incorrect] IP: 62.149.36.76 | Payload: acostaryan@antigravity.io
+2026-10-01 10:08:59,190 - INFO - [404] [Time-Based SQLi] IP: 130.120.47.113 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:09:01,198 - INFO - [404] [Authentication Bypass] IP: 106.176.108.54 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:09:03,205 - INFO - [404] [Legitimate] IP: 136.77.158.194 | Payload: marcus@antigravity.io
+2026-10-01 10:09:05,213 - INFO - [404] [Union-Based SQLi] IP: 132.35.149.52 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-01 10:09:07,223 - INFO - [404] [Authentication Bypass] IP: 166.150.254.48 | Payload: username' OR 1=1 --
+2026-10-01 10:09:09,231 - INFO - [404] [Error-Based SQLi] IP: 196.65.101.222 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:09:11,236 - INFO - [404] [Boolean-Based SQLi] IP: 94.233.119.125 | Payload: admin' OR '1'='1
+2026-10-01 10:09:13,246 - INFO - [404] [Boolean-Based SQLi] IP: 184.187.95.23 | Payload: ' AND 1=1 --
+2026-10-01 10:09:15,253 - INFO - [404] [Authentication Bypass] IP: 187.23.155.46 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:09:17,262 - INFO - [404] [Time-Based SQLi] IP: 44.153.165.28 | Payload: ' OR SLEEP(3) --
+2026-10-01 10:09:19,271 - INFO - [404] [Boolean-Based SQLi] IP: 215.109.236.130 | Payload: username' OR 'a'='a
+2026-10-01 10:09:21,277 - INFO - [404] [Time-Based SQLi] IP: 156.231.138.115 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-01 10:09:23,284 - INFO - [404] [Authentication Bypass] IP: 20.64.228.250 | Payload: ' OR '1'='1' --
+2026-10-01 10:09:25,295 - INFO - [404] [Incorrect] IP: 22.211.152.194 | Payload: chadsullivan@antigravity.io
+2026-10-01 10:09:27,305 - INFO - [404] [Incorrect] IP: 208.151.52.253 | Payload: browningmichael@antigravity.io
+2026-10-01 10:09:29,314 - INFO - [404] [Boolean-Based SQLi] IP: 67.107.223.236 | Payload: admin' OR '1'='1
+2026-10-01 10:09:31,323 - INFO - [404] [Union-Based SQLi] IP: 166.183.130.139 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-01 10:09:33,330 - INFO - [404] [Boolean-Based SQLi] IP: 46.171.162.127 | Payload: ' OR 1=1 --
+2026-10-01 10:09:35,338 - INFO - [404] [Boolean-Based SQLi] IP: 100.42.198.170 | Payload: ' AND 1=1 --
+2026-10-01 10:09:37,350 - INFO - [404] [Incorrect] IP: 78.75.84.54 | Payload: kevin77@antigravity.io
+2026-10-01 10:09:39,358 - INFO - [404] [Boolean-Based SQLi] IP: 186.155.175.41 | Payload: ' OR 1=1 # 
+2026-10-01 10:09:41,365 - INFO - [404] [Legitimate] IP: 98.177.185.156 | Payload: marcus@antigravity.io
+2026-10-01 10:09:43,370 - INFO - [404] [Incorrect] IP: 55.126.31.200 | Payload: daniel89@antigravity.io
+2026-10-01 10:09:45,377 - INFO - [404] [Boolean-Based SQLi] IP: 94.220.191.123 | Payload: ' AND 1=1 --
+2026-10-01 10:09:47,383 - INFO - [404] [Error-Based SQLi] IP: 223.207.160.154 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-01 10:11:40,085 - INFO - [404] [Legitimate] IP: 120.157.98.12 | Payload: admin@antigravity.io
+2026-10-01 10:11:41,592 - INFO - [404] [Incorrect] IP: 181.243.30.78 | Payload: joelvazquez@antigravity.io
+2026-10-01 10:11:43,100 - INFO - [404] [Authentication Bypass] IP: 65.214.174.39 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:11:44,607 - INFO - [404] [Incorrect] IP: 172.107.248.120 | Payload: coxkathy@antigravity.io
+2026-10-01 10:11:46,116 - INFO - [404] [Error-Based SQLi] IP: 62.57.79.111 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:11:47,625 - INFO - [404] [Error-Based SQLi] IP: 136.161.73.52 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:11:49,133 - INFO - [404] [Legitimate] IP: 48.46.129.130 | Payload: elena@antigravity.io
+2026-10-01 10:11:50,640 - INFO - [404] [Authentication Bypass] IP: 70.246.173.159 | Payload: username' OR 1=1 --
+2026-10-01 10:11:52,147 - INFO - [404] [Boolean-Based SQLi] IP: 76.99.217.49 | Payload: admin' OR '1'='1
+2026-10-01 10:11:53,653 - INFO - [404] [Time-Based SQLi] IP: 132.228.179.92 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-01 10:11:55,161 - INFO - [404] [Union-Based SQLi] IP: 110.242.252.15 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-01 10:11:56,670 - INFO - [404] [Error-Based SQLi] IP: 17.44.234.107 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:11:58,177 - INFO - [404] [Boolean-Based SQLi] IP: 195.1.240.57 | Payload: username' OR 'a'='a
+2026-10-01 10:11:59,686 - INFO - [404] [Error-Based SQLi] IP: 191.27.191.97 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:12:01,192 - INFO - [404] [Incorrect] IP: 10.10.254.55 | Payload: xrose@antigravity.io
+2026-10-01 10:12:02,700 - INFO - [404] [Boolean-Based SQLi] IP: 180.80.106.107 | Payload: admin' OR '1'='1
+2026-10-01 10:12:04,209 - INFO - [404] [Time-Based SQLi] IP: 150.203.152.147 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:12:05,716 - INFO - [404] [Union-Based SQLi] IP: 203.109.91.216 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-01 10:12:07,225 - INFO - [404] [Legitimate] IP: 203.163.198.199 | Payload: marcus@antigravity.io
+2026-10-01 10:12:08,732 - INFO - [404] [Error-Based SQLi] IP: 28.161.225.189 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-01 10:12:10,237 - INFO - Results saved to sqli_test_results.json
+2026-10-01 10:17:40,689 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 91.96.41.163 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-01 10:17:44,296 - INFO - [403 BLOCKED] [Incorrect] IP: 117.52.12.58 | Payload: reidsandra@antigravity.io
+2026-10-01 10:17:47,892 - INFO - [200 OK] [Legitimate] IP: 159.206.81.131 | Payload: admin@antigravity.io
+2026-10-01 10:17:51,502 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 37.60.108.170 | Payload: ' OR SLEEP(3) --
+2026-10-01 10:17:55,091 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 125.89.140.9 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-01 10:17:58,681 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 158.230.222.71 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:18:02,327 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 200.12.8.84 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:18:05,950 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 195.223.247.90 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:18:09,585 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 112.225.35.233 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-01 10:18:13,216 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 42.112.84.130 | Payload: ' OR 1=1 # 
+2026-10-01 10:18:16,836 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 201.181.48.111 | Payload: admin' OR '1'='1
+2026-10-01 10:18:20,452 - INFO - [401] [Incorrect] IP: 35.122.43.57 | Payload: tthompson@antigravity.io
+2026-10-01 10:18:24,061 - INFO - [401] [Boolean-Based SQLi] IP: 121.152.157.246 | Payload: username' OR 'a'='a
+2026-10-01 10:18:27,681 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 161.153.255.39 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-01 10:18:31,277 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 60.8.160.83 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-01 10:18:42,632 - INFO - [401] [Authentication Bypass] IP: 43.89.102.127 | Payload: admin'/*
+2026-10-01 10:18:46,218 - INFO - [403 BLOCKED] [Incorrect] IP: 55.91.241.205 | Payload: williefisher@antigravity.io
+2026-10-01 10:18:49,820 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 85.134.202.128 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-01 10:18:53,397 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 205.112.28.219 | Payload: ' OR 1=1 # 
+2026-10-01 10:18:57,043 - INFO - [401] [Incorrect] IP: 45.114.113.51 | Payload: stacy03@antigravity.io
+2026-10-01 10:19:00,593 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 220.137.65.161 | Payload: admin' OR '1'='1
+2026-10-01 10:19:04,156 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 156.194.106.228 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-01 10:19:07,752 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 26.183.150.137 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:19:11,354 - INFO - [200 OK] [Legitimate] IP: 167.93.166.29 | Payload: admin@antigravity.io
+2026-10-01 10:19:14,921 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 77.93.195.140 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:19:18,514 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 160.99.198.190 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-01 10:19:22,105 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 176.82.216.99 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-01 10:19:25,674 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 187.20.132.92 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:19:29,250 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 85.215.123.222 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:19:32,836 - INFO - [401] [Incorrect] IP: 139.161.186.212 | Payload: mckenzie01@antigravity.io
+2026-10-01 10:19:36,394 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 59.72.48.94 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-01 10:19:39,979 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 32.254.166.167 | Payload: ' OR '1'='1' --
+2026-10-01 10:19:43,580 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 25.120.241.137 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-01 10:19:47,151 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 37.196.182.86 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-01 10:19:50,741 - INFO - [200 OK] [Legitimate] IP: 23.74.52.161 | Payload: elena@antigravity.io
+2026-10-01 10:19:54,337 - INFO - [401] [Incorrect] IP: 190.59.150.113 | Payload: pecktanya@antigravity.io
+2026-10-01 10:19:57,891 - INFO - [200 OK] [Legitimate] IP: 104.236.255.114 | Payload: admin@antigravity.io
+2026-10-01 10:20:01,488 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 220.211.146.173 | Payload: ' OR '1'='1' --
+2026-10-01 10:20:05,069 - INFO - [401] [Incorrect] IP: 136.132.69.220 | Payload: kentfrench@antigravity.io
+2026-10-01 10:20:08,635 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 192.21.51.210 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-01 10:20:12,213 - INFO - [200 OK] [Legitimate] IP: 68.75.74.70 | Payload: admin@antigravity.io
+2026-10-01 10:20:15,800 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 35.88.158.10 | Payload: ' AND 1=1 --
+2026-10-01 10:20:19,383 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 195.172.89.46 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-01 10:20:22,971 - INFO - [200 OK] [Legitimate] IP: 187.14.106.42 | Payload: elena@antigravity.io
+2026-10-01 10:20:26,565 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 67.142.85.53 | Payload: ' OR '1'='1' --
+2026-10-01 10:20:30,162 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 10.86.254.137 | Payload: admin' OR '1'='1
+2026-10-01 10:20:33,729 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 81.230.211.14 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:20:37,280 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 112.144.124.210 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-01 10:20:40,854 - INFO - [200 OK] [Legitimate] IP: 79.59.101.198 | Payload: elena@antigravity.io
+2026-10-01 10:20:44,432 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 169.218.94.174 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:20:48,039 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 111.206.195.120 | Payload: ' OR 1=1 --
+2026-10-01 10:20:51,628 - INFO - [200 OK] [Legitimate] IP: 123.65.139.8 | Payload: admin@antigravity.io
+2026-10-01 10:20:55,219 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 123.176.182.224 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:20:58,790 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 161.124.142.17 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-01 10:21:02,352 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 85.252.1.187 | Payload: ' OR SLEEP(3) --
+2026-10-01 10:21:05,893 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 1.208.129.43 | Payload: ' OR 1=1 --
+2026-10-01 10:21:09,487 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 152.32.247.113 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-01 10:21:13,065 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 72.175.154.9 | Payload: admin' --
+2026-10-01 10:21:16,648 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 7.67.18.35 | Payload: username' OR 1=1 --
+2026-10-01 10:21:20,212 - INFO - [401] [Incorrect] IP: 178.24.66.156 | Payload: frazierlarry@antigravity.io
+2026-10-01 10:21:23,805 - INFO - [401] [Incorrect] IP: 50.35.193.92 | Payload: brianmccann@antigravity.io
+2026-10-01 10:21:27,372 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 83.41.5.109 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-01 10:21:30,979 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 88.93.19.85 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-01 10:21:34,582 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 180.4.53.53 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-01 10:21:38,173 - INFO - [401] [Boolean-Based SQLi] IP: 11.33.224.79 | Payload: username' OR 'a'='a
+2026-10-01 10:22:19,560 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 132.4.22.139 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:22:23,164 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 75.181.14.199 | Payload: ' OR 1=1 # 
+2026-10-01 10:22:26,755 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 78.131.155.243 | Payload: ' OR 1=1 # 
+2026-10-01 10:22:30,386 - INFO - [200 OK] [Legitimate] IP: 193.58.233.138 | Payload: elena@antigravity.io
+2026-10-01 10:22:33,985 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 105.70.92.176 | Payload: ' AND 1=1 --
+2026-10-01 10:22:37,569 - INFO - [401] [Incorrect] IP: 170.102.158.140 | Payload: edward16@antigravity.io
+2026-10-01 10:22:41,148 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 142.49.243.226 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:22:44,735 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 64.113.223.62 | Payload: ' OR SLEEP(3) --
+2026-10-01 10:22:48,310 - INFO - [401] [Authentication Bypass] IP: 169.70.169.216 | Payload: admin'/*
+2026-10-01 10:22:51,898 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 208.57.56.82 | Payload: username' OR 1=1 --
+2026-10-01 10:22:55,501 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 110.16.17.111 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-01 10:22:59,096 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 160.147.166.58 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:23:02,689 - INFO - [200 OK] [Legitimate] IP: 92.115.199.198 | Payload: admin@antigravity.io
+2026-10-01 10:23:06,295 - INFO - [200 OK] [Legitimate] IP: 202.64.6.183 | Payload: elena@antigravity.io
+2026-10-01 10:23:09,907 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 108.127.158.48 | Payload: admin' --
+2026-10-01 10:24:09,247 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 152.168.131.39 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:24:12,850 - INFO - [200 OK] [Legitimate] IP: 6.89.161.142 | Payload: elena@antigravity.io
+2026-10-01 10:24:16,458 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 74.191.187.107 | Payload: ' OR 1=1 --
+2026-10-01 10:24:20,056 - INFO - [401] [Incorrect] IP: 87.218.218.59 | Payload: stephaniethompson@antigravity.io
+2026-10-01 10:24:23,640 - INFO - [200 OK] [Legitimate] IP: 17.111.127.105 | Payload: admin@antigravity.io
+2026-10-01 10:24:27,237 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 144.113.104.31 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-01 10:24:30,811 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 104.69.70.159 | Payload: username' OR 1=1 --
+2026-10-01 10:24:34,393 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 62.79.103.166 | Payload: ' OR 1=1 # 
+2026-10-01 10:24:37,973 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 117.109.37.37 | Payload: ' OR 1=1 # 
+2026-10-01 10:24:41,542 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 41.169.251.211 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:24:45,113 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 83.144.10.167 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-01 10:24:48,702 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 131.64.127.14 | Payload: admin' OR '1'='1
+2026-10-01 10:24:52,290 - INFO - [401] [Incorrect] IP: 223.198.223.116 | Payload: matthewjenkins@antigravity.io
+2026-10-01 10:28:36,745 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 146.66.86.25 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-01 10:28:40,359 - INFO - [401] [Authentication Bypass] IP: 79.123.225.3 | Payload: admin'/*
+2026-10-01 10:28:43,983 - INFO - [200 OK] [Legitimate] IP: 167.144.135.152 | Payload: elena@antigravity.io
+2026-10-01 10:28:47,586 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 75.106.161.104 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:28:51,208 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 83.241.6.19 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-01 10:28:54,783 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 12.65.208.41 | Payload: ' OR 1=1 --
+2026-10-01 10:28:58,362 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 108.86.203.33 | Payload: ' AND 1=1 --
+2026-10-01 10:29:01,964 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 118.40.241.161 | Payload: ' OR '1'='1' --
+2026-10-01 10:29:05,566 - INFO - [401] [Boolean-Based SQLi] IP: 106.231.68.11 | Payload: username' OR 'a'='a
+2026-10-01 10:36:00,196 - INFO - [200 OK] [Legitimate] IP: 181.51.58.93 | Payload: admin@antigravity.io
+2026-10-01 10:36:03,795 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 131.216.115.175 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:36:07,410 - INFO - [200 OK] [Legitimate] IP: 199.191.252.115 | Payload: admin@antigravity.io
+2026-10-01 10:36:10,992 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 221.111.179.8 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-01 10:36:14,603 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 30.132.223.252 | Payload: admin' --
+2026-10-01 10:36:18,188 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 206.37.67.213 | Payload: admin' OR '1'='1
+2026-10-01 10:36:21,785 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 111.63.127.181 | Payload: ' OR SLEEP(3) --
+2026-10-01 10:36:25,366 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 45.233.107.208 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-01 10:36:28,987 - INFO - [200 OK] [Legitimate] IP: 153.157.91.80 | Payload: admin@antigravity.io
+2026-10-01 10:36:32,544 - INFO - [401] [Incorrect] IP: 77.141.27.205 | Payload: haynesjennifer@antigravity.io
+2026-10-01 10:36:36,120 - INFO - [401] [Incorrect] IP: 10.24.24.187 | Payload: haneybrandon@antigravity.io
+2026-10-01 10:36:39,720 - INFO - [401] [Incorrect] IP: 30.92.194.1 | Payload: elizabethdawson@antigravity.io
+2026-10-01 10:36:43,313 - INFO - [401] [Incorrect] IP: 1.171.57.71 | Payload: robert39@antigravity.io
+2026-10-01 10:36:46,916 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 63.51.193.94 | Payload: ' OR 1=1 --
+2026-10-01 10:36:50,474 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 140.19.14.69 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:36:54,068 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 73.58.206.40 | Payload: ' AND 1=1 --
+2026-10-01 10:36:57,656 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 39.183.198.68 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-01 10:37:01,226 - INFO - [200 OK] [Legitimate] IP: 83.83.223.239 | Payload: elena@antigravity.io
+2026-10-01 10:37:04,843 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 203.249.75.180 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-01 10:37:08,428 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 188.221.140.183 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-01 10:37:11,999 - INFO - [401] [Boolean-Based SQLi] IP: 58.57.149.62 | Payload: username' OR 'a'='a
+2026-10-01 10:37:15,576 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 147.231.18.5 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-01 10:37:19,152 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 127.92.33.149 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-01 10:37:22,728 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 209.226.159.88 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-01 10:37:26,307 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 77.126.97.136 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:37:29,891 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 142.91.204.246 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-01 10:37:33,459 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 84.43.242.52 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-01 10:37:37,034 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 66.91.13.209 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:37:40,602 - INFO - [401] [Authentication Bypass] IP: 114.15.57.129 | Payload: admin'/*
+2026-10-01 10:37:44,178 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 94.137.61.168 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-01 10:37:47,760 - INFO - [200 OK] [Legitimate] IP: 161.211.20.154 | Payload: elena@antigravity.io
+2026-10-01 10:37:51,320 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 17.120.202.39 | Payload: ' OR '1'='1' --
+2026-10-01 10:37:54,892 - INFO - [401] [Incorrect] IP: 188.144.171.205 | Payload: michelleliu@antigravity.io
+2026-10-01 10:37:58,483 - INFO - [401] [Incorrect] IP: 113.154.242.114 | Payload: davidjackson@antigravity.io
+2026-10-01 10:38:02,044 - INFO - [401] [Authentication Bypass] IP: 12.148.91.49 | Payload: admin'/*
+2026-10-01 10:38:05,618 - INFO - [200 OK] [Legitimate] IP: 208.167.198.170 | Payload: admin@antigravity.io
+2026-10-01 10:38:09,176 - INFO - [401] [Boolean-Based SQLi] IP: 41.180.224.123 | Payload: username' OR 'a'='a
+2026-10-01 10:38:12,743 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 27.143.102.224 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-01 10:38:16,303 - INFO - [401] [Incorrect] IP: 21.37.17.211 | Payload: amy24@antigravity.io
+2026-10-01 10:38:19,854 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 28.32.69.138 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-01 10:38:23,409 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 173.231.128.54 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-01 10:38:26,994 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 220.206.81.201 | Payload: username' OR 1=1 --
+2026-10-01 10:38:30,540 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 16.53.63.72 | Payload: username' OR pg_sleep(2) --
+2026-10-01 10:38:34,131 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 113.46.255.40 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-01 10:38:37,673 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 187.91.76.197 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-05 11:23:30,532 - INFO - [401] [Incorrect] IP: 207.149.168.249 | Payload: zdillon@antigravity.io
+2026-10-05 11:23:34,661 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 208.144.142.218 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-05 11:23:38,761 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 137.217.75.2 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-05 11:23:42,862 - INFO - [401] [Incorrect] IP: 22.249.14.86 | Payload: josephspence@antigravity.io
+2026-10-05 11:23:46,975 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 55.240.126.123 | Payload: ' OR 1=1 # 
+2026-10-05 11:23:51,055 - INFO - [401] [Incorrect] IP: 109.217.201.83 | Payload: huffmankimberly@antigravity.io
+2026-10-05 11:23:55,141 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 193.145.242.212 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-05 11:23:59,246 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 189.22.59.69 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-05 11:24:03,346 - INFO - [401] [Incorrect] IP: 66.144.241.243 | Payload: mpeck@antigravity.io
+2026-10-05 11:24:07,448 - INFO - [200 OK] [Legitimate] IP: 163.130.87.218 | Payload: marcus@antigravity.io
+2026-10-05 11:28:43,956 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 32.72.18.76 | Payload: ' OR '1'='1' --
+2026-10-05 11:28:48,294 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 93.151.13.170 | Payload: admin' --
+2026-10-05 11:28:53,325 - INFO - [401] [Incorrect] IP: 102.146.255.123 | Payload: corypatterson@antigravity.io
+2026-10-05 11:28:57,616 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 200.107.90.99 | Payload: ' OR 1=1 # 
+2026-10-05 11:29:01,744 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 32.206.235.237 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-07 16:08:30,289 - INFO - [200 OK] [Legitimate] IP: 194.100.4.11 | Payload: admin@antigravity.io
+2026-10-07 16:08:34,474 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 113.65.205.208 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-07 16:08:38,631 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 87.252.241.194 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-07 16:08:42,725 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 7.69.101.221 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-07 16:08:46,865 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 116.246.67.130 | Payload: username' OR pg_sleep(2) --
+2026-10-07 16:08:51,000 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 172.117.143.91 | Payload: ' OR 1=1 # 
+2026-10-07 16:08:55,134 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 128.135.177.58 | Payload: ' OR 1=1 --
+2026-10-07 16:08:59,268 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 204.156.139.236 | Payload: admin' --
+2026-10-07 16:09:03,404 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 12.236.54.120 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-08 10:08:07,907 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 60.88.214.134 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-08 10:08:12,026 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 38.10.93.233 | Payload: admin' --
+2026-10-08 10:08:16,185 - INFO - [401] [Incorrect] IP: 207.210.101.237 | Payload: zacharysnyder@antigravity.io
+2026-10-08 10:08:20,274 - INFO - [401] [Incorrect] IP: 9.23.53.174 | Payload: denniskirby@antigravity.io
+2026-10-08 10:26:01,836 - INFO - [401] [Incorrect] IP: 197.16.16.219 | Payload: stephanie39@antigravity.io
+2026-10-08 10:26:05,957 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 119.238.120.173 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-08 10:42:10,880 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 109.170.101.211 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-08 10:42:14,975 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 52.90.67.168 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:45:55,765 - INFO - [401] [Incorrect] IP: 82.65.135.248 | Payload: smithjames@antigravity.io
+2026-10-08 10:45:59,894 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 87.196.9.187 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-08 10:46:03,987 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 223.152.116.252 | Payload: admin' --
+2026-10-08 10:46:08,117 - INFO - [401] [Incorrect] IP: 214.6.21.61 | Payload: howardbradley@antigravity.io
+2026-10-08 10:46:12,220 - INFO - [403 BLOCKED] [Incorrect] IP: 61.139.172.46 | Payload: melissacole@antigravity.io
+2026-10-08 10:46:16,330 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 194.56.106.196 | Payload: ' OR '1'='1' --
+2026-10-08 10:46:20,428 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 164.183.16.142 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-08 10:46:24,519 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 114.2.215.97 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-08 10:46:28,607 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 101.95.211.181 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-08 10:46:32,717 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 106.109.122.157 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-08 10:46:36,790 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 200.15.0.149 | Payload: ' OR '1'='1' --
+2026-10-08 10:46:40,852 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 66.193.50.4 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-08 10:46:44,928 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 146.228.235.93 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-08 10:46:49,014 - INFO - [200 OK] [Legitimate] IP: 107.254.254.160 | Payload: marcus@antigravity.io
+2026-10-08 10:46:53,078 - INFO - [401] [Incorrect] IP: 76.169.249.72 | Payload: petertravis@antigravity.io
+2026-10-08 10:46:57,172 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 29.140.7.241 | Payload: username' OR 1=1 --
+2026-10-08 10:47:01,267 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 57.84.104.210 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-08 10:47:05,365 - INFO - [401] [Boolean-Based SQLi] IP: 151.55.42.180 | Payload: username' OR 'a'='a
+2026-10-08 10:47:09,470 - INFO - [401] [Incorrect] IP: 20.26.253.64 | Payload: brendagross@antigravity.io
+2026-10-08 10:47:13,584 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 140.159.237.99 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-08 10:47:17,677 - INFO - [401] [Incorrect] IP: 32.254.4.62 | Payload: maurice18@antigravity.io
+2026-10-08 10:47:21,767 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 119.230.95.166 | Payload: ' OR 1=1 # 
+2026-10-08 10:47:25,858 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 41.193.114.57 | Payload: username' OR pg_sleep(2) --
+2026-10-08 10:47:29,981 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 106.47.223.148 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-08 10:47:34,085 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 197.249.17.14 | Payload: admin' --
+2026-10-08 10:47:38,173 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 196.250.199.76 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-08 10:47:42,268 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 111.234.215.158 | Payload: ' AND 1=1 --
+2026-10-08 10:47:46,331 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 208.240.125.167 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-08 10:47:50,389 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 157.32.174.245 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:47:54,469 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 181.51.208.199 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-08 10:47:58,528 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 11.66.53.214 | Payload: ' OR SLEEP(3) --
+2026-10-08 10:48:02,616 - INFO - [401] [Incorrect] IP: 195.246.84.176 | Payload: clewis@antigravity.io
+2026-10-08 10:48:06,684 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 119.152.33.77 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-08 10:48:10,760 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 46.211.38.208 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:48:14,819 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 54.75.221.6 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-08 10:48:18,893 - INFO - [401] [Incorrect] IP: 120.71.130.113 | Payload: randallrivas@antigravity.io
+2026-10-08 10:48:22,962 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 151.166.86.16 | Payload: username' OR pg_sleep(2) --
+2026-10-08 10:48:27,048 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 75.69.79.75 | Payload: admin' OR '1'='1
+2026-10-08 10:48:31,128 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 200.75.39.147 | Payload: ' OR 1=1 --
+2026-10-08 10:48:35,215 - INFO - [200 OK] [Legitimate] IP: 181.161.70.177 | Payload: elena@antigravity.io
+2026-10-08 10:48:39,311 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 1.26.61.105 | Payload: ' OR SLEEP(3) --
+2026-10-08 10:48:43,415 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 55.118.218.237 | Payload: ' OR SLEEP(3) --
+2026-10-08 10:48:47,520 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 118.87.205.76 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:48:51,602 - INFO - [200 OK] [Legitimate] IP: 191.122.105.200 | Payload: admin@antigravity.io
+2026-10-08 10:48:55,684 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 64.71.185.26 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-08 10:48:59,781 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 118.165.158.11 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-08 10:49:03,883 - INFO - [401] [Incorrect] IP: 5.190.36.118 | Payload: tgreene@antigravity.io
+2026-10-08 10:49:07,974 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 210.99.215.200 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-08 10:49:12,039 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 192.18.62.36 | Payload: username' OR 1=1 --
+2026-10-08 10:49:16,122 - INFO - [200 OK] [Legitimate] IP: 179.223.87.43 | Payload: admin@antigravity.io
+2026-10-08 10:49:20,211 - INFO - [403 BLOCKED] [Incorrect] IP: 105.254.233.138 | Payload: hsilva@antigravity.io
+2026-10-08 10:49:24,290 - INFO - [403 BLOCKED] [Incorrect] IP: 13.222.103.95 | Payload: cassidygonzalez@antigravity.io
+2026-10-08 10:49:28,373 - INFO - [401] [Incorrect] IP: 162.89.105.165 | Payload: hrojas@antigravity.io
+2026-10-08 10:49:32,458 - INFO - [401] [Boolean-Based SQLi] IP: 130.164.210.52 | Payload: username' OR 'a'='a
+2026-10-08 10:49:36,565 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 194.76.220.97 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-08 10:49:40,659 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 21.229.55.174 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:49:44,754 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 100.113.54.27 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-08 10:49:48,846 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 132.7.223.79 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-08 10:49:52,917 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 37.145.184.88 | Payload: admin' OR '1'='1
+2026-10-08 10:49:57,003 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 102.30.192.116 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-08 10:50:01,103 - INFO - [401] [Incorrect] IP: 153.108.215.50 | Payload: derekbond@antigravity.io
+2026-10-08 10:50:05,163 - INFO - [401] [Incorrect] IP: 178.209.153.174 | Payload: bradley40@antigravity.io
+2026-10-08 10:50:09,239 - INFO - [401] [Incorrect] IP: 2.73.16.5 | Payload: johndavidson@antigravity.io
+2026-10-08 10:54:42,514 - INFO - [401] [Incorrect] IP: 162.120.142.254 | Payload: moorebarbara@antigravity.io
+2026-10-08 10:54:55,444 - INFO - [401] [Incorrect] IP: 220.55.97.109 | Payload: cenglish@antigravity.io
+2026-10-08 10:54:59,547 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 24.102.201.41 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:55:03,615 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 41.191.92.39 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-08 10:55:07,666 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 163.252.79.134 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-08 10:55:11,737 - INFO - [200 OK] [Legitimate] IP: 215.252.2.96 | Payload: admin@antigravity.io
+2026-10-08 10:55:15,856 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 68.55.210.96 | Payload: ' OR 1=1 --
+2026-10-08 10:55:19,938 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 18.164.156.239 | Payload: username' OR pg_sleep(2) --
+2026-10-08 10:55:24,015 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 82.6.253.95 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-08 10:55:28,080 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 178.45.60.207 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-08 10:55:32,164 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 220.42.212.87 | Payload: username' OR 1=1 --
+2026-10-08 10:55:36,255 - INFO - [401] [Incorrect] IP: 122.252.186.118 | Payload: seanheath@antigravity.io
+2026-10-08 10:55:40,321 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 191.168.116.245 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-08 10:55:44,416 - INFO - [200 OK] [Legitimate] IP: 168.138.58.66 | Payload: marcus@antigravity.io
+2026-10-08 10:55:48,492 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 128.52.164.128 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-08 10:55:52,574 - INFO - [200 OK] [Legitimate] IP: 53.238.151.241 | Payload: elena@antigravity.io
+2026-10-08 10:55:56,654 - INFO - [401] [Incorrect] IP: 67.127.132.117 | Payload: james95@antigravity.io
+2026-10-08 10:56:00,743 - INFO - [401] [Authentication Bypass] IP: 77.117.207.156 | Payload: admin'/*
+2026-10-08 10:56:04,802 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 16.88.68.200 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-08 10:56:08,879 - INFO - [200 OK] [Legitimate] IP: 40.231.116.27 | Payload: elena@antigravity.io
+2026-10-08 10:56:12,962 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 53.135.198.122 | Payload: admin' OR '1'='1
+2026-10-08 10:56:17,029 - INFO - [401] [Incorrect] IP: 217.187.162.125 | Payload: levinoble@antigravity.io
+2026-10-08 10:56:21,123 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 134.248.219.23 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-08 10:56:25,214 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 79.132.92.149 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-08 10:56:29,296 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 8.94.166.19 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-08 10:56:33,391 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 151.90.243.214 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-08 10:56:37,468 - INFO - [401] [Boolean-Based SQLi] IP: 46.39.199.174 | Payload: username' OR 'a'='a
+2026-10-08 10:56:41,550 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 45.48.245.80 | Payload: ' AND 1=1 --
+2026-10-08 10:56:45,624 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 189.162.90.158 | Payload: ' AND 1=1 --
+2026-10-08 10:56:49,707 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 181.23.193.251 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:56:53,779 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 15.151.174.252 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-08 10:56:57,869 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 193.169.253.208 | Payload: ' OR 1=1 # 
+2026-10-08 10:57:01,934 - INFO - [401] [Authentication Bypass] IP: 97.207.229.32 | Payload: admin'/*
+2026-10-08 10:57:06,015 - INFO - [200 OK] [Legitimate] IP: 84.115.62.42 | Payload: elena@antigravity.io
+2026-10-08 10:57:10,063 - INFO - [200 OK] [Legitimate] IP: 2.16.133.112 | Payload: admin@antigravity.io
+2026-10-08 10:57:14,155 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 201.232.48.148 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-08 10:57:18,243 - INFO - [401] [Authentication Bypass] IP: 104.28.75.118 | Payload: admin'/*
+2026-10-08 10:57:20,272 - INFO - Results saved to sqli_test_results.json
+2026-10-10 16:25:13,160 - INFO - [401] [Incorrect] IP: 180.147.244.11 | Payload: james02@antigravity.io
+2026-10-10 16:25:17,276 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 150.95.227.221 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-10 16:25:21,360 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 176.66.114.149 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-10 16:25:25,450 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 157.208.199.2 | Payload: admin' OR '1'='1
+2026-10-10 16:25:29,530 - INFO - [200 OK] [Legitimate] IP: 79.106.80.129 | Payload: elena@antigravity.io
+2026-10-10 16:25:33,604 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 11.195.241.64 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-10 16:25:37,683 - INFO - [401] [Incorrect] IP: 186.15.7.194 | Payload: jasonbentley@antigravity.io
+2026-10-10 16:25:41,781 - INFO - [401] [Incorrect] IP: 95.101.126.163 | Payload: brandon26@antigravity.io
+2026-10-10 16:25:45,880 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 131.106.12.217 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-10 16:25:49,976 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 198.188.103.81 | Payload: admin' OR '1'='1
+2026-10-10 16:25:54,049 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 148.13.246.73 | Payload: admin' --
+2026-10-10 16:25:58,141 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 11.68.146.70 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-10 16:26:02,230 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 190.173.239.46 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-10 16:26:06,338 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 146.75.20.224 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-10 16:26:10,439 - INFO - [403 BLOCKED] [Incorrect] IP: 202.1.160.140 | Payload: ashley22@antigravity.io
+2026-10-10 16:26:14,540 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 8.17.228.136 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-10 16:26:18,639 - INFO - [403 BLOCKED] [Incorrect] IP: 166.135.5.224 | Payload: andersonrobin@antigravity.io
+2026-10-10 16:26:22,755 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 40.25.200.83 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-10 16:26:26,846 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 139.113.40.76 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-10 16:26:30,935 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 183.31.236.72 | Payload: ' OR 1=1 # 
+2026-10-10 16:26:35,033 - INFO - [200 OK] [Legitimate] IP: 103.52.248.202 | Payload: elena@antigravity.io
+2026-10-10 16:26:39,147 - INFO - [401] [Incorrect] IP: 110.183.31.143 | Payload: lbradford@antigravity.io
+2026-10-10 16:26:43,241 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 55.221.254.14 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-10 16:26:47,351 - INFO - [200 OK] [Legitimate] IP: 119.162.244.116 | Payload: marcus@antigravity.io
+2026-10-10 16:26:51,434 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 29.114.254.223 | Payload: ' OR 1=1 # 
+2026-10-10 16:26:55,531 - INFO - [403 BLOCKED] [Incorrect] IP: 27.242.48.230 | Payload: jbeck@antigravity.io
+2026-10-10 16:26:59,612 - INFO - [401] [Incorrect] IP: 41.87.176.107 | Payload: brittanyweber@antigravity.io
+2026-10-10 16:27:03,704 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 204.30.205.120 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-10 16:27:07,780 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 76.165.35.172 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-10 16:27:11,882 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 140.170.151.247 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-10 16:27:15,988 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 202.52.93.162 | Payload: ' OR 1=1 --
+2026-10-10 16:27:20,075 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 153.175.191.60 | Payload: ' OR SLEEP(3) --
+2026-10-10 16:27:24,172 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 14.110.142.220 | Payload: username' OR 1=1 --
+2026-10-10 16:27:28,256 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 216.11.105.34 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-10 16:27:32,361 - INFO - [403 BLOCKED] [Incorrect] IP: 22.60.148.37 | Payload: jared29@antigravity.io
+2026-10-10 16:27:36,459 - INFO - [401] [Incorrect] IP: 30.27.240.44 | Payload: gonzalezthomas@antigravity.io
+2026-10-10 16:27:40,561 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 135.69.213.103 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-10 16:27:44,670 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 220.95.127.209 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-10 16:27:48,778 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 217.181.178.37 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-10 16:27:52,879 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 208.22.0.105 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-10 16:27:56,964 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 68.213.174.13 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-10 16:28:01,063 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 96.164.86.111 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-10 16:28:05,178 - INFO - [200 OK] [Legitimate] IP: 183.20.236.104 | Payload: elena@antigravity.io
+2026-10-10 16:28:09,273 - INFO - [401] [Incorrect] IP: 185.185.135.10 | Payload: vfoster@antigravity.io
+2026-10-10 16:28:13,351 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 65.108.54.189 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-10 16:28:17,413 - INFO - [200 OK] [Legitimate] IP: 203.214.39.251 | Payload: marcus@antigravity.io
+2026-10-10 16:28:21,492 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 183.61.161.201 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-10 16:28:25,564 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 31.116.35.7 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-10 16:28:29,636 - INFO - [200 OK] [Legitimate] IP: 8.116.235.190 | Payload: elena@antigravity.io
+2026-10-10 16:28:33,693 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 74.192.40.134 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-10 16:28:37,758 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 180.231.67.189 | Payload: ' AND 1=1 --
+2026-10-10 16:28:41,816 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 62.3.2.42 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-10 16:28:45,865 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 111.103.243.86 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-10 16:28:49,927 - INFO - [401] [Incorrect] IP: 157.35.202.39 | Payload: sparsons@antigravity.io
+2026-10-10 16:28:54,010 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 30.244.137.185 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-10 16:28:58,079 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 76.197.39.97 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-10 16:29:02,136 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 143.183.108.254 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-10 16:29:06,182 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 11.181.46.63 | Payload: username' OR pg_sleep(2) --
+2026-10-10 16:29:10,239 - INFO - [401] [Incorrect] IP: 107.186.231.165 | Payload: olynch@antigravity.io
+2026-10-10 16:29:14,329 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 215.237.23.239 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-10 16:29:18,389 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 173.137.209.54 | Payload: ' OR SLEEP(3) --
+2026-10-10 16:29:22,468 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 146.199.242.79 | Payload: admin' OR '1'='1
+2026-10-10 16:29:26,528 - INFO - [401] [Incorrect] IP: 116.92.233.215 | Payload: jaredrodriguez@antigravity.io
+2026-10-10 16:29:30,609 - INFO - [401] [Authentication Bypass] IP: 98.168.65.39 | Payload: admin'/*
+2026-10-10 16:29:34,697 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 90.107.35.95 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-10 16:29:38,751 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 101.61.61.172 | Payload: username' OR 'a'='a
+2026-10-10 16:29:42,838 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 191.9.165.151 | Payload: ' OR SLEEP(3) --
+2026-10-10 16:29:46,893 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 151.234.132.65 | Payload: username' OR 'a'='a
+2026-10-10 16:29:50,962 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 164.164.21.110 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-10 16:29:55,023 - INFO - [401] [Incorrect] IP: 210.55.108.171 | Payload: allen25@antigravity.io
+2026-10-10 16:29:59,101 - INFO - [401] [Incorrect] IP: 2.65.203.68 | Payload: dianemayer@antigravity.io
+2026-10-10 16:30:03,147 - INFO - [401] [Incorrect] IP: 86.156.4.237 | Payload: gregorymccoy@antigravity.io
+2026-10-10 16:30:07,207 - INFO - [401] [Incorrect] IP: 174.67.48.206 | Payload: jean34@antigravity.io
+2026-10-10 16:30:11,269 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 166.69.6.32 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-10 16:30:15,318 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 106.48.156.132 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-10 16:30:19,372 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 44.122.228.89 | Payload: ' OR 1=1 --
+2026-10-10 16:30:23,450 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 211.188.63.19 | Payload: ' OR '1'='1' --
+2026-10-10 16:30:27,503 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 119.144.50.241 | Payload: ' OR 1=1 # 
+2026-10-10 16:30:31,576 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 86.126.55.122 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-10 16:30:35,642 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 14.70.175.26 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-10 16:30:39,708 - INFO - [403 BLOCKED] [Incorrect] IP: 15.254.188.123 | Payload: trevor04@antigravity.io
+2026-10-10 16:30:43,776 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 74.189.55.251 | Payload: username' OR 1=1 --
+2026-10-10 16:30:47,847 - INFO - [200 OK] [Legitimate] IP: 188.70.118.112 | Payload: marcus@antigravity.io
+2026-10-10 16:30:51,934 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 158.148.98.40 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-10 16:30:56,012 - INFO - [200 OK] [Legitimate] IP: 67.90.27.166 | Payload: admin@antigravity.io
+2026-10-10 16:31:00,066 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 96.8.229.26 | Payload: username' OR 1=1 --
+2026-10-10 16:31:04,135 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 69.145.134.15 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-10 16:31:08,208 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 162.19.204.86 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-10 16:31:12,264 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 214.2.213.98 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-10 16:31:16,350 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 125.90.213.158 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-10 16:31:20,410 - INFO - [403 BLOCKED] [Incorrect] IP: 101.89.54.171 | Payload: kellyyoung@antigravity.io
+2026-10-10 16:31:24,464 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 159.5.122.164 | Payload: username' OR 1=1 --
+2026-10-10 16:31:28,505 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 112.51.37.71 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-10 16:31:32,591 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 21.72.23.239 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-10 16:31:36,672 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 28.57.172.153 | Payload: username' OR pg_sleep(2) --
+2026-10-10 16:31:40,738 - INFO - [200 OK] [Legitimate] IP: 13.111.199.28 | Payload: elena@antigravity.io
+2026-10-10 16:31:44,801 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 217.179.177.211 | Payload: ' OR '1'='1' --
+2026-10-10 16:31:48,864 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 97.194.130.59 | Payload: ' OR SLEEP(3) --
+2026-10-10 16:31:52,943 - INFO - [200 OK] [Legitimate] IP: 54.140.21.27 | Payload: marcus@antigravity.io
+2026-10-10 16:31:57,007 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 190.63.85.144 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-10 16:31:59,019 - INFO - Results saved to sqli_test_results.json
+2026-10-11 11:18:52,102 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 88.32.80.164 | Payload: ' OR SLEEP(3) --
+2026-10-11 11:18:54,133 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 18.130.199.102 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-11 11:18:56,167 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 97.198.126.71 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-11 11:18:58,193 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 16.176.253.135 | Payload: username' OR 'a'='a
+2026-10-11 11:19:00,225 - INFO - [401] [Legitimate] IP: 32.193.17.83 | Payload: marcus@antigravity.io
+2026-10-11 11:19:02,263 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 170.231.185.75 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-11 11:19:04,293 - INFO - [401] [Incorrect] IP: 24.8.118.117 | Payload: solomonjennifer@antigravity.io
+2026-10-11 11:19:06,318 - INFO - [401] [Incorrect] IP: 1.0.137.9 | Payload: perezdaniel@antigravity.io
+2026-10-11 11:19:08,355 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 103.27.122.213 | Payload: ' OR SLEEP(3) --
+2026-10-11 11:19:10,405 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 126.145.184.80 | Payload: admin' --
+2026-10-11 11:19:12,440 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 113.110.136.132 | Payload: ' OR 1=1 # 
+2026-10-11 11:19:14,490 - INFO - [401] [Incorrect] IP: 223.79.4.168 | Payload: dillonrobert@antigravity.io
+2026-10-11 11:19:16,533 - INFO - [401] [Authentication Bypass] IP: 11.60.87.212 | Payload: admin'/*
+2026-10-11 11:19:19,758 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 152.170.86.201 | Payload: admin' --
+2026-10-11 11:19:21,785 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 30.146.244.17 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-11 11:19:23,815 - INFO - [401] [Incorrect] IP: 29.252.80.23 | Payload: gomezrichard@antigravity.io
+2026-10-11 11:19:25,849 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 204.204.105.116 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-11 11:19:27,886 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 120.76.70.35 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-11 11:19:29,937 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 83.175.206.79 | Payload: admin' OR '1'='1
+2026-10-11 11:19:31,968 - INFO - [401] [Incorrect] IP: 124.43.9.14 | Payload: amyperry@antigravity.io
+2026-10-11 11:19:34,004 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 105.226.210.148 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-11 11:19:36,068 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 44.161.191.83 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-11 11:19:38,113 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 130.228.215.86 | Payload: admin' OR '1'='1
+2026-10-11 11:19:40,160 - INFO - [401] [Incorrect] IP: 202.105.210.119 | Payload: wramirez@antigravity.io
+2026-10-11 11:19:42,197 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 87.206.158.97 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 11:22:34,125 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 108.82.176.61 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-11 11:22:36,158 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 119.224.203.239 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-11 11:22:38,187 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 94.149.212.127 | Payload: ' OR 1=1 # 
+2026-10-11 11:22:40,209 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 211.130.236.171 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-11 11:22:42,241 - INFO - [401] [Legitimate] IP: 118.228.133.214 | Payload: elena@antigravity.io
+2026-10-11 11:22:44,267 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 173.230.195.82 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-11 11:22:46,302 - INFO - [401] [Legitimate] IP: 166.49.28.61 | Payload: marcus@antigravity.io
+2026-10-11 11:22:48,372 - INFO - [401] [Incorrect] IP: 223.240.98.167 | Payload: abigail57@antigravity.io
+2026-10-11 11:22:50,397 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 184.230.78.72 | Payload: username' OR 'a'='a
+2026-10-11 11:22:52,422 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 209.75.14.36 | Payload: ' OR 1=1 --
+2026-10-11 11:22:54,447 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 179.171.73.101 | Payload: ' OR '1'='1' --
+2026-10-11 11:22:56,476 - INFO - [401] [Incorrect] IP: 28.121.180.158 | Payload: jeffrey02@antigravity.io
+2026-10-11 11:22:58,533 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 120.172.50.36 | Payload: admin' --
+2026-10-11 11:23:00,583 - INFO - [401] [Authentication Bypass] IP: 90.117.195.76 | Payload: admin'/*
+2026-10-11 11:23:02,625 - INFO - [401] [Incorrect] IP: 11.239.168.177 | Payload: shane89@antigravity.io
+2026-10-11 11:23:04,682 - INFO - [401] [Authentication Bypass] IP: 115.253.7.251 | Payload: admin'/*
+2026-10-11 11:23:06,725 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 193.62.9.68 | Payload: ' OR SLEEP(3) --
+2026-10-11 11:23:08,772 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 64.78.0.154 | Payload: ' OR 1=1 # 
+2026-10-11 11:23:10,818 - INFO - [401] [Incorrect] IP: 199.143.66.47 | Payload: amanda15@antigravity.io
+2026-10-11 11:23:12,866 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 202.14.134.52 | Payload: ' AND 1=1 --
+2026-10-11 11:23:14,913 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 196.199.12.38 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:23:16,957 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 42.242.252.174 | Payload: username' OR pg_sleep(2) --
+2026-10-11 11:23:19,007 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 167.31.45.47 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-11 11:23:21,055 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 81.56.62.49 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 11:23:23,105 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 112.36.29.71 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-11 11:23:25,146 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 132.185.119.89 | Payload: ' OR SLEEP(3) --
+2026-10-11 11:23:27,197 - INFO - [401] [Legitimate] IP: 125.62.173.138 | Payload: elena@antigravity.io
+2026-10-11 11:23:29,356 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 99.122.54.134 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-11 11:23:31,400 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 174.17.90.200 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-11 11:23:33,462 - INFO - [200 OK] [Legitimate] IP: 29.145.235.45 | Payload: admin@antigravity.io
+2026-10-11 11:23:35,510 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 91.192.155.193 | Payload: admin' --
+2026-10-11 11:23:37,551 - INFO - [401] [Incorrect] IP: 106.91.142.168 | Payload: tcox@antigravity.io
+2026-10-11 11:23:39,587 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 204.137.80.154 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:23:41,634 - INFO - [401] [Incorrect] IP: 52.179.169.83 | Payload: courtneyreese@antigravity.io
+2026-10-11 11:23:43,678 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 52.59.34.43 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 11:23:45,707 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 123.3.229.9 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-11 11:23:47,732 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 25.0.115.174 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-11 11:23:49,769 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 191.206.83.211 | Payload: admin' --
+2026-10-11 11:23:51,801 - INFO - [401] [Incorrect] IP: 88.18.36.208 | Payload: lisa10@antigravity.io
+2026-10-11 11:23:53,830 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 164.5.3.142 | Payload: ' OR '1'='1' --
+2026-10-11 11:23:55,884 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 142.232.35.147 | Payload: username' OR 1=1 --
+2026-10-11 11:23:57,922 - INFO - [401] [Incorrect] IP: 53.140.97.154 | Payload: traci10@antigravity.io
+2026-10-11 11:24:00,059 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 99.72.246.61 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-11 11:24:02,092 - INFO - [401] [Legitimate] IP: 29.145.113.247 | Payload: elena@antigravity.io
+2026-10-11 11:24:04,122 - INFO - [401] [Incorrect] IP: 172.253.37.143 | Payload: zbishop@antigravity.io
+2026-10-11 11:24:06,161 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 219.175.47.221 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:24:08,197 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 23.246.50.37 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-11 11:24:10,222 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 37.46.216.195 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:24:12,248 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 174.177.41.189 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-11 11:24:14,271 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 96.82.161.41 | Payload: ' OR '1'='1' --
+2026-10-11 11:24:16,298 - INFO - [401] [Incorrect] IP: 197.228.35.215 | Payload: autumn23@antigravity.io
+2026-10-11 11:24:18,321 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 18.182.125.127 | Payload: ' OR '1'='1' --
+2026-10-11 11:24:20,348 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 174.52.176.170 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 11:24:22,374 - INFO - [401] [Incorrect] IP: 211.13.92.63 | Payload: henryzachary@antigravity.io
+2026-10-11 11:24:24,398 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 148.121.115.30 | Payload: username' OR 'a'='a
+2026-10-11 11:24:26,423 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 21.194.196.68 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 11:24:28,449 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 111.248.93.164 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-11 11:24:30,474 - INFO - [401] [Legitimate] IP: 66.137.126.73 | Payload: elena@antigravity.io
+2026-10-11 11:24:32,499 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 50.177.50.6 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-11 11:24:34,523 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 98.134.80.165 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:24:36,550 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 209.178.177.51 | Payload: ' OR '1'='1' --
+2026-10-11 11:24:38,572 - INFO - [401] [Legitimate] IP: 166.247.51.229 | Payload: marcus@antigravity.io
+2026-10-11 11:24:40,599 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 137.241.99.189 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-11 11:24:42,622 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 166.253.201.117 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-11 11:24:44,651 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 169.38.83.203 | Payload: username' OR pg_sleep(2) --
+2026-10-11 11:24:46,675 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 88.248.16.238 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-11 11:24:48,705 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 127.161.135.80 | Payload: ' AND 1=1 --
+2026-10-11 11:24:50,732 - INFO - [401] [Incorrect] IP: 45.152.29.135 | Payload: hallen@antigravity.io
+2026-10-11 11:24:52,756 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 37.29.117.174 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-11 11:24:54,780 - INFO - [401] [Incorrect] IP: 9.121.216.148 | Payload: john32@antigravity.io
+2026-10-11 11:24:56,805 - INFO - [401] [Incorrect] IP: 138.47.111.156 | Payload: lopezsusan@antigravity.io
+2026-10-11 11:24:58,828 - INFO - [401] [Legitimate] IP: 82.102.90.6 | Payload: marcus@antigravity.io
+2026-10-11 11:25:00,856 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 152.198.175.123 | Payload: ' OR 1=1 --
+2026-10-11 11:25:02,904 - INFO - [401] [Incorrect] IP: 202.121.107.204 | Payload: thomas61@antigravity.io
+2026-10-11 11:25:04,937 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 147.124.204.194 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-11 11:25:06,964 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 8.134.152.21 | Payload: ' OR SLEEP(3) --
+2026-10-11 11:25:08,991 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 89.62.146.24 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-11 11:25:11,013 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 23.251.34.236 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 11:25:13,039 - INFO - [401] [Incorrect] IP: 190.189.18.57 | Payload: nicole33@antigravity.io
+2026-10-11 11:25:15,071 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 4.239.190.4 | Payload: ' OR '1'='1' --
+2026-10-11 11:25:17,108 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 60.33.157.161 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-11 11:25:19,138 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 100.85.0.138 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-11 11:25:21,163 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 97.55.81.40 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-11 11:25:23,186 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 184.38.243.141 | Payload: ' OR 1=1 --
+2026-10-11 11:25:25,211 - INFO - [401] [Incorrect] IP: 147.240.75.182 | Payload: nwood@antigravity.io
+2026-10-11 11:25:27,234 - INFO - [401] [Legitimate] IP: 146.180.171.90 | Payload: elena@antigravity.io
+2026-10-11 11:25:29,257 - INFO - [401] [Incorrect] IP: 20.193.195.123 | Payload: heather22@antigravity.io
+2026-10-11 11:25:31,281 - INFO - [401] [Legitimate] IP: 164.76.109.253 | Payload: elena@antigravity.io
+2026-10-11 11:25:33,306 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 213.60.98.62 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 11:25:35,331 - INFO - [401] [Incorrect] IP: 3.240.23.236 | Payload: ljohnson@antigravity.io
+2026-10-11 11:25:37,358 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 65.179.93.224 | Payload: ' AND 1=1 --
+2026-10-11 11:25:39,382 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 4.177.92.125 | Payload: username' OR 'a'='a
+2026-10-11 11:25:41,407 - INFO - [401] [Authentication Bypass] IP: 186.176.243.253 | Payload: admin'/*
+2026-10-11 11:25:43,436 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 111.238.22.97 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 11:25:45,466 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 53.33.250.113 | Payload: ' AND 1=1 --
+2026-10-11 11:25:47,489 - INFO - [401] [Incorrect] IP: 183.194.210.223 | Payload: richardsonlinda@antigravity.io
+2026-10-11 11:25:49,513 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 176.165.122.42 | Payload: ' AND 1=1 --
+2026-10-11 11:25:51,541 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 106.42.217.128 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 11:25:53,568 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 113.255.165.114 | Payload: admin' OR '1'='1
+2026-10-11 11:25:55,593 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 134.149.105.100 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-11 11:25:57,602 - INFO - Results saved to sqli_test_results.json
+2026-10-11 11:30:43,299 - INFO - [401] [Incorrect] IP: 112.190.145.217 | Payload: laurasanders@antigravity.io
+2026-10-11 11:30:45,329 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 102.206.222.155 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 11:30:47,370 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 15.214.71.98 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:30:49,403 - INFO - [401] [Incorrect] IP: 77.247.176.74 | Payload: kendrasimmons@antigravity.io
+2026-10-11 11:30:51,434 - INFO - [401] [Incorrect] IP: 214.214.122.31 | Payload: katherineatkins@antigravity.io
+2026-10-11 11:30:53,462 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 223.71.78.202 | Payload: ' AND 1=1 --
+2026-10-11 11:30:55,491 - INFO - [401] [Incorrect] IP: 165.122.194.181 | Payload: ichristensen@antigravity.io
+2026-10-11 11:30:57,536 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 139.251.222.125 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-11 11:30:59,571 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 22.156.0.127 | Payload: username' OR 'a'='a
+2026-10-11 11:31:01,600 - INFO - [401] [Legitimate] IP: 215.118.235.245 | Payload: marcus@antigravity.io
+2026-10-11 11:31:03,627 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 187.101.132.218 | Payload: ' OR '1'='1' --
+2026-10-11 11:31:05,651 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 152.92.167.15 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-11 11:32:20,282 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 72.241.76.154 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 11:32:22,320 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 171.59.28.81 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:32:24,365 - INFO - [200 OK] [Legitimate] IP: 1.39.48.155 | Payload: admin@antigravity.io
+2026-10-11 11:32:26,395 - INFO - [401] [Incorrect] IP: 124.110.173.88 | Payload: foxscott@antigravity.io
+2026-10-11 11:32:28,424 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 41.147.155.46 | Payload: ' OR 1=1 # 
+2026-10-11 11:32:30,451 - INFO - [200 OK] [Legitimate] IP: 204.199.207.164 | Payload: admin@antigravity.io
+2026-10-11 11:32:32,511 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 12.243.242.12 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:32:34,555 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 103.62.118.206 | Payload: username' OR pg_sleep(2) --
+2026-10-11 11:42:29,144 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 219.172.123.70 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 11:42:31,196 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 182.125.72.102 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 11:42:33,226 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 86.220.230.224 | Payload: ' UNION SELECT 1,2,3 --
+2026-10-11 11:42:35,258 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 177.214.32.61 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-11 11:42:37,336 - INFO - [401] [Incorrect] IP: 96.167.30.225 | Payload: atucker@antigravity.io
+2026-10-11 11:42:39,374 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 71.178.169.96 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-11 11:42:41,436 - INFO - [401] [Incorrect] IP: 157.67.244.251 | Payload: garyhernandez@antigravity.io
+2026-10-11 11:42:43,479 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 208.179.155.75 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-11 11:42:45,551 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 201.150.255.243 | Payload: ' OR '1'='1' --
+2026-10-11 11:42:47,582 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 10.7.245.120 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 11:42:49,617 - INFO - [401] [Incorrect] IP: 160.220.94.203 | Payload: deansaunders@antigravity.io
+2026-10-11 11:42:51,669 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 37.226.55.242 | Payload: ' OR SLEEP(3) --
+2026-10-11 11:42:53,708 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 129.19.209.4 | Payload: username' OR 'a'='a
+2026-10-11 11:42:55,742 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 6.112.47.228 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-11 11:42:57,834 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 136.83.148.39 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-11 11:42:59,889 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 79.104.20.189 | Payload: username' OR pg_sleep(2) --
+2026-10-11 11:43:01,939 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 206.184.174.181 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 11:43:03,993 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 167.217.64.16 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-11 11:43:06,032 - INFO - [401] [Legitimate] IP: 79.126.51.159 | Payload: elena@antigravity.io
+2026-10-11 11:43:08,071 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 21.232.252.31 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-11 11:43:10,143 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 115.17.43.15 | Payload: ' OR benchmark(1000000,MD5('A')) --
+2026-10-11 11:43:12,176 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 16.173.133.18 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 11:43:14,209 - INFO - [401] [Legitimate] IP: 7.215.206.190 | Payload: marcus@antigravity.io
+2026-10-11 11:43:16,261 - INFO - [401] [Incorrect] IP: 65.33.191.244 | Payload: kristenblair@antigravity.io
+2026-10-11 11:43:18,287 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 191.69.61.235 | Payload: ' AND 1=1 --
+2026-10-11 11:43:20,319 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 221.163.10.19 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 11:43:22,357 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 203.189.245.254 | Payload: ' OR '1'='1' --
+2026-10-11 11:43:24,399 - INFO - [200 OK] [Legitimate] IP: 90.148.93.111 | Payload: admin@antigravity.io
+2026-10-11 11:43:26,425 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 214.169.110.36 | Payload: ' OR 1=1 --
+2026-10-11 11:43:28,454 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 118.171.61.203 | Payload: ' OR SLEEP(3) --
+2026-10-11 11:43:30,484 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 63.202.58.252 | Payload: username' OR 'a'='a
+2026-10-11 11:43:32,512 - INFO - [401] [Incorrect] IP: 141.102.71.77 | Payload: richard79@antigravity.io
+2026-10-11 11:43:34,543 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 36.146.123.140 | Payload: ' OR 1=1 --
+2026-10-11 11:43:36,577 - INFO - [401] [Incorrect] IP: 215.167.156.67 | Payload: david86@antigravity.io
+2026-10-11 11:43:38,606 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 24.221.67.167 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 11:43:40,633 - INFO - [401] [Legitimate] IP: 188.158.224.70 | Payload: elena@antigravity.io
+2026-10-11 11:43:42,665 - INFO - [401] [Legitimate] IP: 195.11.227.47 | Payload: marcus@antigravity.io
+2026-10-11 11:43:44,705 - INFO - [401] [Incorrect] IP: 206.19.7.165 | Payload: gregorydavis@antigravity.io
+2026-10-11 11:43:46,757 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 17.125.249.170 | Payload: admin' OR '1'='1
+2026-10-11 11:43:48,799 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 130.42.16.244 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 11:43:50,838 - INFO - [401] [Authentication Bypass] IP: 4.247.185.206 | Payload: admin'/*
+2026-10-11 12:16:05,499 - INFO - [401] [Authentication Bypass] IP: 174.36.192.93 | Payload: admin'/*
+2026-10-11 12:16:07,531 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 22.216.250.105 | Payload: ' OR '1'='1' --
+2026-10-11 12:16:09,558 - INFO - [401] [Incorrect] IP: 83.69.230.176 | Payload: twoodard@antigravity.io
+2026-10-11 12:16:11,589 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 38.226.147.183 | Payload: admin' --
+2026-10-11 12:16:13,628 - INFO - [401] [Incorrect] IP: 73.109.27.229 | Payload: carol55@antigravity.io
+2026-10-11 12:16:15,665 - INFO - [401] [Authentication Bypass] IP: 209.155.152.29 | Payload: admin'/*
+2026-10-11 12:16:17,698 - INFO - [403 BLOCKED] [Incorrect] IP: 14.207.109.95 | Payload: potterzachary@antigravity.io
+2026-10-11 12:16:19,731 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 156.173.64.193 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-11 12:16:21,788 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 187.160.23.108 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-11 12:16:23,831 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 114.52.116.203 | Payload: ' OR '1'='1' --
+2026-10-11 12:16:25,865 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 49.250.1.111 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-11 12:16:27,914 - INFO - [401] [Incorrect] IP: 201.251.90.175 | Payload: patrickjamie@antigravity.io
+2026-10-11 12:16:29,944 - INFO - [401] [Incorrect] IP: 206.5.56.216 | Payload: jamie08@antigravity.io
+2026-10-11 12:16:31,982 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 28.158.165.153 | Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONC
+2026-10-11 12:16:34,028 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 10.215.147.76 | Payload: username' OR 'a'='a
+2026-10-11 12:16:36,087 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 99.198.192.139 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-11 12:16:38,125 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 15.88.155.60 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 12:16:40,169 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 202.15.93.183 | Payload: ' OR SLEEP(3) --
+2026-10-11 12:16:42,235 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 197.16.93.41 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 12:16:44,285 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 93.206.51.8 | Payload: admin' --
+2026-10-11 12:16:46,325 - INFO - [401] [Legitimate] IP: 71.29.234.87 | Payload: elena@antigravity.io
+2026-10-11 12:16:48,378 - INFO - [401] [Legitimate] IP: 96.90.106.13 | Payload: marcus@antigravity.io
+2026-10-11 12:16:50,421 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 64.87.130.147 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 12:16:52,459 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 67.20.126.168 | Payload: ' OR SLEEP(3) --
+2026-10-11 12:16:54,499 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 109.243.52.210 | Payload: username' OR pg_sleep(2) --
+2026-10-11 12:16:56,538 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 68.25.52.139 | Payload: ' OR 1=1 AND (SELECT 1 FROM (SELECT COUNT(*),
+2026-10-11 12:16:58,579 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 153.64.134.154 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 12:17:00,628 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 175.174.115.60 | Payload: ' OR SLEEP(3) --
+2026-10-11 12:17:02,668 - INFO - [401] [Incorrect] IP: 100.242.109.98 | Payload: nicholas18@antigravity.io
+2026-10-11 12:17:04,714 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 181.46.86.203 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 12:17:06,777 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 174.122.193.152 | Payload: ' AND extractvalue(1, concat(0x7e, (SELECT da
+2026-10-11 12:17:08,829 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 175.252.40.70 | Payload: admin' OR '1'='1
+2026-10-11 12:17:10,921 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 61.255.186.120 | Payload: username' OR 'a'='a
+2026-10-11 12:17:12,978 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 176.97.1.151 | Payload: ' OR SLEEP(3) --
+2026-10-11 12:17:15,032 - INFO - [401] [Authentication Bypass] IP: 151.32.217.137 | Payload: admin'/*
+2026-10-11 12:17:17,076 - INFO - [401] [Incorrect] IP: 204.197.25.207 | Payload: lisa50@antigravity.io
+2026-10-11 12:17:19,127 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 108.207.30.123 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-11 12:17:21,165 - INFO - [401] [Authentication Bypass] IP: 45.180.145.208 | Payload: admin'/*
+2026-10-11 12:17:23,223 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 165.0.46.73 | Payload: admin'; WAITFOR DELAY '00:00:2' --
+2026-10-11 12:17:25,291 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 62.239.188.154 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 12:17:27,345 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 148.20.13.184 | Payload: admin' UNION ALL SELECT username, password FR
+2026-10-11 12:17:29,408 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 214.212.244.240 | Payload: ' OR 1=1 # 
+2026-10-11 12:17:31,544 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 60.113.188.233 | Payload: ' OR 1=1 --
+2026-10-11 12:17:33,597 - INFO - [401] [Legitimate] IP: 152.225.234.4 | Payload: elena@antigravity.io
+2026-10-11 12:17:35,637 - INFO - [401] [Incorrect] IP: 180.205.18.128 | Payload: christopher27@antigravity.io
+2026-10-11 12:17:37,685 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 62.129.84.46 | Payload: 1' UNION SELECT @@version,user(),database() -
+2026-10-11 12:17:39,725 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 57.65.132.211 | Payload: ' OR 1=1 LIMIT 1; --
+2026-10-11 12:17:41,751 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 46.6.24.237 | Payload: ' OR SLEEP(3) --
+2026-10-11 12:17:43,791 - INFO - [401] [Incorrect] IP: 12.83.236.42 | Payload: fgibbs@antigravity.io
+2026-10-11 12:17:45,826 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 54.109.165.59 | Payload: ' UNION+SELECT database(),user(),version() --
+2026-10-11 12:17:47,873 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 203.239.100.21 | Payload: ' UNION ALL SELECT table_name,column_name FRO
+2026-10-11 12:17:49,904 - INFO - [403 BLOCKED] [Incorrect] IP: 157.104.91.240 | Payload: rogergonzales@antigravity.io
+2026-10-11 12:17:51,936 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 126.43.244.181 | Payload: ' AND 1=1 --
+2026-10-11 12:17:53,993 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 151.192.180.246 | Payload: username' OR 'a'='a
+2026-10-11 12:17:56,034 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 218.144.206.9 | Payload: ' AND updatexml(1,concat(0x7e,(SELECT databas
+2026-10-11 12:17:58,086 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 211.173.194.80 | Payload: ' AND 1=1 --
+2026-10-11 12:18:00,120 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 18.157.243.52 | Payload: ' OR '1'='1' --
+2026-10-11 13:03:48,299 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 170.247.150.44 | Payload: ' OR 1=1 --
+2026-10-11 13:03:50,337 - INFO - [403 BLOCKED] [Error-Based SQLi] IP: 212.222.67.204 | Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCA
+2026-10-11 13:03:52,373 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 168.80.253.98 | Payload: ' AND 1=1 --
+2026-10-11 13:03:54,403 - INFO - [403 BLOCKED] [Time-Based SQLi] IP: 80.136.128.132 | Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+2026-10-11 13:03:56,437 - INFO - [403 BLOCKED] [Authentication Bypass] IP: 103.80.229.145 | Payload: admin' --
+2026-10-11 13:03:58,467 - INFO - [401] [Incorrect] IP: 125.39.158.112 | Payload: tylergreen@antigravity.io
+2026-10-11 13:04:00,506 - INFO - [403 BLOCKED] [Boolean-Based SQLi] IP: 25.27.137.184 | Payload: admin' OR '1'='1
+2026-10-11 13:04:02,534 - INFO - [403 BLOCKED] [Union-Based SQLi] IP: 163.82.164.70 | Payload: ' UNION ALL SELECT table_name,column_name FRO

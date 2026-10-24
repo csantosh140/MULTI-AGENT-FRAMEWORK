@@ -1,0 +1,95 @@
+{
+  "stats": {
+    "totalRequests": 1245892,
+    "blockedRequests": 84231,
+    "todaysAttacks": 1482,
+    "detectionAccuracy": 99.86
+  },
+  "requestsPerHour": [
+    { "hour": "00:00", "requests": 45000, "sqli": 120, "safe": 44880 },
+    { "hour": "02:00", "requests": 38000, "sqli": 95, "safe": 37905 },
+    { "hour": "04:00", "requests": 32000, "sqli": 180, "safe": 31820 },
+    { "hour": "06:00", "requests": 55000, "sqli": 240, "safe": 54760 },
+    { "hour": "08:00", "requests": 88000, "sqli": 310, "safe": 87690 },
+    { "hour": "10:00", "requests": 120000, "sqli": 450, "safe": 119550 },
+    { "hour": "12:00", "requests": 145000, "sqli": 520, "safe": 144480 },
+    { "hour": "14:00", "requests": 130000, "sqli": 390, "safe": 129610 },
+    { "hour": "16:00", "requests": 115000, "sqli": 610, "safe": 114390 },
+    { "hour": "18:00", "requests": 125000, "sqli": 480, "safe": 124520 },
+    { "hour": "20:00", "requests": 95000, "sqli": 290, "safe": 94710 },
+    { "hour": "22:00", "requests": 60000, "sqli": 150, "safe": 59850 }
+  ],
+  "attackTypes": [
+    { "type": "Union Based", "count": 34210 },
+    { "type": "Error Based", "count": 22150 },
+    { "type": "Blind SQLi", "count": 14890 },
+    { "type": "Boolean Based", "count": 8940 },
+    { "type": "Time Based", "count": 3210 },
+    { "type": "Out of Band", "count": 831 }
+  ],
+  "sqliVsSafe": [
+    { "name": "Safe Requests", "value": 1161661 },
+    { "name": "SQLi Attacks", "value": 84231 }
+  ],
+  "threatTrend": [
+    { "day": "Mon", "threats": 1250, "critical": 180 },
+    { "day": "Tue", "threats": 1420, "critical": 240 },
+    { "day": "Wed", "threats": 1980, "critical": 410 },
+    { "day": "Thu", "threats": 1310, "critical": 190 },
+    { "day": "Fri", "threats": 1650, "critical": 320 },
+    { "day": "Sat", "threats": 1100, "critical": 150 },
+    { "day": "Sun", "threats": 1482, "critical": 290 }
+  ],
+  "recentAttacks": [
+    {
+      "id": "att-001",
+      "time": "2026-08-01 22:15:32",
+      "ip": "198.51.100.42",
+      "payload": "UNION SELECT username, password FROM users --",
+      "threatLevel": "Critical",
+      "status": "Blocked",
+      "confidence": 99.92,
+      "endpoint": "/api/users/login"
+    },
+    {
+      "id": "att-002",
+      "time": "2026-08-01 22:12:18",
+      "ip": "203.0.113.195",
+      "payload": "1' OR '1'='1",
+      "threatLevel": "High",
+      "status": "Blocked",
+      "confidence": 98.45,
+      "endpoint": "/api/products/search"
+    },
+    {
+      "id": "att-003",
+      "time": "2026-08-01 22:08:45",
+      "ip": "185.220.101.5",
+      "payload": "'; DROP TABLE audits; --",
+      "threatLevel": "Critical",
+      "status": "Blocked",
+      "confidence": 99.98,
+      "endpoint": "/api/admin/config"
+    },
+    {
+      "id": "att-004",
+      "time": "2026-08-01 21:55:12",
+      "ip": "45.138.89.22",
+      "payload": "1 AND 1=2 UNION SELECT NULL, version()",
+      "threatLevel": "High",
+      "status": "Blocked",
+      "confidence": 97.80,
+      "endpoint": "/items/details"
+    },
+    {
+      "id": "att-005",
+      "time": "2026-08-01 21:49:03",
+      "ip": "109.244.12.110",
+      "payload": "admin' --",
+      "threatLevel": "Medium",
+      "status": "Blocked",
+      "confidence": 85.20,
+      "endpoint": "/api/auth/verify"
+    }
+  ]
+}

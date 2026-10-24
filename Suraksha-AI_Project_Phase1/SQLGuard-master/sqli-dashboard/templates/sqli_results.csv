@@ -1,0 +1,11 @@
+category,payload,status_code,response_time,legitimate,incorrect,detected,attack,timestamp
+Union-Based SQLi,"admin' UNION ALL SELECT username, password FROM users --",400,2.088510036468506,False,False,True,True,2026-09-20T22:42:21.852436
+Boolean-Based SQLi,' OR 1=1 --,400,2.059203863143921,False,False,True,True,2026-09-20T22:42:24.013244
+Error-Based SQLi,"' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --",400,2.055870532989502,False,False,True,True,2026-09-20T22:42:26.176386
+Legitimate,dave,200,2.1346118450164795,True,False,False,False,2026-09-20T22:42:28.418291
+Legitimate,alice,200,2.1009907722473145,True,False,False,False,2026-09-20T22:42:30.622677
+Time-Based SQLi,' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --,400,2.051156759262085,False,False,True,True,2026-09-20T22:42:32.776025
+Authentication Bypass,admin' --,400,2.0480220317840576,False,False,True,True,2026-09-20T22:42:34.924863
+Incorrect,qjones,401,2.052722692489624,False,True,True,False,2026-09-20T22:42:37.078380
+Authentication Bypass,' OR 1=1 LIMIT 1; --,400,2.0508322715759277,False,False,True,True,2026-09-20T22:42:39.229702
+Incorrect,ericthompson,401,2.0636518001556396,False,True,True,False,2026-09-20T22:42:41.394330

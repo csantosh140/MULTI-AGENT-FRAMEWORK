@@ -1,0 +1,243 @@
+2026-09-20 22:42:21,850 - INFO - Category: Union-Based SQLi
+Payload: admin' UNION ALL SELECT username, password FROM users --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.09s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 114.188.235.117
+==================================================
+2026-09-20 22:42:24,012 - INFO - Category: Boolean-Based SQLi
+Payload: ' OR 1=1 --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.06s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 47.153.7.69
+==================================================
+2026-09-20 22:42:26,175 - INFO - Category: Error-Based SQLi
+Payload: ' AND (SELECT 2000 FROM(SELECT COUNT(*),CONCAT(0x7176706271,(SELECT version()),0x7176706271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a) --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.06s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 141.228.200.171
+==================================================
+2026-09-20 22:42:28,411 - INFO - Category: Legitimate
+Payload: dave
+Password: password4
+Status: 200
+Response Time: 2.13s
+Response: {'message': 'Please enter the verification code', 'require2FA': True, 'success': False}...
+IP: 22.148.166.59
+==================================================
+2026-09-20 22:42:30,622 - INFO - Category: Legitimate
+Payload: alice
+Password: password1
+Status: 200
+Response Time: 2.10s
+Response: {'message': 'Please enter the verification code', 'require2FA': True, 'success': False}...
+IP: 127.149.242.79
+==================================================
+2026-09-20 22:42:32,775 - INFO - Category: Time-Based SQLi
+Payload: ' OR (SELECT 1 FROM (SELECT SLEEP(2))A) --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.05s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 209.160.236.235
+==================================================
+2026-09-20 22:42:34,924 - INFO - Category: Authentication Bypass
+Payload: admin' --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.05s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 151.166.148.210
+==================================================
+2026-09-20 22:42:37,078 - INFO - Category: Incorrect
+Payload: qjones
+Password: [REDACTED]
+Status: 401
+Response Time: 2.05s
+Response: {'message': 'Invalid credentials.', 'success': False}...
+IP: 31.119.90.159
+==================================================
+2026-09-20 22:42:39,229 - INFO - Category: Authentication Bypass
+Payload: ' OR 1=1 LIMIT 1; --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.05s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 181.226.212.114
+==================================================
+2026-09-20 22:42:41,394 - INFO - Category: Incorrect
+Payload: ericthompson
+Password: [REDACTED]
+Status: 401
+Response Time: 2.06s
+Response: {'message': 'Invalid credentials.', 'success': False}...
+IP: 50.157.176.9
+==================================================
+2026-09-20 22:42:41,497 - INFO - Results saved to templates\sqli_test_results.json
+2026-09-20 22:43:58,950 - INFO - Category: Legitimate
+Payload: charlie
+Password: password3
+Status: 200
+Response Time: 2.09s
+Response: {'message': 'Please enter the verification code', 'require2FA': True, 'success': False}...
+IP: 84.132.198.118
+==================================================
+2026-09-20 22:44:01,097 - INFO - Category: Authentication Bypass
+Payload: ' OR '1'='1' --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.05s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 219.172.98.63
+==================================================
+2026-09-20 22:44:03,250 - INFO - Category: Union-Based SQLi
+Payload: ' UNION ALL SELECT table_name,column_name FROM information_schema.columns --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.05s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 105.114.201.5
+==================================================
+2026-09-20 22:44:05,403 - INFO - Category: Incorrect
+Payload: ortizryan
+Password: [REDACTED]
+Status: 401
+Response Time: 2.05s
+Response: {'message': 'Invalid credentials.', 'success': False}...
+IP: 199.232.30.198
+==================================================
+2026-09-20 22:44:07,529 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.03s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 151.53.164.109
+==================================================
+2026-09-20 22:44:09,665 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 400
+Response Time: 2.03s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 95.239.144.161
+==================================================
+2026-09-20 22:44:11,805 - INFO - Category: Boolean-Based SQLi
+Payload: ' AND 1=1 --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.04s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 196.109.93.127
+==================================================
+2026-09-20 22:44:13,941 - INFO - Category: Time-Based SQLi
+Payload: ' OR SLEEP(3) --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.03s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 208.147.238.76
+==================================================
+2026-09-20 22:44:16,083 - INFO - Category: Incorrect
+Payload: patrickgomez
+Password: [REDACTED]
+Status: 401
+Response Time: 2.04s
+Response: {'message': 'Invalid credentials.', 'success': False}...
+IP: 151.228.201.174
+==================================================
+2026-09-20 22:44:18,270 - INFO - Category: Legitimate
+Payload: dave
+Password: password4
+Status: 200
+Response Time: 2.09s
+Response: {'message': 'Please enter the verification code', 'require2FA': True, 'success': False}...
+IP: 6.126.177.241
+==================================================
+2026-09-20 22:44:18,372 - INFO - Results saved to templates\sqli_test_results.json
+2026-09-20 22:44:42,861 - INFO - Category: Legitimate
+Payload: alice
+Password: password1
+Status: 200
+Response Time: 2.07s
+Response: {'message': 'Please enter the verification code', 'require2FA': True, 'success': False}...
+IP: 192.91.150.113
+==================================================
+2026-09-20 22:44:45,007 - INFO - Category: Authentication Bypass
+Payload: username' OR 1=1 --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.05s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 52.182.175.232
+==================================================
+2026-09-20 22:44:47,170 - INFO - Category: Incorrect
+Payload: uwilson
+Password: [REDACTED]
+Status: 401
+Response Time: 2.06s
+Response: {'message': 'Invalid credentials.', 'success': False}...
+IP: 45.231.74.71
+==================================================
+2026-09-20 22:44:49,308 - INFO - Category: Union-Based SQLi
+Payload: ' UNION SELECT 1,2,3 --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.04s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 10.146.202.117
+==================================================
+2026-09-20 22:44:51,466 - INFO - Category: Time-Based SQLi
+Payload: ' OR benchmark(1000000,MD5('A')) --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.06s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 155.189.85.221
+==================================================
+2026-09-20 22:44:53,618 - INFO - Category: Boolean-Based SQLi
+Payload: username' OR 'a'='a
+Password: [REDACTED]
+Status: 400
+Response Time: 2.05s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 118.209.94.76
+==================================================
+2026-09-20 22:44:55,773 - INFO - Category: Error-Based SQLi
+Payload: admin' AND(SELECT 1 FROM(SELECT COUNT(*),CONCAT(database(),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a) AND 'a'='a
+Password: [REDACTED]
+Status: 400
+Response Time: 2.04s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 179.220.87.169
+==================================================
+2026-09-20 22:44:57,942 - INFO - Category: Time-Based SQLi
+Payload: username' OR pg_sleep(2) --
+Password: [REDACTED]
+Status: 400
+Response Time: 2.07s
+Response: {'message': 'SQL Injection detected!', 'success': False}...
+IP: 59.231.218.126
+==================================================
+2026-09-20 22:45:00,105 - INFO - Category: Legitimate
+Payload: charlie
+Password: password3
+Status: 200
+Response Time: 2.06s
+Response: {'message': 'Please enter the verification code', 'require2FA': True, 'success': False}...
+IP: 11.160.33.196
+==================================================
+2026-09-20 22:45:02,248 - INFO - Category: Incorrect
+Payload: tkaiser
+Password: [REDACTED]
+Status: 401
+Response Time: 2.04s
+Response: {'message': 'Invalid credentials.', 'success': False}...
+IP: 131.134.52.209
+==================================================
+2026-09-20 22:45:02,350 - INFO - Results saved to templates\sqli_test_results.json

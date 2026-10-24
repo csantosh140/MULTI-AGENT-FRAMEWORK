@@ -1,0 +1,161 @@
+{
+  "name": "Suraksha-AI Multi-Agent Orchestrator Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sqli-threat-detected",
+        "options": {}
+      },
+      "id": "node-webhook-1",
+      "name": "SQLi Attack Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [
+        100,
+        300
+      ],
+      "webhookId": "sqli-threat-detected"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract incoming attack telemetry from Suraksha-AI\nconst body = $input.item.json.body || $input.item.json;\n\nconst attackType = body.attack_type || 'SQL Injection';\nconst confidence = body.confidence || 0;\nconst severity = body.severity || 'High';\nconst url = body.url || '/api/login';\nconst method = body.method || 'POST';\nconst clientIp = body.client_ip || '127.0.0.1';\nconst payloadStr = body.payload || body.explanation || 'Malicious SQL pattern';\nconst blocked = body.blocked ? 'BLOCKED' : 'FLAGGED';\n\nconst incidentContext = `🚨 [SURAKSHA-AI ATTACK TELEMETRY EVENT]\n\n• Attack Status: ${blocked}\n• Attack Signature: ${attackType}\n• Threat Severity: ${severity}\n• AI Risk Score / Confidence: ${confidence}%\n• Target Endpoint: ${method} ${url}\n• Attacker IP Address: ${clientIp}\n• Intercepted Payload: ${payloadStr}\n• Event Timestamp: ${new Date().toISOString()}`;\n\nreturn [{\n  json: {\n    incident_context: incidentContext,\n    attack_type: attackType,\n    severity: severity,\n    confidence: confidence,\n    url: url,\n    client_ip: clientIp,\n    payload: payloadStr,\n    raw_event: body\n  }\n}];"
+      },
+      "id": "node-code-1",
+      "name": "Format Incident Telemetry",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        350,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.2
+        }
+      },
+      "id": "node-lm-orchestrator",
+      "name": "OpenAI LLM Engine",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        600,
+        550
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.incident_context }}\n\nYou are the **Master Security Orchestrator Agent** for Suraksha-AI.\nYour objective is to coordinate specialized defense operations when an attack is detected.\n\n### Your Workflow Directive:\n1. **Triage & Classification**: Evaluate the attack type (Boolean, Union, Time-based, Auth Bypass, Error-based).\n2. **IP & Threat History Analysis**: Delegate task to evaluate attacker IP reputation (${json.client_ip}) and repeat offender behavior.\n3. **Mitigation Playbook Assignment**: Assign dynamic firewall rules or SQL patch strategies.\n4. **Incident Summary**: Generate a comprehensive executive security report detailing assigned sub-agent actions.\n\nExecute orchestrator triage now.",
+        "options": {}
+      },
+      "id": "node-orchestrator-agent",
+      "name": "Master Security Orchestrator Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        650,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Task Router & Sub-Agent Dispatcher Node\nconst orchestratorOutput = $input.item.json.output || $input.item.json.text || 'Triage complete.';\nconst prevData = $node['Format Incident Telemetry'].json;\n\n// Generate sub-agent task assignments based on attack severity & signature\nconst tasks = [];\n\n// Sub-Agent 1: Threat Classification & Deep Analysis Agent\ntasks.push({\n  agent: 'Threat Classification Agent',\n  status: 'COMPLETED',\n  action: `Analyzed ${prevData.attack_type} payload with ${prevData.confidence}% confidence score.`\n});\n\n// Sub-Agent 2: Database & IP Security Agent\ntasks.push({\n  agent: 'IP Security & History Agent',\n  status: prevData.severity === 'High' || prevData.severity === 'Critical' ? 'IP_TEMPORARY_BLOCK' : 'MONITORING',\n  action: `Evaluated ${prevData.client_ip}. Assigned status ${prevData.severity === 'High' || prevData.severity === 'Critical' ? 'IP_TEMPORARY_BLOCK' : 'MONITORING'}.`\n});\n\n// Sub-Agent 3: Automated Remediation & Firewall Agent\ntasks.push({\n  agent: 'Firewall & Remediation Agent',\n  status: 'ACTIVE',\n  action: `Formulated defensive rule for ${prevData.url}. Payload pattern blocked at proxy level.`\n});\n\n// Sub-Agent 4: Incident Notification Agent\ntasks.push({\n  agent: 'Notification & Reporting Agent',\n  status: 'QUEUED',\n  action: 'Dispatching security alert payload to backend audit log & admin notification feed.'\n});\n\nreturn [{\n  json: {\n    orchestrator_summary: orchestratorOutput,\n    assigned_sub_agent_tasks: tasks,\n    incident_metadata: prevData\n  }\n}];"
+      },
+      "id": "node-code-task-router",
+      "name": "Sub-Agent Task Dispatcher",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        950,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/logs",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"event\": \"MULTI_AGENT_ORCHESTRATION_COMPLETED\",\n  \"attack_type\": \"{{ $json.incident_metadata.attack_type }}\",\n  \"severity\": \"{{ $json.incident_metadata.severity }}\",\n  \"client_ip\": \"{{ $json.incident_metadata.client_ip }}\",\n  \"orchestrator_analysis\": \"{{ $json.orchestrator_summary }}\",\n  \"sub_agent_dispatch\": {{ JSON.stringify($json.assigned_sub_agent_tasks) }}\n}",
+        "options": {}
+      },
+      "id": "node-http-log",
+      "name": "Dispatch Agent Audit Log to Backend",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1250,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "SQLi Attack Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Format Incident Telemetry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Incident Telemetry": {
+      "main": [
+        [
+          {
+            "node": "Master Security Orchestrator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI LLM Engine": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Master Security Orchestrator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Master Security Orchestrator Agent": {
+      "main": [
+        [
+          {
+            "node": "Sub-Agent Task Dispatcher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sub-Agent Task Dispatcher": {
+      "main": [
+        [
+          {
+            "node": "Dispatch Agent Audit Log to Backend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {}
+}

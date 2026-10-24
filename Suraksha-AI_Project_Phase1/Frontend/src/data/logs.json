@@ -1,0 +1,178 @@
+[
+  {
+    "id": "att-101",
+    "time": "2026-08-01 22:15:32",
+    "ip": "198.51.100.42",
+    "payload": "UNION SELECT username, password FROM users --",
+    "threatLevel": "Critical",
+    "status": "Blocked",
+    "confidence": 99.92,
+    "endpoint": "/api/users/login",
+    "method": "POST"
+  },
+  {
+    "id": "att-102",
+    "time": "2026-08-01 22:12:18",
+    "ip": "203.0.113.195",
+    "payload": "1' OR '1'='1",
+    "threatLevel": "High",
+    "status": "Blocked",
+    "confidence": 98.45,
+    "endpoint": "/api/products/search",
+    "method": "GET"
+  },
+  {
+    "id": "att-103",
+    "time": "2026-08-01 22:08:45",
+    "ip": "185.220.101.5",
+    "payload": "'; DROP TABLE audits; --",
+    "threatLevel": "Critical",
+    "status": "Blocked",
+    "confidence": 99.98,
+    "endpoint": "/api/admin/config",
+    "method": "POST"
+  },
+  {
+    "id": "att-104",
+    "time": "2026-08-01 21:55:12",
+    "ip": "45.138.89.22",
+    "payload": "1 AND 1=2 UNION SELECT NULL, version()",
+    "threatLevel": "High",
+    "status": "Blocked",
+    "confidence": 97.80,
+    "endpoint": "/items/details",
+    "method": "GET"
+  },
+  {
+    "id": "att-105",
+    "time": "2026-08-01 21:49:03",
+    "ip": "109.244.12.110",
+    "payload": "admin' --",
+    "threatLevel": "Medium",
+    "status": "Blocked",
+    "confidence": 85.20,
+    "endpoint": "/api/auth/verify",
+    "method": "POST"
+  },
+  {
+    "id": "att-106",
+    "time": "2026-08-01 19:30:11",
+    "ip": "82.102.23.45",
+    "payload": "'; UPDATE users SET role='admin' WHERE id=5;--",
+    "threatLevel": "Critical",
+    "status": "Blocked",
+    "confidence": 99.78,
+    "endpoint": "/api/profile/update",
+    "method": "PUT"
+  },
+  {
+    "id": "att-107",
+    "time": "2026-08-01 17:15:40",
+    "ip": "185.220.101.12",
+    "payload": "1' OR 1=1 LIMIT 1",
+    "threatLevel": "Medium",
+    "status": "Logged",
+    "confidence": 76.50,
+    "endpoint": "/api/products/filter",
+    "method": "GET"
+  },
+  {
+    "id": "att-108",
+    "time": "2026-08-01 14:02:19",
+    "ip": "194.88.24.18",
+    "payload": "admin' AND '1'='1",
+    "threatLevel": "High",
+    "status": "Blocked",
+    "confidence": 91.20,
+    "endpoint": "/api/auth/login",
+    "method": "POST"
+  },
+  {
+    "id": "att-109",
+    "time": "2026-07-31 23:44:02",
+    "ip": "93.184.216.34",
+    "payload": "'; EXEC xp_cmdshell('dir');--",
+    "threatLevel": "Critical",
+    "status": "Blocked",
+    "confidence": 99.95,
+    "endpoint": "/api/admin/system",
+    "method": "POST"
+  },
+  {
+    "id": "att-110",
+    "time": "2026-07-31 18:22:15",
+    "ip": "104.244.42.1",
+    "payload": "' OR 'a'='a",
+    "threatLevel": "Medium",
+    "status": "Blocked",
+    "confidence": 88.40,
+    "endpoint": "/api/items/search",
+    "method": "GET"
+  },
+  {
+    "id": "att-111",
+    "time": "2026-07-31 11:05:48",
+    "ip": "74.125.19.147",
+    "payload": "1' AND (SELECT 2215 FROM(SELECT COUNT(*),CONCAT(0x7170706271,(SELECT (ELT(2215=2215,1))),0x7178767a71,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)--",
+    "threatLevel": "Critical",
+    "status": "Blocked",
+    "confidence": 99.88,
+    "endpoint": "/api/feedback",
+    "method": "POST"
+  },
+  {
+    "id": "att-112",
+    "time": "2026-07-30 16:50:33",
+    "ip": "198.51.100.111",
+    "payload": "1' AND sleep(5)#",
+    "threatLevel": "High",
+    "status": "Blocked",
+    "confidence": 96.10,
+    "endpoint": "/api/categories",
+    "method": "GET"
+  },
+  {
+    "id": "att-113",
+    "time": "2026-07-30 08:12:11",
+    "ip": "203.0.113.12",
+    "payload": "123 OR 1=1",
+    "threatLevel": "Low",
+    "status": "Logged",
+    "confidence": 64.20,
+    "endpoint": "/api/support/ticket",
+    "method": "GET"
+  },
+  {
+    "id": "att-114",
+    "time": "2026-07-29 21:03:55",
+    "ip": "185.220.101.5",
+    "payload": "UNION SELECT 1,2,3,4,5,database() --",
+    "threatLevel": "High",
+    "status": "Blocked",
+    "confidence": 98.90,
+    "endpoint": "/api/news/read",
+    "method": "GET"
+  },
+  {
+    "id": "att-115",
+    "time": "2026-07-29 13:40:02",
+    "ip": "45.138.89.22",
+    "payload": "'; SELECT pg_sleep(10)--",
+    "threatLevel": "High",
+    "status": "Blocked",
+    "confidence": 95.30,
+    "endpoint": "/api/dashboard/reload",
+    "method": "POST"
+  },
+  {
+    "id": "att-116",
+    "time": "2026-07-28 10:14:22",
+    "ip": "109.244.12.110",
+    "payload": "admin' AND 1=1 --",
+    "threatLevel": "Medium",
+    "status": "Blocked",
+    "confidence": 89.10,
+    "endpoint": "/api/auth/reset",
+    "method": "POST"
+  }
+]

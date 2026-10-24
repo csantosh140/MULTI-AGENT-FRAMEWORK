@@ -1,0 +1,62 @@
+[
+  {
+    "id": "rep-001",
+    "name": "Suraksha-AI Daily Cyber Audit - 2026-08-01",
+    "type": "Daily",
+    "date": "2026-08-01",
+    "size": "142 KB",
+    "attacksCount": 1482,
+    "blockedCount": 1482,
+    "status": "Generated"
+  },
+  {
+    "id": "rep-002",
+    "name": "Suraksha-AI Daily Cyber Audit - 2026-07-31",
+    "type": "Daily",
+    "date": "2026-07-31",
+    "size": "158 KB",
+    "attacksCount": 1690,
+    "blockedCount": 1690,
+    "status": "Generated"
+  },
+  {
+    "id": "rep-003",
+    "name": "Suraksha-AI Weekly Threat Summary - W31",
+    "type": "Weekly",
+    "date": "2026-07-27",
+    "size": "845 KB",
+    "attacksCount": 11340,
+    "blockedCount": 11340,
+    "status": "Generated"
+  },
+  {
+    "id": "rep-004",
+    "name": "Suraksha-AI Weekly Threat Summary - W30",
+    "type": "Weekly",
+    "date": "2026-07-20",
+    "size": "912 KB",
+    "attacksCount": 12890,
+    "blockedCount": 12890,
+    "status": "Generated"
+  },
+  {
+    "id": "rep-005",
+    "name": "Suraksha-AI Monthly Security Report - July 2026",
+    "type": "Monthly",
+    "date": "2026-07-31",
+    "size": "3.8 MB",
+    "attacksCount": 54210,
+    "blockedCount": 54210,
+    "status": "Generated"
+  },
+  {
+    "id": "rep-006",
+    "name": "Suraksha-AI Monthly Security Report - June 2026",
+    "type": "Monthly",
+    "date": "2026-06-30",
+    "size": "4.2 MB",
+    "attacksCount": 61280,
+    "blockedCount": 61280,
+    "status": "Archived"
+  }
+]

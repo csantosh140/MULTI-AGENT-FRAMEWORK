@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Portal &bull; Secure Authentication</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Clean Ambient Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Top Minimal Header -->
+  <header class="top-nav">
+    <div class="brand">
+      <div class="brand-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div class="brand-info">
+        <span class="brand-name">Enterprise Portal</span>
+        <span class="brand-sub">Production Target System</span>
+      </div>
+    </div>
+    <div class="system-status-pill">
+      <span class="status-dot"></span>
+      <span>System Operational</span>
+    </div>
+  </header>
+
+  <!-- Main Centered Auth Container (Visible when not logged in) -->
+  <main class="auth-container" id="auth-container">
+    
+    <!-- 3D Perspective Card Wrapper -->
+    <div class="card-perspective-wrapper" id="card-wrapper">
+      <div class="auth-card" id="auth-card">
+
+        <!-- Auth Card Tabs -->
+        <div class="card-nav">
+          <button class="nav-tab active" data-tab="login-tab" id="tab-login">Sign In</button>
+          <button class="nav-tab" data-tab="register-tab" id="tab-register">Register</button>
+        </div>
+
+        <div class="card-content">
+
+          <!-- ================= TAB 1: SIGN IN ================= -->
+          <div class="tab-pane active" id="login-tab">
+            <div class="header-box">
+              <h2>Welcome Back</h2>
+              <p>Sign in with your enterprise credentials to access your account.</p>
+            </div>
+
+            <!-- Quick Demo Credentials Banner -->
+            <button type="button" class="demo-pill" id="quick-demo-btn">
+              <i class="fa-solid fa-key"></i>
+              <span>Use Demo Account (admin@enterprise.com)</span>
+            </button>
+
+            <form id="login-form" class="auth-form">
+              <div class="input-field">
+                <label for="login-email">Email Address</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope field-icon"></i>
+                  <input type="email" id="login-email" placeholder="admin@enterprise.com" required>
+                </div>
+              </div>
+
+              <div class="input-field">
+                <label for="login-password">Password</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-lock field-icon"></i>
+                  <input type="password" id="login-password" placeholder="••••••••••••" required>
+                  <button type="button" class="pwd-toggle" id="toggle-login-pwd">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label class="remember-me">
+                  <input type="checkbox" id="remember-check" checked>
+                  <span>Remember me</span>
+                </label>
+                <a href="#" class="forgot-pwd" id="forgot-link">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="submit-btn" id="login-btn">
+                <span class="btn-text">Sign In <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="btn-spinner hidden"></span>
+              </button>
+            </form>
+
+            <div class="divider">
+              <span>OR CONTINUE WITH</span>
+            </div>
+
+            <div class="social-login">
+              <button type="button" class="social-btn" onclick="showToast('SSO Service: Google Auth Available', 'info')">
+                <i class="fa-brands fa-google"></i> Google
+              </button>
+              <button type="button" class="social-btn" onclick="showToast('SSO Service: GitHub Auth Available', 'info')">
+                <i class="fa-brands fa-github"></i> GitHub
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= TAB 2: REGISTER ================= -->
+          <div class="tab-pane" id="register-tab">
+            <div class="header-box">
+              <h2>Create Account</h2>
+              <p>Create an enterprise user account for workspace access.</p>
+            </div>
+
+            <form id="register-form" class="auth-form">
+              <div class="input-field">
+                <label for="reg-name">Full Name</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-user field-icon"></i>
+                  <input type="text" id="reg-name" placeholder="Elena Vance" required>
+                </div>
+              </div>
+
+              <div class="input-field">
+                <label for="reg-email">Email Address</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope field-icon"></i>
+                  <input type="email" id="reg-email" placeholder="elena.vance@company.com" required>
+                </div>
+              </div>
+
+              <div class="input-field">
+                <label for="reg-password">Password</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-lock field-icon"></i>
+                  <input type="password" id="reg-password" placeholder="Create strong password" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label class="remember-me">
+                  <input type="checkbox" required checked>
+                  <span>I agree to the Enterprise Terms & Privacy Policy</span>
+                </label>
+              </div>
+
+              <button type="submit" class="submit-btn" id="register-btn">
+                <span class="btn-text">Create Account <i class="fa-solid fa-user-plus"></i></span>
+                <span class="btn-spinner hidden"></span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= FULL-SCREEN ENTERPRISE TARGET PORTAL (VISIBLE WHEN LOGGED IN) ================= -->
+  <div id="full-portal-dashboard" class="hidden">
+    
+    <!-- Top Enterprise Navbar -->
+    <header class="portal-nav">
+      <div class="portal-brand">
+        <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="brand-title">
+          <h2>ENTERPRISE TARGET PORTAL</h2>
+          <span class="sub-title">Corporate System Portal &bull; SQLite Engine</span>
+        </div>
+      </div>
+
+      <div class="portal-nav-center">
+        <div class="waf-banner-pill">
+          <span class="live-dot"></span>
+          <i class="fa-solid fa-lock"></i>
+          <span>PROTECTED BY SURAKSHA-AI REAL-TIME WAF</span>
+        </div>
+      </div>
+
+      <div class="portal-nav-right">
+        <div class="user-profile-badge">
+          <img id="dash-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="User Avatar">
+          <div class="user-details">
+            <span id="dash-name" class="name">System Administrator</span>
+            <span id="dash-email" class="email">admin@enterprise.com</span>
+          </div>
+          <span id="dash-role" class="role-pill">System Admin</span>
+        </div>
+        <button id="logout-btn" class="portal-logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Full-Width Portal Content -->
+    <div class="portal-content-grid">
+
+      <!-- Executive KPI Summary Cards (5-Column) -->
+      <div class="portal-kpi-row">
+        <div class="p-kpi-card">
+          <div class="p-kpi-icon gold"><i class="fa-solid fa-coins"></i></div>
+          <div class="p-kpi-data">
+            <span class="label">Total Managed Assets</span>
+            <span class="val" id="kpi-assets">$14,850,200</span>
+            <span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +18.4% YoY</span>
+          </div>
+        </div>
+
+        <div class="p-kpi-card">
+          <div class="p-kpi-icon blue"><i class="fa-solid fa-users"></i></div>
+          <div class="p-kpi-data">
+            <span class="label">Corporate Accounts</span>
+            <span class="val" id="kpi-users">14,892</span>
+            <span class="trend neutral">Active Directory</span>
+          </div>
+        </div>
+
+        <div class="p-kpi-card">
+          <div class="p-kpi-icon cyan"><i class="fa-solid fa-bolt"></i></div>
+          <div class="p-kpi-data">
+            <span class="label">API Velocity</span>
+            <span class="val" id="kpi-velocity">1,420 req/s</span>
+            <span class="trend positive"><i class="fa-solid fa-gauge-high"></i> Optimal</span>
+          </div>
+        </div>
+
+        <div class="p-kpi-card">
+          <div class="p-kpi-icon purple"><i class="fa-solid fa-server"></i></div>
+          <div class="p-kpi-data">
+            <span class="label">Database Query Latency</span>
+            <span class="val">1.4 ms</span>
+            <span class="trend positive">SQLite v3.42</span>
+          </div>
+        </div>
+
+        <div class="p-kpi-card highlight-waf">
+          <div class="p-kpi-icon green"><i class="fa-solid fa-shield-cat"></i></div>
+          <div class="p-kpi-data">
+            <span class="label">Suraksha-AI Status</span>
+            <span class="val text-green">100% Shielded</span>
+            <span class="trend text-green"><i class="fa-solid fa-circle-check"></i> Telemetry Active</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Dual Panel Layout -->
+      <div class="portal-dual-layout">
+
+        <!-- Left Column: Enterprise Customer Database & Financial Ledger Table -->
+        <div class="portal-card main-table-card">
+          <div class="card-header-flex">
+            <div class="header-left">
+              <h3><i class="fa-solid fa-database"></i> Enterprise Customer Directory & Financial Ledger</h3>
+              <p>Target SQL Database: <code>d:\Suraksha-AI_Project_Phase1\New1\database.sqlite</code></p>
+            </div>
+            <div class="header-actions">
+              <input type="text" id="table-search" placeholder="Search customer records..." class="table-search-input">
+              <button type="button" id="refresh-data-btn" class="action-btn glow">
+                <i class="fa-solid fa-arrows-rotate"></i> Sync Records
+              </button>
+              <button type="button" id="export-data-btn" class="action-btn">
+                <i class="fa-solid fa-download"></i> Export CSV
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="portal-table">
+              <thead>
+                <tr>
+                  <th>Account ID</th>
+                  <th>Customer Name</th>
+                  <th>Email Address</th>
+                  <th>Account Tier</th>
+                  <th>Financial Balance</th>
+                  <th>Status</th>
+                  <th>Last Access IP</th>
+                </tr>
+              </thead>
+              <tbody id="target-records-body">
+                <tr>
+                  <td><code>CUST-9021</code></td>
+                  <td><strong>Sarah Jenkins</strong></td>
+                  <td>s.jenkins@corp.net</td>
+                  <td><span class="tier-pill enterprise">Enterprise</span></td>
+                  <td><span class="balance-text">$45,200.00</span></td>
+                  <td><span class="status-badge success">Active</span></td>
+                  <td><code>10.0.4.12</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-8834</code></td>
+                  <td><strong>Alex Vance</strong></td>
+                  <td>a.vance@techops.io</td>
+                  <td><span class="tier-pill executive">Executive</span></td>
+                  <td><span class="balance-text">$128,450.00</span></td>
+                  <td><span class="status-badge success">Verified</span></td>
+                  <td><code>192.168.1.45</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-7712</code></td>
+                  <td><strong>David Miller</strong></td>
+                  <td>d.miller@fintech.com</td>
+                  <td><span class="tier-pill standard">Standard</span></td>
+                  <td><span class="balance-text">$12,900.00</span></td>
+                  <td><span class="status-badge warning">Pending</span></td>
+                  <td><code>172.16.0.8</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-6549</code></td>
+                  <td><strong>Marcus Wright</strong></td>
+                  <td>m.wright@enterprise.com</td>
+                  <td><span class="tier-pill vip">VIP Admin</span></td>
+                  <td><span class="balance-text">$310,000.00</span></td>
+                  <td><span class="status-badge success">Active</span></td>
+                  <td><code>127.0.0.1</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-5421</code></td>
+                  <td><strong>Elena Rostova</strong></td>
+                  <td>elena@cybersec.org</td>
+                  <td><span class="tier-pill security">Security Admin</span></td>
+                  <td><span class="balance-text">$92,150.00</span></td>
+                  <td><span class="status-badge success">Active</span></td>
+                  <td><code>10.200.5.88</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-4310</code></td>
+                  <td><strong>Robert Chen</strong></td>
+                  <td>r.chen@globalpay.com</td>
+                  <td><span class="tier-pill enterprise">Enterprise</span></td>
+                  <td><span class="balance-text">$215,000.00</span></td>
+                  <td><span class="status-badge success">Verified</span></td>
+                  <td><code>198.51.100.14</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-3298</code></td>
+                  <td><strong>Sophia Martinez</strong></td>
+                  <td>s.martinez@cloudnet.io</td>
+                  <td><span class="tier-pill standard">Standard</span></td>
+                  <td><span class="balance-text">$68,400.00</span></td>
+                  <td><span class="status-badge success">Active</span></td>
+                  <td><code>203.0.113.50</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-2187</code></td>
+                  <td><strong>James Wilson</strong></td>
+                  <td>j.wilson@apexsystems.com</td>
+                  <td><span class="tier-pill executive">Executive</span></td>
+                  <td><span class="balance-text">$34,500.00</span></td>
+                  <td><span class="status-badge success">Active</span></td>
+                  <td><code>192.0.2.77</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-1076</code></td>
+                  <td><strong>Amanda Taylor</strong></td>
+                  <td>a.taylor@datacore.net</td>
+                  <td><span class="tier-pill enterprise">Enterprise</span></td>
+                  <td><span class="balance-text">$175,800.00</span></td>
+                  <td><span class="status-badge success">Verified</span></td>
+                  <td><code>10.0.2.15</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-0965</code></td>
+                  <td><strong>Viktor Dragan</strong></td>
+                  <td>v.dragan@securenet.eu</td>
+                  <td><span class="tier-pill vip">VIP Admin</span></td>
+                  <td><span class="balance-text">$540,000.00</span></td>
+                  <td><span class="status-badge success">Active</span></td>
+                  <td><code>185.220.101.5</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-0854</code></td>
+                  <td><strong>Linda Kovacs</strong></td>
+                  <td>l.kovacs@techcorp.de</td>
+                  <td><span class="tier-pill standard">Standard</span></td>
+                  <td><span class="balance-text">$28,900.00</span></td>
+                  <td><span class="status-badge warning">Pending</span></td>
+                  <td><code>91.210.107.4</code></td>
+                </tr>
+                <tr>
+                  <td><code>CUST-0743</code></td>
+                  <td><strong>Tarun Patel</strong></td>
+                  <td>t.patel@fintech.in</td>
+                  <td><span class="tier-pill executive">Executive</span></td>
+                  <td><span class="balance-text">$412,300.00</span></td>
+                  <td><span class="status-badge success">Active</span></td>
+                  <td><code>103.21.244.0</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right Column: System Audit Stream & Telemetry Stats -->
+        <div class="portal-side-column">
+          
+          <!-- Live Target System Audit Log Stream -->
+          <div class="portal-card audit-log-card">
+            <div class="card-header-flex">
+              <h3><i class="fa-solid fa-list-check"></i> Target Application Audit Stream</h3>
+              <span class="live-tag">LIVE SQL AUDIT</span>
+            </div>
+            <div class="audit-log-terminal" id="target-audit-terminal">
+              <div class="log-line"><span class="time">00:29:10</span> <span class="tag info">[SYS]</span> Target Server initialized on port 3000</div>
+              <div class="log-line"><span class="time">00:29:12</span> <span class="tag success">[DB]</span> SQLite database connected: database.sqlite</div>
+              <div class="log-line"><span class="time">00:29:15</span> <span class="tag warning">[HOOK]</span> Suraksha-AI Telemetry Middleware active</div>
+              <div class="log-line"><span class="time">00:29:20</span> <span class="tag info">[AUTH]</span> User logged in: admin@enterprise.com</div>
+              <div class="log-line"><span class="time">00:29:22</span> <span class="tag success">[QUERY]</span> SELECT * FROM users WHERE email='admin@enterprise.com'</div>
+              <div class="log-line"><span class="time">00:29:30</span> <span class="tag info">[TELEMETRY]</span> Telemetry payload dispatched to http://localhost:5000/api/logs</div>
+            </div>
+          </div>
+
+          <!-- Target Server Architecture Info -->
+          <div class="portal-card info-card">
+            <h3><i class="fa-solid fa-microchip"></i> Target Server Specifications</h3>
+            <div class="spec-list">
+              <div class="spec-item">
+                <span class="spec-label">Target URL</span>
+                <span class="spec-val"><code>http://localhost:3000/api/login</code></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Middleware Telemetry</span>
+                <span class="spec-val text-blue"><code>inspectWithSurakshaAI()</code></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Suraksha-AI Engine</span>
+                <span class="spec-val text-green"><i class="fa-solid fa-circle-check"></i> Online (port 5000)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Dashboard Monitor</span>
+                <span class="spec-val text-blue">http://localhost:5173</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 Enterprise Portal &bull; Protected Target Environment</p>
+  </footer>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container"></div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

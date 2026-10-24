@@ -1,0 +1,30 @@
+{
+  "metrics": {
+    "mostTargetedEndpoint": "/api/users/login",
+    "averageResponseTime": "12.4 ms",
+    "mostCommonPayload": "1' OR '1'='1",
+    "topAttackingIp": "185.220.101.5",
+    "totalBlocked": 84231,
+    "bypassAttempts": 0
+  },
+  "threatDistribution": [
+    { "name": "Low Risk", "value": 4120 },
+    { "name": "Medium Risk", "value": 15890 },
+    { "name": "High Risk", "value": 42102 },
+    { "name": "Critical Risk", "value": 22119 }
+  ],
+  "weeklyTrend": [
+    { "week": "Week 1", "attacks": 12400, "blocked": 12400 },
+    { "week": "Week 2", "attacks": 15800, "blocked": 15800 },
+    { "week": "Week 3", "attacks": 18200, "blocked": 18200 },
+    { "week": "Week 4", "attacks": 14820, "blocked": 14820 }
+  ],
+  "monthlyTrend": [
+    { "month": "Mar", "threats": 45000, "mitigated": 45000 },
+    { "month": "Apr", "threats": 58000, "mitigated": 58000 },
+    { "month": "May", "threats": 72000, "mitigated": 72000 },
+    { "month": "Jun", "threats": 65000, "mitigated": 65000 },
+    { "month": "Jul", "threats": 88000, "mitigated": 88000 },
+    { "month": "Aug", "threats": 84231, "mitigated": 84231 }
+  ]
+}

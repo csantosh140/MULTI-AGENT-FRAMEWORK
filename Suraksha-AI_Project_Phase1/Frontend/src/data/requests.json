@@ -1,0 +1,110 @@
+[
+  {
+    "id": "req-1",
+    "timestamp": "2026-08-01T22:20:01Z",
+    "method": "GET",
+    "url": "/api/v1/products?category=electronics&sort=price_asc",
+    "payload": "category=electronics&sort=price_asc",
+    "riskScore": 1.2,
+    "decision": "Allowed"
+  },
+  {
+    "id": "req-2",
+    "timestamp": "2026-08-01T22:20:04Z",
+    "method": "POST",
+    "url": "/api/v1/auth/login",
+    "payload": "{\"email\":\"admin@company.com\",\"password\":\"********\"}",
+    "riskScore": 0.5,
+    "decision": "Allowed"
+  },
+  {
+    "id": "req-3",
+    "timestamp": "2026-08-01T22:20:08Z",
+    "method": "GET",
+    "url": "/api/v1/users/profile?id=42%20UNION%20SELECT%20null,username,password%20FROM%20users",
+    "payload": "id=42 UNION SELECT null,username,password FROM users",
+    "riskScore": 98.6,
+    "decision": "Blocked"
+  },
+  {
+    "id": "req-4",
+    "timestamp": "2026-08-01T22:20:11Z",
+    "method": "GET",
+    "url": "/api/v1/items?q=security",
+    "payload": "q=security",
+    "riskScore": 2.1,
+    "decision": "Allowed"
+  },
+  {
+    "id": "req-5",
+    "timestamp": "2026-08-01T22:20:14Z",
+    "method": "POST",
+    "url": "/api/v1/feedback",
+    "payload": "{\"name\":\"Alice\",\"comment\":\"Great dashboard!\"}",
+    "riskScore": 1.0,
+    "decision": "Allowed"
+  },
+  {
+    "id": "req-6",
+    "timestamp": "2026-08-01T22:20:17Z",
+    "method": "POST",
+    "url": "/api/v1/admin/update",
+    "payload": "username=admin' OR '1'='1' --",
+    "riskScore": 92.4,
+    "decision": "Blocked"
+  },
+  {
+    "id": "req-7",
+    "timestamp": "2026-08-01T22:20:20Z",
+    "method": "GET",
+    "url": "/api/v1/blog/posts?id=12&author=2",
+    "payload": "id=12&author=2",
+    "riskScore": 0.8,
+    "decision": "Allowed"
+  },
+  {
+    "id": "req-8",
+    "timestamp": "2026-08-01T22:20:23Z",
+    "method": "GET",
+    "url": "/api/v1/search?term=%27%3B%20WAITFOR%20DELAY%20%270%3A0%3A5%27%20--",
+    "payload": "term='; WAITFOR DELAY '0:0:5' --",
+    "riskScore": 99.4,
+    "decision": "Blocked"
+  },
+  {
+    "id": "req-9",
+    "timestamp": "2026-08-01T22:20:26Z",
+    "method": "PUT",
+    "url": "/api/v1/user/settings",
+    "payload": "{\"theme\":\"dark\",\"notifications\":true}",
+    "riskScore": 0.3,
+    "decision": "Allowed"
+  },
+  {
+    "id": "req-10",
+    "timestamp": "2026-08-01T22:20:30Z",
+    "method": "GET",
+    "url": "/api/v1/products?id=1%20AND%201=1",
+    "payload": "id=1 AND 1=1",
+    "riskScore": 72.8,
+    "decision": "Logged"
+  },
+  {
+    "id": "req-11",
+    "timestamp": "2026-08-01T22:20:34Z",
+    "method": "GET",
+    "url": "/api/v1/categories?filter=all",
+    "payload": "filter=all",
+    "riskScore": 1.5,
+    "decision": "Allowed"
+  },
+  {
+    "id": "req-12",
+    "timestamp": "2026-08-01T22:20:39Z",
+    "method": "POST",
+    "url": "/api/v1/auth/register",
+    "payload": "{\"email\":\"attacker' OR '1'='1\",\"password\":\"unsafe123\"}",
+    "riskScore": 86.5,
+    "decision": "Blocked"
+  }
+]

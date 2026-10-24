@@ -1,0 +1,454 @@
+import express from 'express';
+import cors from 'cors';
+import jwt from 'jsonwebtoken';
+import sqlite3 from 'sqlite3';
+import path from 'path';
+import http from 'http';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const JWT_SECRET = 'antigravity_open_secret_key_2026';
+
+// Request Statistics
+let totalRequests = 0;
+const startTime = new Date();
+
+// Middleware: Parse JSON & URLencoded & Static Files
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
+
+// MANDATORY Open CORS Middleware - Allow all origins & ports
+app.use((req, res, next) => {
+  const origin = req.headers.origin || '*';
+  
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Authorization, Accept, Origin');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).json({ status: 'CORS Preflight OK', allowedOrigin: '*' });
+  }
+
+  totalRequests++;
+  console.log(`[CORS REQUEST #${totalRequests}] ${req.method} ${req.url} | Origin: ${origin}`);
+  next();
+});
+
+app.use(cors({ origin: '*', credentials: true }));
+
+// ==================== SQLITE DATABASE INITIALIZATION ====================
+
+const dbPath = path.join(__dirname, 'database.sqlite');
+const db = new sqlite3.Database(dbPath, (err) => {
+  if (err) {
+    console.error('❌ Error connecting to SQLite database:', err.message);
+  } else {
+    console.log('✅ Connected to SQLite database: database.sqlite');
+    initDatabaseSchema();
+  }
+});
+
+function initDatabaseSchema() {
+  db.run(`
+    CREATE TABLE IF NOT EXISTS users (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE NOT NULL,
+      password TEXT NOT NULL,
+      role TEXT DEFAULT 'Standard User',
+      avatar TEXT,
+      created_at TEXT
+    )
+  `, (err) => {
+    if (err) {
+      console.error('❌ Error creating table:', err.message);
+    } else {
+      console.log('✅ Users table ready.');
+      seedDefaultRecords();
+    }
+  });
+}
+
+function seedDefaultRecords() {
+  db.get('SELECT COUNT(*) AS count FROM users', (err, row) => {
+    if (err) return console.error('Error counting users:', err.message);
+
+    if (row.count === 0) {
+      console.log('🌱 Seeding initial user records into SQLite database...');
+      const seedUsers = [
+        {
+          id: 'usr_001',
+          name: 'Antigravity Explorer',
+          email: 'admin@antigravity.io',
+          password: 'password123',
+          role: 'System Administrator',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'usr_002',
+          name: 'Elena Vance',
+          email: 'elena@antigravity.io',
+          password: 'securePassword2026',
+          role: 'Lead Designer',
+          avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=Elena',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'usr_003',
+          name: 'Marcus Chen',
+          email: 'marcus@antigravity.io',
+          password: 'marcusPassWord!',
+          role: 'Security Engineer',
+          avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=Marcus',
+          created_at: new Date().toISOString()
+        }
+      ];
+
+      const stmt = db.prepare('INSERT INTO users (id, name, email, password, role, avatar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)');
+      seedUsers.forEach(u => {
+        stmt.run(u.id, u.name, u.email, u.password, u.role, u.avatar, u.created_at);
+      });
+      stmt.finalize(() => {
+        console.log('✅ Successfully seeded 3 records into SQLite database.');
+      });
+    } else {
+      console.log(`ℹ️ Database already contains ${row.count} user records.`);
+    }
+  });
+}
+
+// Helper: Token Authentication Middleware
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ error: 'Unauthorized', message: 'No authorization token provided' });
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) return res.status(403).json({ error: 'Forbidden', message: 'Token invalid or expired' });
+    req.user = user;
+    next();
+  });
+};
+
+// ==================== REST API ENDPOINTS ====================
+
+// Root Welcome Page
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Antigravity API Server Status</title>
+      <style>
+        body { font-family: system-ui, -apple-system, sans-serif; background: #070913; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .card { background: rgba(18, 22, 41, 0.85); border: 1px solid rgba(0, 242, 254, 0.4); padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.2); max-width: 480px; width: 100%; }
+        .badge { background: #00e676; color: #070913; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.05em; }
+        h1 { margin-bottom: 8px; font-size: 1.6rem; color: #00f2fe; }
+        p { color: #94a3b8; font-size: 0.9rem; margin: 10px 0; }
+        a { color: #00f2fe; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #00f2fe, #4facfe); color: #070913; font-weight: 800; padding: 12px 24px; border-radius: 12px; margin-top: 16px; text-decoration: none; }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <h1>🚀 Antigravity REST API</h1>
+        <p><span class="badge">ONLINE</span> Active on Port ${PORT}</p>
+        <p>Database: <strong>SQLite (database.sqlite)</strong></p>
+        <p>CORS Policy: <strong>Open / Unrestricted (*)</strong></p>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+        <p>Frontend Login Interface:</p>
+        <a href="http://localhost:3000" class="btn" target="_blank">Open http://localhost:3000</a>
+      </div>
+    </body>
+    </html>
+  `);
+});
+
+// 1. Health Endpoint
+app.get('/api/health', (req, res) => {
+  db.get('SELECT COUNT(*) AS totalUsers FROM users', (err, row) => {
+    res.json({
+      status: 'online',
+      serverPort: PORT,
+      database: 'SQLite (database.sqlite)',
+      databaseRecords: row ? row.totalUsers : 0,
+      corsPolicy: 'Unrestricted (*)',
+      uptimeSeconds: Math.floor((new Date() - startTime) / 1000),
+      totalRequestsReceived: totalRequests
+    });
+  });
+});
+
+// Helper: Real-time Telemetry & Threat Inspection via Suraksha-AI Engine
+function inspectWithSurakshaAI(req, endpointName = '/api/login') {
+  return new Promise((resolve) => {
+    try {
+      const payload = req.body || {};
+      const postData = JSON.stringify({
+        source_app: 'New1 Target App',
+        url: endpointName,
+        method: req.method,
+        payload: payload,
+        client_ip: req.ip || req.socket?.remoteAddress || '127.0.0.1',
+        user_agent: req.headers['user-agent'] || 'Mozilla/5.0'
+      });
+
+      const options = {
+        hostname: '127.0.0.1',
+        port: 5000,
+        path: '/api/target/telemetry',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(postData)
+        },
+        timeout: 2500
+      };
+
+      const surakshaReq = http.request(options, (surakshaRes) => {
+        let responseBody = '';
+        surakshaRes.on('data', (chunk) => { responseBody += chunk; });
+        surakshaRes.on('end', () => {
+          try {
+            const data = JSON.parse(responseBody);
+            if (surakshaRes.statusCode === 403 || data?.data?.blocked || data?.data?.verdict === 'BLOCKED') {
+              return resolve({
+                blocked: true,
+                reason: data?.data?.reason || 'SQL Injection Intercepted by Suraksha-AI Security Shield'
+              });
+            }
+          } catch (e) {}
+          resolve({ blocked: false });
+        });
+      });
+
+      surakshaReq.on('error', (err) => {
+        console.log('⚠️ [Suraksha-AI Inspection] Telemetry service notice:', err.message);
+        resolve({ blocked: false });
+      });
+
+      surakshaReq.on('timeout', () => {
+        surakshaReq.destroy();
+        resolve({ blocked: false });
+      });
+
+      surakshaReq.write(postData);
+      surakshaReq.end();
+    } catch (err) {
+      resolve({ blocked: false });
+    }
+  });
+}
+
+// SSE Client Broadcast Connections
+const sseClients = [];
+
+app.get('/api/live-attacks-stream', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  res.write('data: {"status":"connected"}\n\n');
+  sseClients.push(res);
+
+  req.on('close', () => {
+    const idx = sseClients.indexOf(res);
+    if (idx !== -1) sseClients.splice(idx, 1);
+  });
+});
+
+function broadcastAttackToBrowsers(payload, status) {
+  const data = JSON.stringify({ payload, status, time: new Date().toISOString() });
+  sseClients.forEach(client => {
+    client.write(`data: ${data}\n\n`);
+  });
+}
+
+// 2. User Login Endpoint (Database Processed with Suraksha-AI Defense)
+app.post('/api/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Missing Fields', message: 'Please provide email address and password' });
+  }
+
+  // Broadcast attack vector to active browser login UI for visual typing animation
+  broadcastAttackToBrowsers(email || password, 'BLOCKED');
+
+  // Active Suraksha-AI Security Inspection
+  const securityCheck = await inspectWithSurakshaAI(req, '/api/login');
+  if (securityCheck.blocked) {
+    console.log(`🚨 [SURAKSHA-AI WAF BLOCK] SQL Injection Attempt Intercepted: ${securityCheck.reason}`);
+    return res.status(403).json({
+      error: 'Security Threat Intercepted',
+      message: `🚨 Blocked by Suraksha-AI Security System: ${securityCheck.reason}`,
+      blocked: true,
+      suraksha_verdict: 'BLOCKED'
+    });
+  }
+
+  // Parameterized Query: Query user by email from SQLite Database
+  db.get('SELECT * FROM users WHERE LOWER(email) = LOWER(?)', [email], (err, user) => {
+    if (err) {
+      console.error('Database query error:', err.message);
+      return res.status(500).json({ error: 'Database Error', message: 'Internal server query error' });
+    }
+
+    if (!user || user.password !== password) {
+      return res.status(401).json({ error: 'Authentication Failed', message: 'Invalid email or password credentials' });
+    }
+
+    // Generate JWT Token
+    const accessToken = jwt.sign(
+      { id: user.id, email: user.email, name: user.name, role: user.role },
+      JWT_SECRET,
+      { expiresIn: '24h' }
+    );
+
+    return res.json({
+      success: true,
+      message: 'Login successful!',
+      token: accessToken,
+      tokenType: 'Bearer',
+      expiresIn: '24 Hours',
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        avatar: user.avatar
+      },
+      clientOrigin: req.headers.origin || 'Direct API Call',
+      serverPort: PORT
+    });
+  });
+});
+
+// 3. User Registration Endpoint (Database Insert)
+app.post('/api/register', (req, res) => {
+  const { name, email, password } = req.body;
+
+  if (!name || !email || !password) {
+    return res.status(400).json({ error: 'Missing Fields', message: 'Name, email, and password are required' });
+  }
+
+  // Check if user exists in database
+  db.get('SELECT id FROM users WHERE LOWER(email) = LOWER(?)', [email], (err, existing) => {
+    if (err) {
+      return res.status(500).json({ error: 'Database Error', message: 'Database check failed' });
+    }
+
+    if (existing) {
+      return res.status(409).json({ error: 'User Exists', message: 'A user with this email address already exists' });
+    }
+
+    const newUser = {
+      id: `usr_${Date.now()}`,
+      name,
+      email,
+      password,
+      role: 'Standard User',
+      avatar: `https://api.dicebear.com/7.x/bottts/svg?seed=${encodeURIComponent(name)}`,
+      created_at: new Date().toISOString()
+    };
+
+    // Parameterized Insert Statement
+    const stmt = db.prepare('INSERT INTO users (id, name, email, password, role, avatar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)');
+    stmt.run(
+      newUser.id,
+      newUser.name,
+      newUser.email,
+      newUser.password,
+      newUser.role,
+      newUser.avatar,
+      newUser.created_at,
+      function (err) {
+        if (err) {
+          console.error('Insert error:', err.message);
+          return res.status(500).json({ error: 'Database Error', message: 'Failed to insert user into database' });
+        }
+
+        const accessToken = jwt.sign(
+          { id: newUser.id, email: newUser.email, name: newUser.name, role: newUser.role },
+          JWT_SECRET,
+          { expiresIn: '24h' }
+        );
+
+        return res.status(201).json({
+          success: true,
+          message: 'User account created and saved to database!',
+          token: accessToken,
+          tokenType: 'Bearer',
+          user: {
+            id: newUser.id,
+            name: newUser.name,
+            email: newUser.email,
+            role: newUser.role,
+            avatar: newUser.avatar
+          },
+          clientOrigin: req.headers.origin || 'Direct API Call'
+        });
+      }
+    );
+    stmt.finalize();
+  });
+});
+
+// 4. Get User Profile (Database Query via Authenticated Token)
+app.get('/api/user', authenticateToken, (req, res) => {
+  db.get('SELECT id, name, email, role, avatar, created_at FROM users WHERE id = ?', [req.user.id], (err, user) => {
+    if (err || !user) {
+      return res.status(404).json({ error: 'Not Found', message: 'User profile not found in database' });
+    }
+
+    res.json({
+      success: true,
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        avatar: user.avatar,
+        createdAt: user.created_at
+      },
+      clientOrigin: req.headers.origin || 'Direct API Call',
+      accessedAt: new Date().toISOString()
+    });
+  });
+});
+
+// 5. User Logout Endpoint
+app.post('/api/logout', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Logged out successfully!',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Start Server listening on 0.0.0.0
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`
+  =============================================================
+  🚀 ANTIGRAVITY REST API SERVER WITH SQLITE DATABASE
+  -------------------------------------------------------------
+  🌐 Host / Port:     0.0.0.0:${PORT} (http://localhost:${PORT})
+  🗄️ Database:        SQLite (database.sqlite)
+  🔓 CORS Policy:     FULLY UNRESTRICTED (*)
+  📋 Health Check:    http://localhost:${PORT}/api/health
+  =============================================================
+  `);
+});
