@@ -2,7 +2,6 @@
   "enabled_agents": [
     "monitoring_agent",
     "detection_agent",
-    "decision_agent",
     "prevention_agent",
     "threat_intel_agent",
     "report_agent",
@@ -12,7 +11,9 @@
     "0c24588c",
     "9376b5ab"
   ],
-  "disabled_agents": [],
+  "disabled_agents": [
+    "decision_agent"
+  ],
   "priorities": {
     "monitoring_agent": "High",
     "detection_agent": "Critical",

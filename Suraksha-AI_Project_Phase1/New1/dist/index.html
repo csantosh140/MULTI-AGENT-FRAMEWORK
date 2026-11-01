@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexCore &bull; Enterprise Cloud Platform</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script type="module" crossorigin src="/assets/index-cXN5xiE7.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BSGags_j.css">
+</head>
+<body class="app-body">
+  <!-- Subtle Canvas Grid -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- =========================================================================
+       1. MODERN ENTERPRISE AUTH VIEW (CENTERED CLEAN CARD)
+       ========================================================================= -->
+  <div id="auth-view" class="auth-wrapper">
+    <div class="auth-split-container">
+      
+      <!-- Authentication Form Card -->
+      <div class="auth-form-panel">
+        <div class="auth-card-clean" id="auth-card">
+          
+          <div class="card-brand-header">
+            <div class="brand-logo-sq"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <span class="brand-title">Enterprise Portal</span>
+              <span class="brand-env-tag"><i class="fa-solid fa-circle text-green"></i> Secure Authentication</span>
+            </div>
+          </div>
+
+          <div class="auth-tab-switch">
+            <button class="auth-tab-btn active" id="tab-login" data-tab="login-form-box">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+            </button>
+            <button class="auth-tab-btn" id="tab-register" data-tab="register-form-box">
+              <i class="fa-solid fa-user-plus"></i> Create Account
+            </button>
+          </div>
+
+          <!-- SIGN IN FORM -->
+          <div class="auth-box-content active" id="login-form-box">
+            <div class="form-header">
+              <h3>Enterprise Workspace Access</h3>
+              <p>Authenticate with your corporate credentials or single sign-on provider.</p>
+            </div>
+
+            <form id="login-form" class="clean-form">
+              <div class="form-group">
+                <label for="login-email">Corporate Email</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="email" id="login-email" placeholder="name@company.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="login-password">Password</label>
+                  <a href="#" class="form-link" onclick="showToast('Password reset link dispatched to domain admin.', 'info'); return false;">Forgot?</a>
+                </div>
+                <div class="input-icon-wrap">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" id="login-password" placeholder="••••••••••••" required autocomplete="current-password">
+                  <button type="button" class="pwd-toggle-btn" id="toggle-login-pwd">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="remember-row">
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="remember-check" checked>
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">Keep me authenticated for 14 days</span>
+                </label>
+              </div>
+
+              <button type="submit" class="primary-action-btn" id="login-btn">
+                <span class="btn-text">Authenticate Workspace <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="btn-spinner hidden"></span>
+              </button>
+            </form>
+
+            <div class="auth-divider">
+              <span>OR SINGLE SIGN-ON</span>
+            </div>
+
+            <div class="sso-buttons-row">
+              <button type="button" class="sso-btn" onclick="showToast('SSO Provider: Google Workspace SAML Authenticated', 'info')">
+                <i class="fa-brands fa-google"></i> Google
+              </button>
+              <button type="button" class="sso-btn" onclick="showToast('SSO Provider: Microsoft Entra ID Available', 'info')">
+                <i class="fa-brands fa-microsoft"></i> Microsoft
+              </button>
+              <button type="button" class="sso-btn" onclick="showToast('SSO Provider: GitHub Enterprise Connected', 'info')">
+                <i class="fa-brands fa-github"></i> GitHub
+              </button>
+            </div>
+          </div>
+
+          <!-- REGISTER FORM -->
+          <div class="auth-box-content" id="register-form-box">
+            <div class="form-header">
+              <h3>Create Operator Account</h3>
+              <p>Register a corporate user profile in the local enterprise database.</p>
+            </div>
+
+            <form id="register-form" class="clean-form">
+              <div class="form-group">
+                <label for="reg-name">Full Name</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" id="reg-name" placeholder="Elena Vance" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-email">Corporate Email</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="email" id="reg-email" placeholder="elena.vance@enterprise.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-password">Security Password</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" id="reg-password" placeholder="Create robust password" required>
+                </div>
+              </div>
+
+              <div class="remember-row">
+                <label class="custom-checkbox">
+                  <input type="checkbox" required checked>
+                  <span class="checkbox-box"></span>
+                  <span class="checkbox-label">I agree to Enterprise Security Policies & Access Terms</span>
+                </label>
+              </div>
+
+              <button type="submit" class="primary-action-btn" id="register-btn">
+                <span class="btn-text">Register Enterprise Profile <i class="fa-solid fa-user-check"></i></span>
+                <span class="btn-spinner hidden"></span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       2. FULL PROFESSIONAL ENTERPRISE APPLICATION PORTAL
+       ========================================================================= -->
+  <div id="full-portal-dashboard" class="app-layout hidden">
+    
+    <!-- Top Enterprise Navbar -->
+    <header class="app-topbar">
+      <div class="topbar-left">
+        <div class="app-brand-badge">
+          <div class="brand-logo-sq"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="brand-text-col">
+            <span class="brand-title">ApexCore Cloud</span>
+            <span class="brand-env-tag"><i class="fa-solid fa-circle text-green"></i> production-us-east-1</span>
+          </div>
+        </div>
+
+        <div class="global-search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="global-search-input" placeholder="Search customer records, transactions, or ledger IDs..." class="global-search-input">
+          <kbd class="kbd-shortcut">⌘K</kbd>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Live WAF Shield Pill -->
+        <div class="waf-live-pill" title="Protected by Suraksha-AI reverse inspection middleware">
+          <span class="shield-ping-dot"></span>
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>SURAKSHA-AI SHIELD ACTIVE</span>
+        </div>
+
+        <div class="topbar-actions">
+          <button type="button" class="icon-circle-btn" id="refresh-all-btn" title="Sync All Tables with SQLite Database">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </button>
+          <button type="button" class="icon-circle-btn" onclick="showToast('No unread system alarms', 'info')" title="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="badge-dot"></span>
+          </button>
+        </div>
+
+        <div class="user-profile-menu">
+          <img id="dash-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar" class="user-avatar-img">
+          <div class="user-info-text">
+            <span id="dash-name" class="user-display-name">System Administrator</span>
+            <span id="dash-role" class="user-role-badge">System Administrator</span>
+          </div>
+          <button id="logout-btn" class="signout-button" title="Sign out of current workspace">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container: Sidebar + Content Area -->
+    <div class="app-body-wrapper">
+      
+      <!-- Modern Sidebar Navigation -->
+      <aside class="app-sidebar">
+        <div class="sidebar-group-title">CORE PLATFORM</div>
+        <nav class="sidebar-nav">
+          <button class="nav-item active" data-tab="tab-overview">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Overview & Health</span>
+          </button>
+          <button class="nav-item" data-tab="tab-customers">
+            <i class="fa-solid fa-users-viewfinder"></i>
+            <span>Customer Directory</span>
+            <span class="nav-pill" id="nav-customer-count">12</span>
+          </button>
+          <button class="nav-item" data-tab="tab-ledger">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <span>Financial Ledger</span>
+          </button>
+          <button class="nav-item" data-tab="tab-apikeys">
+            <i class="fa-solid fa-key"></i>
+            <span>API Keys & Access</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-group-title">SECURITY & OPS</div>
+        <nav class="sidebar-nav">
+          <button class="nav-item" data-tab="tab-audit">
+            <i class="fa-solid fa-fingerprint"></i>
+            <span>Audit & Access Trail</span>
+          </button>
+          <button class="nav-item" data-tab="tab-settings">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Security Settings</span>
+          </button>
+        </nav>
+
+        <!-- Sidebar Telemetry Card -->
+        <div class="sidebar-footer-card">
+          <div class="telemetry-header">
+            <i class="fa-solid fa-microchip text-indigo"></i>
+            <span>Engine Telemetry</span>
+          </div>
+          <div class="telemetry-stat-row">
+            <span>Query Engine:</span>
+            <strong>SQLite v3.42</strong>
+          </div>
+          <div class="telemetry-stat-row">
+            <span>Avg Response:</span>
+            <strong class="text-green">1.2 ms</strong>
+          </div>
+          <div class="telemetry-stat-row">
+            <span>Suraksha Host:</span>
+            <code>:5000</code>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Stage -->
+      <main class="app-main-stage">
+        
+        <!-- ================= SECTION 1: OVERVIEW DASHBOARD ================= -->
+        <section class="portal-tab-pane active" id="tab-overview">
+          
+          <div class="pane-header">
+            <div>
+              <h2 class="pane-title">Executive Operations & Asset Summary</h2>
+              <p class="pane-subtitle">Real-time status of ledger reconciliation, system health, and transactional volume.</p>
+            </div>
+            <div class="header-action-group">
+              <button class="clean-btn" id="open-transfer-btn-overview">
+                <i class="fa-solid fa-paper-plane"></i> Quick Wire Transfer
+              </button>
+              <button class="primary-btn" id="open-customer-btn-overview">
+                <i class="fa-solid fa-plus"></i> New Customer Account
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 Executive KPI Cards -->
+          <div class="kpi-quad-grid">
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Total Managed Ledger Assets</span>
+                <span class="kpi-icon-box gold"><i class="fa-solid fa-vault"></i></span>
+              </div>
+              <div class="kpi-val" id="kpi-total-assets">$14,850,200.00</div>
+              <div class="kpi-bottom text-green">
+                <i class="fa-solid fa-arrow-trend-up"></i> +18.4% YoY Volume Expansion
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Active Corporate Accounts</span>
+                <span class="kpi-icon-box blue"><i class="fa-solid fa-building-columns"></i></span>
+              </div>
+              <div class="kpi-val" id="kpi-cust-accounts">14,892</div>
+              <div class="kpi-bottom text-muted">
+                <span>12 seeded directory accounts</span>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">API Gateway Throughput</span>
+                <span class="kpi-icon-box cyan"><i class="fa-solid fa-bolt-lightning"></i></span>
+              </div>
+              <div class="kpi-val" id="kpi-velocity">1,420 req/s</div>
+              <div class="kpi-bottom text-green">
+                <i class="fa-solid fa-gauge-high"></i> 99.99% Nominal Throughput
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Database Query Latency</span>
+                <span class="kpi-icon-box purple"><i class="fa-solid fa-database"></i></span>
+              </div>
+              <div class="kpi-val">1.2 ms</div>
+              <div class="kpi-bottom text-green">
+                <i class="fa-solid fa-circle-check"></i> SQLite Memory Index Active
+              </div>
+            </div>
+          </div>
+
+          <!-- Dual Row: Recent Transfers & System Audit Stream -->
+          <div class="dashboard-split-grid">
+            
+            <!-- Left: Recent Financial Activity -->
+            <div class="content-card">
+              <div class="card-head">
+                <div class="card-head-title">
+                  <i class="fa-solid fa-receipt text-indigo"></i>
+                  <h3>Recent Financial Activity</h3>
+                </div>
+                <button class="link-btn" id="view-all-ledger-btn">View All Ledger</button>
+              </div>
+              <div class="table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Transaction ID</th>
+                      <th>Sender</th>
+                      <th>Recipient</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="overview-tx-body">
+                    <!-- Populated dynamically via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Right: Real-time System Audit Feed -->
+            <div class="content-card">
+              <div class="card-head">
+                <div class="card-head-title">
+                  <i class="fa-solid fa-terminal text-cyan"></i>
+                  <h3>Security & Event Stream</h3>
+                </div>
+                <span class="live-pill-mini"><span class="ping-dot"></span> LIVE AUDIT</span>
+              </div>
+              <div class="terminal-log-viewer" id="overview-audit-stream">
+                <div class="term-line"><span class="term-time">00:01:10</span> <span class="term-tag info">[SYSTEM]</span> ApexCore Cloud Gateway active</div>
+                <div class="term-line"><span class="term-time">00:01:12</span> <span class="term-tag success">[DATABASE]</span> SQLite connected: database.sqlite</div>
+                <div class="term-line"><span class="term-time">00:01:14</span> <span class="term-tag warning">[SECURITY]</span> Suraksha-AI Telemetry reverse bridge listening</div>
+                <div class="term-line"><span class="term-time">00:01:20</span> <span class="term-tag info">[AUTH]</span> Session verified for admin@enterprise.com</div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ================= SECTION 2: CUSTOMER DIRECTORY ================= -->
+        <section class="portal-tab-pane" id="tab-customers">
+          
+          <div class="pane-header">
+            <div>
+              <h2 class="pane-title">Enterprise Customer Directory & Ledger</h2>
+              <p class="pane-subtitle">Authorized institutional entities, account balances, and authentication origins.</p>
+            </div>
+            <div class="header-action-group">
+              <button class="clean-btn" id="export-csv-btn">
+                <i class="fa-solid fa-file-csv"></i> Export CSV
+              </button>
+              <button class="primary-btn" id="open-add-customer-modal-btn">
+                <i class="fa-solid fa-user-plus"></i> Add Customer Account
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Toolbar -->
+          <div class="filter-toolbar">
+            <div class="filter-search-wrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="cust-search-input" placeholder="Search by customer name, account ID, or corporate email..." class="filter-search-input">
+            </div>
+
+            <div class="filter-selects">
+              <div class="select-wrapper">
+                <label>Tier:</label>
+                <select id="cust-tier-select" class="clean-select">
+                  <option value="All">All Tiers</option>
+                  <option value="Enterprise">Enterprise</option>
+                  <option value="VIP Admin">VIP Admin</option>
+                  <option value="Executive">Executive</option>
+                  <option value="Standard">Standard</option>
+                </select>
+              </div>
+
+              <div class="select-wrapper">
+                <label>Status:</label>
+                <select id="cust-status-select" class="clean-select">
+                  <option value="All">All Statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Verified">Verified</option>
+                  <option value="Pending">Pending</option>
+                </select>
+              </div>
+
+              <button class="clean-btn sm" id="reset-cust-filters-btn">
+                <i class="fa-solid fa-xmark"></i> Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Customer Data Table -->
+          <div class="content-card">
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Account ID</th>
+                    <th>Customer Name</th>
+                    <th>Corporate Email</th>
+                    <th>Account Tier</th>
+                    <th>Financial Balance</th>
+                    <th>Status</th>
+                    <th>Last Access IP</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="customers-table-body">
+                  <!-- Populated dynamically via /api/customers -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ================= SECTION 3: FINANCIAL LEDGER & TRANSFERS ================= -->
+        <section class="portal-tab-pane" id="tab-ledger">
+          
+          <div class="pane-header">
+            <div>
+              <h2 class="pane-title">Institutional Financial Ledger & Wire Operations</h2>
+              <p class="pane-subtitle">Real-time ledger entries, automated clearing, and inter-bank transfers.</p>
+            </div>
+            <div class="header-action-group">
+              <button class="primary-btn" id="open-transfer-modal-btn">
+                <i class="fa-solid fa-money-bill-transfer"></i> Initiate Wire Transfer
+              </button>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Transfer ID</th>
+                    <th>Source Account / Sender</th>
+                    <th>Destination Entity / Recipient</th>
+                    <th>Volume Amount</th>
+                    <th>Clearance Type</th>
+                    <th>Execution Status</th>
+                    <th>Timestamp</th>
+                  </tr>
+                </thead>
+                <tbody id="full-ledger-table-body">
+                  <!-- Populated dynamically via /api/transactions -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ================= SECTION 4: API KEYS & DEVELOPER ACCESS ================= -->
+        <section class="portal-tab-pane" id="tab-apikeys">
+          
+          <div class="pane-header">
+            <div>
+              <h2 class="pane-title">Developer API Keys & Service Credentials</h2>
+              <p class="pane-subtitle">Manage cryptographic authentication tokens for internal microservices and external gateways.</p>
+            </div>
+            <div class="header-action-group">
+              <button class="primary-btn" id="open-key-modal-btn">
+                <i class="fa-solid fa-key"></i> Generate API Key
+              </button>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Key Identifier</th>
+                    <th>Service Name</th>
+                    <th>Key Prefix</th>
+                    <th>Granted Scopes</th>
+                    <th>Status</th>
+                    <th>Created Date</th>
+                    <th>Last Used</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="apikeys-table-body">
+                  <!-- Populated dynamically via /api/api-keys -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ================= SECTION 5: AUDIT LOGS ================= -->
+        <section class="portal-tab-pane" id="tab-audit">
+          
+          <div class="pane-header">
+            <div>
+              <h2 class="pane-title">Security & System Access Audit Trail</h2>
+              <p class="pane-subtitle">Tamper-evident chronological record of all administrative operations, queries, and security interventions.</p>
+            </div>
+            <div class="header-action-group">
+              <button class="clean-btn" id="export-audit-btn">
+                <i class="fa-solid fa-download"></i> Export Audit Log
+              </button>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Log ID</th>
+                    <th>Timestamp</th>
+                    <th>Level</th>
+                    <th>Category</th>
+                    <th>Event Description</th>
+                    <th>Origin IP</th>
+                    <th>Client Agent</th>
+                  </tr>
+                </thead>
+                <tbody id="audit-table-body">
+                  <!-- Populated dynamically via /api/audit-logs -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ================= SECTION 6: SETTINGS ================= -->
+        <section class="portal-tab-pane" id="tab-settings">
+          
+          <div class="pane-header">
+            <div>
+              <h2 class="pane-title">Enterprise Security Policies & Platform Configuration</h2>
+              <p class="pane-subtitle">Manage workspace security guardrails, timeout rules, and WAF protection parameters.</p>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            
+            <div class="content-card">
+              <h3 class="settings-sec-title"><i class="fa-solid fa-shield-halved text-indigo"></i> Authentication & Session Policies</h3>
+              
+              <div class="setting-item">
+                <div class="setting-info">
+                  <strong>Mandatory Multi-Factor Authentication (MFA)</strong>
+                  <span>Enforce hardware security keys (FIDO2/WebAuthn) or TOTP for all administrator accounts.</span>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked onchange="showToast('Security Policy Updated: MFA Enforced', 'success')">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-info">
+                  <strong>Session Inactivity Lockdown</strong>
+                  <span>Automatically revoke JWT bearer tokens after 15 minutes of user inactivity.</span>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked onchange="showToast('Policy Updated: 15-Minute Timeout Active', 'success')">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-info">
+                  <strong>IP Geolocation Boundary Lock</strong>
+                  <span>Deny authentication requests originating outside sanctioned enterprise IP blocks.</span>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked onchange="showToast('Policy Updated: IP Boundary Guard Active', 'success')">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <h3 class="settings-sec-title"><i class="fa-solid fa-network-wired text-cyan"></i> Suraksha-AI Reverse Inspection Settings</h3>
+
+              <div class="setting-item">
+                <div class="setting-info">
+                  <strong>Fail-Closed Security Posture</strong>
+                  <span>Drop all incoming web requests immediately if the Suraksha-AI inspection daemon is unreachable.</span>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked onchange="showToast('Policy Updated: Fail-Closed Enforcement Active', 'success')">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-info">
+                  <strong>Deep AST Query Tokenization</strong>
+                  <span>Pre-tokenize SQL and shell statements before database parameter binding.</span>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked onchange="showToast('Policy Updated: AST Parser Active', 'success')">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-info">
+                  <strong>Real-time Telemetry WebSocket Broadcast</strong>
+                  <span>Transmit attack events to local security monitoring dashboards.</span>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked onchange="showToast('Telemetry Broadcast Active', 'success')">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+    <!-- Minimal App Footer -->
+    <footer class="app-bottom-bar">
+      <span>&copy; 2026 ApexCore Cloud Technologies, Inc. &bull; Enterprise Production Environment</span>
+      <span>Protected by <strong>Suraksha-AI Autonomous Web Defense Grid</strong></span>
+    </footer>
+
+  </div>
+
+
+  <!-- =========================================================================
+       3. INTERACTIVE MODALS
+       ========================================================================= -->
+
+  <!-- Modal 1: Add New Customer Account -->
+  <div class="modal-backdrop hidden" id="modal-add-customer">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-user-plus text-indigo"></i> Add Enterprise Customer Account</h3>
+        <button class="modal-close-btn" id="close-cust-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="add-customer-form" class="modal-form">
+        <div class="form-group">
+          <label>Customer Full Name</label>
+          <input type="text" id="cust-name-input" placeholder="e.g. Jordan Sterling" required class="modal-input">
+        </div>
+        <div class="form-group">
+          <label>Corporate Email Address</label>
+          <input type="email" id="cust-email-input" placeholder="e.g. j.sterling@apexcorp.com" required class="modal-input">
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Account Tier</label>
+            <select id="cust-tier-input" class="modal-select">
+              <option value="Enterprise">Enterprise</option>
+              <option value="VIP Admin">VIP Admin</option>
+              <option value="Executive">Executive</option>
+              <option value="Standard">Standard</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Initial Ledger Balance ($)</label>
+            <input type="number" id="cust-balance-input" placeholder="50000.00" step="100" min="0" required class="modal-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Account Status</label>
+          <select id="cust-status-input" class="modal-select">
+            <option value="Active">Active</option>
+            <option value="Verified">Verified</option>
+            <option value="Pending">Pending</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="clean-btn" id="cancel-cust-modal">Cancel</button>
+          <button type="submit" class="primary-btn">Create Customer Record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Initiate Wire Transfer -->
+  <div class="modal-backdrop hidden" id="modal-transfer">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-money-bill-transfer text-indigo"></i> Execute Ledger Wire Transfer</h3>
+        <button class="modal-close-btn" id="close-transfer-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="transfer-form" class="modal-form">
+        <div class="form-group">
+          <label>Source Account (Sender)</label>
+          <input type="text" id="transfer-sender-input" value="Corporate Treasury Escrow Vault" class="modal-input" readonly>
+        </div>
+        <div class="form-group">
+          <label>Destination Entity (Recipient)</label>
+          <input type="text" id="transfer-recipient-input" placeholder="e.g. Sarah Jenkins (CUST-9021)" required class="modal-input">
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Transfer Amount ($ USD)</label>
+            <input type="number" id="transfer-amount-input" placeholder="25000.00" step="500" min="1" required class="modal-input">
+          </div>
+          <div class="form-group">
+            <label>Clearance Channel</label>
+            <select id="transfer-type-input" class="modal-select">
+              <option value="Wire Transfer">Wire Transfer</option>
+              <option value="Fedwire Instant">Fedwire Instant</option>
+              <option value="ACH Clearance">ACH Clearance</option>
+              <option value="SWIFT International">SWIFT International</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="clean-btn" id="cancel-transfer-modal">Cancel</button>
+          <button type="submit" class="primary-btn">Authorize & Execute Transfer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: Generate API Key -->
+  <div class="modal-backdrop hidden" id="modal-apikey">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-key text-indigo"></i> Mint Enterprise API Key</h3>
+        <button class="modal-close-btn" id="close-key-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="apikey-form" class="modal-form">
+        <div class="form-group">
+          <label>Key Name / Service Reference</label>
+          <input type="text" id="key-name-input" placeholder="e.g. Reconciliation Microservice Worker" required class="modal-input">
+        </div>
+        <div class="form-group">
+          <label>Granted RBAC Permissions</label>
+          <select id="key-scopes-input" class="modal-select">
+            <option value="ledger:read,ledger:write">Full Ledger (Read & Write)</option>
+            <option value="ledger:read">Read-Only Audit Scope</option>
+            <option value="transfers:execute">Transfers Execution Scope</option>
+            <option value="telemetry:emit">Telemetry Ingestion Scope</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="clean-btn" id="cancel-key-modal">Cancel</button>
+          <button type="submit" class="primary-btn">Generate & Save Token</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Main JavaScript Controller -->
+</body>
+</html>

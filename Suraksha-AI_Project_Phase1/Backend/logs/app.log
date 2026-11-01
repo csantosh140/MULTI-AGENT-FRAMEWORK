@@ -744,3 +744,18 @@
 [2026-10-18 23:28:17,511] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
 [2026-10-18 23:28:18,525] INFO in __init__: Application logging pipeline initialized successfully.
 [2026-10-18 23:28:20,577] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-10-28 13:47:58,074] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-28 13:48:11,629] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-10-28 13:48:11,630] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-10-28 13:48:12,618] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-10-28 13:48:14,904] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-01 22:50:53,173] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-01 22:53:32,784] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-11-01 22:53:32,785] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-11-01 22:53:34,188] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-01 22:53:36,083] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-02 00:22:28,116] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-02 00:22:32,407] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-11-02 00:22:32,408] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-11-02 00:22:33,805] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-02 00:22:36,159] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
