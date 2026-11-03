@@ -24,3 +24,8 @@ export const disableAgent = async (agentId) => {
   const response = await apiClient.post('/agents/disable', { agent_id: agentId });
   return response.data;
 };
+
+export const scanCryptographicFailures = async (files) => {
+  const response = await apiClient.post('/agents/cryptographic-failures/scan', { files });
+  return response.data;
+};

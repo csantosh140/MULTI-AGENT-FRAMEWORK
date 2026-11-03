@@ -759,3 +759,172 @@
 [2026-11-02 00:22:32,408] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
 [2026-11-02 00:22:33,805] INFO in __init__: Application logging pipeline initialized successfully.
 [2026-11-02 00:22:36,159] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-03 13:55:25,886] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:01:20,929] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-11-03 14:01:20,929] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-11-03 14:01:23,702] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:01:29,902] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-03 14:20:21,154] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:20:25,975] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-03 14:20:43,566] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:20:48,517] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-03 14:21:31,845] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:21:37,262] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-03 14:21:51,908] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:21:57,496] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-11-03 14:21:57,497] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-11-03 14:21:57,568] INFO in logger: METHOD: GET | URL: /api/agents | IP: 127.0.0.1 | STATUS: 200 | DURATION: 3ms
+[2026-11-03 14:21:57,573] INFO in logger: METHOD: GET | URL: /api/agents/tasks | IP: 127.0.0.1 | STATUS: 200 | DURATION: 1ms
+[2026-11-03 14:21:57,578] INFO in logger: METHOD: POST | URL: /api/agents/cryptographic-failures/scan | IP: 127.0.0.1 | STATUS: 200 | DURATION: 1ms
+[2026-11-03 14:21:57,580] INFO in logger: METHOD: POST | URL: /api/agents/cryptographic-failures/scan | IP: 127.0.0.1 | STATUS: 401 | DURATION: 0ms
+[2026-11-03 14:21:57,583] INFO in logger: METHOD: POST | URL: /api/agents/cryptographic-failures/scan | IP: 127.0.0.1 | STATUS: 400 | DURATION: 1ms
+[2026-11-03 14:21:57,586] INFO in base_agent: Agent SystemOrchestrator (orchestrator) is initializing...
+[2026-11-03 14:21:57,593] INFO in agent_registry: Registered Agent Plugin: CryptoFailureAgent (ID: crypto_failure_agent, Priority: Critical)
+[2026-11-03 14:21:57,593] INFO in agent_registry: Agent plugin decision_agent is disabled via config. Skipping.
+[2026-11-03 14:21:57,596] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-11-03 14:21:57,603] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-11-03 14:21:57,607] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-11-03 14:21:57,610] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-11-03 14:21:57,615] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-11-03 14:21:57,619] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-11-03 14:21:57,620] INFO in base_agent: Agent CryptographicFailureAgent (crypto_failure_agent) is initializing...
+[2026-11-03 14:21:57,620] INFO in orchestrator: Worker thread for agent CryptographicFailureAgent started.
+[2026-11-03 14:21:57,621] INFO in base_agent: Agent CryptographicFailureAgent background worker loop started.
+[2026-11-03 14:21:57,623] INFO in base_agent: Agent VulnerabilityDetectionAgent (detection_agent) is initializing...
+[2026-11-03 14:21:57,623] INFO in orchestrator: Worker thread for agent VulnerabilityDetectionAgent started.
+[2026-11-03 14:21:57,624] INFO in detection_agent: [DetectionAgent] VulnerabilityDetectionAgent active and ready.
+[2026-11-03 14:21:57,626] INFO in base_agent: Agent VulnerabilityDetectionAgent background worker loop started.
+[2026-11-03 14:21:57,630] INFO in base_agent: Agent TrafficMonitoringAgent (monitoring_agent) is initializing...
+[2026-11-03 14:21:57,630] INFO in orchestrator: Worker thread for agent TrafficMonitoringAgent started.
+[2026-11-03 14:21:57,630] INFO in base_agent: Agent TrafficMonitoringAgent background worker loop started.
+[2026-11-03 14:21:57,632] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent (payload_generator_agent) is initializing...
+[2026-11-03 14:21:57,633] INFO in orchestrator: Worker thread for agent MaliciousPayloadGeneratorAgent started.
+[2026-11-03 14:21:57,633] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent background worker loop started.
+[2026-11-03 14:21:57,636] INFO in base_agent: Agent IntrusionPreventionAgent (prevention_agent) is initializing...
+[2026-11-03 14:21:57,637] INFO in orchestrator: Worker thread for agent IntrusionPreventionAgent started.
+[2026-11-03 14:21:57,637] INFO in base_agent: Agent IntrusionPreventionAgent background worker loop started.
+[2026-11-03 14:21:57,639] INFO in base_agent: Agent IncidentReportAgent (report_agent) is initializing...
+[2026-11-03 14:21:57,640] INFO in orchestrator: Worker thread for agent IncidentReportAgent started.
+[2026-11-03 14:21:57,641] INFO in base_agent: Agent IncidentReportAgent background worker loop started.
+[2026-11-03 14:21:57,644] INFO in base_agent: Agent CyberThreatIntelAgent (threat_intel_agent) is initializing...
+[2026-11-03 14:21:57,644] INFO in orchestrator: Worker thread for agent CyberThreatIntelAgent started.
+[2026-11-03 14:21:57,645] INFO in base_agent: Agent CyberThreatIntelAgent background worker loop started.
+[2026-11-03 14:21:57,647] INFO in scheduler: Agent Scheduler service started.
+[2026-11-03 14:21:57,648] INFO in orchestrator: Orchestrator health monitoring daemon started.
+[2026-11-03 14:21:57,649] INFO in base_agent: Agent SystemOrchestrator (orchestrator) is initializing...
+[2026-11-03 14:21:57,650] INFO in orchestrator: Orchestrator background thread started.
+[2026-11-03 14:21:57,650] INFO in orchestrator: [Orchestrator] Dispatching request analysis transaction: 4d5d5a6e
+[2026-11-03 14:21:57,652] INFO in base_agent: Shutting down agent CryptographicFailureAgent...
+[2026-11-03 14:21:57,652] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-11-03 14:21:57,652] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-11-03 14:21:57,653] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-11-03 14:21:57,653] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-11-03 14:21:57,653] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-11-03 14:21:57,653] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-11-03 14:21:57,656] INFO in agent_registry: Registered Agent Plugin: CryptoFailureAgent (ID: crypto_failure_agent, Priority: Critical)
+[2026-11-03 14:21:57,657] INFO in agent_registry: Agent plugin decision_agent is disabled via config. Skipping.
+[2026-11-03 14:21:57,659] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-11-03 14:21:57,662] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-11-03 14:21:57,664] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-11-03 14:21:57,666] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-11-03 14:21:57,668] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-11-03 14:21:57,670] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-11-03 14:21:57,672] INFO in base_agent: Agent CryptographicFailureAgent (crypto_failure_agent) is initializing...
+[2026-11-03 14:21:57,672] INFO in orchestrator: Worker thread for agent CryptographicFailureAgent started.
+[2026-11-03 14:21:57,672] INFO in base_agent: Agent CryptographicFailureAgent background worker loop started.
+[2026-11-03 14:21:57,674] INFO in base_agent: Agent VulnerabilityDetectionAgent (detection_agent) is initializing...
+[2026-11-03 14:21:57,674] INFO in orchestrator: Worker thread for agent VulnerabilityDetectionAgent started.
+[2026-11-03 14:21:57,675] INFO in detection_agent: [DetectionAgent] VulnerabilityDetectionAgent active and ready.
+[2026-11-03 14:21:57,675] INFO in base_agent: Agent VulnerabilityDetectionAgent background worker loop started.
+[2026-11-03 14:21:57,678] INFO in base_agent: Agent TrafficMonitoringAgent (monitoring_agent) is initializing...
+[2026-11-03 14:21:57,679] INFO in orchestrator: Worker thread for agent TrafficMonitoringAgent started.
+[2026-11-03 14:21:57,679] INFO in base_agent: Agent TrafficMonitoringAgent background worker loop started.
+[2026-11-03 14:21:57,680] INFO in base_agent: [TrafficMonitoringAgent] Executing task: monitor_request
+[2026-11-03 14:21:57,680] INFO in monitoring_agent: [MonitoringAgent] Intercepted request from 127.0.0.1. Frequency: 1 req/min.
+[2026-11-03 14:21:57,680] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent (payload_generator_agent) is initializing...
+[2026-11-03 14:21:57,681] INFO in orchestrator: Worker thread for agent MaliciousPayloadGeneratorAgent started.
+[2026-11-03 14:21:57,681] INFO in base_agent: Agent MaliciousPayloadGeneratorAgent background worker loop started.
+[2026-11-03 14:21:57,683] INFO in base_agent: [VulnerabilityDetectionAgent] Executing task: detect_threat
+[2026-11-03 14:21:57,697] INFO in base_agent: Agent IntrusionPreventionAgent (prevention_agent) is initializing...
+[2026-11-03 14:21:57,717] INFO in orchestrator: Worker thread for agent IntrusionPreventionAgent started.
+[2026-11-03 14:21:57,725] INFO in base_agent: Agent IntrusionPreventionAgent background worker loop started.
+[2026-11-03 14:21:57,727] INFO in ensemble: Ensemble Engine: Loading model files...
+[2026-11-03 14:21:57,729] INFO in base_agent: Agent IncidentReportAgent (report_agent) is initializing...
+[2026-11-03 14:21:57,730] INFO in orchestrator: Worker thread for agent IncidentReportAgent started.
+[2026-11-03 14:21:57,731] INFO in base_agent: Agent IncidentReportAgent background worker loop started.
+[2026-11-03 14:21:57,736] INFO in base_agent: Agent CyberThreatIntelAgent (threat_intel_agent) is initializing...
+[2026-11-03 14:21:57,736] INFO in base_agent: Agent CyberThreatIntelAgent background worker loop started.
+[2026-11-03 14:21:57,740] INFO in orchestrator: Worker thread for agent CyberThreatIntelAgent started.
+[2026-11-03 14:21:57,754] INFO in orchestrator: Orchestrator health monitoring daemon started.
+[2026-11-03 14:21:57,756] INFO in base_agent: Agent SystemOrchestrator background worker loop started.
+[2026-11-03 14:21:57,862] ERROR in ensemble: Ensemble Engine load failed: No module named 'xgboost'
+[2026-11-03 14:21:57,869] INFO in detection_agent: [DetectionAgent] Classification complete: Type=Safe, Conf=95.0%, Severity=Low
+[2026-11-03 14:21:57,875] INFO in base_agent: [CyberThreatIntelAgent] Executing task: evaluate_campaign
+[2026-11-03 14:21:57,875] INFO in threat_intel_agent: [ThreatIntelAgent] IP 127.0.0.1 reputation score: 0.0 (0 strikes).
+[2026-11-03 14:22:01,666] WARNING in orchestrator: [Orchestrator] Request transaction 4d5d5a6e timed out. Defaulting to ALLOW.
+[2026-11-03 14:22:01,666] INFO in orchestrator: [Orchestrator] Dispatching request analysis transaction: 4c77c3a0
+[2026-11-03 14:22:01,671] INFO in base_agent: [TrafficMonitoringAgent] Executing task: monitor_request
+[2026-11-03 14:22:01,671] INFO in monitoring_agent: [MonitoringAgent] Intercepted request from 127.0.0.1. Frequency: 2 req/min.
+[2026-11-03 14:22:01,676] INFO in base_agent: [VulnerabilityDetectionAgent] Executing task: detect_threat
+[2026-11-03 14:22:01,678] INFO in detection_agent: [DetectionAgent] Classification complete: Type=Injection, Conf=99.99%, Severity=Critical
+[2026-11-03 14:22:01,679] INFO in base_agent: [CyberThreatIntelAgent] Executing task: evaluate_campaign
+[2026-11-03 14:22:01,680] INFO in threat_intel_agent: [ThreatIntelAgent] IP 127.0.0.1 reputation score: 19.0 (1 strikes).
+[2026-11-03 14:22:02,647] INFO in scheduler: [Scheduler] Triggering periodic task: cleanup_logs for prevention_agent
+[2026-11-03 14:22:02,648] INFO in scheduler: [Scheduler] Triggering periodic task: generate_periodic_reports for report_agent
+[2026-11-03 14:22:02,648] INFO in base_agent: [IntrusionPreventionAgent] Executing task: cleanup_logs
+[2026-11-03 14:22:02,649] INFO in scheduler: [Scheduler] Triggering periodic task: update_threat_scores for threat_intel_agent
+[2026-11-03 14:22:02,650] INFO in prevention_agent: [PreventionAgent] Executing scheduled logs rotation audit.
+[2026-11-03 14:22:02,650] INFO in scheduler: [Scheduler] Triggering periodic task: evaluate_model_performance for detection_agent
+[2026-11-03 14:22:02,651] INFO in scheduler: [Scheduler] Triggering periodic task: system_health_audit for monitoring_agent
+[2026-11-03 14:22:02,652] INFO in base_agent: [CyberThreatIntelAgent] Executing task: update_threat_scores
+[2026-11-03 14:22:02,653] INFO in threat_intel_agent: [ThreatIntelAgent] Executing scheduled threat scores decay.
+[2026-11-03 14:22:02,653] INFO in base_agent: [TrafficMonitoringAgent] Executing task: system_health_audit
+[2026-11-03 14:22:02,654] INFO in monitoring_agent: [MonitoringAgent] Executing scheduled system health audit.
+[2026-11-03 14:22:02,654] INFO in base_agent: [VulnerabilityDetectionAgent] Executing task: evaluate_model_performance
+[2026-11-03 14:22:02,654] INFO in base_agent: [IncidentReportAgent] Executing task: generate_periodic_reports
+[2026-11-03 14:22:02,655] INFO in detection_agent: [DetectionAgent] Running scheduled model performance verification.
+[2026-11-03 14:22:02,656] INFO in report_agent: [ReportAgent] Generating periodic CSV/PDF reports.
+[2026-11-03 14:22:05,682] WARNING in orchestrator: [Orchestrator] Request transaction 4c77c3a0 timed out. Defaulting to ALLOW.
+[2026-11-03 14:22:05,686] INFO in base_agent: Shutting down agent CryptographicFailureAgent...
+[2026-11-03 14:22:05,686] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-11-03 14:22:05,686] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-11-03 14:22:05,686] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-11-03 14:22:05,686] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-11-03 14:22:05,686] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-11-03 14:22:05,687] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-11-03 14:22:05,688] INFO in agent_registry: Registered Agent Plugin: CryptoFailureAgent (ID: crypto_failure_agent, Priority: Critical)
+[2026-11-03 14:22:05,689] INFO in agent_registry: Agent plugin decision_agent is disabled via config. Skipping.
+[2026-11-03 14:22:05,690] INFO in agent_registry: Registered Agent Plugin: DetectionAgent (ID: detection_agent, Priority: Critical)
+[2026-11-03 14:22:05,692] INFO in agent_registry: Registered Agent Plugin: MonitoringAgent (ID: monitoring_agent, Priority: High)
+[2026-11-03 14:22:05,693] INFO in agent_registry: Registered Agent Plugin: PayloadGeneratorAgent (ID: payload_generator_agent, Priority: Low)
+[2026-11-03 14:22:05,694] INFO in agent_registry: Registered Agent Plugin: PreventionAgent (ID: prevention_agent, Priority: Critical)
+[2026-11-03 14:22:05,696] INFO in agent_registry: Registered Agent Plugin: ReportAgent (ID: report_agent, Priority: Low)
+[2026-11-03 14:22:05,697] INFO in agent_registry: Registered Agent Plugin: ThreatIntelAgent (ID: threat_intel_agent, Priority: Medium)
+[2026-11-03 14:22:05,698] INFO in scheduler: Agent Scheduler service stopped.
+[2026-11-03 14:22:05,698] INFO in base_agent: Shutting down agent CryptographicFailureAgent...
+[2026-11-03 14:22:05,698] INFO in base_agent: Shutting down agent VulnerabilityDetectionAgent...
+[2026-11-03 14:22:05,698] INFO in base_agent: Shutting down agent TrafficMonitoringAgent...
+[2026-11-03 14:22:05,698] INFO in base_agent: Shutting down agent MaliciousPayloadGeneratorAgent...
+[2026-11-03 14:22:05,699] INFO in base_agent: Shutting down agent IntrusionPreventionAgent...
+[2026-11-03 14:22:05,699] INFO in base_agent: Shutting down agent IncidentReportAgent...
+[2026-11-03 14:22:05,699] INFO in base_agent: Shutting down agent CyberThreatIntelAgent...
+[2026-11-03 14:22:05,699] INFO in base_agent: Shutting down agent SystemOrchestrator...
+[2026-11-03 14:22:05,699] INFO in orchestrator: System Orchestrator completely shutdown.
+[2026-11-03 14:23:52,280] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:23:57,037] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-03 14:24:10,615] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:24:14,470] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-11-03 14:24:14,471] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-11-03 14:24:14,521] INFO in logger: METHOD: POST | URL: /api/agents/cryptographic-failures/scan | IP: 127.0.0.1 | STATUS: 200 | DURATION: 1ms
+[2026-11-03 14:24:14,524] INFO in logger: METHOD: POST | URL: /api/agents/cryptographic-failures/scan | IP: 127.0.0.1 | STATUS: 401 | DURATION: 0ms
+[2026-11-03 14:24:14,527] INFO in logger: METHOD: POST | URL: /api/agents/cryptographic-failures/scan | IP: 127.0.0.1 | STATUS: 400 | DURATION: 1ms
+[2026-11-03 14:24:14,528] INFO in scheduler: Agent Scheduler service stopped.
+[2026-11-03 14:24:14,529] INFO in base_agent: Shutting down agent SystemOrchestrator...
+[2026-11-03 14:24:14,529] INFO in orchestrator: System Orchestrator completely shutdown.
+[2026-11-03 14:25:19,895] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:25:57,818] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-03 14:35:12,390] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:35:18,997] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-11-03 14:35:18,998] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-11-03 14:35:21,034] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-03 14:35:25,892] INFO in __init__: Executing database schema upgrades via Flask-Migrate...

@@ -70,7 +70,7 @@ class TestAgenticAI(unittest.TestCase):
         self.assertEqual(msg2.payload["val"], 1)
 
     def test_registry_discovery(self):
-        """Asserts that all 7 agent plugins are loaded by the registry."""
+        """Asserts that all enabled agent plugins are loaded by the registry."""
         registry = AgentRegistry()
         registry.discover_and_register_plugins()
         agents = registry.list_agents()
@@ -78,6 +78,7 @@ class TestAgenticAI(unittest.TestCase):
         agent_types = [a.agent_type for a in agents]
         self.assertIn("monitoring_agent", agent_types)
         self.assertIn("detection_agent", agent_types)
+        self.assertIn("cryptographic_failure_agent", agent_types)
         self.assertIn("threat_intel_agent", agent_types)
         self.assertIn("decision_agent", agent_types)
         self.assertIn("prevention_agent", agent_types)
@@ -133,3 +134,37 @@ class TestAgenticAI(unittest.TestCase):
         self.assertTrue(tasks_data["success"])
         self.assertIn("queue_size", tasks_data["data"])
         self.assertIn("recent_messages", tasks_data["data"])
+
+    def test_cryptographic_failure_scan_api(self):
+        response = self.client.post(
+            '/api/agents/cryptographic-failures/scan',
+            headers=self.headers,
+            json={
+                "files": [
+                    {
+                        "path": "app/settings.py",
+                        "content": "JWT_SECRET_KEY = 'hardcoded-signing-secret-value'\n",
+                    }
+                ]
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        result = response.get_json()["data"]
+        self.assertEqual(result["owasp_id"], "A02:2021")
+        self.assertEqual(result["finding_count"], 1)
+        self.assertEqual(result["findings"][0]["rule_id"], "CRYPTO-005")
+        self.assertNotIn("hardcoded-signing-secret-value", response.get_data(as_text=True))
+
+    def test_cryptographic_failure_scan_requires_authentication_and_relative_paths(self):
+        unauthenticated = self.client.post(
+            '/api/agents/cryptographic-failures/scan',
+            json={"files": [{"path": "app.py", "content": ""}]},
+        )
+        self.assertEqual(unauthenticated.status_code, 401)
+
+        invalid_path = self.client.post(
+            '/api/agents/cryptographic-failures/scan',
+            headers=self.headers,
+            json={"files": [{"path": "../outside.py", "content": ""}]},
+        )
+        self.assertEqual(invalid_path.status_code, 400)

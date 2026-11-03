@@ -2,6 +2,7 @@
   "enabled_agents": [
     "monitoring_agent",
     "detection_agent",
+    "crypto_failure_agent",
     "prevention_agent",
     "threat_intel_agent",
     "report_agent",
@@ -17,6 +18,7 @@
   "priorities": {
     "monitoring_agent": "High",
     "detection_agent": "Critical",
+    "crypto_failure_agent": "Critical",
     "decision_agent": "Critical",
     "prevention_agent": "Critical",
     "threat_intel_agent": "Medium",

@@ -23,6 +23,7 @@ Backend/agents/
 ├── plugins/                   # Folder containing agent plugins
 │   ├── monitoring_agent.py
 │   ├── detection_agent.py
+│   ├── crypto_failure_agent.py
 │   ├── threat_intel_agent.py
 │   ├── decision_agent.py
 │   ├── prevention_agent.py
@@ -74,7 +75,15 @@ Adding a new agent is purely file-based:
 
 ---
 
-## 6. Threat Containment Workflow
+## 6. Cryptographic Failure Scanning
+
+The enabled `CryptoFailureAgent` is available on the Agentic Operations page. Choose a project folder to scan supported Python, JavaScript/TypeScript, Java, Go, Ruby, PHP, C#, shell, infrastructure, and configuration files. Virtual environments, dependency folders, and build outputs are excluded. The scan endpoint requires JWT authentication and accepts at most 200 files and 4 MB of source content.
+
+`POST /api/agents/cryptographic-failures/scan` accepts `{ "files": [{ "path": "src/auth.py", "content": "..." }] }`. Results include file and line, rule ID, CWE, severity, and remediation guidance; matched source lines and secret values are never returned. Checks include weak hashes/ciphers, disabled TLS and signature verification, non-cryptographic randomness used for security material, hard-coded keys, deprecated TLS protocols, and undersized RSA/DH keys. These are static heuristics: findings require review, and a clean scan is not proof that an application is secure.
+
+---
+
+## 7. Threat Containment Workflow
 
 ```text
 Incoming Request 

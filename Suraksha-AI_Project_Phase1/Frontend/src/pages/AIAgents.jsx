@@ -8,7 +8,9 @@ import {
   FiCheckCircle, 
   FiAlertCircle, 
   FiDatabase,
-  FiTerminal
+  FiTerminal,
+  FiShield,
+  FiUpload
 } from 'react-icons/fi';
 
 import Card from '../components/Card';
@@ -21,7 +23,8 @@ import {
   fetchAgentTasks, 
   restartAgent, 
   enableAgent, 
-  disableAgent 
+  disableAgent,
+  scanCryptographicFailures
 } from '../services/agentsService';
 
 const AIAgents = () => {
@@ -30,6 +33,8 @@ const AIAgents = () => {
   const [tasks, setTasks] = useState({ queue_size: 0, total_processed: 0, recent_messages: [] });
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(null); // stores agent_id when loading actions
+  const [cryptoScanLoading, setCryptoScanLoading] = useState(false);
+  const [cryptoScanReport, setCryptoScanReport] = useState(null);
 
   const loadData = async (silent = false) => {
     if (!silent) setLoading(true);
@@ -90,6 +95,65 @@ const AIAgents = () => {
       showNotification('Configuration update connection error.', 'error');
     } finally {
       setActionLoading(null);
+    }
+  };
+
+  const handleCryptoScan = async (event) => {
+    const selectedFiles = Array.from(event.currentTarget.files || []);
+    event.currentTarget.value = '';
+    if (!selectedFiles.length) return;
+
+    const ignoredDirectories = new Set([
+      '.git', '.venv', '__pycache__', 'build', 'dist', 'node_modules',
+      'site-packages', 'venv'
+    ]);
+    const allowedExtensions = new Set([
+      '.cfg', '.conf', '.cs', '.env', '.go', '.ini', '.java', '.js', '.json',
+      '.jsx', '.php', '.properties', '.py', '.rb', '.sh', '.tf', '.toml',
+      '.ts', '.tsx', '.xml', '.yaml', '.yml'
+    ]);
+    const filesToScan = selectedFiles.filter((file) => {
+      const path = file.webkitRelativePath || file.name;
+      const parts = path.replaceAll('\\', '/').split('/');
+      const filename = parts[parts.length - 1].toLowerCase();
+      const dotIndex = filename.lastIndexOf('.');
+      const extension = dotIndex >= 0 ? filename.slice(dotIndex) : '';
+      return !parts.some((part) => ignoredDirectories.has(part.toLowerCase()))
+        && (filename === '.env' || filename.startsWith('.env.') || allowedExtensions.has(extension));
+    });
+
+    if (!filesToScan.length) {
+      showNotification('No supported source or configuration files were selected.', 'error');
+      return;
+    }
+    if (filesToScan.length > 200 || filesToScan.reduce((total, file) => total + file.size, 0) > 4_000_000) {
+      showNotification('Select no more than 200 files and 4 MB of source content per scan.', 'error');
+      return;
+    }
+
+    setCryptoScanLoading(true);
+    try {
+      const files = await Promise.all(filesToScan.map(async (file) => ({
+        path: file.webkitRelativePath || file.name,
+        content: await file.text()
+      })));
+      const response = await scanCryptographicFailures(files);
+      if (!response.success) {
+        showNotification(response.message || 'Cryptographic failure scan failed.', 'error');
+        return;
+      }
+      setCryptoScanReport(response.data);
+      showNotification(
+        response.data.finding_count
+          ? `Scan complete: ${response.data.finding_count} cryptographic issue(s) found.`
+          : 'Scan complete: no supported cryptographic failure patterns found.',
+        response.data.finding_count ? 'error' : 'success'
+      );
+    } catch (err) {
+      console.error('Cryptographic failure scan failed:', err);
+      showNotification(err.response?.data?.message || 'Unable to scan the selected files.', 'error');
+    } finally {
+      setCryptoScanLoading(false);
     }
   };
 
@@ -189,6 +253,79 @@ const AIAgents = () => {
           </div>
         </Card>
       </div>
+
+      <Card
+        title="Cryptographic Failure Scanner"
+        subtitle="Scan source and configuration files for common OWASP A02:2021 weaknesses."
+        className="border border-border-custom/50"
+        action={
+          <label className={`inline-flex cursor-pointer items-center gap-2 rounded-lg border border-border-custom px-3 py-2 text-xs font-semibold text-text-custom hover:border-accent-custom ${cryptoScanLoading ? 'pointer-events-none opacity-60' : ''}`}>
+            {cryptoScanLoading
+              ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-indigo-400 border-t-transparent" />
+              : <FiUpload className="text-accent-custom" />}
+            <span>{cryptoScanLoading ? 'Scanning...' : 'Choose project folder'}</span>
+            <input
+              type="file"
+              className="hidden"
+              multiple
+              webkitdirectory=""
+              directory=""
+              onChange={handleCryptoScan}
+              disabled={cryptoScanLoading}
+              aria-label="Choose a project folder to scan for cryptographic failures"
+            />
+          </label>
+        }
+      >
+        <div className="flex items-start gap-3">
+          <FiShield className="mt-0.5 h-5 w-5 shrink-0 text-indigo-400" />
+          <p className="text-[11px] leading-relaxed text-text-muted">
+            Select a project folder to detect weak hashes and ciphers, disabled TLS verification,
+            insecure randomness used for secrets, deprecated TLS protocols, and hard-coded keys.
+            Dependencies and build folders are excluded. Source contents are sent to the authenticated
+            backend for analysis; files are not saved by the scanner.
+          </p>
+        </div>
+        {cryptoScanReport && (
+          <div className="mt-4 space-y-3 border-t border-border-custom/40 pt-3">
+            <div className="flex flex-wrap items-center gap-3 text-[11px]">
+              <span className="font-semibold text-text-custom">
+                {cryptoScanReport.scanned_files} files scanned
+              </span>
+              <span className={cryptoScanReport.finding_count ? 'text-amber-400' : 'text-emerald-400'}>
+                {cryptoScanReport.finding_count} finding(s)
+              </span>
+              {Object.entries(cryptoScanReport.severity_counts).map(([severity, count]) => (
+                count > 0 && (
+                  <span key={severity} className={severity === 'Critical' || severity === 'High' ? 'text-red-400' : 'text-amber-400'}>
+                    {severity}: {count}
+                  </span>
+                )
+              ))}
+            </div>
+            {cryptoScanReport.findings.length > 0 ? (
+              <div className="max-h-96 space-y-2 overflow-auto">
+                {cryptoScanReport.findings.map((finding, index) => (
+                  <div key={`${finding.rule_id}-${finding.file}-${finding.line}-${index}`} className="rounded-lg border border-border-custom/50 p-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="text-xs font-semibold text-text-custom">{finding.title}</span>
+                      <span className={finding.severity === 'High' || finding.severity === 'Critical' ? 'text-[10px] font-bold uppercase text-red-400' : 'text-[10px] font-bold uppercase text-amber-400'}>
+                        {finding.severity} · {finding.cwe}
+                      </span>
+                    </div>
+                    <p className="mt-1 break-all font-mono-custom text-[10px] text-indigo-300">
+                      {finding.file}:{finding.line} · {finding.rule_id}
+                    </p>
+                    <p className="mt-1 text-[10px] text-text-muted">{finding.recommendation}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-[11px] text-emerald-400">No supported cryptographic failure patterns were detected.</p>
+            )}
+          </div>
+        )}
+      </Card>
 
       {/* Agents Worker Grid */}
       <div>

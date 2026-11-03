@@ -29,6 +29,7 @@ if backend_dir not in sys.path:
 
 from ai.utils.multi_threat_engine import MultiThreatEngine
 from app.services.detection_service import DetectionService
+from app.services.crypto_failure_scanner import CryptoFailureScanner
 
 def load_dataset():
     dataset_path = os.path.join(backend_dir, 'ai', 'datasets', 'owasp_top10_2021.json')
@@ -140,7 +141,46 @@ def run_tests():
         det = DetectionService.analyze_request(**kw)
         print(f"  {p[:45]:<45} -> Blocked: {str(det['blocked']):<5} | OWASP: {det.get('owasp_id', '-'):<8} | Category: {det['prediction']:<30} | Score: {det['risk_score']:4.1f}")
 
-    return passed == total
+    print("\n[+] Testing Cryptographic Failure Agent (OWASP A02:2021):")
+    crypto_samples = [
+        {
+            "path": "auth.py",
+            "content": "digest = hashlib.sha1(password.encode()).hexdigest()\n",
+            "expected_rule": "CRYPTO-001",
+        },
+        {
+            "path": "settings.py",
+            "content": "JWT_SECRET_KEY = 'hardcoded-signing-secret-value'\n",
+            "expected_rule": "CRYPTO-005",
+        },
+        {
+            "path": "client.py",
+            "content": "requests.get(url, verify=False)\n",
+            "expected_rule": "CRYPTO-003",
+        },
+        {
+            "path": "safe.py",
+            "content": "digest = hashlib.sha256(data).hexdigest()\n",
+            "expected_rule": None,
+        },
+    ]
+    crypto_passed = 0
+    for sample in crypto_samples:
+        result = CryptoFailureScanner.scan_files([sample])
+        detected_rules = {finding["rule_id"] for finding in result["findings"]}
+        success = (
+            sample["expected_rule"] in detected_rules
+            if sample["expected_rule"]
+            else not detected_rules
+        )
+        crypto_passed += int(success)
+        print(
+            f"  [{'PASS' if success else 'FAIL'}] {sample['path']}: "
+            f"{', '.join(sorted(detected_rules)) or 'no findings'}"
+        )
+
+    print(f"  Crypto agent result: {crypto_passed}/{len(crypto_samples)} passed")
+    return passed == total and crypto_passed == len(crypto_samples)
 
 if __name__ == "__main__":
     success = run_tests()

@@ -2,12 +2,68 @@ import logging
 from flask import Blueprint, request
 from flask_jwt_extended import jwt_required
 from app.utils.helpers import json_response
+from agents.plugins.crypto_failure_agent import CryptoFailureAgent
 from agents.orchestrator.orchestrator import OrchestratorAgent
 from agents.registry.agent_registry import AgentRegistry
 from agents.communication.message_bus import MessageBus
 
 logger = logging.getLogger('app')
 agents_bp = Blueprint('agents', __name__)
+
+@agents_bp.route('/agents/cryptographic-failures/scan', methods=['POST'])
+@jwt_required()
+def scan_cryptographic_failures():
+    if request.content_length and request.content_length > 5_000_000:
+        return json_response(
+            success=False,
+            message="Scan request exceeds the 5 MB limit.",
+            status_code=413
+        )
+
+    body = request.get_json(silent=True)
+    files = body.get("files") if isinstance(body, dict) else None
+    if not isinstance(files, list) or not files:
+        return json_response(
+            success=False,
+            message="Provide a non-empty files array.",
+            status_code=400
+        )
+    if len(files) > 200:
+        return json_response(
+            success=False,
+            message="A scan can contain at most 200 files.",
+            status_code=413
+        )
+
+    total_bytes = 0
+    for source_file in files:
+        if not isinstance(source_file, dict):
+            return json_response(success=False, message="Each file must include path and content.", status_code=400)
+        path = source_file.get("path")
+        content = source_file.get("content")
+        if not isinstance(path, str) or not path.strip() or not isinstance(content, str):
+            return json_response(success=False, message="Each file must include a valid path and text content.", status_code=400)
+        normalized_path = path.replace("\\", "/")
+        if (
+            normalized_path.startswith("/")
+            or (len(normalized_path) >= 3 and normalized_path[1:3] == ":/")
+            or len(normalized_path) > 500
+            or any(part == ".." for part in normalized_path.split("/"))
+        ):
+            return json_response(success=False, message="File paths must be relative and cannot traverse parent directories.", status_code=400)
+        try:
+            total_bytes += len(content.encode("utf-8"))
+        except UnicodeEncodeError:
+            return json_response(success=False, message="File content must be valid UTF-8 text.", status_code=400)
+        if total_bytes > 4_000_000:
+            return json_response(success=False, message="Scanned file content exceeds the 4 MB limit.", status_code=413)
+
+    return json_response(
+        success=True,
+        message="Cryptographic failure scan completed.",
+        data=CryptoFailureAgent.scan_files(files),
+        status_code=200
+    )
 
 @agents_bp.route('/agents', methods=['GET'])
 @agents_bp.route('/agents/status', methods=['GET'])
