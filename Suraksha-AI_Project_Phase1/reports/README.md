@@ -34,3 +34,14 @@ This directory contains the official technical and operational documentation for
   * Copy-paste cheatsheet with 10 realistic test scenarios.
   * Quick 1-command automated terminal test runner (`python test_owasp_top10_suite.py`).
 
+---
+
+### 4. [Multi-Threat Vector Classification & Testing Report](./multi_threat_detection_and_resolution_report.md)
+* **Audience**: Core Developers, SecOps Engineers, Security Analysts.
+* **Contents**:
+  * Root cause resolution for the dashboard threat classification issue (all threats previously labeled "SQL Injection").
+  * Multi-threat detection architecture across all 11 OWASP vectors (`MultiThreatEngine`, ML Random Forest, AST rule engines).
+  * Backend model and frontend code enhancements (`attack_log.py`, `Dashboard.jsx`, `AttackLogs.jsx`, `dashboardService.js`).
+  * Automated testing commands (`test_live_attacks.py`, `test_owasp_top10_suite.py`) and individual cURL/PowerShell attack recipes.
+
+

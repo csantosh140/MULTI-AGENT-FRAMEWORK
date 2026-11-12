@@ -148,6 +148,15 @@ const AttackLogs = () => {
       )
     },
     {
+      header: 'Threat Pattern',
+      key: 'prediction',
+      render: (row, val) => (
+        <span className="font-semibold text-xs text-text-custom whitespace-nowrap">
+          {val || row.pattern || row.attack_pattern || row.inferred_type || 'SQL Injection'}
+        </span>
+      )
+    },
+    {
       header: 'Threat Level',
       key: 'threatLevel',
       render: (_, val) => <Badge variant={val}>{val}</Badge>
@@ -176,7 +185,7 @@ const AttackLogs = () => {
         <div>
           <h2 className="text-[22px] font-bold tracking-tight text-text-custom leading-tight">Attack Logs &amp; Audit Trail</h2>
           <p className="text-[12px] text-text-muted mt-0.5">
-            Historical index of intercepted SQL injection patterns, signatures, and classifications.
+            Historical audit trail of intercepted multi-threat attack patterns, OWASP vectors, and AI classifications.
           </p>
         </div>
 
@@ -326,7 +335,7 @@ const AttackLogs = () => {
       >
         {selectedLog && (
           <div className="space-y-5">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4.5 bg-bg-custom/50 border border-border-custom rounded-xl">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-4.5 bg-bg-custom/50 border border-border-custom rounded-xl">
               <div>
                 <p className="text-[10px] text-text-muted uppercase font-semibold">Incident ID</p>
                 <p className="text-xs font-semibold text-text-custom font-mono mt-1">{selectedLog.id}</p>
@@ -338,6 +347,10 @@ const AttackLogs = () => {
               <div>
                 <p className="text-[10px] text-text-muted uppercase font-semibold">Source Host</p>
                 <p className="text-xs font-semibold text-text-custom font-mono mt-1">{selectedLog.ip}</p>
+              </div>
+              <div>
+                <p className="text-[10px] text-text-muted uppercase font-semibold">Threat Vector</p>
+                <p className="text-xs font-bold text-red-500 mt-1">{selectedLog.prediction || selectedLog.pattern || 'Web Attack Vector'}</p>
               </div>
               <div>
                 <p className="text-[10px] text-text-muted uppercase font-semibold">ML Confidence</p>

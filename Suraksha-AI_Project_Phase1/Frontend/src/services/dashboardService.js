@@ -38,19 +38,36 @@ export const dashboardService = {
       };
     });
 
-    // Map attackTypes percentages dynamically from blockedRequests count
-    const attackTypes = [
-      { type: "Union Based", count: Math.round(blockedReq * 0.41) },
-      { type: "Error Based", count: Math.round(blockedReq * 0.26) },
-      { type: "Blind SQLi", count: Math.round(blockedReq * 0.18) },
-      { type: "Boolean Based", count: Math.round(blockedReq * 0.11) },
-      { type: "Time Based", count: Math.round(blockedReq * 0.04) }
-    ];
+    // Dynamic aggregation of threat vectors from actual logs
+    const categoryCounts = {};
+    if (Array.isArray(logsData) && logsData.length > 0) {
+      logsData.forEach(item => {
+        const cat = item.prediction || item.pattern || item.attack_pattern || item.inferred_type || 'SQL Injection';
+        if (cat && cat !== 'Safe') {
+          categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+        }
+      });
+    }
 
-    // Safe vs SQLi division
+    let attackTypes = Object.entries(categoryCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 7)
+      .map(([type, count]) => ({ type, count }));
+
+    if (attackTypes.length === 0) {
+      attackTypes = [
+        { type: "SQL Injection", count: Math.round(blockedReq * 0.35) },
+        { type: "Cross-Site Scripting (XSS)", count: Math.round(blockedReq * 0.25) },
+        { type: "Command Injection", count: Math.round(blockedReq * 0.15) },
+        { type: "Broken Access Control", count: Math.round(blockedReq * 0.15) },
+        { type: "SSRF / Traversal", count: Math.round(blockedReq * 0.10) }
+      ];
+    }
+
+    // Safe vs Threats division
     const sqliVsSafe = [
       { name: "Safe Requests", value: Math.max(0, totalReq - blockedReq) },
-      { name: "SQLi Attacks", value: blockedReq }
+      { name: "Threats Blocked", value: blockedReq }
     ];
 
     const threatTrend = (analyticsData.weeklyTrend && analyticsData.weeklyTrend.length > 0)

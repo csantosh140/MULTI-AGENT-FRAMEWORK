@@ -70,7 +70,7 @@ const Dashboard = () => {
         ip: item.ip || item.client_ip || '127.0.0.1',
         endpoint: item.endpoint || item.url || '/api/target/login',
         payload: item.payload || "N/A",
-        pattern: item.inferred_type || item.prediction || 'SQL Injection',
+        pattern: item.prediction || item.pattern || item.attack_pattern || item.inferred_type || 'Web Attack Vector',
         threatLevel: (item.threatLevel || item.threat_level || 'HIGH').toUpperCase(),
         confidence: item.confidence ? roundVal(item.confidence) : 98.5,
         action: item.status === 'Blocked' || item.blocked ? 'Blocked' : 'Allowed'
@@ -110,7 +110,7 @@ const Dashboard = () => {
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-[22px] font-bold tracking-tight text-text-custom leading-tight">Dashboard Overview</h2>
-          <p className="text-[12px] text-text-muted mt-0.5">Real-time SQL Injection Detection &amp; Target Monitoring</p>
+          <p className="text-[12px] text-text-muted mt-0.5">Real-Time Autonomous Multi-Threat Detection &amp; WAF Defense Grid</p>
         </div>
         
         {/* Header Controls */}
@@ -454,7 +454,7 @@ const Dashboard = () => {
                   <th className="py-2.5 px-3 font-semibold">Timestamp</th>
                   <th className="py-2.5 px-3 font-semibold">Source IP</th>
                   <th className="py-2.5 px-3 font-semibold">Target Endpoint</th>
-                  <th className="py-2.5 px-3 font-semibold">Injected SQL Payload Snippet</th>
+                  <th className="py-2.5 px-3 font-semibold">Injected Threat Payload</th>
                   <th className="py-2.5 px-3 font-semibold">Attack Pattern</th>
                   <th className="py-2.5 px-3 font-semibold">Threat Level</th>
                   <th className="py-2.5 px-3 font-semibold">Risk Confidence</th>

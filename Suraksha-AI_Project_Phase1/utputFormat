@@ -1,0 +1,15 @@
+HTTP/1.1 400 BAD REQUEST
+Server: Werkzeug/3.0.1 Python/3.11.9
+Date: Thu, 12 Nov 2026 13:01:13 GMT
+Content-Type: application/json
+Content-Length: 227
+Access-Control-Allow-Origin: *
+Connection: close
+
+{
+  "data": {},
+  "message": "Failed to decode JSON object: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+  "status_code": 400,
+  "success": false,
+  "timestamp": "2026-11-12T13:01:13.808879Z"
+}
