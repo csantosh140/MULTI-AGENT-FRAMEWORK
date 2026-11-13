@@ -176,6 +176,9 @@ const ThreatAnalytics = () => {
     if (p.includes('design') || p.includes('business logic')) return 'bg-yellow-500/10 text-yellow-600 border border-yellow-500/20';
     if (p.includes('misconfig') || p.includes('hardening')) return 'bg-orange-500/10 text-orange-600 border border-orange-500/20';
     if (p.includes('outdated') || p.includes('vulnerable') || p.includes('cve')) return 'bg-rose-500/10 text-rose-600 border border-rose-500/20';
+    if (p.includes('auth') || p.includes('identification')) return 'bg-cyan-500/10 text-cyan-600 border border-cyan-500/20';
+    if (p.includes('integrity') || p.includes('software')) return 'bg-fuchsia-500/10 text-fuchsia-600 border border-fuchsia-500/20';
+    if (p.includes('logging') || p.includes('monitoring')) return 'bg-slate-500/10 text-slate-600 border border-slate-500/20';
     if (p.includes('ssrf') || p.includes('forgery')) return 'bg-amber-500/10 text-amber-600 border border-amber-500/20';
     if (p.includes('traversal')) return 'bg-teal-500/10 text-teal-600 border border-teal-500/20';
     if (p.includes('redirect')) return 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20';

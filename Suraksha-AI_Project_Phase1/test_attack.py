@@ -174,6 +174,60 @@ VECTORS = {
         "payload": "${struts.valueStack}",
         "client_ip": "198.51.100.65",
         "desc": "Apache Struts OGNL remote execution probe (CVE-2017-5638)"
+    },
+    "auth": {
+        "name": "Identification & Authentication Failures - Credential Stuffing (A07:2021)",
+        "source_app": "Production API",
+        "url": "/api/auth/login",
+        "method": "POST",
+        "payload": "username=admin&password=admin:123456&mfa_bypass=true",
+        "client_ip": "198.51.100.66",
+        "desc": "Credential stuffing with common leaked password and MFA bypass attempt"
+    },
+    "auth-mfa": {
+        "name": "Identification & Authentication Failures - MFA Bypass (A07:2021)",
+        "source_app": "Production API",
+        "url": "/api/auth/verify-2fa",
+        "method": "POST",
+        "payload": "mfa_bypass=true&skip_2fa=1",
+        "client_ip": "198.51.100.67",
+        "desc": "Attempt to bypass two-factor authentication via query/body parameter override"
+    },
+    "integrity": {
+        "name": "Software & Data Integrity Failures - JWT alg:none (A08:2021)",
+        "source_app": "Production API",
+        "url": "/api/v1/secure/token",
+        "method": "POST",
+        "payload": '{"alg":"none","typ":"JWT"}.eyJ1c2VyIjoiYWRtaW4ifQ.',
+        "client_ip": "198.51.100.68",
+        "desc": "Unsigned JWT token forging attempt with alg:none header"
+    },
+    "integrity-deserial": {
+        "name": "Software & Data Integrity Failures - Insecure Deserialization (A08:2021)",
+        "source_app": "Production API",
+        "url": "/api/session/state",
+        "method": "POST",
+        "payload": "rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUr9Hgjbwh5AkAAEkFkbWluUGF5bG9hZA==",
+        "client_ip": "198.51.100.69",
+        "desc": "Base64 Java serialized object injection (Insecure Object Deserialization)"
+    },
+    "logging": {
+        "name": "Security Logging & Monitoring Failures - Log Tampering (A09:2021)",
+        "source_app": "Production API",
+        "url": "/api/admin/audit-logs",
+        "method": "POST",
+        "payload": "DELETE FROM audit_logs WHERE timestamp < NOW()",
+        "client_ip": "198.51.100.70",
+        "desc": "Malicious attempt to delete and tamper with security audit records"
+    },
+    "logging-scanner": {
+        "name": "Security Logging & Monitoring Failures - Scanner Signature (A09:2021)",
+        "source_app": "Production API",
+        "url": "/api/products/query",
+        "method": "GET",
+        "payload": "User-Agent: sqlmap/1.6#stable",
+        "client_ip": "198.51.100.71",
+        "desc": "Automated penetration testing scanner probe signature (sqlmap)"
     }
 }
 
@@ -250,7 +304,18 @@ if __name__ == "__main__":
         "outdated": "cve",
         "vulnerable": "cve",
         "log4j": "cve",
-        "log4shell": "cve"
+        "log4shell": "cve",
+        "identification": "auth",
+        "authentication": "auth",
+        "mfa": "auth-mfa",
+        "software-integrity": "integrity",
+        "data-integrity": "integrity",
+        "jwt": "integrity",
+        "deserialization": "integrity-deserial",
+        "logging-monitoring": "logging",
+        "monitoring": "logging",
+        "log": "logging",
+        "audit": "logging"
     }
     target_key = aliases.get(arg, arg)
 

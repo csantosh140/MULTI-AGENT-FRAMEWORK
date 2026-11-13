@@ -776,3 +776,8 @@
 [2026-11-12 22:31:02,899] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
 [2026-11-12 22:31:03,776] INFO in __init__: Application logging pipeline initialized successfully.
 [2026-11-12 22:31:06,758] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
+[2026-11-13 12:16:24,124] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-13 12:16:31,194] INFO in __init__: Reloader parent process started. Skipping DB/ML/Agent subsystem initialization.
+[2026-11-13 12:16:31,195] INFO in __init__: Suraksha-AI Flask application started in DEBUG mode.
+[2026-11-13 12:16:33,171] INFO in __init__: Application logging pipeline initialized successfully.
+[2026-11-13 12:16:37,075] INFO in __init__: Executing database schema upgrades via Flask-Migrate...
