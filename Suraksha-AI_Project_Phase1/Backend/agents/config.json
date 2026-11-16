@@ -6,6 +6,8 @@
     "threat_intel_agent",
     "report_agent",
     "payload_generator_agent",
+    "anomaly_detection_agent",
+    "remediation_agent",
     "aa9f4820",
     "b6076242",
     "0c24588c",
@@ -21,7 +23,9 @@
     "prevention_agent": "Critical",
     "threat_intel_agent": "Medium",
     "report_agent": "Low",
-    "payload_generator_agent": "Low"
+    "payload_generator_agent": "Low",
+    "anomaly_detection_agent": "High",
+    "remediation_agent": "Critical"
   },
   "retry_count": 3,
   "timeout": 5.0,

@@ -1,3 +1,4 @@
+import json
 from app.extensions import db
 
 class Settings(db.Model):
@@ -17,6 +18,25 @@ class Settings(db.Model):
     active_model = db.Column(db.String(50), default='lstm')
     smtp_server = db.Column(db.String(255), default='smtp.suraksha.ai')
 
+    # New field for dynamic remediation rules
+    dynamic_rules = db.Column(db.Text, default='[]') # Stored as JSON string
+
+    def __init__(self, **kwargs):
+        super(Settings, self).__init__(**kwargs)
+        if 'dynamic_rules' not in kwargs:
+            self.dynamic_rules = json.dumps([])
+
+    @property
+    def parsed_dynamic_rules(self):
+        try:
+            return json.loads(self.dynamic_rules) if self.dynamic_rules else []
+        except Exception:
+            return []
+
+    @parsed_dynamic_rules.setter
+    def parsed_dynamic_rules(self, value):
+        self.dynamic_rules = json.dumps(value)
+
     def to_dict(self):
         return {
             "emailAlerts": self.email_alerts,
@@ -28,5 +48,6 @@ class Settings(db.Model):
             "theme": self.theme,
             "notificationEnabled": self.notification_enabled,
             "dashboardRefresh": self.dashboard_refresh,
-            "apiTimeout": self.api_timeout
+            "apiTimeout": self.api_timeout,
+            "dynamicRules": self.parsed_dynamic_rules
         }

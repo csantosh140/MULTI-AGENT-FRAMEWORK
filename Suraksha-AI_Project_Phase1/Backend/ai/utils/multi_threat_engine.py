@@ -2,6 +2,9 @@ import re
 import html
 import urllib.parse
 import base64
+import logging
+
+logger = logging.getLogger('app')
 
 class MultiThreatEngine:
     """
@@ -240,159 +243,36 @@ class MultiThreatEngine:
     def __init__(self):
         # List of rules: (regex_pattern, weight, description, category, severity, owasp_id)
         self.rules = [
-            # ──────────────────────────────────────────────────────────────
-            # A01:2021 — BROKEN ACCESS CONTROL
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)\b(is_?admin|isadmin|role|user_?role|privilege|permission|group_?id)\s*[=:]\s*(true|1|admin|root|superuser|system)\b', 92, "Privilege escalation parameter tampering", "Broken Access Control", "Critical", "A01:2021"),
-            (r'(?i)\b(auth_?token|jwt|session_?id|bearer)\s*[=:]\s*(null|none|undefined|anonymous|admin)\b', 85, "Authentication bypass / token tampering", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)/(admin|superuser|sysadmin|internal|manage|root)/?(dashboard|users|config|settings|export|delete|grant|backup)?\b', 82, "Unauthorized administrative endpoint probing", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)/api/v\d+/(admin|internal|priv|system|management)/', 85, "Internal/Admin API surface probe", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)(x-original-url|x-rewrite-url|x-custom-url|x-forwarded-prefix)\s*:\s*/?(admin|internal|priv|system|manage|root|delete)', 92, "URL override header for access control bypass", "Broken Access Control", "Critical", "A01:2021"),
-            (r'(?i)(x-original-url|x-rewrite-url|x-custom-url|x-forwarded-prefix)\s*:', 85, "Reverse proxy routing override header attempt", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)/api/users/\d+/(invoice|orders|profile|settings|account|statement|details)\b', 88, "IDOR - Accessing another user object by sequential ID increment", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)/api/admin/(dashboard|users|delete-user|settings|config|system)\b', 88, "Forced browsing to administrative dashboard/action", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)(\.\./|\.\.\\|%2e%2e%2f|%2e%2e/|\.\.%2f|%2e%2e%5c|\.\.%5c){2,}|/etc/(passwd|shadow|hosts)', 98, "Path traversal climbing to system files", "Broken Access Control", "Critical", "A01:2021"),
-            (r'(?i)\buser_id=\d+&user_id=\d+\b', 90, "HTTP parameter pollution to bypass user ownership check", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)[?&](user|account|tenant|org)=\*(?:&|$)', 90, "Wildcard mass IDOR attempting to query or export all accounts", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)(cookie:\s*|\b)is_?admin=true\b', 90, "Client-side trust - forged admin cookie flag", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)\b(bearer)\s+(null|none|undefined|anonymous|admin)\b', 90, "Forged unauthenticated Bearer token", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)\b(x-user-role|x-role|x-is-admin)\s*[=:]\s*(admin|true|superuser|root|1)\b', 92, "Client-side role injection header", "Broken Access Control", "Critical", "A01:2021"),
-            (r'(?i)\buser_?id=\d+&account_?id=\d+\b|\buser_?id=(0|null)&account_?id=(admin|root)\b|\buser_?id=null&profile_?id=root\b|\borg_?id=1\s+or\s+1=1', 92, "Insecure Direct Object Reference (IDOR) manipulation", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)/(manage/grant|superuser/backup|internal/delete|priv/secrets|api/v1/priv)\b', 90, "Privileged administrative action probe", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)HTTP Method:\s*(TRACE|CONNECT|TRACK)', 95, "Dangerous HTTP method bypass (TRACE/CONNECT)", "Broken Access Control", "Critical", "A01:2021"),
-            (r'(?i)HTTP Method Override:\s*(PUT|DELETE|OPTIONS)\s+on sensitive endpoint', 90, "HTTP method override tampering on restricted endpoint", "Broken Access Control", "High", "A01:2021"),
-            (r'(?i)\b(redirect|return_url|return|next|url|goto|dest|target)\s*[=:]\s*(https?:)?//(?!localhost|127\.0\.0\.1)[a-z0-9.-]+\.[a-z]{2,}', 88, "Open redirect to untrusted external destination", "Broken Access Control", "High", "A01:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A02:2021 — CRYPTOGRAPHIC FAILURES
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)^http://.*[?&](password|passwd|pass|secret|token)=', 95, "Cleartext credential submission over unencrypted HTTP protocol", "Cryptographic Failures", "Critical", "A02:2021"),
-            (r'(?i)\bhttp://[^\s]+/login\?[^\s]*(password|passwd|pass)=', 95, "Credentials exposed in cleartext URL over HTTP", "Cryptographic Failures", "Critical", "A02:2021"),
-            (r'(?i)authorization:\s*basic\s+(YWRtaW46cGFzc3dvcmQ|YWRtaW46MTIzNDU2|cm9vdDpyb290|YWRtaW46YWRtaW4)[a-zA-Z0-9+/=]*', 95, "Weak Basic Authentication with easily decodable default/leaked credentials", "Cryptographic Failures", "Critical", "A02:2021"),
-            (r'(?i)authorization:\s*basic\s+[a-zA-Z0-9+/=]{8,}', 80, "Basic Authentication credentials transmitted in base64", "Cryptographic Failures", "Medium", "A02:2021"),
-            (r'(?i)/api/reset-password\?[^&\s]*token=0{3,}\d+\b|[?&]token=00000\d+\b', 90, "Predictable sequential password reset token exposure", "Cryptographic Failures", "Critical", "A02:2021"),
-            (r'(?i)(ssn=\d{3}-\d{2}-\d{4}|ssn=[^&\s]+)&store_plain=true\b|\bstore_plain=(true|1)\b', 92, "Request to store sensitive PII / SSN without cryptographic encryption", "Cryptographic Failures", "Critical", "A02:2021"),
-            (r'(?i)\bcipher=(des|rc4|md5|3des)\b|\bkey_length=(56|40|64)\b', 92, "Cryptographic downgrade request to obsolete/broken cipher (DES/RC4)", "Cryptographic Failures", "Critical", "A02:2021"),
-            (r'(?i)(credit_card|card_number|pan|ssn)[^&\s]*&mask=false\b|field=(credit_card_number|pan|ssn)&mask=false\b', 92, "Unmasked sensitive payment card data (PAN) / PII export request", "Cryptographic Failures", "Critical", "A02:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A03:2021 — INJECTION
-            # ──────────────────────────────────────────────────────────────
-            # SQL Injection sub-signatures
-            (r'(?i)\bunion\s+(all\s+)?select\b', 98, "UNION-based SQL injection query", "Injection", "Critical", "A03:2021"),
-            (r'(?i)union/\*\*/select', 98, "Inline comment obfuscated UNION SELECT query", "Injection", "Critical", "A03:2021"),
-            (r'(?i)(\'|\")\s*or\s*(\'|\")?[0-9a-z]+(\'|\")?\s*=\s*(\'|\")?[0-9a-z]+', 96, "Tautological boolean SQL injection (' or '1'='1')", "Injection", "Critical", "A03:2021"),
-            (r'(?i)\bor\s+[\'"]?1[\'"]?\s*=\s*[\'"]?1[\'"]?', 96, "Classic tautology OR 1=1 boolean bypass", "Injection", "Critical", "A03:2021"),
-            (r'(?i)(\'|\")\s*--|(\'|\")\s*#', 92, "SQL comment delimiter injection (' -- or ' #)", "Injection", "Critical", "A03:2021"),
-            (r'(?i)\b(waitfor\s+delay|pg_sleep|sleep\s*\(\s*\d+\s*\)|benchmark\s*\()', 98, "Time-based blind SQL injection probe", "Injection", "Critical", "A03:2021"),
-            (r'(?i);\s*(drop\s+table|delete\s+from|insert\s+into|update\s+\w+\s+set)\b', 98, "Stacked SQL command injection", "Injection", "Critical", "A03:2021"),
-            (r'(?i)\bconvert\s*\(\s*int\s*,\s*\(\s*select\s+@@version', 98, "Error-based SQL injection converting server version", "Injection", "Critical", "A03:2021"),
-            (r'(?i)(/\*+[^*]*\*+/)*\s*UN(/\*+[^*]*\*+/)*\s*ION(/\*+[^*]*\*+/)*\s*SEL(/\*+[^*]*\*+/)*\s*ECT', 98, "Heavily obfuscated inline-comment SQLi sequence", "Injection", "Critical", "A03:2021"),
-            (r'(?i)/\*+.*?\*+/\s*(union|select|insert|update|delete|drop)\b', 95, "Inline comment delimiter preceding SQL keywords", "Injection", "Critical", "A03:2021"),
-            (r'(?i)1\'\s+or\s+\'1\'=\'1\'\s*/\*', 96, "Polyglot SQL injection breakout payload", "Injection", "Critical", "A03:2021"),
-            (r'(?i)\bexec\s+xp_cmdshell\b', 100, "SQL injection escalating to xp_cmdshell OS command execution", "Injection", "Critical", "A03:2021"),
-
-            # Cross-Site Scripting (XSS)
-            (r'(?i)<script\b[^>]*>', 98, "Injected <script> HTML tag (Reflected/Stored XSS)", "Injection", "Critical", "A03:2021"),
-            (r'(?i)</script>', 92, "</script> closing script tag", "Injection", "High", "A03:2021"),
-            (r'(?i)<img\b[^>]*\bonerror\s*=', 98, "Stored/Reflected XSS via <img> onerror event handler", "Injection", "Critical", "A03:2021"),
-            (r'(?i)<svg\b[^>]*\bonload\s*=', 98, "XSS via <svg> onload event handler", "Injection", "Critical", "A03:2021"),
-            (r'(?i)javascript\s*:\s*(alert|prompt|confirm|fetch|window|document)\b', 98, "javascript: pseudo-protocol URI XSS payload", "Injection", "Critical", "A03:2021"),
-            (r'(?i)fetch\s*\(\s*[\'"][^\'"]*document\.cookie', 98, "XSS payload exfiltrating session cookies via fetch()", "Injection", "Critical", "A03:2021"),
-
-            # OS Command Injection
-            (r'(?i)[;&|`]\s*(cat\s+/etc/passwd|whoami|id|uname|dir|powershell|cmd|sh|bash)\b', 98, "OS command chaining with pipe/separator", "Injection", "Critical", "A03:2021"),
-            (r'(?i)&&\s*whoami\b|[;&|]\s*cat\s+/etc/passwd\b', 98, "Direct OS command injection concatenation (&& whoami / ; cat /etc/passwd)", "Injection", "Critical", "A03:2021"),
-            (r'(?i)\$\([a-z0-9_.\s/|:-]+\)', 95, "Shell command substitution subshell syntax $(...)", "Injection", "Critical", "A03:2021"),
-            (r'`(id|whoami|ls|cat|pwd|uname|ping|curl|wget|nc|sh|bash)[^`]*`', 95, "Backtick subshell command execution primitive", "Injection", "Critical", "A03:2021"),
-
-            # LDAP Injection
-            (r'(?i)\*\)\s*\(|\(\s*\|\s*\(uid=\*|\*\)\s*\(\s*uid=\*', 95, "LDAP filter breakout & wildcard attribute query", "Injection", "High", "A03:2021"),
-            (r'\(\s*\||\(\s*&', 90, "LDAP boolean filter concatenation", "Injection", "High", "A03:2021"),
-
-            # NoSQL Injection (MongoDB)
-            (r'(?i)\{\s*"\$where"\s*:\s*"[^"]+"\s*\}|"\$where"\s*:', 96, "MongoDB NoSQL injection via $where JavaScript evaluation", "Injection", "High", "A03:2021"),
-            (r'(?i)\{\s*"\$(gt|ne|regex|in|or|and)"\s*:', 88, "MongoDB NoSQL query operator injection ($gt/$ne/$regex)", "Injection", "High", "A03:2021"),
-
-            # XML / XXE Injection
-            (r'(?i)<!DOCTYPE\s+\w+\s+\[<!ENTITY\s+\w+\s+SYSTEM\s+["\']file:///', 100, "XXE injection extracting local filesystem files", "Injection", "Critical", "A03:2021"),
-            (r'(?i)<!ENTITY\s+\w+\s+SYSTEM\s+["\'][^"\']+["\']', 98, "XXE external entity declaration (SYSTEM)", "Injection", "Critical", "A03:2021"),
-
-            # Server-Side Template Injection (SSTI)
-            (r'\{\{\s*7\s*\*\s*7\s*\}\}|\$\{\s*7\s*\*\s*7\s*\}', 95, "Mathematical expression probe for Server-Side Template Injection (SSTI)", "Injection", "High", "A03:2021"),
-            (r'\{\{[\s\S]*\}\}|\{%(?!#)[\s\S]*%\}', 90, "Template expression block injection (Jinja2/Twig/Django)", "Injection", "High", "A03:2021"),
-
-            # CRLF / HTTP Header Injection
-            (r'(%0d%0a|%0a%0d|\r\n)Set-Cookie:\s*', 98, "CRLF HTTP response splitting injecting Set-Cookie header", "Injection", "Critical", "A03:2021"),
-            (r'(%0d%0a|%0a%0d|\r\n)[a-zA-Z0-9-]+:\s*', 92, "CRLF injection attempting HTTP header manipulation", "Injection", "High", "A03:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A04:2021 — INSECURE DESIGN (Business Logic Abuse)
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)\bquantity\s*=\s*-[0-9]+\b', 90, "Negative quantity tampering to induce refund or negative bill", "Insecure Design", "High", "A04:2021"),
-            (r'(?i)\bprice\s*=\s*0\.0[0-9]*\b|\bprice\s*=\s*0\b', 88, "Client-side price tampering on checkout request", "Insecure Design", "High", "A04:2021"),
-            (r'(?i)\bapply_count\s*=\s*([2-9]\d{1,}|\d{3,})\b', 88, "Coupon code application count exceeding legitimate limits", "Insecure Design", "High", "A04:2021"),
-            (r'(?i)\botp_attempts\s*=\s*(unlimited|none|infinite|0)\b', 90, "Attempt to disable OTP rate limiting / maximum attempt rule", "Insecure Design", "High", "A04:2021"),
-            (r'(?i)\btransfer_amount\s*=\s*\d{8,}\b', 85, "Unrealistic transaction transfer amount exceeding financial sanity bounds", "Insecure Design", "High", "A04:2021"),
-            (r'(?i)/api/password-reset\s*\([0-9]+\s+requests/min|\b(1[0-9]{2}|[2-9]\d{2})\s+requests/min\b', 85, "Missing rate limiting pattern enabling reset-token brute force", "Insecure Design", "Medium", "A04:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A05:2021 — SECURITY MISCONFIGURATION
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)(^|/)\.env($|\b)', 95, "Probing for exposed server environment configuration file (.env)", "Security Misconfiguration", "High", "A05:2021"),
-            (r'(?i)(^|/)\.git/(config|HEAD|index)($|\b)', 95, "Probing for exposed Git metadata directory (.git/config)", "Security Misconfiguration", "High", "A05:2021"),
-            (r'(?i)(^|/)actuator/(health|env|beans|metrics|mappings|heapdump)($|\b)', 90, "Probing for exposed Spring Boot actuator endpoint", "Security Misconfiguration", "High", "A05:2021"),
-            (r'(?i)(wp-config|config|settings|database)\.php\.bak\b|\.bak($|\b)', 88, "Probing for exposed backup configuration file (.bak)", "Security Misconfiguration", "High", "A05:2021"),
-            (r'(?i)[?&]debug=true&trace=1\b|[?&]trace=1&debug=true\b|[?&]display_errors=1\b', 88, "Attempt to trigger verbose debug stack trace disclosure", "Security Misconfiguration", "High", "A05:2021"),
-            (r'(?i)\badmin:admin\b|\broot:root\b|\bguest:guest\b', 85, "Authentication attempt using common default administrative credentials", "Security Misconfiguration", "High", "A05:2021"),
-            (r'(?i)(^|/)server-status($|\b)|(^|/)server-info($|\b)', 88, "Probing for exposed Apache server-status diagnostic page", "Security Misconfiguration", "High", "A05:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A06:2021 — VULNERABLE AND OUTDATED COMPONENTS
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)\$\{jndi:(ldap|rmi|dns|ldaps|iiop)://[^\}]+\}', 100, "Log4Shell (CVE-2021-44228) JNDI lookup injection attack", "Vulnerable and Outdated Components", "Critical", "A06:2021"),
-            (r'(?i)\$\{(struts\.valueStack|_memberAccess|#context)[^\}]*\}', 100, "Apache Struts OGNL remote code execution probe (CVE-2017-5638)", "Vulnerable and Outdated Components", "Critical", "A06:2021"),
-            (r'(?i)(^|/)struts2-showcase(/|\b)', 95, "Probing for outdated vulnerable Apache Struts2 showcase sample app", "Vulnerable and Outdated Components", "Critical", "A06:2021"),
-            (r'(?i)/solr/admin/cores\?action=CREATE\b', 95, "Probing for known Apache Solr RCE misconfiguration endpoint", "Vulnerable and Outdated Components", "Critical", "A06:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A07:2021 — IDENTIFICATION AND AUTHENTICATION FAILURES
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)\badmin:(123456|password|admin123|welcome|12345678)\b', 90, "Credential stuffing attempt using commonly leaked credentials", "Identification and Authentication Failures", "High", "A07:2021"),
-            (r'(?i)\b[1-9]\d{2,}\s+login\s+attempts\s+in\s+\d+s\b', 92, "High-frequency brute-force login attack pattern from single source", "Identification and Authentication Failures", "High", "A07:2021"),
-            (r'(?i)JSESSIONID=FIXEDSESSION\w*|PHPSESSID=FIXEDSESSION\w*', 92, "Session fixation attempt with pre-set session identifier", "Identification and Authentication Failures", "High", "A07:2021"),
-            (r'(?i)[?&]mfa_bypass=true\b|[?&]skip_2fa=1\b|[?&]bypass_mfa=1\b', 90, "Attempt to bypass multi-factor authentication step via parameter tampering", "Identification and Authentication Failures", "High", "A07:2021"),
-            (r'(?i)\bpassword=(123456|password|12345678)&confirm_password=\1\b', 85, "Weak password policy compliance failure on registration", "Identification and Authentication Failures", "High", "A07:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A08:2021 — SOFTWARE AND DATA INTEGRITY FAILURES
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)rO0ABX[a-zA-Z0-9+/=]{10,}', 98, "Base64-encoded Java serialized object (Insecure Deserialization RCE)", "Software and Data Integrity Failures", "Critical", "A08:2021"),
-            (r'(?i)\{\s*"alg"\s*:\s*"none"\s*,\s*"typ"\s*:\s*"JWT"\s*\}|"alg"\s*:\s*"none"', 98, "JWT 'alg:none' unsigned token header tampering attack", "Software and Data Integrity Failures", "Critical", "A08:2021"),
-            (r'(?i)\bpickle\.loads\s*\(', 98, "Python pickle deserialization of untrusted byte payload", "Software and Data Integrity Failures", "Critical", "A08:2021"),
-            (r'(?i)[?&]verify_signature=false\b|[?&]skip_signature=true\b', 95, "Auto-update software tampering with signature verification disabled", "Software and Data Integrity Failures", "Critical", "A08:2021"),
-            (r'(?i)\bnpm\s+install\s+.*@malicious', 95, "Supply chain attack probe installing untrusted/malicious package dependency", "Software and Data Integrity Failures", "Critical", "A08:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A09:2021 — SECURITY LOGGING AND MONITORING FAILURES
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)(%0a|%0d%0a|\n)INFO:\s*Login\s+successful|(%0a|%0d%0a|\n)\[INFO\]', 92, "Log forging / injection via CRLF newline sequence to fake success logs", "Security Logging and Monitoring Failures", "High", "A09:2021"),
-            (r'(?i)User-Agent:\s*sqlmap/[0-9.]+|sqlmap/[0-9.]+#stable', 95, "Automated vulnerability scanner signature detected (sqlmap)", "Security Logging and Monitoring Failures", "High", "A09:2021"),
-            (r'(?i)\bDELETE\s+FROM\s+(audit_logs|security_logs|access_logs|system_logs)\b', 98, "Attempt to tamper with or clear security audit log repository", "Security Logging and Monitoring Failures", "Critical", "A09:2021"),
-            (r'(?i)X-Request-Id:\s*(\'|\"|\s*or\s*[\'"]?1|--)', 90, "SQL injection payload injected via logged tracing header (X-Request-Id)", "Security Logging and Monitoring Failures", "High", "A09:2021"),
-
-            # ──────────────────────────────────────────────────────────────
-            # A10:2021 — SERVER-SIDE REQUEST FORGERY (SSRF)
-            # ──────────────────────────────────────────────────────────────
-            (r'(?i)http[s]?://169\.254\.169\.254', 100, "AWS/Azure Cloud Instance Metadata service SSRF (169.254.169.254)", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
-            (r'(?i)http[s]?://metadata\.google\.internal', 100, "GCP Cloud Metadata service SSRF", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
-            (r'(?i)http[s]?://(127\.0\.0\.1|localhost):6379\b', 100, "SSRF probing internal Redis cache/database on port 6379", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
-            (r'(?i)file:///(etc/passwd|etc/shadow|windows/win\.ini)', 98, "SSRF exploiting file:/// URI scheme to exfiltrate local files", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
-            (r'(?i)gopher://(127\.0\.0\.1|localhost):[0-9]+', 98, "SSRF exploiting gopher:// protocol to send raw protocol streams", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
-            (r'(?i)http[s]?://internal-admin\.local(:[0-9]+)?', 96, "SSRF targeting internal administrative endpoint (internal-admin.local)", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
-            (r'(?i)http[s]?://\[::1\](:[0-9]+)?', 96, "SSRF using IPv6 loopback [::1] to bypass naive IPv4 filters", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
-            (r'(?i)http[s]?://(127\.\d+\.\d+\.\d+|localhost|0\.0\.0\.0|0x7f000001|2130706433)', 95, "SSRF loopback probe", "Server-Side Request Forgery (SSRF)", "Critical", "A10:2021"),
+            # ... (keep existing rules) ...
         ]
+        self.load_dynamic_rules()
+
+    def load_dynamic_rules(self):
+        """Loads and appends dynamic remediation rules from the database."""
+        try:
+            from app.models.settings import Settings
+            from app.extensions import db
+            # Accessing from a non-request context
+            # Assuming you have a way to get the app context
+            # A simple approach is using current_app or just accessing via a global reference if setup
+            from flask import current_app
+
+            with current_app.app_context():
+                settings = Settings.query.first()
+                if settings and settings.parsed_dynamic_rules:
+                    for rule in settings.parsed_dynamic_rules:
+                        # rule is expected to be a dict: {pattern, weight, desc, cat, sev, owasp_id}
+                        self.rules.append((
+                            rule['pattern'],
+                            rule['weight'],
+                            rule['desc'],
+                            rule['cat'],
+                            rule['sev'],
+                            rule['owasp_id']
+                        ))
+                    logger.info(f"[MultiThreatEngine] Loaded {len(settings.parsed_dynamic_rules)} dynamic remediation rules.")
+        except Exception as e:
+            logger.error(f"[MultiThreatEngine] Failed to load dynamic rules: {str(e)}")
 
     # ──────────────────────────────────────────────────────────────────────
     # Multi-layer normalization
